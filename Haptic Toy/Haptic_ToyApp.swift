@@ -11,7 +11,10 @@ import SwiftUI
 struct Haptic_ToyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationStack {
+                ContentView()
+                    .preferredColorScheme(.light)
+            } // NavigationStack
         }
     }
 }
