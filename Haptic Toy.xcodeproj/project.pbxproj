@@ -11,6 +11,8 @@
 		E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */; };
 		E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE7A2A6D9D8B00ED9FD4 /* Assets.xcassets */; };
 		E9A8AE7E2A6D9D8B00ED9FD4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE7D2A6D9D8B00ED9FD4 /* Preview Assets.xcassets */; };
+		E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */; };
+		E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E9A8AE7A2A6D9D8B00ED9FD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9A8AE7D2A6D9D8B00ED9FD4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +57,8 @@
 			children = (
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
+				E9A8AE872A6DACFB00ED9FD4 /* Style */,
+				E9A8AE842A6DA8E700ED9FD4 /* Utilities */,
 				E9A8AE7A2A6D9D8B00ED9FD4 /* Assets.xcassets */,
 				E9A8AE7C2A6D9D8B00ED9FD4 /* Preview Content */,
 			);
@@ -65,6 +71,22 @@
 				E9A8AE7D2A6D9D8B00ED9FD4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E9A8AE842A6DA8E700ED9FD4 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		E9A8AE872A6DACFB00ED9FD4 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +160,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
+				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
+				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
