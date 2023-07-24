@@ -47,6 +47,11 @@ struct ContentView: View {
                                        .resizable()
                                        .scaledToFit()
                                }
+                               NavigationLink(destination: CatView()) {
+                                   Image("catNavigation")
+                                       .resizable()
+                                       .scaledToFit()
+                               }
                                
                            } // LazyVGrid
                            .padding(20)
