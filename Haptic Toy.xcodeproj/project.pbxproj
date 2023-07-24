@@ -19,6 +19,8 @@
 		E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */; };
 		E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */; };
 		E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */; };
+		E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */; };
+		E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsView.swift; sourceTree = "<group>"; };
+		E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purring.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
 				E9A8AE8C2A6DE1B600ED9FD4 /* Core */,
 				E9A8AE872A6DACFB00ED9FD4 /* Style */,
+				E9A8AE9D2A6E968000ED9FD4 /* Sounds */,
 				E9A8AE842A6DA8E700ED9FD4 /* Utilities */,
 				E9A8AE7A2A6D9D8B00ED9FD4 /* Assets.xcassets */,
 				E9A8AE7C2A6D9D8B00ED9FD4 /* Preview Content */,
@@ -90,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
+				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -129,6 +135,14 @@
 			children = (
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		E9A8AE9D2A6E968000ED9FD4 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
+			);
+			path = Sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,6 +205,7 @@
 			files = (
 				E9A8AE7E2A6D9D8B00ED9FD4 /* Preview Assets.xcassets in Resources */,
 				E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */,
+				E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +218,7 @@
 			files = (
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
+				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,

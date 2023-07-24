@@ -32,6 +32,7 @@ struct CatView: View {
                                     withAnimation {
                                         showHearts = true
                                         HapticManager.startHaptics()
+                                        startSound(sound: "purring", type: "wav")
                                     }
                                 }
                             }
@@ -40,6 +41,7 @@ struct CatView: View {
                                     showHearts = false
                                     heartIDs.removeAll()
                                     HapticManager.stopHaptics()
+                                    stopSound()
                                 }
                             }
                     )
