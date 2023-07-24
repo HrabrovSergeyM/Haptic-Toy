@@ -13,53 +13,66 @@ struct CatView: View {
     @State private var heartIDs = [UUID]()
     @State private var counter = 1
     
+    
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        ZStack {
+        VStack {
             
-            Image("cat")
-                .resizable()
-                .scaledToFit()
-                .gesture(
-                    DragGesture(minimumDistance: 0)
-                        .onChanged { _ in
-                            if !showHearts {
+            ZStack {
+                
+                Image("cat")
+                    .resizable()
+    //                .scaledToFit()
+                    .frame(width: 250, height: 400)
+                    .gesture(
+                        DragGesture(minimumDistance: 0)
+                            .onChanged { _ in
+                                if !showHearts {
+                                    withAnimation {
+                                        showHearts = true
+                                        HapticManager.startHaptics()
+                                    }
+                                }
+                            }
+                            .onEnded { _ in
                                 withAnimation {
-                                    showHearts = true
-    //                                heartIDs.append(UUID())
+                                    showHearts = false
+                                    heartIDs.removeAll()
+                                    HapticManager.stopHaptics()
                                 }
                             }
-                        }
-                        .onEnded { _ in
-                            withAnimation {
-                                showHearts = false
-                                heartIDs.removeAll()
-                            }
-                        }
-                )
-            
-            if showHearts {
-                ForEach(heartIDs, id: \.self) { id in
-                    HeartsView(id: id)
-                        .onAppear(perform: {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                if !heartIDs.isEmpty {
-                                    heartIDs.removeFirst()
+                    )
+                
+                if showHearts {
+                    ForEach(heartIDs, id: \.self) { id in
+                        HeartsView(id: id)
+                            .onAppear(perform: {
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                    if !heartIDs.isEmpty {
+                                        heartIDs.removeFirst()
+                                    }
                                 }
-                            }
-                        })
+                            })
+                    }
+                }
+                
+             
+                   
+                
+            } // ZStack
+            .onReceive(timer) { _ in
+                if showHearts {
+                    heartIDs.append(UUID())
                 }
             }
-               
+            .onAppear {
+                        HapticManager.prepareHaptics()
+                    }
+            Text("Hold your finger to purr")
+                .font(Font.system(size: 24, weight: .thin, design: .rounded))
             
-        } // ZStack
-        .onReceive(timer) { _ in
-            if showHearts {
-                heartIDs.append(UUID())
-//                counter += 1
-            }
-        }
+        } // VStack
     }
 }
 
