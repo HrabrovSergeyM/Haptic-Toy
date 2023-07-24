@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HeartsView: View {
     
-    var id: Int
+    var id: UUID
     @State private var opacity: Double = 1
     @State private var offset = CGSize.zero
     
@@ -21,7 +21,7 @@ struct HeartsView: View {
             .opacity(opacity)
             .offset(offset)
             .onAppear {
-                withAnimation(Animation.easeOut(duration: 1)) {
+                withAnimation(Animation.easeOut(duration: 1.5)) {
                     offset = CGSize(width: Int.random(in: -50...50), height: -300)
                     opacity = 0.0
                 }
