@@ -21,6 +21,7 @@
 		E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */; };
 		E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */; };
 		E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */; };
+		E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsView.swift; sourceTree = "<group>"; };
 		E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purring.wav; sourceTree = "<group>"; };
+		E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
 				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
 				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
+				E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -221,6 +224,7 @@
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
+				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
 				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,

@@ -14,7 +14,9 @@ struct ContentView: View {
             GridItem(.flexible()),
         ]
     
-    private let spacing: CGFloat = 20
+    private let spacing: CGFloat = 40
+    
+    @State private var isAnimated: Bool = false
 
     var body: some View {
        
@@ -25,38 +27,81 @@ struct ContentView: View {
                            alignment: .center,
                            spacing: spacing,
                            pinnedViews: []) {
-                               NavigationLink(destination: NumberPickerView()) {
-                                   Image("numberPicker")
-                                       .resizable()
-                                       .scaledToFit()
+                               VStack {
+                                   NavigationLink(destination: NumberPickerView()) {
+                                       Image("numberPicker")
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 200, height: 200)
+                                       
+                                   }
+                                   Text("Roller Picker")
+                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
                                }
-                               NavigationLink(destination: ToggleView()) {
-                                   Image("toggles")
-                                       .resizable()
-                                       .scaledToFit()
-                               }
+                               .opacity(isAnimated ? 1 : 0)
+                                          .offset(y: isAnimated ? 0 : -50)
+                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
                                
-                               NavigationLink(destination: SlidersView()) {
-                                   Image("slider")
-                                       .resizable()
-                                       .scaledToFit()
+                               VStack {
+                                   NavigationLink(destination: ToggleView()) {
+                                       Image("toggles")
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 200, height: 200)
+                                   }
+                                   Text("Buttons")
+                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
                                }
+                               .opacity(isAnimated ? 1 : 0)
+                                          .offset(y: isAnimated ? 0 : -50)
+                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
                                
-                               NavigationLink(destination: SegmentedPicker()) {
-                                   Image("segmentedPicker")
-                                       .resizable()
-                                       .scaledToFit()
+                               
+                               VStack {
+                                   NavigationLink(destination: SlidersView()) {
+                                       Image("slider")
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 200, height: 200)
+                                   }
+                                   Text("Sliders")
+                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
                                }
-                               NavigationLink(destination: CatView()) {
-                                   Image("catNavigation")
-                                       .resizable()
-                                       .scaledToFit()
+                               .opacity(isAnimated ? 1 : 0)
+                                          .offset(y: isAnimated ? 0 : 50)
+                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
+
+                               
+                               VStack {
+                                   NavigationLink(destination: CatView()) {
+                                       Image("catNavigation")
+                                           .resizable()
+                                           .scaledToFit()
+                                           .frame(width: 200, height: 200)
+                                   }
+                                   Text("Purr")
+                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
                                }
+                               .opacity(isAnimated ? 1 : 0)
+                                          .offset(y: isAnimated ? 0 : 50)
+                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
+                                        
                                
                            } // LazyVGrid
                            .padding(20)
                 
             } // VStack
+            .onAppear {
+                withAnimation {
+                    isAnimated = true
+                }
+            }
+            .onDisappear {
+                withAnimation {
+                    isAnimated = false
+                }
+            }
+            
             
         } // NavigationStack
         
