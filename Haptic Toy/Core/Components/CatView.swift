@@ -12,6 +12,7 @@ struct CatView: View {
     @State private var showHearts = false
     @State private var heartIDs = [UUID]()
     @State private var counter = 1
+    @State private var intensity: Double = 0
     
     
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
@@ -31,7 +32,7 @@ struct CatView: View {
                                 if !showHearts {
                                     withAnimation {
                                         showHearts = true
-                                        HapticManager.startHaptics()
+                                        HapticManager.startHaptics(intensityValue: Float(intensity))
                                         startSound(sound: "purring", type: "wav")
                                     }
                                 }
@@ -73,6 +74,13 @@ struct CatView: View {
                     }
             Text("Hold your finger to purr")
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
+                .padding(.bottom, 40)
+            Slider(value: $intensity, in: 0.2...2, step: 0.2)
+                .frame(width: 250)
+              
+            Text("Find your ideal intensity")
+                .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                
             
         } // VStack
     }

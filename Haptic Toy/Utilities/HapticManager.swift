@@ -35,19 +35,48 @@ class HapticManager {
         }
     }
     
-    static func startHaptics() {
+//    static func startHaptics() {
+//        guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
+//        var events = [CHHapticEvent]()
+//
+//        for i in stride(from: 0, to: 1, by: 0.1) {
+//            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(i))
+//            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(i))
+//            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: i)
+//            events.append(event)
+//        }
+//
+//        for i in stride(from: 0, to: 1, by: 0.1) {
+//            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1 - i))
+//            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - i))
+//            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 1 + i)
+//            events.append(event)
+//        }
+//
+//        do {
+//            let pattern = try CHHapticPattern(events: events, parameters: [])
+//            self.player = try engine?.makeAdvancedPlayer(with: pattern)
+//            try player?.start(atTime: 0)
+//            isPlaying = true
+//            repeatHaptics()
+//        } catch {
+//            print("Failed to play pattern: \(error.localizedDescription).")
+//        }
+//    }
+    
+    static func startHaptics(intensityValue: Float? = nil) {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         var events = [CHHapticEvent]()
 
         for i in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(i))
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? Float(i))
             let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(i))
             let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: i)
             events.append(event)
         }
 
         for i in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: Float(1 - i))
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? Float(1 - i))
             let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - i))
             let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 1 + i)
             events.append(event)
