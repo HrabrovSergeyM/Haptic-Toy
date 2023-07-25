@@ -10,85 +10,55 @@ import SwiftUI
 struct ContentView: View {
     
     private let columns: [GridItem] = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-        ]
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
     
     private let spacing: CGFloat = 40
     
     @State private var isAnimated: Bool = false
-
+    
     var body: some View {
-       
+        
         NavigationStack {
             VStack {
                 LazyVGrid(
-                           columns: columns,
-                           alignment: .center,
-                           spacing: spacing,
-                           pinnedViews: []) {
-                               VStack {
-                                   NavigationLink(destination: NumberPickerView()) {
-                                       Image("numberPicker")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 200, height: 200)
-                                       
-                                   }
-                                   Text("Roller Picker")
-                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
-                               }
-                               .opacity(isAnimated ? 1 : 0)
-                                          .offset(y: isAnimated ? 0 : -50)
-                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
-                               
-                               VStack {
-                                   NavigationLink(destination: ToggleView()) {
-                                       Image("toggles")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 200, height: 200)
-                                   }
-                                   Text("Buttons")
-                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
-                               }
-                               .opacity(isAnimated ? 1 : 0)
-                                          .offset(y: isAnimated ? 0 : -50)
-                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
-                               
-                               
-                               VStack {
-                                   NavigationLink(destination: SlidersView()) {
-                                       Image("slider")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 200, height: 200)
-                                   }
-                                   Text("Sliders")
-                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
-                               }
-                               .opacity(isAnimated ? 1 : 0)
-                                          .offset(y: isAnimated ? 0 : 50)
-                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
-
-                               
-                               VStack {
-                                   NavigationLink(destination: CatView()) {
-                                       Image("catNavigation")
-                                           .resizable()
-                                           .scaledToFit()
-                                           .frame(width: 200, height: 200)
-                                   }
-                                   Text("Purr")
-                                       .font(Font.system(size: 24, weight: .thin, design: .rounded))
-                               }
-                               .opacity(isAnimated ? 1 : 0)
-                                          .offset(y: isAnimated ? 0 : 50)
-                                          .animation(.easeOut(duration: 1.5), value: isAnimated)
-                                        
-                               
-                           } // LazyVGrid
-                           .padding(20)
+                    columns: columns,
+                    alignment: .center,
+                    spacing: spacing,
+                    pinnedViews: []) {
+                      
+                            NavigationGrid(destination: AnyView(NumberPickerView()),
+                                           imageName: "numberPicker",
+                                           text: "Roller Picker",
+                                           isAnimated: isAnimated,
+                                           offset: -50)
+                        
+                        
+                       
+                            NavigationGrid(destination: AnyView(ToggleView()),
+                                           imageName: "toggles",
+                                           text: "Buttons",
+                                           isAnimated: isAnimated,
+                                           offset: -50)
+                      
+                        
+                        
+                            NavigationGrid(destination: AnyView(SlidersView()),
+                                           imageName: "slider",
+                                           text: "Sliders",
+                                           isAnimated: isAnimated,
+                                           offset: 50)
+                     
+                      
+                            NavigationGrid(destination: AnyView(CatView()),
+                                           imageName: "catNavigation",
+                                           text: "Purr",
+                                           isAnimated: isAnimated,
+                                           offset: 50)
+                      
+                    } // LazyVGrid
+                    .padding(20)
                 
             } // VStack
             .onAppear {
@@ -101,7 +71,6 @@ struct ContentView: View {
                     isAnimated = false
                 }
             }
-            
             
         } // NavigationStack
         
