@@ -11,6 +11,7 @@ struct ToggleView: View {
     
     @State private var buttonToggle = false
     @State private var switchToggle = false
+    @State var showHelp: Bool = false
     
     var body: some View {
         VStack(spacing: 40) {
@@ -22,6 +23,14 @@ struct ToggleView: View {
                 .labelsHidden()
 
         } // VStack
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarHelpButton(showHelp: $showHelp)
+            }
+        }
+        .sheet(isPresented: $showHelp, content: {
+            HelpView(helpText: "Dive into an ocean of tactile responses. Each button and toggle possesses its unique sound and vibration, offering you a new level of interactivity. Let your sensations travel across this diversity of responses. Explore a new world of tactility. Find your ideal toggle. Find your ideal button.", isPresented: $showHelp)
+        })
     }
 }
 

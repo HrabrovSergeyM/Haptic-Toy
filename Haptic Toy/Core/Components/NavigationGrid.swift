@@ -14,6 +14,8 @@ struct NavigationGrid: View {
     var text: String
     var isAnimated: Bool
     var offset: CGFloat
+    var delayTime: Double
+    @State private var scaleEffectActive = false
 
     var body: some View {
         VStack {
@@ -22,6 +24,12 @@ struct NavigationGrid: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
+                    .scaleEffect(scaleEffectActive ? 1.1 : 1.0)
+                    .onAppear {
+                        withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {
+                            self.scaleEffectActive.toggle()
+                        }
+                    }
             }
             Text(text)
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
@@ -31,4 +39,3 @@ struct NavigationGrid: View {
         .animation(.easeOut(duration: 1.5), value: isAnimated)
     }
 }
-

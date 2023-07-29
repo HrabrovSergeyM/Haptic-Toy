@@ -25,6 +25,7 @@
 		E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */; };
 		E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAA2A75509500ED9FD4 /* Constants.swift */; };
 		E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */; };
+		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderMenuButtonView.swift; sourceTree = "<group>"; };
 		E9A8AEAA2A75509500ED9FD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
+		E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHelpButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
 				E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */,
+				E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */,
 				E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */,
 				E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */,
 				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
@@ -235,6 +238,7 @@
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
+				E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */,
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
 				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,

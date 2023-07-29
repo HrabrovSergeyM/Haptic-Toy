@@ -22,6 +22,11 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
+            Text("Select your experience")
+                .font(Font.system(size: 28, weight: .thin, design: .rounded))
+                .padding(.top, 40)
+            Spacer()
+            
             VStack {
                 LazyVGrid(
                     columns: columns,
@@ -33,7 +38,8 @@ struct ContentView: View {
                                            imageName: "numberPicker",
                                            text: "Roller Picker",
                                            isAnimated: isAnimated,
-                                           offset: -50)
+                                           offset: -50,
+                            delayTime: 1)
                         
                         
                        
@@ -41,7 +47,8 @@ struct ContentView: View {
                                            imageName: "toggles",
                                            text: "Buttons",
                                            isAnimated: isAnimated,
-                                           offset: -50)
+                                           offset: -50,
+                            delayTime: 2)
                       
                         
                         
@@ -49,14 +56,16 @@ struct ContentView: View {
                                            imageName: "slider",
                                            text: "Sliders",
                                            isAnimated: isAnimated,
-                                           offset: 50)
+                                           offset: 50,
+                                           delayTime: 2.5)
                      
                       
                             NavigationGrid(destination: AnyView(CatView()),
                                            imageName: "catNavigation",
                                            text: "Purr",
                                            isAnimated: isAnimated,
-                                           offset: 50)
+                                           offset: 50,
+                                           delayTime: 1.5)
                       
                     } // LazyVGrid
                     .padding(20)
@@ -71,9 +80,12 @@ struct ContentView: View {
                 withAnimation {
                     isAnimated = false
                 }
+               
             }
+            Spacer()
             
         } // NavigationStack
+       
         
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 struct NumberPickerView: View {
     
     @State private var selection = 300
+    @State var showHelp: Bool = false
     
     var body: some View {
         Picker("", selection: $selection) {
@@ -18,6 +19,14 @@ struct NumberPickerView: View {
             }
         } // Picker
         .pickerStyle(WheelPickerStyle())
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarHelpButton(showHelp: $showHelp)
+            }
+        }
+        .sheet(isPresented: $showHelp, content: {
+            HelpView(helpText: "Immerse yourself in a tranquil world of tactile sensations. Allow yourself to unwind simply by spinning the Wheel Picker. Delight in the subtle vibration and calming sound that envelop you. Discover a world of serenity and relaxation. Find your ideal speed.", isPresented: $showHelp)
+        })
     }
 }
 
