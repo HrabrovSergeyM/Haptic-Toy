@@ -22,6 +22,7 @@
 		E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */; };
 		E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */; };
 		E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */; };
+		E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purring.wav; sourceTree = "<group>"; };
 		E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGrid.swift; sourceTree = "<group>"; };
+		E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderMenuButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
 				E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */,
+				E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */,
 				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
 				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
 				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
@@ -220,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
+				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
