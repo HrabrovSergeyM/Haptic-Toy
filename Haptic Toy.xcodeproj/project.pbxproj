@@ -26,6 +26,8 @@
 		E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAA2A75509500ED9FD4 /* Constants.swift */; };
 		E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */; };
 		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
+		E9FF6E632A75B97A00DF9B87 /* BubbleWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */; };
+		E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		E9A8AEAA2A75509500ED9FD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHelpButton.swift; sourceTree = "<group>"; };
+		E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleWrapView.swift; sourceTree = "<group>"; };
+		E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,7 @@
 		E9A8AE8D2A6DE1E300ED9FD4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
 				E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */,
@@ -158,6 +163,15 @@
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		E9FF6E612A75B96100DF9B87 /* BubbleWrap */ = {
+			isa = PBXGroup;
+			children = (
+				E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */,
+				E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */,
+			);
+			path = BubbleWrap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +248,7 @@
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
+				E9FF6E632A75B97A00DF9B87 /* BubbleWrapView.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
@@ -242,6 +257,7 @@
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
 				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,
+				E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */,
 				E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */,
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ToggleView.swift in Sources */,

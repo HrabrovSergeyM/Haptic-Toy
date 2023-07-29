@@ -28,47 +28,55 @@ struct ContentView: View {
             Spacer()
             
             VStack {
-                LazyVGrid(
-                    columns: columns,
-                    alignment: .center,
-                    spacing: spacing,
-                    pinnedViews: []) {
-                      
-                            NavigationGrid(destination: AnyView(NumberPickerView()),
-                                           imageName: "numberPicker",
-                                           text: "Roller Picker",
-                                           isAnimated: isAnimated,
-                                           offset: -50,
-                            delayTime: 1)
-                        
-                        
-                       
-                            NavigationGrid(destination: AnyView(ToggleView()),
-                                           imageName: "toggles",
-                                           text: "Buttons",
-                                           isAnimated: isAnimated,
-                                           offset: -50,
-                            delayTime: 2)
-                      
-                        
-                        
-                            NavigationGrid(destination: AnyView(SlidersView()),
-                                           imageName: "slider",
-                                           text: "Sliders",
-                                           isAnimated: isAnimated,
-                                           offset: 50,
-                                           delayTime: 2.5)
-                     
-                      
-                            NavigationGrid(destination: AnyView(CatView()),
-                                           imageName: "catNavigation",
+                ScrollView {
+                    LazyVGrid(
+                        columns: columns,
+                        alignment: .center,
+                        spacing: spacing,
+                        pinnedViews: []) {
+                          
+                                NavigationGrid(destination: AnyView(NumberPickerView()),
+                                               imageName: "numberPicker",
+                                               text: "Roller Picker",
+                                               isAnimated: isAnimated,
+                                               offset: -50,
+                                delayTime: 1)
+                            
+                            
+                           
+                                NavigationGrid(destination: AnyView(ToggleView()),
+                                               imageName: "toggles",
+                                               text: "Buttons",
+                                               isAnimated: isAnimated,
+                                               offset: -50,
+                                delayTime: 2)
+                          
+                            
+                            
+                                NavigationGrid(destination: AnyView(SlidersView()),
+                                               imageName: "slider",
+                                               text: "Sliders",
+                                               isAnimated: isAnimated,
+                                               offset: 50,
+                                               delayTime: 2.5)
+                         
+                          
+                                NavigationGrid(destination: AnyView(CatView()),
+                                               imageName: "catNavigation",
+                                               text: "Purr",
+                                               isAnimated: isAnimated,
+                                               offset: 50,
+                                               delayTime: 1.5)
+                            NavigationGrid(destination: AnyView(BubbleWrapView()),
+                                           imageName: "bubbleWrapper",
                                            text: "Purr",
                                            isAnimated: isAnimated,
                                            offset: 50,
                                            delayTime: 1.5)
-                      
-                    } // LazyVGrid
-                    .padding(20)
+                          
+                        } // LazyVGrid
+                        .padding(20)
+                }
                 
             } // VStack
             .onAppear {
