@@ -13,6 +13,7 @@ struct CatView: View {
     @State private var heartIDs = [UUID]()
     @State private var counter = 1
     @State private var intensity: Double = 0
+    @State var showHelp: Bool = false
     
     
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
@@ -83,6 +84,21 @@ struct CatView: View {
                 
             
         } // VStack
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {
+                    showHelp = true
+                }, label: {
+                    Image(systemName: "questionmark.circle")
+                        .resizable()
+                        .frame(width: 24, height: 24)
+                        .padding()
+                })
+            }
+        }
+        .sheet(isPresented: $showHelp, content: {
+            HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", isPresented: $showHelp)
+        })
     }
 }
 

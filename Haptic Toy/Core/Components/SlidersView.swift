@@ -15,42 +15,59 @@ struct SlidersView: View {
     @State var hapticStyle: HapticStyle = .soft
     @State var sliderTitle: String = "Soft"
     @State var titleWeight: Font.Weight = .thin
+    @State var showHelp: Bool = false
     
     var body: some View {
-        VStack(spacing: 20) {
-            Spacer()
-            Spacer()
-            Slider(value: $sliderValue, in: 0...1, step: 0.1)
-                .onChange(of: sliderValue) { newValue in
-                    HapticManager.impact(style: hapticStyle.feedbackStyle)
-                }
-            Text(sliderTitle)
-                .font(Font.system(size: 24, weight: titleWeight, design: .rounded))
-            Spacer()
-            Menu {
-                ForEach(HapticStyle.allCases, id: \.self) { style in
-                    MenuButton(style: style, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
-                }
-            } label: {
-                Capsule()
-                      .cornerRadius(0)
-                      .foregroundColor(.white)
-                      .frame(width: 200, height: 75)
-                      .overlay(alignment: .center, content: {
-                          Text("Press and find your ideal style")
-                              .multilineTextAlignment(.center)
-                              .font(Font.system(size: 20, weight: .thin, design: .rounded))
+        
+            VStack(spacing: 20) {
+                Spacer()
+                Spacer()
+                Slider(value: $sliderValue, in: 0...1, step: 0.1)
+                    .onChange(of: sliderValue) { newValue in
+                        HapticManager.impact(style: hapticStyle.feedbackStyle)
+                    }
+                Text(sliderTitle)
+                    .font(Font.system(size: 24, weight: titleWeight, design: .rounded))
+                Spacer()
+                Menu {
+                    ForEach(HapticStyle.allCases, id: \.self) { style in
+                        MenuButton(style: style, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
+                            
+                    }
+                } label: {
+                    Capsule()
+                        .cornerRadius(0)
+                        .foregroundColor(.white)
+                        .frame(width: 200, height: 75)
+                        .overlay(alignment: .center, content: {
+                            Text("Press and find your ideal style")
+                                .multilineTextAlignment(.center)
+                                .font(Font.system(size: 20, weight: .thin, design: .rounded))
 
-                      })
+                        })
+                }
+                .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
+                .foregroundColor(.primary)
+                Spacer()
             }
-            .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
-            .foregroundColor(.primary)
-            
-                
-            Spacer()
-            
-        }
-        .padding(.horizontal, 80)
+            .padding(.horizontal, 80)
+//            .navigationBarTitle("Haptic Toy", displayMode: .inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showHelp = true
+                    }, label: {
+                        Image(systemName: "questionmark.circle")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .padding()
+                    })
+                }
+            }
+            .sheet(isPresented: $showHelp, content: {
+                HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", isPresented: $showHelp)
+            })
+        
     }
 }
 

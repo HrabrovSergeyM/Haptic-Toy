@@ -17,11 +17,12 @@ struct MenuButton: View {
     var body: some View {
         Button {
             hapticStyle = style
-            withAnimation(.easeIn(duration: 0.5)) {
+            withAnimation(.easeIn(duration: 0.2)) {
                 sliderTitle = style.rawValue.capitalized
                 titleWeight = style.titleWeight
                 sliderValue = 0
             }
+            HapticManager.notification(type: .success)
         } label: {
             Text(style.rawValue.capitalized)
                 .font(Font.system(size: 24, weight: style.titleWeight, design: .rounded))
