@@ -8,12 +8,8 @@
 import SwiftUI
 
 struct MenuButton: View {
-    
-    var title: String
-    var weight: Font.Weight
-    var style: UIImpactFeedbackGenerator.FeedbackStyle
-    
-    @Binding var hapticStyle: UIImpactFeedbackGenerator.FeedbackStyle
+    var style: HapticStyle
+    @Binding var hapticStyle: HapticStyle
     @Binding var sliderTitle: String
     @Binding var titleWeight: Font.Weight
     @Binding var sliderValue: Double
@@ -22,12 +18,13 @@ struct MenuButton: View {
         Button {
             hapticStyle = style
             withAnimation(.easeIn(duration: 0.5)) {
-                sliderTitle = title
-                titleWeight = weight
+                sliderTitle = style.rawValue.capitalized
+                titleWeight = style.titleWeight
                 sliderValue = 0
             }
         } label: {
-            Text(title)
+            Text(style.rawValue.capitalized)
+                .font(Font.system(size: 24, weight: style.titleWeight, design: .rounded))
         }
     }
 }

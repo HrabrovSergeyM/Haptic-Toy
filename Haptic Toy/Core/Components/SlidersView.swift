@@ -12,11 +12,9 @@ import SwiftUI
 struct SlidersView: View {
     
     @State var sliderValue: Double = 0
-    @State var hapticStyle: UIImpactFeedbackGenerator.FeedbackStyle = .soft
+    @State var hapticStyle: HapticStyle = .soft
     @State var sliderTitle: String = "Soft"
     @State var titleWeight: Font.Weight = .thin
-    
-    
     
     var body: some View {
         VStack(spacing: 20) {
@@ -24,17 +22,15 @@ struct SlidersView: View {
             Spacer()
             Slider(value: $sliderValue, in: 0...1, step: 0.1)
                 .onChange(of: sliderValue) { newValue in
-                    HapticManager.impact(style: hapticStyle)
+                    HapticManager.impact(style: hapticStyle.feedbackStyle)
                 }
             Text(sliderTitle)
                 .font(Font.system(size: 24, weight: titleWeight, design: .rounded))
             Spacer()
             Menu {
-                MenuButton(title: "Soft", weight: .thin, style: .soft, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
-                   MenuButton(title: "Light", weight: .light, style: .light, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
-                   MenuButton(title: "Medium", weight: .medium, style: .medium, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
-                   MenuButton(title: "Rigid", weight: .semibold, style: .rigid, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
-                   MenuButton(title: "Heavy", weight: .heavy, style: .heavy, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
+                ForEach(HapticStyle.allCases, id: \.self) { style in
+                    MenuButton(style: style, hapticStyle: $hapticStyle, sliderTitle: $sliderTitle, titleWeight: $titleWeight, sliderValue: $sliderValue)
+                }
             } label: {
                 Capsule()
                       .cornerRadius(0)

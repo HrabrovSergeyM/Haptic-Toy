@@ -23,6 +23,7 @@
 		E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */; };
 		E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */; };
 		E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */; };
+		E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAA2A75509500ED9FD4 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = purring.wav; sourceTree = "<group>"; };
 		E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationGrid.swift; sourceTree = "<group>"; };
 		E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderMenuButtonView.swift; sourceTree = "<group>"; };
+		E9A8AEAA2A75509500ED9FD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
+				E9A8AEAA2A75509500ED9FD4 /* Constants.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,
 				E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */,
+				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ToggleView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
 			);
