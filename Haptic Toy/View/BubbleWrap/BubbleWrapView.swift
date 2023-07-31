@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct BubbleWrapView: View {
+    @State var showHelp: Bool = false
+    
     var body: some View {
         VStack {
             HStack {
@@ -15,7 +17,22 @@ struct BubbleWrapView: View {
             }
             BubbleView()
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarHelpButton(showHelp: $showHelp)
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                BubbleMenuButtonView()
+            }
+        }
+        
+        .sheet(isPresented: $showHelp, content: {
+            HelpView(helpText: "Just pop it.", screenKey: "BubbleWrapView", isPresented: $showHelp)
+        })
     }
+    
 }
 
 struct BubbleWrapView_Previews: PreviewProvider {

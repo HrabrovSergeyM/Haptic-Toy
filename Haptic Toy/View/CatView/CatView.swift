@@ -22,10 +22,9 @@ struct CatView: View {
         VStack {
             
             ZStack {
-                
                 Image("cat")
                     .resizable()
-                    .frame(width: 250, height: 400)
+                    .frame(width: 220, height: 400)
                     .gesture(
                         DragGesture(minimumDistance: 0)
                             .onChanged { _ in

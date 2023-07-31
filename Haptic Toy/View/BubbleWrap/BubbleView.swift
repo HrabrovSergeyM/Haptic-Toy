@@ -1,3 +1,10 @@
+//
+//  BubbleView.swift
+//  Haptic Toy
+//
+//  Created by Sergey Hrabrov on 30.07.2023.
+//
+
 import SwiftUI
 
 struct BubbleView: View {
@@ -23,6 +30,7 @@ struct BubbleView: View {
                 }
             }
         }
+        .padding()
     }
 }
 
@@ -30,10 +38,13 @@ struct Bubble: View {
     @State var isPopped: Bool = false
     
     var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
+    var popped: [String] = ["softPopped", "softPopped2", "softPopped3", "softPopped4", "softPopped5"]
 
     var body: some View {
-        Image((isPopped ? "popped" : prepopped.randomElement())!)
+        Image((isPopped ? popped.randomElement() : prepopped.randomElement())!)
             .resizable()
+//            .renderingMode(.template)
+//                .foregroundColor(.white)
             .scaledToFit()
             .onTapGesture {
                 withAnimation(.default) {

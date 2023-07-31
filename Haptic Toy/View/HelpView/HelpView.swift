@@ -20,7 +20,7 @@ struct HelpView: View {
     var body: some View {
         ZStack {
             Color(.systemGray6)
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea()
             VStack {
                 Spacer()
                 Text("Explore")

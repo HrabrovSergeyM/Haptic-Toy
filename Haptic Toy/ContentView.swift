@@ -69,7 +69,7 @@ struct ContentView: View {
                                                delayTime: 1.5)
                             NavigationGrid(destination: AnyView(BubbleWrapView()),
                                            imageName: "bubbleWrapper",
-                                           text: "Purr",
+                                           text: "Bubble Wrapper",
                                            isAnimated: isAnimated,
                                            offset: 50,
                                            delayTime: 1.5)
