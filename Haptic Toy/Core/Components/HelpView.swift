@@ -8,9 +8,14 @@
 import SwiftUI
 
 struct HelpView: View {
+    
     var helpText: String
+    var screenKey: String
+    
     @Binding var isPresented: Bool
+    
     @State private var isTextVisible: Bool = false
+    
 
     var body: some View {
         ZStack {
@@ -28,10 +33,11 @@ struct HelpView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom)
                     .opacity(isTextVisible ? 1 : 0)
-                    .offset(y: isTextVisible ? 0 : 50)  // add offset modifier
+                    .offset(y: isTextVisible ? 0 : 50)
                 Spacer()
                 Button(action: {
                     isPresented = false
+                    UserDefaults.standard.set(true, forKey: screenKey) 
                 }) {
                     Capsule()
                         .cornerRadius(0)
@@ -45,7 +51,7 @@ struct HelpView: View {
                         .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
                         .foregroundColor(.primary)
                 }
-            }
+            } // VStack
             .padding()
             .background(Color(.systemGray6))
             .cornerRadius(10)
@@ -54,12 +60,12 @@ struct HelpView: View {
                     isTextVisible = true
                 }
             }
-        }
+        } // ZStack
     }
 }
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", isPresented: .constant(true))
+        HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", screenKey: "AnyView", isPresented: .constant(true))
     }
 }

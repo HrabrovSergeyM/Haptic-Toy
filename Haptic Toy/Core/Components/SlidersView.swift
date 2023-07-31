@@ -58,7 +58,7 @@ struct SlidersView: View {
             }
             
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", isPresented: $showHelp)
+                HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", screenKey: "SlidersView", isPresented: $showHelp)
             })
         
     }

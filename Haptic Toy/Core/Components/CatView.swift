@@ -25,7 +25,6 @@ struct CatView: View {
                 
                 Image("cat")
                     .resizable()
-    //                .scaledToFit()
                     .frame(width: 250, height: 400)
                     .gesture(
                         DragGesture(minimumDistance: 0)
@@ -96,10 +95,14 @@ struct CatView: View {
                 })
             }
         }
+        .onAppear {
+            showHelp = !UserDefaults.standard.bool(forKey: "CatView")
+                }
         .sheet(isPresented: $showHelp, content: {
-            HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", isPresented: $showHelp)
+            HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", screenKey: "CatView", isPresented: $showHelp)
         })
     }
+    
 }
 
 struct CatView_Previews: PreviewProvider {
