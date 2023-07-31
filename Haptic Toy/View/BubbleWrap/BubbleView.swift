@@ -4,7 +4,7 @@ struct BubbleView: View {
     var body: some View {
         ZStack {
 //            Color("BubbleWrapBackground").ignoresSafeArea()
-            Color(.black).ignoresSafeArea()
+            Color(.white).ignoresSafeArea()
             VStack {
                 ForEach(0..<10) { index in
                     if index % 2 > 0 {
@@ -28,9 +28,11 @@ struct BubbleView: View {
 
 struct Bubble: View {
     @State var isPopped: Bool = false
+    
+    var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
 
     var body: some View {
-        Image(isPopped ? "popped" : "prepop")
+        Image((isPopped ? "popped" : prepopped.randomElement())!)
             .resizable()
             .scaledToFit()
             .onTapGesture {

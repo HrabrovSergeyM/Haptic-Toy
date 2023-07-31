@@ -87,6 +87,9 @@
 			children = (
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
+				E9E7781A2A77F36F00FBBE4D /* ViewModel */,
+				E9E778192A77F36A00FBBE4D /* View */,
+				E9E778182A77F36400FBBE4D /* Model */,
 				E9A8AE8C2A6DE1B600ED9FD4 /* Core */,
 				E9A8AE872A6DACFB00ED9FD4 /* Style */,
 				E9A8AE9D2A6E968000ED9FD4 /* Sounds */,
@@ -108,8 +111,6 @@
 		E9A8AE842A6DA8E700ED9FD4 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
-				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 				E9A8AEAA2A75509500ED9FD4 /* Constants.swift */,
 			);
 			path = Utilities;
@@ -126,7 +127,6 @@
 		E9A8AE8C2A6DE1B600ED9FD4 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				E9A8AE8E2A6DE1F100ED9FD4 /* Home */,
 				E9A8AE8D2A6DE1E300ED9FD4 /* Components */,
 			);
 			path = Core;
@@ -135,26 +135,10 @@
 		E9A8AE8D2A6DE1E300ED9FD4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
-				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
-				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
-				E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */,
-				E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */,
-				E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */,
-				E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */,
 				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
-				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
-				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
 				E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		E9A8AE8E2A6DE1F100ED9FD4 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Home;
 			sourceTree = "<group>";
 		};
 		E9A8AE9D2A6E968000ED9FD4 /* Sounds */ = {
@@ -163,6 +147,62 @@
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		E9E778182A77F36400FBBE4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
+				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E9E778192A77F36A00FBBE4D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
+				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
+				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
+				E9E7781C2A77F3AA00FBBE4D /* SliderView */,
+				E9E7781B2A77F3A000FBBE4D /* HelpView */,
+				E9E7781D2A77F3BB00FBBE4D /* CatView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E9E7781A2A77F36F00FBBE4D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E9E7781B2A77F3A000FBBE4D /* HelpView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */,
+				E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */,
+			);
+			path = HelpView;
+			sourceTree = "<group>";
+		};
+		E9E7781C2A77F3AA00FBBE4D /* SliderView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */,
+				E9A8AEA82A754AB100ED9FD4 /* SliderMenuButtonView.swift */,
+			);
+			path = SliderView;
+			sourceTree = "<group>";
+		};
+		E9E7781D2A77F3BB00FBBE4D /* CatView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
+				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
+			);
+			path = CatView;
 			sourceTree = "<group>";
 		};
 		E9FF6E612A75B96100DF9B87 /* BubbleWrap */ = {
