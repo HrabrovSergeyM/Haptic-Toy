@@ -6,6 +6,7 @@
 //
 // TODO: Description for the screen
 
+//NSLocalizedString("bubbleWrapper", comment: "")
 import SwiftUI
 
 struct ContentView: View {
@@ -26,7 +27,7 @@ struct ContentView: View {
             ZStack {
                 Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
                 VStack {
-                    Text("Select your experience")
+                    Text("greeting_text")
                         .font(Font.system(size: 28, weight: .thin, design: .rounded))
                         .padding(.top, 40)
                     Spacer()
@@ -41,38 +42,39 @@ struct ContentView: View {
                                     
                                     NavigationGrid(destination: AnyView(BubbleWrapView()),
                                                    imageName: "bubbleWrapper",
-                                                   text: "Bubble Wrapper",
+                                                   text: NSLocalizedString("bubbleWrapper", comment: ""),
                                                    isAnimated: isAnimated,
                                                    offset: 50,
-                                                   delayTime: 3)
+                                                   delayTime: 0)
                                     
                                     NavigationGrid(destination: AnyView(ToggleView()),
                                                    imageName: "toggles",
-                                                   text: "Buttons",
+                                                   text: NSLocalizedString("buttonsAndToggles", comment: ""),
                                                    isAnimated: isAnimated,
                                                    offset: 50,
-                                    delayTime: 2)
+                                    delayTime: 0)
                                    
                                     
                                     NavigationGrid(destination: AnyView(SlidersView()),
                                                    imageName: "slider",
-                                                   text: "Sliders",
+                                                   text: NSLocalizedString("slider", comment: ""),
                                                    isAnimated: isAnimated,
                                                    offset: 50,
                                                    delayTime: 2.5)
+                                    
                                     NavigationGrid(destination: AnyView(CatView()),
                                                    imageName: "catNavigation",
-                                                   text: "Purr",
+                                                   text: NSLocalizedString("purr", comment: ""),
                                                    isAnimated: isAnimated,
                                                    offset: -50,
-                                                   delayTime: 2)
+                                                   delayTime: 0)
                                     
                                         NavigationGrid(destination: AnyView(NumberPickerView()),
                                                        imageName: "numberPicker",
-                                                       text: "Roller Picker",
+                                                       text: NSLocalizedString("rollerPicker", comment: ""),
                                                        isAnimated: isAnimated,
                                                        offset: -50,
-                                        delayTime: 1)
+                                        delayTime: 0)
                                  
                                     
                                     

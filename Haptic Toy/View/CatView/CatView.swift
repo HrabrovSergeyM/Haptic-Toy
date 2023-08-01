@@ -27,7 +27,7 @@ struct CatView: View {
                     Image("cat")
                         .resizable()
                         .renderingMode(.template)
-                         .foregroundColor(.primary)
+                        .foregroundColor(.primary)
                         .frame(width: 220, height: 400)
                         .gesture(
                             DragGesture(minimumDistance: 0)
@@ -63,8 +63,8 @@ struct CatView: View {
                         }
                     }
                     
-                 
-                       
+                    
+                    
                     
                 } // ZStack
                 .onReceive(timer) { _ in
@@ -73,17 +73,17 @@ struct CatView: View {
                     }
                 }
                 .onAppear {
-                            HapticManager.prepareHaptics()
-                        }
+                    HapticManager.prepareHaptics()
+                }
                 Text("Hold your finger to purr")
                     .font(Font.system(size: 24, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
                 Slider(value: $intensity, in: 0.2...2, step: 0.2)
                     .frame(width: 250)
-                  
+                
                 Text("Find your ideal intensity")
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
-                    
+                
                 
             } // VStack
             .toolbar {
@@ -100,7 +100,7 @@ struct CatView: View {
             }
             .onAppear {
                 showHelp = !UserDefaults.standard.bool(forKey: "CatView")
-                    }
+            }
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", screenKey: "CatView", isPresented: $showHelp)
             })

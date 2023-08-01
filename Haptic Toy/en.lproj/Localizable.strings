@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Haptic Toy
+
+  Created by Sergey Hrabrov on 02.08.2023.
+  
+*/
+
+
+// ContenView
+"greeting_text" = "Select your experience";
+
+"bubbleWrapper" = "Bubble Wrapper";
+"buttonsAndToggles" = "Buttons";
+"slider" = "Slider";
+"purr" = "Purr";
+"rollerPicker" = "Roller";
+
