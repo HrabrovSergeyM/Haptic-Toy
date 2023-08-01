@@ -22,77 +22,97 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
-            Text("Select your experience")
-                .font(Font.system(size: 28, weight: .thin, design: .rounded))
-                .padding(.top, 40)
-            Spacer()
             
-            VStack {
-                ScrollView {
-                    LazyVGrid(
-                        columns: columns,
-                        alignment: .center,
-                        spacing: spacing,
-                        pinnedViews: []) {
-                          
-                                NavigationGrid(destination: AnyView(NumberPickerView()),
-                                               imageName: "numberPicker",
-                                               text: "Roller Picker",
-                                               isAnimated: isAnimated,
-                                               offset: -50,
-                                delayTime: 1)
-                            
-                            
-                           
-                                NavigationGrid(destination: AnyView(ToggleView()),
-                                               imageName: "toggles",
-                                               text: "Buttons",
-                                               isAnimated: isAnimated,
-                                               offset: -50,
-                                delayTime: 2)
-                          
-                            
-                            
-                                NavigationGrid(destination: AnyView(SlidersView()),
-                                               imageName: "slider",
-                                               text: "Sliders",
-                                               isAnimated: isAnimated,
-                                               offset: 50,
-                                               delayTime: 2.5)
-                         
-                          
-                                NavigationGrid(destination: AnyView(CatView()),
-                                               imageName: "catNavigation",
-                                               text: "Purr",
-                                               isAnimated: isAnimated,
-                                               offset: 50,
-                                               delayTime: 1.5)
-                            NavigationGrid(destination: AnyView(BubbleWrapView()),
-                                           imageName: "bubbleWrapper",
-                                           text: "Bubble Wrapper",
-                                           isAnimated: isAnimated,
-                                           offset: 50,
-                                           delayTime: 1.5)
-                          
-                        } // LazyVGrid
-                        .padding(20)
+            ZStack {
+                Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+                VStack {
+                    Text("Select your experience")
+                        .font(Font.system(size: 28, weight: .thin, design: .rounded))
+                        .padding(.top, 40)
+                    Spacer()
+                    
+                    VStack {
+                        ScrollView {
+                            LazyVGrid(
+                                columns: columns,
+                                alignment: .center,
+                                spacing: spacing,
+                                pinnedViews: []) {
+                                    
+                                    NavigationGrid(destination: AnyView(BubbleWrapView()),
+                                                   imageName: "bubbleWrapper",
+                                                   text: "Bubble Wrapper",
+                                                   isAnimated: isAnimated,
+                                                   offset: 50,
+                                                   delayTime: 3)
+                                    
+                                    NavigationGrid(destination: AnyView(ToggleView()),
+                                                   imageName: "toggles",
+                                                   text: "Buttons",
+                                                   isAnimated: isAnimated,
+                                                   offset: 50,
+                                    delayTime: 2)
+                                   
+                                    
+                                    NavigationGrid(destination: AnyView(SlidersView()),
+                                                   imageName: "slider",
+                                                   text: "Sliders",
+                                                   isAnimated: isAnimated,
+                                                   offset: 50,
+                                                   delayTime: 2.5)
+                                    NavigationGrid(destination: AnyView(CatView()),
+                                                   imageName: "catNavigation",
+                                                   text: "Purr",
+                                                   isAnimated: isAnimated,
+                                                   offset: -50,
+                                                   delayTime: 2)
+                                    
+                                        NavigationGrid(destination: AnyView(NumberPickerView()),
+                                                       imageName: "numberPicker",
+                                                       text: "Roller Picker",
+                                                       isAnimated: isAnimated,
+                                                       offset: -50,
+                                        delayTime: 1)
+                                 
+                                    
+                                    
+                                   
+                                      
+                                  
+                                    
+                                    
+                                      
+                                 
+                                  
+                                       
+                                   
+                                  
+                                } // LazyVGrid
+                                .padding(20)
+                        }
+                        
+                    } // VStack
+                    .onAppear {
+                        withAnimation {
+                            isAnimated = true
+                        }
+                    }
+                    .onDisappear {
+                        withAnimation {
+                            isAnimated = false
+                        }
+                       
+                    }
+                    
+                    Spacer()
                 }
                 
-            } // VStack
-            .onAppear {
-                withAnimation {
-                    isAnimated = true
-                }
             }
-            .onDisappear {
-                withAnimation {
-                    isAnimated = false
-                }
-               
-            }
-            Spacer()
+            
+            
             
         } // NavigationStack
+        
        
         
     }

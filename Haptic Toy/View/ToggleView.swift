@@ -14,23 +14,28 @@ struct ToggleView: View {
     @State var showHelp: Bool = false
     
     var body: some View {
-        VStack(spacing: 40) {
-            Toggle("Toggle", isOn: $buttonToggle)
-                .toggleStyle(CheckboxStyle())
+        ZStack {
             
-            Toggle("Toggle", isOn: $switchToggle)
-                .toggleStyle(.switch)
-                .labelsHidden()
+            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            
+            VStack(spacing: 40) {
+                Toggle("Toggle", isOn: $buttonToggle)
+                    .toggleStyle(CheckboxStyle())
+                
+                Toggle("Toggle", isOn: $switchToggle)
+                    .toggleStyle(.switch)
+                    .labelsHidden()
 
-        } // VStack
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                ToolbarHelpButton(showHelp: $showHelp)
+            } // VStack
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    ToolbarHelpButton(showHelp: $showHelp)
+                }
             }
-        }
-        .sheet(isPresented: $showHelp, content: {
-            HelpView(helpText: "Dive into an ocean of tactile responses. Each button and toggle possesses its unique sound and vibration, offering you a new level of interactivity. Let your sensations travel across this diversity of responses. Explore a new world of tactility. Find your ideal toggle. Find your ideal button.", screenKey: "ToggleView", isPresented: $showHelp)
+            .sheet(isPresented: $showHelp, content: {
+                HelpView(helpText: "Dive into an ocean of tactile responses. Each button and toggle possesses its unique sound and vibration, offering you a new level of interactivity. Let your sensations travel across this diversity of responses. Explore a new world of tactility. Find your ideal toggle. Find your ideal button.", screenKey: "ToggleView", isPresented: $showHelp)
         })
+        }
     }
 }
 

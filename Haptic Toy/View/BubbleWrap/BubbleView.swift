@@ -11,7 +11,7 @@ struct BubbleView: View {
     var body: some View {
         ZStack {
 //            Color("BubbleWrapBackground").ignoresSafeArea()
-            Color(.white).ignoresSafeArea()
+//            Color(.white).ignoresSafeArea()
             VStack {
                 ForEach(0..<10) { index in
                     if index % 2 > 0 {
@@ -36,6 +36,7 @@ struct BubbleView: View {
 
 struct Bubble: View {
     @State var isPopped: Bool = false
+    var soundEffects: [String] = ["popBubble1", "popBubble2"]
     
     var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
     var popped: [String] = ["softPopped", "softPopped2", "softPopped3", "softPopped4", "softPopped5"]
@@ -43,12 +44,17 @@ struct Bubble: View {
     var body: some View {
         Image((isPopped ? popped.randomElement() : prepopped.randomElement())!)
             .resizable()
-//            .renderingMode(.template)
-//                .foregroundColor(.white)
+            .renderingMode(.template)
+                .foregroundColor(.primary)
             .scaledToFit()
             .onTapGesture {
-                withAnimation(.default) {
-                    isPopped = true
+//                withAnimation(.easeIn) {
+                   
+                    if !isPopped {
+                        isPopped = true
+                        startSound(sound: "pop", type: "mp3")
+                        HapticManager.impact(style: .medium)
+//                    }
                 }
             }
     }

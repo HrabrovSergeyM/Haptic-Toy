@@ -16,6 +16,8 @@ struct HelpView: View {
     
     @State private var isTextVisible: Bool = false
     
+    @Environment(\.colorScheme) var colorScheme
+    
 
     var body: some View {
         ZStack {
@@ -41,7 +43,7 @@ struct HelpView: View {
                 }) {
                     Capsule()
                         .cornerRadius(0)
-                        .foregroundColor(.white)
+                        .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
                         .frame(width: 200, height: 75)
                         .overlay(alignment: .center, content: {
                             Text("Got it")

@@ -29,3 +29,9 @@ struct MenuButton: View {
         }
     }
 }
+
+struct MenuButton_Previews: PreviewProvider {
+    static var previews: some View {
+        MenuButton(style: .heavy, hapticStyle: .constant(.heavy), sliderTitle: .constant("Test"), titleWeight: .constant(.black), sliderValue: .constant(0))
+    }
+}

@@ -19,87 +19,93 @@ struct CatView: View {
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        VStack {
-            
-            ZStack {
-                Image("cat")
-                    .resizable()
-                    .frame(width: 220, height: 400)
-                    .gesture(
-                        DragGesture(minimumDistance: 0)
-                            .onChanged { _ in
-                                if !showHearts {
-                                    withAnimation {
-                                        showHearts = true
-                                        HapticManager.startHaptics(intensityValue: Float(intensity))
-                                        startSound(sound: "purring", type: "wav")
-                                    }
-                                }
-                            }
-                            .onEnded { _ in
-                                withAnimation {
-                                    showHearts = false
-                                    heartIDs.removeAll()
-                                    HapticManager.stopHaptics()
-                                    stopSound()
-                                }
-                            }
-                    )
+        ZStack {
+            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            VStack {
                 
-                if showHearts {
-                    ForEach(heartIDs, id: \.self) { id in
-                        HeartsView(id: id)
-                            .onAppear(perform: {
-                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                    if !heartIDs.isEmpty {
-                                        heartIDs.removeFirst()
+                ZStack {
+                    Image("cat")
+                        .resizable()
+                        .renderingMode(.template)
+                         .foregroundColor(.primary)
+                        .frame(width: 220, height: 400)
+                        .gesture(
+                            DragGesture(minimumDistance: 0)
+                                .onChanged { _ in
+                                    if !showHearts {
+                                        withAnimation {
+                                            showHearts = true
+                                            HapticManager.startHaptics(intensityValue: Float(intensity))
+                                            startRepeatingSound(sound: "purring", type: "wav")
+                                        }
                                     }
                                 }
-                            })
+                                .onEnded { _ in
+                                    withAnimation {
+                                        showHearts = false
+                                        heartIDs.removeAll()
+                                        HapticManager.stopHaptics()
+                                        stopSound()
+                                    }
+                                }
+                        )
+                    
+                    if showHearts {
+                        ForEach(heartIDs, id: \.self) { id in
+                            HeartsView(id: id)
+                                .onAppear(perform: {
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                        if !heartIDs.isEmpty {
+                                            heartIDs.removeFirst()
+                                        }
+                                    }
+                                })
+                        }
+                    }
+                    
+                 
+                       
+                    
+                } // ZStack
+                .onReceive(timer) { _ in
+                    if showHearts {
+                        heartIDs.append(UUID())
                     }
                 }
+                .onAppear {
+                            HapticManager.prepareHaptics()
+                        }
+                Text("Hold your finger to purr")
+                    .font(Font.system(size: 24, weight: .thin, design: .rounded))
+                    .padding(.bottom, 40)
+                Slider(value: $intensity, in: 0.2...2, step: 0.2)
+                    .frame(width: 250)
+                  
+                Text("Find your ideal intensity")
+                    .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                    
                 
-             
-                   
-                
-            } // ZStack
-            .onReceive(timer) { _ in
-                if showHearts {
-                    heartIDs.append(UUID())
+            } // VStack
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showHelp = true
+                    }, label: {
+                        Image(systemName: "questionmark.circle")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .padding()
+                    })
                 }
             }
             .onAppear {
-                        HapticManager.prepareHaptics()
+                showHelp = !UserDefaults.standard.bool(forKey: "CatView")
                     }
-            Text("Hold your finger to purr")
-                .font(Font.system(size: 24, weight: .thin, design: .rounded))
-                .padding(.bottom, 40)
-            Slider(value: $intensity, in: 0.2...2, step: 0.2)
-                .frame(width: 250)
-              
-            Text("Find your ideal intensity")
-                .font(Font.system(size: 20, weight: .thin, design: .rounded))
-                
+            .sheet(isPresented: $showHelp, content: {
+                HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", screenKey: "CatView", isPresented: $showHelp)
+            })
             
-        } // VStack
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    showHelp = true
-                }, label: {
-                    Image(systemName: "questionmark.circle")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                        .padding()
-                })
-            }
         }
-        .onAppear {
-            showHelp = !UserDefaults.standard.bool(forKey: "CatView")
-                }
-        .sheet(isPresented: $showHelp, content: {
-            HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", screenKey: "CatView", isPresented: $showHelp)
-        })
     }
     
 }
