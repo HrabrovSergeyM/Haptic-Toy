@@ -13,7 +13,7 @@ struct Haptic_ToyApp: App {
         WindowGroup {
             NavigationStack {
                 ContentView()
-//                    .preferredColorScheme(.light)
+//                    .preferredColorScheme(.dark)
             } // NavigationStack
         }
     }
