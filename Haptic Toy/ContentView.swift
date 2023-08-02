@@ -42,15 +42,15 @@ struct ContentView: View {
                                                    imageName: "bubbleWrapper",
                                                    text: NSLocalizedString("bubbleWrapper", comment: ""),
                                                    isAnimated: isAnimated,
-                                                   offset: 50,
+                                                   offset: -50,
                                                    delayTime: 0)
                                     
                                     NavigationGrid(destination: AnyView(ToggleView()),
                                                    imageName: "toggles",
                                                    text: NSLocalizedString("buttonsAndToggles", comment: ""),
                                                    isAnimated: isAnimated,
-                                                   offset: 50,
-                                    delayTime: 0)
+                                                   offset: -50,
+                                                   delayTime: 4)
                                    
                                     
                                     NavigationGrid(destination: AnyView(SlidersView()),
@@ -58,21 +58,21 @@ struct ContentView: View {
                                                    text: NSLocalizedString("slider", comment: ""),
                                                    isAnimated: isAnimated,
                                                    offset: 50,
-                                                   delayTime: 2.5)
+                                                   delayTime: 1)
                                     
                                     NavigationGrid(destination: AnyView(CatView()),
                                                    imageName: "catNavigation",
                                                    text: NSLocalizedString("purr", comment: ""),
                                                    isAnimated: isAnimated,
-                                                   offset: -50,
+                                                   offset: 50,
                                                    delayTime: 0)
                                     
                                         NavigationGrid(destination: AnyView(NumberPickerView()),
                                                        imageName: "numberPicker",
                                                        text: NSLocalizedString("rollerPicker", comment: ""),
                                                        isAnimated: isAnimated,
-                                                       offset: -50,
-                                        delayTime: 0)
+                                                       offset: 50,
+                                                       delayTime: 4)
                                  
                                     
                                     
