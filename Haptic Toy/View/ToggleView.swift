@@ -25,7 +25,7 @@ struct ToggleView: View {
                 Toggle("Toggle", isOn: $switchToggle)
                     .toggleStyle(.switch)
                     .labelsHidden()
-
+                
             } // VStack
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -33,8 +33,8 @@ struct ToggleView: View {
                 }
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "Dive into an ocean of tactile responses. Each button and toggle possesses its unique sound and vibration, offering you a new level of interactivity. Let your sensations travel across this diversity of responses. Explore a new world of tactility. Find your ideal toggle. Find your ideal button.", screenKey: "ToggleView", isPresented: $showHelp)
-        })
+                HelpView(helpText: NSLocalizedString("helpViewToggle", comment: ""), screenKey: "ToggleView", isPresented: $showHelp)
+            })
         }
     }
 }

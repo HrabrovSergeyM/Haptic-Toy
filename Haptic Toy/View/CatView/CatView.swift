@@ -75,13 +75,13 @@ struct CatView: View {
                 .onAppear {
                     HapticManager.prepareHaptics()
                 }
-                Text("Hold your finger to purr")
-                    .font(Font.system(size: 24, weight: .thin, design: .rounded))
+                Text("catViewTitle")
+                    .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
                 Slider(value: $intensity, in: 0.2...2, step: 0.2)
                     .frame(width: 250)
                 
-                Text("Find your ideal intensity")
+                Text("catViewSlider")
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
                 
                 
@@ -102,7 +102,7 @@ struct CatView: View {
                 showHelp = !UserDefaults.standard.bool(forKey: "CatView")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.", screenKey: "CatView", isPresented: $showHelp)
+                HelpView(helpText: NSLocalizedString("helpViewCat", comment: ""), screenKey: "CatView", isPresented: $showHelp)
             })
             
         }

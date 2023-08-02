@@ -10,8 +10,8 @@ import SwiftUI
 struct BubbleView: View {
     var body: some View {
         ZStack {
-//            Color("BubbleWrapBackground").ignoresSafeArea()
-//            Color(.white).ignoresSafeArea()
+            //            Color("BubbleWrapBackground").ignoresSafeArea()
+            //            Color(.white).ignoresSafeArea()
             VStack {
                 ForEach(0..<10) { index in
                     if index % 2 > 0 {
@@ -40,21 +40,21 @@ struct Bubble: View {
     
     var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
     var popped: [String] = ["softPopped", "softPopped2", "softPopped3", "softPopped4", "softPopped5"]
-
+    
     var body: some View {
         Image((isPopped ? popped.randomElement() : prepopped.randomElement())!)
             .resizable()
             .renderingMode(.template)
-                .foregroundColor(.primary)
+            .foregroundColor(.primary)
             .scaledToFit()
             .onTapGesture {
-//                withAnimation(.easeIn) {
-                   
-                    if !isPopped {
-                        isPopped = true
-                        startSound(sound: "pop", type: "mp3")
-                        HapticManager.impact(style: .medium)
-//                    }
+                //                withAnimation(.easeIn) {
+                
+                if !isPopped {
+                    isPopped = true
+                    startSound(sound: "pop", type: "mp3")
+                    HapticManager.impact(style: .medium)
+                    //                    }
                 }
             }
     }

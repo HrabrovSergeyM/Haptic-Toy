@@ -1,10 +1,10 @@
 /* 
-  Localizable.strings
-  Haptic Toy
-
-  Created by Sergey Hrabrov on 02.08.2023.
-  
-*/
+ Localizable.strings
+ Haptic Toy
+ 
+ Created by Sergey Hrabrov on 02.08.2023.
+ 
+ */
 
 
 // ContenView
@@ -16,3 +16,23 @@
 "purr" = "Purr";
 "rollerPicker" = "Roller";
 
+//BubbleWrapView
+"helpViewBubble" = "Just pop it";
+
+//ToggleView
+"helpViewToggle" = "Each button and toggle possesses its unique sound and vibration, offering you a new level of interactivity. Find your ideal toggle. Find your ideal button.";
+
+//SlidersView
+"sliderButton" = "Press and find your ideal style";
+
+"helpViewSliders" = "With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.";
+
+//HelpView
+"helpViewTitle" = "What is it?";
+"helpViewButton" = "Got it";
+
+//CatView
+"catViewTitle" = "Hold your finger to purr";
+"catViewSlider" = "Find your ideal intensity";
+
+"helpViewCat" = "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.";

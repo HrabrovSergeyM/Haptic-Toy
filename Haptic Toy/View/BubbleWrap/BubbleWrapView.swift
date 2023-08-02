@@ -33,8 +33,8 @@ struct BubbleWrapView: View {
             }
             
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "Just pop it.", screenKey: "BubbleWrapView", isPresented: $showHelp)
-        })
+                HelpView(helpText: NSLocalizedString("helpViewBubble", comment: ""), screenKey: "BubbleWrapView", isPresented: $showHelp)
+            })
         }
     }
     

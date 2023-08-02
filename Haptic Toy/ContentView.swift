@@ -4,9 +4,7 @@
 //
 //  Created by Sergey Hrabrov on 23.07.2023.
 //
-// TODO: Description for the screen
 
-//NSLocalizedString("bubbleWrapper", comment: "")
 import SwiftUI
 
 struct ContentView: View {

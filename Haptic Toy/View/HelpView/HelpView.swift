@@ -25,7 +25,7 @@ struct HelpView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
-                Text("Explore")
+                Text("helpViewTitle")
                     .font(.largeTitle)
                     .fontWeight(.thin)
                     .padding(.bottom)
@@ -46,7 +46,7 @@ struct HelpView: View {
                         .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
                         .frame(width: 200, height: 75)
                         .overlay(alignment: .center, content: {
-                            Text("Got it")
+                            Text("helpViewButton")
                                 .multilineTextAlignment(.center)
                                 .font(Font.system(size: 20, weight: .thin, design: .rounded))
                         })

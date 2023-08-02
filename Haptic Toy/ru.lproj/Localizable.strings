@@ -1,10 +1,11 @@
 /* 
-  Localizable.strings
-  Haptic Toy
+ Localizable.strings
+ Haptic Toy
+ 
+ Created by Sergey Hrabrov on 02.08.2023.
+ 
+ */
 
-  Created by Sergey Hrabrov on 02.08.2023.
-  
-*/
 
 // ContenView
 "greeting_text" = "Выберите своё путешествие";
@@ -15,3 +16,23 @@
 "purr" = "Мур";
 "rollerPicker" = "Крутилка";
 
+//BubbleWrapView
+"helpViewBubble" = "Просто дави их.";
+
+//ToggleView
+"helpViewToggle" = "Каждая кнопка и переключатель обладает своей уникальность вибрацией, предоставляя Вам новый уровень интерактивности. Найдите свою идеальную кнопку.";
+
+//SlidersView
+"sliderButton" = "Найти свой идеальный стиль";
+
+"helpViewSliders" = "Ощутите приятные вибрации, просто передвигая ползунок слайдера влево и вправо. Экспериментируйте и найдите в меню свой идеальный стиль.";
+
+//HelpView
+"helpViewTitle" = "Что это?";
+"helpViewButton" = "Попробовать";
+
+//CatView
+"catViewTitle" = "Удерживайте палец для мурчания";
+"catViewSlider" = "Найдите идеальную интенсивность";
+
+"helpViewCat" = "Исследуйте новый уровень погружения. Просто удерживайте палец, чтобы почувствовать любовь этой кошки.";
