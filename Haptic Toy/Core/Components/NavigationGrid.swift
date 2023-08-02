@@ -24,7 +24,7 @@ struct NavigationGrid: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 200, height: 200)
-                    .scaleEffect(scaleEffectActive ? 1.1 : 1.0)
+                    .scaleEffect(scaleEffectActive ? 1.05 : 1.0)
                     .onAppear {
                         withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {
                             self.scaleEffectActive.toggle()

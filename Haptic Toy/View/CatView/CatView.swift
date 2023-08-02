@@ -80,6 +80,7 @@ struct CatView: View {
                     .padding(.bottom, 40)
                 Slider(value: $intensity, in: 0.2...2, step: 0.2)
                     .frame(width: 250)
+                    .accentColor(.red)
                 
                 Text("catViewSlider")
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))

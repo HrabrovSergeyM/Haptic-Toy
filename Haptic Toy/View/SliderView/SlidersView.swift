@@ -17,6 +17,8 @@ struct SlidersView: View {
     @State var titleWeight: Font.Weight = .thin
     @State var showHelp: Bool = false
     
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
         
         ZStack {
@@ -41,7 +43,7 @@ struct SlidersView: View {
                     } label: {
                         Capsule()
                             .cornerRadius(0)
-                            .foregroundColor(Color(UIColor.tertiarySystemBackground))
+                            .foregroundColor(Color(colorScheme == .dark ? .systemGray4 : .white))
                             .frame(width: 200, height: 75)
                             .overlay(alignment: .center, content: {
                                 Text("sliderButton")
@@ -50,7 +52,7 @@ struct SlidersView: View {
 
                             })
                     }
-                    .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 2)
+                    .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 2)
                     .foregroundColor(.primary)
                     Spacer()
                 }
