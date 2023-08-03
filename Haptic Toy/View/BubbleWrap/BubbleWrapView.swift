@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BubbleWrapView: View {
     @State var showHelp: Bool = false
+    @State var restartKey: Bool = false
     
     var body: some View {
         ZStack {
@@ -19,7 +20,7 @@ struct BubbleWrapView: View {
                 HStack {
                     
                 }
-                BubbleView()
+                BubbleView(restartKey: $restartKey)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -29,6 +30,20 @@ struct BubbleWrapView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     BubbleMenuButtonView()
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                      
+                        withAnimation(.spring()) {
+                            restartKey.toggle()
+                            HapticManager.notification(type: .success)
+                        }
+                    } label: {
+                        Image(systemName: "arrow.triangle.2.circlepath")
+                    }
+
                 }
             }
             

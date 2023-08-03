@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct BubbleView: View {
+    
+    @Binding var restartKey: Bool
+    
     var body: some View {
         ZStack {
             //            Color("BubbleWrapBackground").ignoresSafeArea()
@@ -17,13 +20,13 @@ struct BubbleView: View {
                     if index % 2 > 0 {
                         HStack {
                             ForEach(0..<5) { _ in
-                                Bubble()
+                                Bubble(restartKey: $restartKey)
                             }
                         }
                     } else {
                         HStack {
                             ForEach(0..<4) { _ in
-                                Bubble()
+                                Bubble(restartKey: $restartKey)
                             }
                         }
                     }
@@ -36,6 +39,8 @@ struct BubbleView: View {
 
 struct Bubble: View {
     @State var isPopped: Bool = false
+    @Binding var restartKey: Bool
+    
     var soundEffects: [String] = ["popBubble1", "popBubble2"]
     
     var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
@@ -48,13 +53,15 @@ struct Bubble: View {
             .foregroundColor(.primary)
             .scaledToFit()
             .onTapGesture {
-                //                withAnimation(.easeIn) {
-                
                 if !isPopped {
                     isPopped = true
                     startSound(sound: "pop", type: "mp3")
-                    HapticManager.impact(style: .medium)
-                    //                    }
+                    HapticManager.impact(style: .rigid)
+                }
+            }
+            .onChange(of: restartKey) { newValue in
+                withAnimation(.easeOut) {
+                    isPopped = false
                 }
             }
     }
@@ -62,6 +69,6 @@ struct Bubble: View {
 
 struct BubbleView_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleView()
+        BubbleView(restartKey: .constant(false))
     }
 }
