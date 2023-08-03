@@ -23,7 +23,7 @@ struct NavigationGrid: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 200, height: 200)
+//                    .frame(width: 200, height: 200)
                     .scaleEffect(scaleEffectActive ? 1.05 : 1.0)
                     .onAppear {
                         withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {

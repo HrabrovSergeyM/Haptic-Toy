@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E99934032A7B4FD500323C4D /* GridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99934022A7B4FD500323C4D /* GridElement.swift */; };
 		E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */; };
 		E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */; };
 		E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9A8AE7A2A6D9D8B00ED9FD4 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E99934022A7B4FD500323C4D /* GridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridElement.swift; sourceTree = "<group>"; };
 		E9A8AE732A6D9D8800ED9FD4 /* Haptic Toy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Toy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic_ToyApp.swift; sourceTree = "<group>"; };
 		E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
+				E99934022A7B4FD500323C4D /* GridElement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -302,6 +305,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99934032A7B4FD500323C4D /* GridElement.swift in Sources */,
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
 				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
