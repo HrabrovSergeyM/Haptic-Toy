@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
+		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
 		E99934032A7B4FD500323C4D /* GridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99934022A7B4FD500323C4D /* GridElement.swift */; };
 		E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */; };
 		E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
+		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
 		E99934022A7B4FD500323C4D /* GridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridElement.swift; sourceTree = "<group>"; };
 		E9A8AE732A6D9D8800ED9FD4 /* Haptic Toy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Toy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic_ToyApp.swift; sourceTree = "<group>"; };
@@ -77,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E9636B282A7BF84A006AF0BB /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		E9A8AE6A2A6D9D8800ED9FD4 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +110,7 @@
 			children = (
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
+				E9636B282A7BF84A006AF0BB /* Services */,
 				E9E7781A2A77F36F00FBBE4D /* ViewModel */,
 				E9E778192A77F36A00FBBE4D /* View */,
 				E9E778182A77F36400FBBE4D /* Model */,
@@ -124,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A8AEAA2A75509500ED9FD4 /* Constants.swift */,
+				E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -307,6 +321,7 @@
 			files = (
 				E99934032A7B4FD500323C4D /* GridElement.swift in Sources */,
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
+				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,
 				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
@@ -322,6 +337,7 @@
 				E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */,
 				E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */,
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
+				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ToggleView.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
