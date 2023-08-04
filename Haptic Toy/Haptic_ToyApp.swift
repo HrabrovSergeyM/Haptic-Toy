@@ -18,6 +18,7 @@ struct Haptic_ToyApp: App {
                 ContentView()
                      .preferredColorScheme(isDarkMode ? .dark : .light)
             } // NavigationStack
+            .accentColor(isDarkMode ? .white : .blue)
         }
     }
 }
