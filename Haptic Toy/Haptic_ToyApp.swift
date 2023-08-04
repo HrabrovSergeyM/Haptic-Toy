@@ -9,11 +9,14 @@ import SwiftUI
 
 @main
 struct Haptic_ToyApp: App {
+      
+      @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 ContentView()
-//                    .preferredColorScheme(.dark)
+                     .preferredColorScheme(isDarkMode ? .dark : .light)
             } // NavigationStack
         }
     }
