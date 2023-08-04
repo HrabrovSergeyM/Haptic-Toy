@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
 		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
+		E998E10C2A7D82440047530E /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998E10B2A7D82440047530E /* BlankView.swift */; };
 		E99934032A7B4FD500323C4D /* GridElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99934022A7B4FD500323C4D /* GridElement.swift */; };
 		E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */; };
 		E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */; };
@@ -30,6 +31,8 @@
 		E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */; };
 		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
 		E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD1872A7D13F700E03A22 /* LaunchView.swift */; };
+		E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */; };
+		E9DAD18D2A7D775D00E03A22 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */; };
 		E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */; };
 		E9E778232A78677000FBBE4D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778222A78677000FBBE4D /* pop.mp3 */; };
 		E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778362A796C9F00FBBE4D /* pop2.mp3 */; };
@@ -41,6 +44,7 @@
 /* Begin PBXFileReference section */
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
+		E998E10B2A7D82440047530E /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		E99934022A7B4FD500323C4D /* GridElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridElement.swift; sourceTree = "<group>"; };
 		E9A8AE732A6D9D8800ED9FD4 /* Haptic Toy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Toy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic_ToyApp.swift; sourceTree = "<group>"; };
@@ -64,6 +68,8 @@
 		E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHelpButton.swift; sourceTree = "<group>"; };
 		E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haptic-Toy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9DAD1872A7D13F700E03A22 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleMenuButtonView.swift; sourceTree = "<group>"; };
 		E9E778222A78677000FBBE4D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		E9E778362A796C9F00FBBE4D /* pop2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop2.mp3; sourceTree = "<group>"; };
@@ -168,6 +174,7 @@
 				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
 				E9A8AEA02A6FFAA800ED9FD4 /* NavigationGrid.swift */,
 				E9DAD1872A7D13F700E03A22 /* LaunchView.swift */,
+				E998E10B2A7D82440047530E /* BlankView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,10 +189,19 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		E9DAD1892A7D6EB800E03A22 /* SettingsView */ = {
+			isa = PBXGroup;
+			children = (
+				E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */,
+			);
+			path = SettingsView;
+			sourceTree = "<group>";
+		};
 		E9E778182A77F36400FBBE4D /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
+				E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 				E99934022A7B4FD500323C4D /* GridElement.swift */,
 			);
@@ -195,6 +211,7 @@
 		E9E778192A77F36A00FBBE4D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E9DAD1892A7D6EB800E03A22 /* SettingsView */,
 				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
@@ -328,11 +345,14 @@
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
 				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,
 				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
+				E9DAD18D2A7D775D00E03A22 /* LanguageManager.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E9FF6E632A75B97A00DF9B87 /* BubbleWrapView.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
+				E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */,
+				E998E10C2A7D82440047530E /* BlankView.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,

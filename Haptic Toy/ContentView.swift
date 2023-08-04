@@ -11,6 +11,8 @@ struct ContentView: View {
     
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
+    @State private var isShowingSettings: Bool = false
+    
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -38,7 +40,7 @@ struct ContentView: View {
                 header
                 VStack {
                     content
-                    .zIndex(1)
+                        .zIndex(1)
                     
                 } // VStack
                 .onAppear {
@@ -53,6 +55,31 @@ struct ContentView: View {
                     }
                 }
             }
+            .blur(radius: isShowingSettings ? 8.0 : 0, opaque: false)
+            .animation(.default, value: isShowingSettings)
+            if isShowingSettings {
+                BlankView(
+                    backgroundColor: isDarkMode ? .black : .gray,
+                    backgroundOpacity: isDarkMode ? 0.3 : 0.5
+                )
+                .onTapGesture {
+                    withAnimation {
+                        isShowingSettings = false
+                    }
+                }
+                
+                
+            }
+            SettingsView(isShowingSettings: $isShowingSettings)
+                .frame(width: 300, height: 300, alignment: .center)
+                .accentColor(.primary)
+                .cornerRadius(20)
+                .shadow(radius: 20)
+                .padding()
+                .animation(.easeInOut, value: isShowingSettings)
+                .offset(y: isShowingSettings ? 0 : UIScreen.main.bounds.height)
+                .zIndex(3)
+            
         }
         
     }
@@ -79,10 +106,10 @@ extension ContentView {
                         .font(Font.system(size: 28, weight: .thin, design: .rounded))
                     Spacer()
                     Button {
-                        isDarkMode.toggle()
+                        isShowingSettings.toggle()
                         HapticManager.notification(type: .success)
                     } label: {
-                        Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                        Image(systemName: "gearshape")
                             .resizable()
                             .frame(width: 24, height: 24)
                             .font(.system(.title, design: .rounded))

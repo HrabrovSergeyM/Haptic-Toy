@@ -9,8 +9,8 @@ import SwiftUI
 
 @main
 struct Haptic_ToyApp: App {
-    
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
+
     @State private var showLaunchView: Bool = true
     
     var body: some Scene {

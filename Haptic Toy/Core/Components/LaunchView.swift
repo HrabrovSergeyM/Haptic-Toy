@@ -18,7 +18,7 @@ struct LaunchView: View {
     @State var isLabelVisible: Bool = false
     @State var isLogoVisible: Bool = false
     @Binding var showLaunchView: Bool
-
+    
     private static let animationInterval: Double = 0.1
     private static let animationLoops: Int = 3
     private static let fontSize: CGFloat = 36
@@ -75,7 +75,7 @@ struct LaunchView: View {
     }
     
     // MARK: - Functions
-        
+    
     private func handleTimerTick(_: Date) {
         withAnimation(.spring()) {
             let lastIndex = loadingText.count - 1

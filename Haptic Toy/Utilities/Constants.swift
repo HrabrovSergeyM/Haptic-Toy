@@ -10,7 +10,7 @@ import SwiftUI
 
 enum HapticStyle: String, CaseIterable {
     case soft, light, medium, rigid, heavy
-
+    
     var feedbackStyle: UIImpactFeedbackGenerator.FeedbackStyle {
         switch self {
         case .soft:
@@ -25,7 +25,7 @@ enum HapticStyle: String, CaseIterable {
             return .heavy
         }
     }
-
+    
     var titleWeight: Font.Weight {
         switch self {
         case .soft:
@@ -46,13 +46,13 @@ enum DisplayMode: String {
     case standard, extended, maximum
     
     mutating func toggle() {
-            switch self {
-            case .standard:
-                self = .extended
-            case .extended:
-                self = .maximum
-            case .maximum:
-                self = .standard
-            }
+        switch self {
+        case .standard:
+            self = .extended
+        case .extended:
+            self = .maximum
+        case .maximum:
+            self = .standard
         }
+    }
 }

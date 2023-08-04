@@ -53,8 +53,8 @@ struct ToggleView: View {
                     HStack(spacing: 20) {
                         ForEach(0..<5) { index in
                             Button(action: {
-//                                let intensityValue = 0.6 + (Float(index) * 0.04)
-//                                let sharpnessValue = 0.7 + (Float(index) * 0.04)
+                                //                                let intensityValue = 0.6 + (Float(index) * 0.04)
+                                //                                let sharpnessValue = 0.7 + (Float(index) * 0.04)
                                 let intensityValue = Float(0.8)
                                 let sharpnessValue = 1.0 - (Float(index) * 0.15)
                                 HapticManager.playHapticWithIntensity(intensityValue, sharpness: sharpnessValue)
@@ -102,7 +102,7 @@ struct ToggleView: View {
                 }
                 .opacity(isStackVisible ? 1 : 0)
                 .offset(y: isStackVisible ? 0 : -80)
-//                Spacer()
+                //                Spacer()
             }
         }
         

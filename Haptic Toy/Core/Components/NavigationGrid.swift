@@ -16,14 +16,13 @@ struct NavigationGrid: View {
     var offset: CGFloat
     var delayTime: Double
     @State private var scaleEffectActive = false
-
+    
     var body: some View {
         VStack {
             NavigationLink(destination: destination) {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-//                    .frame(width: 200, height: 200)
                     .scaleEffect(scaleEffectActive ? 1.05 : 1.0)
                     .onAppear {
                         withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {
