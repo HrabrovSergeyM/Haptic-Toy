@@ -10,24 +10,30 @@ import SwiftUI
 struct BubbleView: View {
     
     @Binding var restartKey: Bool
+    @Binding var displayMode: DisplayMode
     
     var body: some View {
-        ZStack {
-            //            Color("BubbleWrapBackground").ignoresSafeArea()
-            //            Color(.white).ignoresSafeArea()
+        let bubbleRows: Int
+        let bubblesPerRow: Int
+        
+        switch displayMode {
+        case .standard:
+            bubbleRows = 10
+            bubblesPerRow = 4
+        case .extended:
+            bubbleRows = 15
+            bubblesPerRow = 6
+        case .maximum:
+            bubbleRows = 19
+            bubblesPerRow = 9
+        }
+        
+        return ZStack {
             VStack {
-                ForEach(0..<10) { index in
-                    if index % 2 > 0 {
-                        HStack {
-                            ForEach(0..<5) { _ in
-                                Bubble(restartKey: $restartKey)
-                            }
-                        }
-                    } else {
-                        HStack {
-                            ForEach(0..<4) { _ in
-                                Bubble(restartKey: $restartKey)
-                            }
+                ForEach(0..<bubbleRows, id: \.self) { index in
+                    HStack {
+                        ForEach(0..<(index % 2 == 0 ? bubblesPerRow : bubblesPerRow + 1), id: \.self) { _ in
+                            Bubble(restartKey: $restartKey, displayMode: $displayMode)
                         }
                     }
                 }
@@ -40,6 +46,7 @@ struct BubbleView: View {
 struct Bubble: View {
     @State var isPopped: Bool = false
     @Binding var restartKey: Bool
+    @Binding var displayMode: DisplayMode
     
     var soundEffects: [String] = ["popBubble1", "popBubble2"]
     
@@ -64,11 +71,17 @@ struct Bubble: View {
                     isPopped = false
                 }
             }
+            .onChange(of: displayMode) { newValue in
+                withAnimation(.easeOut) {
+                    isPopped = false
+                }
+            }
+        
     }
 }
 
 struct BubbleView_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleView(restartKey: .constant(false))
+        BubbleView(restartKey: .constant(false), displayMode: .constant(.standard))
     }
 }

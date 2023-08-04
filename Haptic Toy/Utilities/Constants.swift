@@ -41,3 +41,18 @@ enum HapticStyle: String, CaseIterable {
         }
     }
 }
+
+enum DisplayMode: String {
+    case standard, extended, maximum
+    
+    mutating func toggle() {
+            switch self {
+            case .standard:
+                self = .extended
+            case .extended:
+                self = .maximum
+            case .maximum:
+                self = .standard
+            }
+        }
+}
