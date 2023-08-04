@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ToggleView: View {
     
-    @State var showHelp: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    
+    @State var showHelp: Bool = false
+    @State private var isStackVisible: Bool = false
+  
     var body: some View {
         ZStack {
             
@@ -42,6 +45,8 @@ struct ToggleView: View {
                         }
                     }
                 }
+                .opacity(isStackVisible ? 1 : 0)
+                .offset(y: isStackVisible ? 0 : -40)
                 
                 VStack(spacing: 20) {
                     Text("Medium")
@@ -66,6 +71,8 @@ struct ToggleView: View {
                         }
                     }
                 }
+                .opacity(isStackVisible ? 1 : 0)
+                .offset(y: isStackVisible ? 0 : -60)
                 
                 VStack(spacing: 20) {
                     Text("Heavy")
@@ -93,9 +100,13 @@ struct ToggleView: View {
                             }
                         }
                     }
+                   
                 }
+                .opacity(isStackVisible ? 1 : 0)
+                .offset(y: isStackVisible ? 0 : -80)
             }
         }
+     
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 ToolbarHelpButton(showHelp: $showHelp)
@@ -103,6 +114,9 @@ struct ToggleView: View {
         }
         .onAppear {
             showHelp = !UserDefaults.standard.bool(forKey: "ToggleView")
+            withAnimation(.easeInOut(duration: 1)) {
+                isStackVisible = true
+            }
             HapticManager.prepareHaptics()
         }
         .sheet(isPresented: $showHelp, content: {

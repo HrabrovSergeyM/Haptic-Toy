@@ -39,7 +39,8 @@ struct HelpView: View {
                 Spacer()
                 Button(action: {
                     isPresented = false
-                    UserDefaults.standard.set(true, forKey: screenKey) 
+                    UserDefaults.standard.set(true, forKey: screenKey)
+                    HapticManager.impact(style: .soft)
                 }) {
                     Capsule()
                         .cornerRadius(0)
