@@ -9,16 +9,28 @@ import SwiftUI
 
 @main
 struct Haptic_ToyApp: App {
-      
-      @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    
+    @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    @State private var showLaunchView: Bool = true
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                ContentView()
-                     .preferredColorScheme(isDarkMode ? .dark : .light)
-            } // NavigationStack
-            .accentColor(isDarkMode ? .white : .blue)
+            ZStack {
+                NavigationStack {
+                    ContentView()
+                        .preferredColorScheme(isDarkMode ? .dark : .light)
+                } // NavigationStack
+                .accentColor(isDarkMode ? .white : .blue)
+                
+                ZStack {
+                    if showLaunchView {
+                        LaunchView(showLaunchView: $showLaunchView)
+                            .transition(.move(edge: .leading))
+                    }
+                } // ZStack
+                .zIndex(2.0)
+            } // ZStack
         }
     }
 }
+
