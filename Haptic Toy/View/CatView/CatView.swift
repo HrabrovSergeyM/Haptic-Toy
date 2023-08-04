@@ -89,14 +89,7 @@ struct CatView: View {
             } // VStack
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        showHelp = true
-                    }, label: {
-                        Image(systemName: "questionmark.circle")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .padding()
-                    })
+                    ToolbarHelpButton(showHelp: $showHelp)
                 }
             }
             .onAppear {

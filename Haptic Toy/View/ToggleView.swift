@@ -10,7 +10,7 @@ import SwiftUI
 struct ToggleView: View {
     
     @State var showHelp: Bool = false
-    
+    @Environment(\.colorScheme) var colorScheme
     var body: some View {
         ZStack {
             
@@ -29,7 +29,12 @@ struct ToggleView: View {
                                 HapticManager.playHapticWithIntensity(intensityValue, sharpness: sharpnessValue)
                             }) {
                                 RoundedRectangle(cornerRadius: 5)
-                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.1))
+//                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.1))
+                                    .fill(
+                                        colorScheme == .light ?
+                                        Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.1)
+                                        : Color("ColorGray").opacity(Double(1 - index) * 0.08 + 0.8)
+                                        )
                                     .shadow(color: .primary.opacity(0.4), radius: 4, x: 0, y: 0)
                                     .frame(width: 50, height: 50)
                             }
@@ -49,7 +54,12 @@ struct ToggleView: View {
                                 HapticManager.playHapticWithIntensity(intensityValue, sharpness: sharpnessValue)
                             }) {
                                 RoundedRectangle(cornerRadius: 5)
-                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.3))
+//                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.3))
+                                    .fill(
+                                        colorScheme == .light ?
+                                        Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.3)
+                                        : Color("ColorGray").opacity(Double(1 - index) * 0.08 + 0.55)
+                                        )
                                     .shadow(color: .primary.opacity(0.4), radius: 4, x: 0, y: 0)
                                     .frame(width: 50, height: 50)
                             }
@@ -69,14 +79,26 @@ struct ToggleView: View {
                                 HapticManager.playHapticWithIntensity(intensityValue, sharpness: sharpnessValue)
                             }) {
                                 RoundedRectangle(cornerRadius: 5)
-                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.6))
-//                                    .fill(Color("ColorGray"))
+                                    .fill(
+                                        colorScheme == .light ?
+                                        Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.5)
+                                        : Color("ColorGray").opacity(Double(1 - index) * 0.08 + 0.35)
+                                        )
+                                
+                                
+//                                    .fill(Color("ColorGray").opacity(Double(index + 1) * 0.03 + 0.6))
+//                                    .fill(Color("ColorGray")).opacity((Double(index + 1) * 0.03))
                                     .shadow(color: .primary.opacity(0.4), radius: 4, x: 0, y: 0)
                                     .frame(width: 50, height: 50)
                             }
                         }
                     }
                 }
+            }
+        }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarHelpButton(showHelp: $showHelp)
             }
         }
         .onAppear {

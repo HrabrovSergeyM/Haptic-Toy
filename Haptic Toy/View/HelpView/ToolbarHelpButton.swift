@@ -16,10 +16,8 @@ struct ToolbarHelpButton: View {
                 showHelp = true
             }, label: {
                 Image(systemName: "questionmark.circle")
-                   
                     .resizable()
                     .frame(width: 24, height: 24)
-                   
             })
             
             
