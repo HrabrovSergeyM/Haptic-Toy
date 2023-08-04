@@ -25,7 +25,7 @@
 //SlidersView
 "sliderButton" = "Press and find your ideal style";
 
-"helpViewSliders" = "With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.";
+"helpViewSliders" = "Feel the pleasant vibrations by simply moving the slider left and right. Experiment and find your ideal style in the menu.";
 
 //HelpView
 "helpViewTitle" = "What is it?";
@@ -35,4 +35,8 @@
 "catViewTitle" = "Hold your finger to purr";
 "catViewSlider" = "Find your ideal intensity";
 
-"helpViewCat" = "Discover a new layer of interaction with a cat right on your screen. Simply hold your finger, and she'll start to purr, creating a soothing vibration. Use the slider to dial in the perfect intensity. Find your ideal intensity.";
+"helpViewCat" = "Feel the love of this cat. Just hold your finger to experience a new level of immersion. Find your ideal intensity.";
+
+//NumberPickerView
+"helpViewPicker" = "Just scroll it.";
+

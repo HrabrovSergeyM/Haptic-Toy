@@ -88,7 +88,7 @@ extension ContentView {
                             .font(.system(.title, design: .rounded))
                             .foregroundColor(.primary)
                     }
-                    .padding()
+                    .padding(.horizontal)
                 }
                 
             )

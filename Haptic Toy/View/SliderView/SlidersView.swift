@@ -62,7 +62,9 @@ struct SlidersView: View {
                         ToolbarHelpButton(showHelp: $showHelp)
                     }
                 }
-                
+                .onAppear {
+                    showHelp = !UserDefaults.standard.bool(forKey: "SlidersView")
+                }
                 .sheet(isPresented: $showHelp, content: {
                     HelpView(helpText: NSLocalizedString("helpViewSliders", comment: ""), screenKey: "SlidersView", isPresented: $showHelp)
             })

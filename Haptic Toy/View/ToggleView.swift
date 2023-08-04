@@ -32,6 +32,9 @@ struct ToggleView: View {
                     ToolbarHelpButton(showHelp: $showHelp)
                 }
             }
+            .onAppear {
+                showHelp = !UserDefaults.standard.bool(forKey: "ToggleView")
+            }
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: NSLocalizedString("helpViewToggle", comment: ""), screenKey: "ToggleView", isPresented: $showHelp)
             })
