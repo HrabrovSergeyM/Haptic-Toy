@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct Haptic_ToyApp: App {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
+    @AppStorage("appHasBeenLaunchedBefore") var appHasBeenLaunchedBefore: Bool = false
 
     @State private var showLaunchView: Bool = true
     
@@ -30,6 +31,16 @@ struct Haptic_ToyApp: App {
                 } // ZStack
                 .zIndex(2.0)
             } // ZStack
+            .onAppear {
+                if !appHasBeenLaunchedBefore {
+                    if UITraitCollection.current.userInterfaceStyle == .dark {
+                        isDarkMode = true
+                    } else {
+                        isDarkMode = false
+                    }
+                    appHasBeenLaunchedBefore = true
+                }
+            }
         }
     }
 }

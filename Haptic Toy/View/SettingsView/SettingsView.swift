@@ -52,11 +52,9 @@ struct DarkModeToggleView: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-           
                 Image(systemName: isDarkMode ? "sun.min" : "sun.max")
                     .font(.title)
                     .frame(width: 42, height: 42)
-            
             Toggle("Dark Mode", isOn: $isDarkMode)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
@@ -75,7 +73,7 @@ struct LanguageToggleView: View {
             Text("rus")
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
                 .frame(width: 42, height: 42)
-            Toggle("Dark Mode", isOn: $isEng)
+            Toggle("Language", isOn: $isEng)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: isEng) { value in
@@ -97,7 +95,7 @@ struct IconToggleView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
-            Toggle("Dark Mode", isOn: $isDarkIcon)
+            Toggle("Icon", isOn: $isDarkIcon)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: isDarkIcon) { newValue in
