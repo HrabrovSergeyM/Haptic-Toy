@@ -52,7 +52,7 @@ struct DarkModeToggleView: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-                Image(systemName: isDarkMode ? "sun.min" : "sun.max")
+                Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
                     .font(.title)
                     .frame(width: 42, height: 42)
             Toggle("Dark Mode", isOn: $isDarkMode)
