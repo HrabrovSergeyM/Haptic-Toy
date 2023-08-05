@@ -9,7 +9,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @State var isEng: Bool = LanguageManager.language == "en"
-    @State var isDarkIcon: Bool = false
+    @AppStorage("isDarkIcon") var isDarkIcon: Bool = false
     @Binding var isShowingSettings: Bool
 
     var body: some View {
