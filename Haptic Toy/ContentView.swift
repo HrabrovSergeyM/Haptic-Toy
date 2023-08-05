@@ -100,7 +100,7 @@ extension ContentView {
             .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 2)
             .overlay(
                 HStack {
-                    Spacer(minLength: 40)
+                    Spacer()
                     Spacer()
                     Text("greeting_text")
                         .font(Font.system(size: 28, weight: .thin, design: .rounded))
