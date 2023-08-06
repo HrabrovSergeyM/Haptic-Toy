@@ -70,8 +70,8 @@ struct LanguageToggleView: View {
 
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Text("rus")
-                .font(Font.system(size: 24, weight: .thin, design: .rounded))
+            Text("🇷🇺")
+                .font(Font.system(size: 48, weight: .thin, design: .rounded))
                 .frame(width: 42, height: 42)
             Toggle("Language", isOn: $isEng)
                 .labelsHidden()
@@ -79,8 +79,8 @@ struct LanguageToggleView: View {
                 .onChange(of: isEng) { value in
                     LocalizationService.shared.language = value ? .english_us : .russian
                 }
-            Text("eng")
-                .font(Font.system(size: 24, weight: .thin, design: .rounded))
+            Text("🇺🇸")
+                .font(Font.system(size: 48, weight: .thin, design: .rounded))
                 .frame(width: 42, height: 42)
         }
     }
@@ -95,6 +95,7 @@ struct IconToggleView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
+                .cornerRadius(12)
             Toggle("Icon", isOn: $isDarkIcon)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
@@ -105,6 +106,7 @@ struct IconToggleView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
+                .cornerRadius(12)
         }
     }
 

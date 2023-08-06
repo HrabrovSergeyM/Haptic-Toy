@@ -9,15 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    private var language = LocalizationService.shared.language
+    
     @State private var isShowingSettings: Bool = false
-    
-    private let columns: [GridItem] = [
-        GridItem(.flexible()),
-        GridItem(.flexible()),
-    ]
-    
-    private let spacing: CGFloat = 40
     
     @State private var isAnimated: Bool = false
     
@@ -29,13 +22,21 @@ struct ContentView: View {
         GridElement(id: UUID(), destination: AnyView(NumberPickerView()), imageName: "numberPicker", text: "rollerPicker", isAnimated: false, offset: 50, delayTime: 4)
     ]
     
+    private var language = LocalizationService.shared.language
+   
+    private let columns: [GridItem] = [
+        GridItem(.flexible()),
+        GridItem(.flexible()),
+    ]
+    
+    private let spacing: CGFloat = 40
+    
     var body: some View {
         
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             
             VStack {
-                
                 HomeHeader(isShowingSettings: $isShowingSettings)
                 VStack {
                     content
@@ -80,7 +81,7 @@ struct ContentView: View {
                 .zIndex(3)
             
         }
-        
+        .navigationTitle("")
     }
 }
 
@@ -91,11 +92,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension ContentView {
-    
-//    private var header: some View {
-//     //
-//    }
-//
+
     private var content: some View {
         ScrollView {
             LazyVGrid(

@@ -12,7 +12,18 @@ class LocalizationService {
     static let shared = LocalizationService()
     static let changedLanguage = Notification.Name("changedLanguage")
     
-    private init() {}
+    private init() {
+        checkForLanguageChange()
+    }
+    
+    private func checkForLanguageChange() {
+        let currentAppLanguage = UserDefaults.standard.string(forKey: "language")
+        let systemLanguage = Bundle.main.preferredLocalizations.first
+        
+        if let systemLanguage = systemLanguage, systemLanguage != currentAppLanguage {
+            self.language = Language(rawValue: systemLanguage) ?? .english_us
+        }
+    }
     
     var language: Language {
         get {

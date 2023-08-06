@@ -35,7 +35,6 @@
 		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
 		E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD1872A7D13F700E03A22 /* LaunchView.swift */; };
 		E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */; };
-		E9DAD18D2A7D775D00E03A22 /* LanguageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */; };
 		E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */; };
 		E9E778232A78677000FBBE4D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778222A78677000FBBE4D /* pop.mp3 */; };
 		E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778362A796C9F00FBBE4D /* pop2.mp3 */; };
@@ -75,7 +74,6 @@
 		E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haptic-Toy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9DAD1872A7D13F700E03A22 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageManager.swift; sourceTree = "<group>"; };
 		E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleMenuButtonView.swift; sourceTree = "<group>"; };
 		E9E778222A78677000FBBE4D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		E9E778362A796C9F00FBBE4D /* pop2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop2.mp3; sourceTree = "<group>"; };
@@ -218,7 +216,6 @@
 			isa = PBXGroup;
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
-				E9DAD18C2A7D775D00E03A22 /* LanguageManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 				E99934022A7B4FD500323C4D /* GridElement.swift */,
 			);
@@ -362,7 +359,6 @@
 				E9A8AE792A6D9D8800ED9FD4 /* ContentView.swift in Sources */,
 				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,
 				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
-				E9DAD18D2A7D775D00E03A22 /* LanguageManager.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
@@ -552,7 +548,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -589,7 +585,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
