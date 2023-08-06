@@ -56,3 +56,8 @@ enum DisplayMode: String {
         }
     }
 }
+
+enum Language: String {
+    case russian = "ru"
+    case english_us = "en"
+}

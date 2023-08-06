@@ -15,6 +15,9 @@ struct CatView: View {
     @State private var intensity: Double = 0
     @State var showHelp: Bool = false
     
+    @AppStorage("language")
+    var language = LocalizationService.shared.language
+    
     
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
@@ -75,14 +78,14 @@ struct CatView: View {
                 .onAppear {
                     HapticManager.prepareHaptics()
                 }
-                Text("catViewTitle")
+                Text("catViewTitle".localized(language))
                     .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
                 Slider(value: $intensity, in: 0.2...2, step: 0.2)
                     .frame(width: 250)
                     .accentColor(.red)
                 
-                Text("catViewSlider")
+                Text("catViewSlider".localized(language))
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
                 
                 
@@ -96,7 +99,7 @@ struct CatView: View {
                 showHelp = !UserDefaults.standard.bool(forKey: "CatView")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: NSLocalizedString("helpViewCat", comment: ""), screenKey: "CatView", isPresented: $showHelp)
+                HelpView(helpText: "helpViewCat", screenKey: "CatView", isPresented: $showHelp)
             })
             
         }

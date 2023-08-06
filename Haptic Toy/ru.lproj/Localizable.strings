@@ -39,3 +39,9 @@
 
 //NumberPickerView
 "helpViewPicker" = "Просто крути.";
+
+//SettingsView
+"closeButton" = "Закрыть";
+
+//Navigation
+"backButton" = "Назад";

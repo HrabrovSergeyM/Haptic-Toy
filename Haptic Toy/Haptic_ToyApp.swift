@@ -9,8 +9,13 @@ import SwiftUI
 
 @main
 struct Haptic_ToyApp: App {
+    @AppStorage("nativeLanguage") var nativeLanguage = Locale.current.language.languageCode?.identifier == LocalizationService.shared.language.rawValue ? "en" : "ru"
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @AppStorage("appHasBeenLaunchedBefore") var appHasBeenLaunchedBefore: Bool = false
+    
+//    @AppStorage("language")
+//    var language = Locale.current.language.languageCode?.identifier ?? LocalizationService.shared.language.rawValue
+    
 
     @State private var showLaunchView: Bool = true
     
@@ -20,6 +25,7 @@ struct Haptic_ToyApp: App {
                 NavigationStack {
                     ContentView()
                         .preferredColorScheme(isDarkMode ? .dark : .light)
+                        .navigationBarBackButtonHidden()
                 } // NavigationStack
                 .accentColor(isDarkMode ? .white : .blue)
                 
@@ -32,6 +38,7 @@ struct Haptic_ToyApp: App {
                 .zIndex(2.0)
             } // ZStack
             .onAppear {
+                print(nativeLanguage)
                 if !appHasBeenLaunchedBefore {
                     if UITraitCollection.current.userInterfaceStyle == .dark {
                         isDarkMode = true

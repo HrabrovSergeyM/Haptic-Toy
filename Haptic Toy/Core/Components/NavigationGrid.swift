@@ -15,6 +15,7 @@ struct NavigationGrid: View {
     var isAnimated: Bool
     var offset: CGFloat
     var delayTime: Double
+    var language = LocalizationService.shared.language
     @State private var scaleEffectActive = false
     
     var body: some View {
@@ -30,7 +31,7 @@ struct NavigationGrid: View {
                         }
                     }
             }
-            Text(text)
+            Text(text.localized(language))
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
         }
         .opacity(isAnimated ? 1 : 0)

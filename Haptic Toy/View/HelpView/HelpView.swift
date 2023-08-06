@@ -11,6 +11,7 @@ struct HelpView: View {
     
     var helpText: String
     var screenKey: String
+    var language = LocalizationService.shared.language
     
     @Binding var isPresented: Bool
     
@@ -25,11 +26,11 @@ struct HelpView: View {
                 .ignoresSafeArea()
             VStack {
                 Spacer()
-                Text("helpViewTitle")
+                Text("helpViewTitle".localized(language))
                     .font(.largeTitle)
                     .fontWeight(.thin)
                     .padding(.bottom)
-                Text(helpText)
+                Text(helpText.localized(language))
                     .font(.title2)
                     .fontWeight(.thin)
                     .multilineTextAlignment(.center)
@@ -47,7 +48,7 @@ struct HelpView: View {
                         .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
                         .frame(width: 200, height: 75)
                         .overlay(alignment: .center, content: {
-                            Text("helpViewButton")
+                            Text("helpViewButton".localized(language))
                                 .multilineTextAlignment(.center)
                                 .font(Font.system(size: 20, weight: .thin, design: .rounded))
                         })

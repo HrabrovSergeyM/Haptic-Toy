@@ -33,7 +33,7 @@ struct NumberPickerView: View {
                 showHelp = !UserDefaults.standard.bool(forKey: "NumberPickerView")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: NSLocalizedString("helpViewPicker", comment: ""), screenKey: "NumberPickerView", isPresented: $showHelp)
+                HelpView(helpText: "helpViewPicker", screenKey: "NumberPickerView", isPresented: $showHelp)
             })
         }
         

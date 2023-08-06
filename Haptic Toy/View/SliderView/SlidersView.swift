@@ -5,11 +5,11 @@
 //  Created by Sergey Hrabrov on 24.07.2023.
 //
 
-//TODO: Picker Soft/Light/... with Menu, added haptics
-
 import SwiftUI
 
 struct SlidersView: View {
+    @AppStorage("language")
+    var language = LocalizationService.shared.language
     
     @State var sliderValue: Double = 0
     @State var hapticStyle: HapticStyle = .soft
@@ -46,7 +46,7 @@ struct SlidersView: View {
                             .foregroundColor(Color(colorScheme == .dark ? .systemGray4 : .white))
                             .frame(width: 200, height: 75)
                             .overlay(alignment: .center, content: {
-                                Text("sliderButton")
+                                Text("sliderButton".localized(language))
                                     .multilineTextAlignment(.center)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
 
@@ -66,7 +66,7 @@ struct SlidersView: View {
                     showHelp = !UserDefaults.standard.bool(forKey: "SlidersView")
                 }
                 .sheet(isPresented: $showHelp, content: {
-                    HelpView(helpText: NSLocalizedString("helpViewSliders", comment: ""), screenKey: "SlidersView", isPresented: $showHelp)
+                    HelpView(helpText: "helpViewSliders", screenKey: "SlidersView", isPresented: $showHelp)
             })
         }
         

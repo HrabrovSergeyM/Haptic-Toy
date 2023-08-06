@@ -4,6 +4,7 @@
 //
 //  Created by Sergey Hrabrov on 24.07.2023.
 //
+// TODO: refactoring
 
 import SwiftUI
 
@@ -119,7 +120,7 @@ struct ToggleView: View {
             HapticManager.prepareHaptics()
         }
         .sheet(isPresented: $showHelp, content: {
-            HelpView(helpText: NSLocalizedString("helpViewToggle", comment: ""), screenKey: "ToggleView", isPresented: $showHelp)
+            HelpView(helpText: "helpViewToggle", screenKey: "ToggleView", isPresented: $showHelp)
         })
         
     }

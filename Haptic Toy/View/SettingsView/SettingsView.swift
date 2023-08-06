@@ -8,8 +8,11 @@ import SwiftUI
 
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    @State var isEng: Bool = LanguageManager.language == "en"
     @AppStorage("isDarkIcon") var isDarkIcon: Bool = false
+    @AppStorage("language")
+    private var language = LocalizationService.shared.language
+    @State var isEng: Bool = LocalizationService.shared.language == .english_us
+    
     @Binding var isShowingSettings: Bool
 
     var body: some View {
@@ -28,7 +31,7 @@ struct SettingsView: View {
                         isShowingSettings = false
                     }
                 } label: {
-                    Text("Close")
+                    Text("closeButton".localized(language))
                 }
             }
         }
@@ -42,9 +45,6 @@ struct SettingsView: View {
         }
     }
 
-    private func setLanguage(isEng: Bool) {
-        LanguageManager.language = isEng ? "en" : "ru"
-    }
 }
 
 struct DarkModeToggleView: View {
@@ -77,7 +77,7 @@ struct LanguageToggleView: View {
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: isEng) { value in
-                    LanguageManager.language = value ? "en" : "ru"
+                    LocalizationService.shared.language = value ? .english_us : .russian
                 }
             Text("eng")
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))

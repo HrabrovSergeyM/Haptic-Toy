@@ -40,3 +40,10 @@
 //NumberPickerView
 "helpViewPicker" = "Just scroll it.";
 
+//SettingsView
+"closeButton" = "Close";
+
+//Navigation
+
+"backButton" = "Back";
+

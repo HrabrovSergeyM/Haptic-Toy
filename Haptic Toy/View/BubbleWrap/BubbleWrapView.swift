@@ -79,7 +79,7 @@ struct BubbleWrapView: View {
                 showHelp = !UserDefaults.standard.bool(forKey: "BubbleWrapView")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: NSLocalizedString("helpViewBubble", comment: ""), screenKey: "BubbleWrapView", isPresented: $showHelp)
+                HelpView(helpText: "helpViewBubble", screenKey: "BubbleWrapView", isPresented: $showHelp)
             })
         }
     }

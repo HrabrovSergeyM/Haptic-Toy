@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    
+    private var language = LocalizationService.shared.language
     @State private var isShowingSettings: Bool = false
     
     private let columns: [GridItem] = [
@@ -23,11 +22,11 @@ struct ContentView: View {
     @State private var isAnimated: Bool = false
     
     @State private var gridItems: [GridElement] = [
-        GridElement(id: UUID(), destination: AnyView(BubbleWrapView()), imageName: "bubbleWrapper", text: NSLocalizedString("bubbleWrapper", comment: ""), isAnimated: false, offset: -50, delayTime: 0),
-        GridElement(id: UUID(), destination: AnyView(CatView()), imageName: "catNavigation", text: NSLocalizedString("purr", comment: ""), isAnimated: false, offset: 50, delayTime: 0),
-        GridElement(id: UUID(), destination: AnyView(ToggleView()), imageName: "toggles", text: NSLocalizedString("buttonsAndToggles", comment: ""), isAnimated: false, offset: -50, delayTime: 4),
-        GridElement(id: UUID(), destination: AnyView(SlidersView()), imageName: "slider", text: NSLocalizedString("slider", comment: ""), isAnimated: false, offset: 50, delayTime: 1),
-        GridElement(id: UUID(), destination: AnyView(NumberPickerView()), imageName: "numberPicker", text: NSLocalizedString("rollerPicker", comment: ""), isAnimated: false, offset: 50, delayTime: 4)
+        GridElement(id: UUID(), destination: AnyView(BubbleWrapView()), imageName: "bubbleWrapper", text: "bubbleWrapper", isAnimated: false, offset: -50, delayTime: 0),
+        GridElement(id: UUID(), destination: AnyView(CatView()), imageName: "catNavigation", text: "purr", isAnimated: false, offset: 50, delayTime: 0),
+        GridElement(id: UUID(), destination: AnyView(ToggleView()), imageName: "toggles", text: "buttonsAndToggles", isAnimated: false, offset: -50, delayTime: 4),
+        GridElement(id: UUID(), destination: AnyView(SlidersView()), imageName: "slider", text: "slider", isAnimated: false, offset: 50, delayTime: 1),
+        GridElement(id: UUID(), destination: AnyView(NumberPickerView()), imageName: "numberPicker", text: "rollerPicker", isAnimated: false, offset: 50, delayTime: 4)
     ]
     
     var body: some View {
@@ -37,7 +36,7 @@ struct ContentView: View {
             
             VStack {
                 
-                header
+                HomeHeader(isShowingSettings: $isShowingSettings)
                 VStack {
                     content
                         .zIndex(1)
@@ -93,36 +92,10 @@ struct ContentView_Previews: PreviewProvider {
 
 extension ContentView {
     
-    private var header: some View {
-        RoundedRectangle(cornerRadius: 0)
-            .fill(Color(.systemGray6)).ignoresSafeArea()
-            .frame(height: 60)
-            .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 2)
-            .overlay(
-                HStack {
-                    Spacer()
-                    Spacer()
-                    Text("greeting_text")
-                        .font(Font.system(size: 28, weight: .thin, design: .rounded))
-                    Spacer()
-                    Button {
-                        isShowingSettings.toggle()
-                        HapticManager.notification(type: .success)
-                    } label: {
-                        Image(systemName: "gearshape")
-                            .resizable()
-                            .frame(width: 24, height: 24)
-                            .font(.system(.title, design: .rounded))
-                            .foregroundColor(.primary)
-                    }
-                    .padding(.horizontal)
-                }
-                
-            )
-            .padding(.bottom, 0)
-            .zIndex(2)
-    }
-    
+//    private var header: some View {
+//     //
+//    }
+//
     private var content: some View {
         ScrollView {
             LazyVGrid(
