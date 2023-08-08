@@ -21,9 +21,9 @@ struct ButtonsView: View {
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             VStack(spacing: 20) {
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, baseOpacity: 0.1, offsetOpacity: 0.03, title: "Soft", yOffset: -40)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, baseOpacity: 0.3, offsetOpacity: 0.03, title: "Medium", yOffset: -60)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, baseOpacity: 0.5, offsetOpacity: 0.03, title: "Heavy", yOffset: -80)
+                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, baseOpacity: 0.1, offsetOpacity: colorScheme == .light ? 0.1 : 0.8, title: "Soft", yOffset: -40)
+                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, baseOpacity: 0.3, offsetOpacity: colorScheme == .light ? 0.3 : 0.55, title: "Medium", yOffset: -60)
+                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, baseOpacity: 0.5, offsetOpacity: colorScheme == .light ? 0.5 : 0.35, title: "Heavy", yOffset: -80)
             }
         }
         .toolbar {
