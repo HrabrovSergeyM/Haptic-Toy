@@ -44,8 +44,8 @@ struct ButtonsSection: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(Color("ColorGray"))
                                 .shadow(color: .primary.opacity(0.35), radius: 3,
-                                        x: motion != nil ? CGFloat(-motion!.gravity.x * 3) : 0,
-                                        y: motion != nil ? CGFloat(motion!.gravity.y * 3) : 0
+                                        x: motion != nil ? CGFloat(-motion!.gravity.x * 4) : 0,
+                                        y: motion != nil ? CGFloat(motion!.gravity.y * 2) : 0
                                 )
                                 .frame(width: 50, height: 50)
                             
@@ -62,7 +62,7 @@ struct ButtonsSection: View {
                                 )
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(Color("ColorGray"))
-//                                .shadow(color: .primary.opacity(0.35), radius: 2, x: 0, y: 0)
+                                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 0)
                                
                                 .frame(width: 50, height: 50)
                                 .offset(
