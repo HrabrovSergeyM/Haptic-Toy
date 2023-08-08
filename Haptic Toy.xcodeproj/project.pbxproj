@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
+		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
 		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
 		E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F0D2A80089A00333816 /* LocalizationService.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
+		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
 		E97D9F0D2A80089A00333816 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
+				E92827182A8287A000F5E9AB /* SliderHeartView.swift */,
 				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
 			);
 			path = CatView;
@@ -392,6 +395,7 @@
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */,
 				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
+				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,

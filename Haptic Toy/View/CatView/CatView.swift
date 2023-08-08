@@ -11,21 +11,22 @@ struct CatView: View {
     
     @State private var showHearts = false
     @State private var heartIDs = [UUID]()
+    @State private var sliderHeartsIDs = [UUID]()
     @State private var counter = 1
     @State private var intensity: Double = 0
     @State var showHelp: Bool = false
-    
+    @State private var sliderWidth: CGFloat = 0
     @AppStorage("language")
     var language = LocalizationService.shared.language
-    
     
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {
+            
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            
             VStack {
-                
                 ZStack {
                     Image("cat")
                         .resizable()
@@ -65,10 +66,6 @@ struct CatView: View {
                                 })
                         }
                     }
-                    
-                    
-                    
-                    
                 } // ZStack
                 .onReceive(timer) { _ in
                     if showHearts {
@@ -81,13 +78,29 @@ struct CatView: View {
                 Text("catViewTitle".localized(language))
                     .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
-                Slider(value: $intensity, in: 0.2...2, step: 0.2)
-                    .frame(width: 250)
-                    .accentColor(.red)
-                
+                ZStack {
+                    
+                           Slider(value: $intensity, in: 0.2...2, step: 0.2)
+                               .frame(width: 250)
+                               .accentColor(.red)
+                               .onChange(of: intensity) { newValue in
+                                   sliderHeartsIDs.append(UUID())
+                                   DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                       if !sliderHeartsIDs.isEmpty {
+                                           sliderHeartsIDs.removeFirst()
+                                       }
+                                   }
+                                   HapticManager.impact(style: .light)
+                               }
+                           ForEach(sliderHeartsIDs, id: \.self) { id in
+                               SliderHeartView(id: id, startPosition: CGPoint(x: 100 + CGFloat(intensity) * 100, y: 0))
+                           }
+                       }
+                .frame(height: 60)
+                .background(Color.clear)
+
                 Text("catViewSlider".localized(language))
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
-                
                 
             } // VStack
             .toolbar {
