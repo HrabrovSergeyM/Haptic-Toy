@@ -19,6 +19,7 @@ struct ButtonsSection: View {
     var offsetOpacity: Double
     var title: String
     var yOffset: CGFloat
+    var brightness: Double
     
     private func getColor(color: Color, forIndex index: Int, baseOpacity: Double, offsetOpacity: Double) -> Color {
         let returnedColor =
@@ -41,13 +42,16 @@ struct ButtonsSection: View {
                     }) {
                         ZStack{
                             RoundedRectangle(cornerRadius: 5)
-                                .fill(Color(UIColor.tertiarySystemBackground))
-                                .shadow(color: getColor(color: Color("ColorGray"), forIndex: index, baseOpacity: baseOpacity, offsetOpacity: offsetOpacity), radius: 4, x: 0, y: 0)
+                                .fill(Color("ColorGray"))
+                                .shadow(color: .primary.opacity(0.35), radius: 3,
+                                        x: motion != nil ? CGFloat(-motion!.gravity.x * 3) : 0,
+                                        y: motion != nil ? CGFloat(motion!.gravity.y * 3) : 0
+                                )
                                 .frame(width: 50, height: 50)
                             
                                 .offset(
-                                    x: motion != nil ? CGFloat(motion!.gravity.x * 18) : 0,
-                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 18) : 0
+                                    x: motion != nil ? CGFloat(motion!.gravity.x * 4) : 0,
+                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 4) : 0
                                 )
                                 .rotation3DEffect(
                                     motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
@@ -57,12 +61,13 @@ struct ButtonsSection: View {
                                         z: 0)
                                 )
                             RoundedRectangle(cornerRadius: 5)
-                                .fill(getColor(color: Color("ColorGray"), forIndex: index, baseOpacity: baseOpacity, offsetOpacity: offsetOpacity))
-                                .shadow(color: .primary.opacity(0.4), radius: 4, x: 0, y: 0)
+                                .fill(Color("ColorGray"))
+//                                .shadow(color: .primary.opacity(0.35), radius: 2, x: 0, y: 0)
+                               
                                 .frame(width: 50, height: 50)
                                 .offset(
-                                    x: motion != nil ? CGFloat(motion!.gravity.x * 20) : 0,
-                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 20) : 0
+                                    x: motion != nil ? CGFloat(motion!.gravity.x * 5) : 0,
+                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 5) : 0
                                 )
                                 .rotation3DEffect(
                                     motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
@@ -73,9 +78,13 @@ struct ButtonsSection: View {
                                 )
                         }
                     }
+                    .brightness(colorScheme == .light ?
+                                Double(1 - index) * 0.02 + brightness :
+                                    Double(1 - index) * 0.02 + brightness)
                     
                 }
             }
+//            .background(.blue)
         }
         .opacity(isStackVisible ? 1 : 0)
         .offset(y: isStackVisible ? 0 : yOffset)
@@ -86,9 +95,9 @@ struct ButtonsSection: View {
 struct ButtonsSection_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (0.6), baseOpacity: (0.3), offsetOpacity: (0.03), title: ("Soft"), yOffset: (40))
-            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (0.8), baseOpacity: (0.5), offsetOpacity: (0.03), title: ("Medium"), yOffset: (40))
-            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (1.0), baseOpacity: (0.7), offsetOpacity: (0.03), title: ("Heavy"), yOffset: (40))
+//            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (0.6), baseOpacity: (0.3), offsetOpacity: (0.03), title: ("Soft"), yOffset: (40))
+//            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (0.8), baseOpacity: (0.5), offsetOpacity: (0.03), title: ("Medium"), yOffset: (40))
+//            ButtonsSection(isStackVisible: .constant(true), motion: .constant(.none), motionManager: CMMotionManager(), intensity: (1.0), baseOpacity: (0.7), offsetOpacity: (0.03), title: ("Heavy"), yOffset: (40))
         }
     }
 }
