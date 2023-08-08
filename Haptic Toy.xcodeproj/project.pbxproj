@@ -35,6 +35,7 @@
 		E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAA2A75509500ED9FD4 /* Constants.swift */; };
 		E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */; };
 		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
+		E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D1BD192A8308FE00562287 /* CatShape.swift */; };
 		E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD1872A7D13F700E03A22 /* LaunchView.swift */; };
 		E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */; };
 		E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */; };
@@ -75,6 +76,7 @@
 		E9A8AEAA2A75509500ED9FD4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHelpButton.swift; sourceTree = "<group>"; };
+		E9D1BD192A8308FE00562287 /* CatShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatShape.swift; sourceTree = "<group>"; };
 		E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haptic-Toy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9DAD1872A7D13F700E03A22 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */,
+				E9D1BD192A8308FE00562287 /* CatShape.swift */,
 				E92827182A8287A000F5E9AB /* SliderHeartView.swift */,
 				E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */,
 			);
@@ -395,6 +398,7 @@
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */,
 				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
+				E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */,
 				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,

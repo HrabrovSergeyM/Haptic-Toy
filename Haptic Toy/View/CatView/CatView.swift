@@ -33,6 +33,7 @@ struct CatView: View {
                         .renderingMode(.template)
                         .foregroundColor(.primary)
                         .frame(width: 220, height: 400)
+                        .contentShape(CatShape())
                         .gesture(
                             DragGesture(minimumDistance: 0)
                                 .onChanged { _ in
@@ -53,6 +54,11 @@ struct CatView: View {
                                     }
                                 }
                         )
+                    
+                    // MARK: - DEBUG
+                    //                    CatShape()
+                    //                        .fill(Color.red.opacity(0.5))
+                    //                        .frame(width: 220, height: 400)
                     
                     if showHearts {
                         ForEach(heartIDs, id: \.self) { id in
@@ -80,25 +86,25 @@ struct CatView: View {
                     .padding(.bottom, 40)
                 ZStack {
                     
-                           Slider(value: $intensity, in: 0.2...2, step: 0.2)
-                               .frame(width: 250)
-                               .accentColor(.red)
-                               .onChange(of: intensity) { newValue in
-                                   sliderHeartsIDs.append(UUID())
-                                   DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                       if !sliderHeartsIDs.isEmpty {
-                                           sliderHeartsIDs.removeFirst()
-                                       }
-                                   }
-                                   HapticManager.impact(style: .light)
-                               }
-                           ForEach(sliderHeartsIDs, id: \.self) { id in
-                               SliderHeartView(id: id, startPosition: CGPoint(x: 100 + CGFloat(intensity) * 100, y: 0))
-                           }
-                       }
+                    Slider(value: $intensity, in: 0.2...2, step: 0.2)
+                        .frame(width: 250)
+                        .accentColor(.red)
+                        .onChange(of: intensity) { newValue in
+                            sliderHeartsIDs.append(UUID())
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                if !sliderHeartsIDs.isEmpty {
+                                    sliderHeartsIDs.removeFirst()
+                                }
+                            }
+                            HapticManager.impact(style: .light)
+                        }
+                    ForEach(sliderHeartsIDs, id: \.self) { id in
+                        SliderHeartView(id: id, startPosition: CGPoint(x: 100 + CGFloat(intensity) * 100, y: 0))
+                    }
+                }
                 .frame(height: 60)
                 .background(Color.clear)
-
+                
                 Text("catViewSlider".localized(language))
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
                 
@@ -125,3 +131,4 @@ struct CatView_Previews: PreviewProvider {
         CatView()
     }
 }
+
