@@ -17,7 +17,7 @@ struct ContentView: View {
     @State private var gridItems: [GridElement] = [
         GridElement(id: UUID(), destination: AnyView(BubbleWrapView()), imageName: "bubbleWrapper", text: "bubbleWrapper", isAnimated: false, offset: -50, delayTime: 0),
         GridElement(id: UUID(), destination: AnyView(CatView()), imageName: "catNavigation", text: "purr", isAnimated: false, offset: 50, delayTime: 0),
-        GridElement(id: UUID(), destination: AnyView(ToggleView()), imageName: "toggles", text: "buttonsAndToggles", isAnimated: false, offset: -50, delayTime: 4),
+        GridElement(id: UUID(), destination: AnyView(ButtonsView()), imageName: "toggles", text: "buttonsAndToggles", isAnimated: false, offset: -50, delayTime: 4),
         GridElement(id: UUID(), destination: AnyView(SlidersView()), imageName: "slider", text: "slider", isAnimated: false, offset: 50, delayTime: 1),
         GridElement(id: UUID(), destination: AnyView(NumberPickerView()), imageName: "numberPicker", text: "rollerPicker", isAnimated: false, offset: 50, delayTime: 4)
     ]

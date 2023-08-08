@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
 		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
 		E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F0D2A80089A00333816 /* LocalizationService.swift */; };
@@ -21,7 +22,7 @@
 		E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */; };
 		E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */; };
 		E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */; };
-		E9A8AE922A6DE69100ED9FD4 /* ToggleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */; };
+		E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */; };
 		E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */; };
 		E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */; };
 		E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
 		E97D9F0D2A80089A00333816 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyle.swift; sourceTree = "<group>"; };
 		E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
-		E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleView.swift; sourceTree = "<group>"; };
+		E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersView.swift; sourceTree = "<group>"; };
 		E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
@@ -94,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E92827152A82000000F5E9AB /* ButtonsView */ = {
+			isa = PBXGroup;
+			children = (
+				E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */,
+				E92827162A82007200F5E9AB /* ButtonsSection.swift */,
+			);
+			path = ButtonsView;
+			sourceTree = "<group>";
+		};
 		E9636B282A7BF84A006AF0BB /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,7 +239,7 @@
 				E9DAD1892A7D6EB800E03A22 /* SettingsView */,
 				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
-				E9A8AE912A6DE69100ED9FD4 /* ToggleView.swift */,
+				E92827152A82000000F5E9AB /* ButtonsView */,
 				E9E7781C2A77F3AA00FBBE4D /* SliderView */,
 				E9E7781B2A77F3A000FBBE4D /* HelpView */,
 				E9E7781D2A77F3BB00FBBE4D /* CatView */,
@@ -379,8 +390,9 @@
 				E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */,
 				E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */,
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
+				E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */,
 				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
-				E9A8AE922A6DE69100ED9FD4 /* ToggleView.swift in Sources */,
+				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
 			);
