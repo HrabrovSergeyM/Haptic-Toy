@@ -40,34 +40,30 @@ struct ButtonsSection: View {
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
                     }) {
                         ZStack{
-                                                        RoundedRectangle(cornerRadius: 5)
-                                                            .fill(Color(UIColor.tertiarySystemBackground))
-//                                                            .fill(getColor(color: Color("ColorGray"), forIndex: index, baseOpacity: baseOpacity, offsetOpacity: offsetOpacity))
-                                                            .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 0)
-                                                            .frame(width: 50, height: 50)
+                            RoundedRectangle(cornerRadius: 5)
+                                .fill(Color(UIColor.tertiarySystemBackground))
+                                .shadow(color: getColor(color: Color("ColorGray"), forIndex: index, baseOpacity: baseOpacity, offsetOpacity: offsetOpacity), radius: 4, x: 0, y: 0)
+                                .frame(width: 50, height: 50)
                             
-                                                            .offset(
-                                                                x: motion != nil ? CGFloat(motion!.gravity.x * 15) : 0,
-                                                                y: motion != nil ? CGFloat(-motion!.gravity.y * 15) : 0
-                                                            )
-                                                            //                    .rotation3DEffect(motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0))
-                                                            .rotation3DEffect(
-                                                                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
-                                                                axis: (
-                                                                    x: motion != nil ? -motion!.gravity.y : 0,
-                                                                    y: motion != nil ? motion!.gravity.x : 0,
-                                                                    z: 0)
-                                                            )
+                                .offset(
+                                    x: motion != nil ? CGFloat(motion!.gravity.x * 18) : 0,
+                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 18) : 0
+                                )
+                                .rotation3DEffect(
+                                    motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
+                                    axis: (
+                                        x: motion != nil ? -motion!.gravity.y : 0,
+                                        y: motion != nil ? motion!.gravity.x : 0,
+                                        z: 0)
+                                )
                             RoundedRectangle(cornerRadius: 5)
                                 .fill(getColor(color: Color("ColorGray"), forIndex: index, baseOpacity: baseOpacity, offsetOpacity: offsetOpacity))
                                 .shadow(color: .primary.opacity(0.4), radius: 4, x: 0, y: 0)
                                 .frame(width: 50, height: 50)
-                            //                                .blendMode(.overlay)
                                 .offset(
                                     x: motion != nil ? CGFloat(motion!.gravity.x * 20) : 0,
                                     y: motion != nil ? CGFloat(-motion!.gravity.y * 20) : 0
                                 )
-                            //                    .rotation3DEffect(motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0))
                                 .rotation3DEffect(
                                     motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
                                     axis: (
