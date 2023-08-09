@@ -10,22 +10,26 @@ import SpriteKit
 
 class SpriteBubble: SKSpriteNode {
     var isPopped: Bool = false
-    var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
-    var popped: [String] = ["softPopped", "softPopped2", "softPopped3", "softPopped4", "softPopped5"]
+//    var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
+    var prepopped: [String] = ["whiteSoftPrepopped", "whiteSoftPrepopped2", "whiteSoftPrepopped3", "whiteSoftPrepopped4"]
+//    var popped: [String] = ["softPopped", "softPopped2", "softPopped3", "softPopped4", "softPopped5"]
+    var popped: [String] = ["whiteSoftPopped", "whiteSoftPopped2", "whiteSoftPopped3", "whiteSoftPopped4", "whiteSoftPopped5"]
     init() {
-        let texture = SKTexture(imageNamed: prepopped.randomElement()!)
-        super.init(texture: texture, color: .clear, size: texture.size())
+        let texture = SKTexture(imageNamed: prepopped[0])
+        super.init(texture: texture, color: .white, size: texture.size())
         self.name = "bubble"
         self.colorBlendFactor = 1.0
     }
     func pop() {
-        guard !isPopped else { return } // Проверяем, что пузырь не взорван
-        self.texture = SKTexture(imageNamed: popped.randomElement()!)
+        guard !isPopped else { return }
+        self.texture = SKTexture(imageNamed: popped[0])
         isPopped = true
     }
     func updateColorForTheme(using traitCollection: UITraitCollection) {
-        self.colorBlendFactor = 1.0
+
         self.color = traitCollection.userInterfaceStyle == .dark ? .white : .black
+
+        
     }
  
     
