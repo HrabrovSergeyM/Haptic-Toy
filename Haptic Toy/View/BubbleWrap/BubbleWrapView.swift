@@ -18,69 +18,74 @@ struct BubbleWrapView: View {
             
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             
-            VStack {
-                HStack {
-                    
-                }
-                BubbleView(restartKey: $restartKey, displayMode: $displayMode)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    ToolbarHelpButton(showHelp: $showHelp)
-                }
-            }
-//            .toolbar {
-//                ToolbarItem(placement: .navigationBarTrailing) {
-//                    BubbleMenuButtonView()
-//                }
-//            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        withAnimation(.spring()) {
-                            restartKey.toggle()
-                            HapticManager.notification(type: .success)
-                        }
-                    } label: {
-                        Image(systemName: "arrow.triangle.2.circlepath")
+            GeometryReader { geometry in
+                VStack {
+                    HStack {
+                        
                     }
-                    
+    //                BubbleView(restartKey: $restartKey, displayMode: $displayMode)
+                    SpriteKitView(sceneSize: geometry.size)
+                        .padding()
+                        
                 }
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        withAnimation(.spring()) {
-                            displayMode.toggle()
-                        }
-                        switch displayMode {
-                        case .standard:
-                            HapticManager.impact(style: .light)
-                        case .extended:
-                            HapticManager.impact(style: .medium)
-                        case .maximum:
-                            HapticManager.impact(style: .heavy)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        ToolbarHelpButton(showHelp: $showHelp)
+                    }
+                }
+    //            .toolbar {
+    //                ToolbarItem(placement: .navigationBarTrailing) {
+    //                    BubbleMenuButtonView()
+    //                }
+    //            }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            withAnimation(.spring()) {
+                                restartKey.toggle()
+                                HapticManager.notification(type: .success)
+                            }
+                        } label: {
+                            Image(systemName: "arrow.triangle.2.circlepath")
                         }
                         
-                    } label: {
-                        switch displayMode {
-                        case .standard:
-                            Image(systemName: "rectangle.split.2x2.fill")
-                        case .extended:
-                            Image(systemName: "rectangle.split.3x3.fill")
-                        case .maximum:
-                            Image(systemName: "square.split.2x1.fill")
-                        }
                     }
-                    
                 }
-            }
-            .onAppear {
-                showHelp = !UserDefaults.standard.bool(forKey: "BubbleWrapView")
-            }
-            .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "helpViewBubble", screenKey: "BubbleWrapView", isPresented: $showHelp)
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            withAnimation(.spring()) {
+                                displayMode.toggle()
+                            }
+                            switch displayMode {
+                            case .standard:
+                                HapticManager.impact(style: .light)
+                            case .extended:
+                                HapticManager.impact(style: .medium)
+                            case .maximum:
+                                HapticManager.impact(style: .heavy)
+                            }
+                            
+                        } label: {
+                            switch displayMode {
+                            case .standard:
+                                Image(systemName: "rectangle.split.2x2.fill")
+                            case .extended:
+                                Image(systemName: "rectangle.split.3x3.fill")
+                            case .maximum:
+                                Image(systemName: "square.split.2x1.fill")
+                            }
+                        }
+                        
+                    }
+                }
+                .onAppear {
+                    showHelp = !UserDefaults.standard.bool(forKey: "BubbleWrapView")
+                }
+                .sheet(isPresented: $showHelp, content: {
+                    HelpView(helpText: "helpViewBubble", screenKey: "BubbleWrapView", isPresented: $showHelp)
             })
+            }
         }
     }
     

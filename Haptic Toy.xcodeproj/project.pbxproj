@@ -11,6 +11,9 @@
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
 		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
+		E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6232A83829A00536CD2 /* BubbleSprite.swift */; };
+		E971E6262A83830B00536CD2 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6252A83830B00536CD2 /* BubbleScene.swift */; };
+		E971E6282A8384E600536CD2 /* SpriteKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6272A8384E600536CD2 /* SpriteKitView.swift */; };
 		E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F0D2A80089A00333816 /* LocalizationService.swift */; };
 		E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F102A800FC400333816 /* HomeHeader.swift */; };
 		E998E10C2A7D82440047530E /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998E10B2A7D82440047530E /* BlankView.swift */; };
@@ -51,6 +54,9 @@
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
+		E971E6232A83829A00536CD2 /* BubbleSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSprite.swift; sourceTree = "<group>"; };
+		E971E6252A83830B00536CD2 /* BubbleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleScene.swift; sourceTree = "<group>"; };
+		E971E6272A8384E600536CD2 /* SpriteKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitView.swift; sourceTree = "<group>"; };
 		E97D9F0D2A80089A00333816 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		E97D9F102A800FC400333816 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
 		E998E10B2A7D82440047530E /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
@@ -118,6 +124,16 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		E971E6202A83825200536CD2 /* BubbleGame */ = {
+			isa = PBXGroup;
+			children = (
+				E971E6232A83829A00536CD2 /* BubbleSprite.swift */,
+				E971E6252A83830B00536CD2 /* BubbleScene.swift */,
+				E971E6272A8384E600536CD2 /* SpriteKitView.swift */,
+			);
+			path = BubbleGame;
+			sourceTree = "<group>";
+		};
 		E9A2B7442A8002EE00B933AA /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +163,7 @@
 			children = (
 				E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */,
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
+				E971E6202A83825200536CD2 /* BubbleGame */,
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
 				E9A2B7442A8002EE00B933AA /* Extensions */,
 				E9636B282A7BF84A006AF0BB /* Services */,
@@ -388,6 +405,7 @@
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */,
 				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
+				E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
 				E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */,
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
@@ -398,6 +416,8 @@
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */,
 				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
+				E971E6262A83830B00536CD2 /* BubbleScene.swift in Sources */,
+				E971E6282A8384E600536CD2 /* SpriteKitView.swift in Sources */,
 				E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */,
 				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
