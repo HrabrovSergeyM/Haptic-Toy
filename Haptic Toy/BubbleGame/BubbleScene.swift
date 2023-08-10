@@ -12,24 +12,29 @@ import Swift
 class BubblesScene: SKScene {
     
     override func didMove(to view: SKView) {
-        backgroundColor = UIColor.tertiarySystemBackground
+
+        let padding: CGFloat = 10
         
+        let totalWidth = size.width - 2 * padding
+        let totalHeight = size.height - 2 * padding
+
         let maxColumns = 8
         let rows = 15
-        let totalWidth = size.width
-        let totalHeight = size.height
+        
         let bubbleWidth = totalWidth / CGFloat(maxColumns)
         let bubbleHeight = totalHeight / CGFloat(rows)
         
         for i in 0..<rows {
             let currentColumns = (i % 2 == 0) ? maxColumns - 1 : maxColumns
-            let offset = (totalWidth - (CGFloat(currentColumns) * bubbleWidth)) / 2
+            let offset = (totalWidth - (CGFloat(currentColumns) * bubbleWidth)) / 2 + padding
             
             for j in 0..<currentColumns {
                 let bubble = SpriteBubble()
                 bubble.size = CGSize(width: bubbleWidth, height: bubbleHeight)
-                bubble.position = CGPoint(x: offset + bubbleWidth * CGFloat(j) + bubbleWidth / 2,
-                                          y: bubbleHeight * CGFloat(i) + bubbleHeight / 2)
+                bubble.position = CGPoint(
+                    x: offset + bubbleWidth * CGFloat(j) + bubbleWidth / 2,
+                    y: padding + bubbleHeight * CGFloat(i) + bubbleHeight / 2
+                )
                 addChild(bubble)
             }
         }
@@ -68,7 +73,7 @@ class BubblesScene: SKScene {
         if traitCollection.userInterfaceStyle == .dark {
             backgroundColor = UIColor.tertiarySystemBackground
         } else {
-            backgroundColor = UIColor.systemBackground
+            backgroundColor = UIColor.white
         }
         
         for node in self.children {

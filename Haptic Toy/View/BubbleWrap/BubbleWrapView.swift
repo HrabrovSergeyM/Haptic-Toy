@@ -18,16 +18,18 @@ struct BubbleWrapView: View {
             
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             
+            
+                //                VStack {
+                //                    HStack {
+                //
+                //                    }
+                //                BubbleView(restartKey: $restartKey, displayMode: $displayMode)
             GeometryReader { geometry in
-                VStack {
-                    HStack {
+                SpriteKitView(sceneSize: geometry.size)
+                
+            }
                         
-                    }
-    //                BubbleView(restartKey: $restartKey, displayMode: $displayMode)
-                    SpriteKitView(sceneSize: geometry.size)
-                        .padding()
-                        
-                }
+//                }
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         ToolbarHelpButton(showHelp: $showHelp)
@@ -85,7 +87,7 @@ struct BubbleWrapView: View {
                 .sheet(isPresented: $showHelp, content: {
                     HelpView(helpText: "helpViewBubble", screenKey: "BubbleWrapView", isPresented: $showHelp)
             })
-            }
+            
         }
     }
     

@@ -10,12 +10,16 @@ import SpriteKit
 
 struct SpriteKitView: UIViewRepresentable {
     var sceneSize: CGSize
-    
+
     func makeUIView(context: Context) -> SKView {
         let view = SKView()
+        view.layer.borderWidth = .nan
+        view.layer.borderColor = UIColor.clear.cgColor
+//        view.isOpaque = true
         view.ignoresSiblingOrder = true
-        view.showsFPS = true
-        view.showsNodeCount = true
+//        view.showsFPS = true
+//        view.showsNodeCount = true
+//        view.clipsToBounds = true
         return view
     }
 
@@ -24,6 +28,7 @@ struct SpriteKitView: UIViewRepresentable {
             scene.updateColorsForCurrentTheme(using: uiView.traitCollection)
         } else {
             let scene = BubblesScene(size: sceneSize)
+//            scene.scaleMode = .resizeFill
             uiView.presentScene(scene)
             scene.updateColorsForCurrentTheme(using: uiView.traitCollection)
         }
