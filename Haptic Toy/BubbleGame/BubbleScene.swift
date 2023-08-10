@@ -10,9 +10,29 @@ import SwiftUI
 import Swift
 
 class BubblesScene: SKScene {
+    var maxColumns: Int = 15
+    var rows: Int = 7
+    init(size: CGSize, displayMode: DisplayMode) {
+        super.init(size: size)
+        
+        switch displayMode {
+        case .standard:
+            self.rows = 15
+            self.maxColumns = 7
+        case .extended:
+            self.rows = 21
+            self.maxColumns = 10
+        case .maximum:
+            self.rows = 26
+            self.maxColumns = 13
+        }
+    }
 
-    var maxColumns: Int = 8
-    var rows: Int = 15
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
+  
     
     override func didMove(to view: SKView) {
         createBubbles()

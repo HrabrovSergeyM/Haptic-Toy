@@ -48,8 +48,8 @@ struct SpriteKitView: UIViewRepresentable {
                 scene.rows = 21
                 scene.maxColumns = 10
             case .maximum:
-                scene.rows = 23
-                scene.maxColumns = 11
+                scene.rows = 27
+                scene.maxColumns = 13
             }
 
             if restartKey {
@@ -66,7 +66,7 @@ struct SpriteKitView: UIViewRepresentable {
 
             context.coordinator.lastDisplayMode = displayMode
         } else {
-            let scene = BubblesScene(size: sceneSize)
+            let scene = BubblesScene(size: sceneSize, displayMode: displayMode)
             uiView.presentScene(scene)
             scene.updateColorsForCurrentTheme(using: uiView.traitCollection)
         }

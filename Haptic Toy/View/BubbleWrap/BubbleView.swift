@@ -22,9 +22,9 @@ struct BubbleView: View {
             bubblesPerRow = 4
         case .extended:
             bubbleRows = 15
-            bubblesPerRow = 6
+            bubblesPerRow = 7
         case .maximum:
-            bubbleRows = 19
+            bubbleRows = 20
             bubblesPerRow = 9
         }
         
