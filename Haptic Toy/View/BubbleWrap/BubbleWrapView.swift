@@ -39,9 +39,9 @@ struct BubbleWrapView: View {
                             isTapMode.toggle()
                         } label: {
                             if isTapMode {
-                                Image(systemName: "hand.tap")
-                            } else {
                                 Image(systemName: "hand.draw")
+                            } else {
+                                Image(systemName: "hand.tap")
                             }
                         }
                         

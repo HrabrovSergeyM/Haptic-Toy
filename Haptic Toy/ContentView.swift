@@ -23,7 +23,7 @@ struct ContentView: View {
     ]
     
     private var language = LocalizationService.shared.language
-   
+    
     private let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -92,7 +92,7 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension ContentView {
-
+    
     private var content: some View {
         ScrollView {
             LazyVGrid(
