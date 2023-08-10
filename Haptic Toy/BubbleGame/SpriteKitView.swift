@@ -12,17 +12,16 @@ struct SpriteKitView: UIViewRepresentable {
     var sceneSize: CGSize
     
     @Binding var displayMode: DisplayMode
-        @Binding var restartKey: Bool
-
+    @Binding var restartKey: Bool
     
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
-
+    
     class Coordinator {
         var parent: SpriteKitView
         var lastDisplayMode: DisplayMode?
-
+        
         init(_ parent: SpriteKitView) {
             self.parent = parent
         }
@@ -36,10 +35,13 @@ struct SpriteKitView: UIViewRepresentable {
         view.showsFPS = true
         return view
     }
-
+    
     func updateUIView(_ uiView: SKView, context: Context) {
+        if restartKey {
+            (uiView.scene as? BubblesScene)?.resetBubbles()
+        }
         if let scene = uiView.scene as? BubblesScene {
-
+            
             switch displayMode {
             case .standard:
                 scene.rows = 15
@@ -51,26 +53,23 @@ struct SpriteKitView: UIViewRepresentable {
                 scene.rows = 27
                 scene.maxColumns = 13
             }
-
-            if restartKey {
-                scene.resetBubbles()
-            }
-
+            
             if context.coordinator.lastDisplayMode != displayMode {
                 scene.createBubbles()
             } else if !restartKey {
                 scene.createBubbles()
             }
-
+            
             scene.updateColorsForCurrentTheme(using: uiView.traitCollection)
-
+            
             context.coordinator.lastDisplayMode = displayMode
+            
         } else {
             let scene = BubblesScene(size: sceneSize, displayMode: displayMode)
             uiView.presentScene(scene)
             scene.updateColorsForCurrentTheme(using: uiView.traitCollection)
         }
     }
-
-
+    
+    
 }

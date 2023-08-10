@@ -61,3 +61,9 @@ enum Language: String {
     case russian = "ru"
     case english_us = "en"
 }
+
+enum SceneUpdate {
+    case resetBubbles
+    case updateBubbles
+    case noChange
+}

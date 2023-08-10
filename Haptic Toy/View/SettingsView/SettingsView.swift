@@ -14,13 +14,13 @@ struct SettingsView: View {
     @State var isEng: Bool = LocalizationService.shared.language == .english_us
     
     @Binding var isShowingSettings: Bool
-
+    
     var body: some View {
         ZStack {
             Color(UIColor.systemGray6).ignoresSafeArea()
-
+            
             VStack(alignment: .center, spacing: 30) {
-               
+                
                 
                 DarkModeToggleView(isDarkMode: $isDarkMode)
                 LanguageToggleView(isEng: $isEng)
@@ -36,7 +36,7 @@ struct SettingsView: View {
             }
         }
     }
-
+    
     private func changeAppIcon(isDarkIcon: Bool) {
         UIApplication.shared.setAlternateIconName(isDarkIcon ? "AppDarkIcon" : nil) { error in
             if let error = error {
@@ -44,17 +44,17 @@ struct SettingsView: View {
             }
         }
     }
-
+    
 }
 
 struct DarkModeToggleView: View {
     @Binding var isDarkMode: Bool
-
+    
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-                Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
-                    .font(.title)
-                    .frame(width: 42, height: 42)
+            Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
+                .font(.title)
+                .frame(width: 42, height: 42)
             Toggle("Dark Mode", isOn: $isDarkMode)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
@@ -67,7 +67,7 @@ struct DarkModeToggleView: View {
 
 struct LanguageToggleView: View {
     @Binding var isEng: Bool
-
+    
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Text("🇷🇺")
@@ -88,7 +88,7 @@ struct LanguageToggleView: View {
 
 struct IconToggleView: View {
     @Binding var isDarkIcon: Bool
-
+    
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Image("settingsLightIcon")
@@ -109,7 +109,7 @@ struct IconToggleView: View {
                 .cornerRadius(12)
         }
     }
-
+    
     private func changeAppIcon(isDarkIcon: Bool) {
         UIApplication.shared.setAlternateIconName(isDarkIcon ? "AppDarkIcon" : nil) { error in
             if let error = error {

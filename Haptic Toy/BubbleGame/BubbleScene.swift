@@ -12,6 +12,7 @@ import Swift
 class BubblesScene: SKScene {
     var maxColumns: Int = 15
     var rows: Int = 7
+    
     init(size: CGSize, displayMode: DisplayMode) {
         super.init(size: size)
         
@@ -27,12 +28,10 @@ class BubblesScene: SKScene {
             self.maxColumns = 13
         }
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
-  
     
     override func didMove(to view: SKView) {
         createBubbles()
@@ -45,7 +44,7 @@ class BubblesScene: SKScene {
         let padding: CGFloat = 10
         let totalWidth = size.width - 2 * padding
         let totalHeight = size.height - 2 * padding
-
+        
         let bubbleWidth = totalWidth / CGFloat(maxColumns)
         let bubbleHeight = totalHeight / CGFloat(rows)
         
@@ -93,7 +92,7 @@ class BubblesScene: SKScene {
             
             for node in nodesAtPoint {
                 if let bubble = node as? SpriteBubble, !bubble.isPopped {
-//                    startSound(sound: "pop", type: "mp3")
+                    //                    startSound(sound: "pop", type: "mp3")
                     HapticManager.impact(style: .heavy)
                     
                     bubble.pop()
