@@ -10,17 +10,22 @@ import SwiftUI
 import Swift
 
 class BubblesScene: SKScene {
+
+    var maxColumns: Int = 8
+    var rows: Int = 15
     
     override func didMove(to view: SKView) {
-
-        let padding: CGFloat = 10
+        createBubbles()
+        updateColorsForCurrentTheme(using: view.traitCollection)
+    }
+    
+    func createBubbles() {
+        removeAllChildren()
         
+        let padding: CGFloat = 10
         let totalWidth = size.width - 2 * padding
         let totalHeight = size.height - 2 * padding
 
-        let maxColumns = 8
-        let rows = 15
-        
         let bubbleWidth = totalWidth / CGFloat(maxColumns)
         let bubbleHeight = totalHeight / CGFloat(rows)
         
@@ -38,7 +43,15 @@ class BubblesScene: SKScene {
                 addChild(bubble)
             }
         }
-        updateColorsForCurrentTheme(using: view.traitCollection)
+    }
+    
+    func resetBubbles() {
+        for node in self.children {
+            if let bubble = node as? SpriteBubble {
+                bubble.isPopped = false
+                bubble.texture = SKTexture(imageNamed: bubble.prepopped.randomElement()!)
+            }
+        }
     }
     
     override func willMove(from view: SKView) {

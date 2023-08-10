@@ -25,8 +25,7 @@ struct BubbleWrapView: View {
                 //                    }
                 //                BubbleView(restartKey: $restartKey, displayMode: $displayMode)
             GeometryReader { geometry in
-                SpriteKitView(sceneSize: geometry.size)
-                
+                SpriteKitView(sceneSize: geometry.size, displayMode: $displayMode, restartKey: $restartKey)
             }
                         
 //                }
