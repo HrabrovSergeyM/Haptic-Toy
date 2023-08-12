@@ -165,8 +165,8 @@
 			children = (
 				E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */,
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
-				E971E6202A83825200536CD2 /* BubbleGame */,
 				E9A8AE782A6D9D8800ED9FD4 /* ContentView.swift */,
+				E971E6202A83825200536CD2 /* BubbleGame */,
 				E9A2B7442A8002EE00B933AA /* Extensions */,
 				E9636B282A7BF84A006AF0BB /* Services */,
 				E9E7781A2A77F36F00FBBE4D /* ViewModel */,

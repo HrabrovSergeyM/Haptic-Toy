@@ -50,7 +50,8 @@ struct CatView: View {
                                         showHearts = false
                                         heartIDs.removeAll()
                                         HapticManager.stopHaptics()
-                                        stopSound()
+                                        fadeOutSound()
+                                        
                                     }
                                 }
                         )

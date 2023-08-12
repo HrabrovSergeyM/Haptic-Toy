@@ -9,7 +9,11 @@
 import Foundation
 import AVFoundation
 
+let audioPlayerPool = AudioPlayerPool()
+
 var audioPlayer: AVAudioPlayer?
+let fadeDuration: TimeInterval = 0.5
+var fadeOutTimer: Timer?
 
 func startRepeatingSound(sound: String, type: String) {
     if let path = Bundle.main.path(forResource: sound, ofType: type) {
@@ -22,10 +26,8 @@ func startRepeatingSound(sound: String, type: String) {
             print("Could not find and play the sound file.")
         }
     }
-   
+    
 }
-
-let audioPlayerPool = AudioPlayerPool()
 
 func startSound(sound: String, type: String) {
     if let player = audioPlayerPool.playerForSound(sound: sound, type: type) {
@@ -38,4 +40,16 @@ func startSound(sound: String, type: String) {
 func stopSound() {
     audioPlayer?.stop()
     audioPlayer = nil
+}
+
+func fadeOutSound() {
+    fadeOutTimer?.invalidate()
+    fadeOutTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
+        if audioPlayer?.volume ?? 0 > 0.05 {
+            audioPlayer?.volume -= 0.05
+        } else {
+            timer.invalidate()
+            audioPlayer?.stop()
+        }
+    }
 }
