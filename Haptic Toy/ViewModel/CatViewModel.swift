@@ -16,6 +16,7 @@ class CatViewModel: ObservableObject {
     @Published var showHelp: Bool = false
     @Published  var sliderWidth: CGFloat = 0
     
+    
     func startGesture() {
         showHearts = true
         HapticManager.startHaptics(intensityValue: Float(intensity))
@@ -37,6 +38,11 @@ class CatViewModel: ObservableObject {
             }
         }
         HapticManager.impact(style: .light)
+    }
+    
+    func viewAppeared() {
+        HapticManager.prepareHaptics()
+        showHelp = !UserDefaults.standard.bool(forKey: "CatView")
     }
     
 }

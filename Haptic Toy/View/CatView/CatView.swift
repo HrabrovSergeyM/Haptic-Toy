@@ -9,16 +9,8 @@ import SwiftUI
 
 struct CatView: View {
     @StateObject  var catViewModel: CatViewModel = CatViewModel()
-//    @State private var showHearts = false
-//    @State private var heartIDs = [UUID]()
-//    @State private var sliderHeartsIDs = [UUID]()
-//    @State private var counter = 1
-//    @State private var intensity: Double = 0
-//    @State var showHelp: Bool = false
-//    @State private var sliderWidth: CGFloat = 0
     @AppStorage("language")
     var language = LocalizationService.shared.language
-    
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -28,7 +20,7 @@ struct CatView: View {
             
             VStack {
                 ZStack {
-                  
+                    
                     catImage
                     
                     if catViewModel.showHearts {
@@ -40,13 +32,10 @@ struct CatView: View {
                         catViewModel.heartIDs.append(UUID())
                     }
                 }
-                .onAppear {
-                    HapticManager.prepareHaptics()
-                }
                 Text("catViewTitle".localized(language))
                     .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
-             
+                
                 intensitySlider
                 
                 Text("catViewSlider".localized(language))
@@ -59,7 +48,7 @@ struct CatView: View {
                 }
             }
             .onAppear {
-                catViewModel.showHelp = !UserDefaults.standard.bool(forKey: "CatView")
+                catViewModel.viewAppeared()
             }
             .sheet(isPresented: $catViewModel.showHelp, content: {
                 HelpView(helpText: "helpViewCat", screenKey: "CatView", isPresented: $catViewModel.showHelp)
