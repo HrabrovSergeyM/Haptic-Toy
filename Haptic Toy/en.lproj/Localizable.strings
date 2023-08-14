@@ -35,7 +35,7 @@
 "catViewTitle" = "Hold your finger to purr";
 "catViewSlider" = "Find your ideal intensity";
 
-"helpViewCat" = "Feel the love of this cat. Just hold your finger to experience a new level of immersion. Find your ideal intensity.";
+"helpViewCat" = "Feel the love of this cat.\n Just hold your finger to experience a new level of immersion. Find your ideal intensity.";
 
 //NumberPickerView
 "helpViewPicker" = "Just scroll it.";

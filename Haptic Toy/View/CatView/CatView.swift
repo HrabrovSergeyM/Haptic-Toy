@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct CatView: View {
-    
-    @State private var showHearts = false
-    @State private var heartIDs = [UUID]()
-    @State private var sliderHeartsIDs = [UUID]()
-    @State private var counter = 1
-    @State private var intensity: Double = 0
-    @State var showHelp: Bool = false
-    @State private var sliderWidth: CGFloat = 0
+    @StateObject  var catViewModel: CatViewModel = CatViewModel()
+//    @State private var showHearts = false
+//    @State private var heartIDs = [UUID]()
+//    @State private var sliderHeartsIDs = [UUID]()
+//    @State private var counter = 1
+//    @State private var intensity: Double = 0
+//    @State var showHelp: Bool = false
+//    @State private var sliderWidth: CGFloat = 0
     @AppStorage("language")
     var language = LocalizationService.shared.language
     
@@ -28,55 +28,16 @@ struct CatView: View {
             
             VStack {
                 ZStack {
-                    Image("cat")
-                        .resizable()
-                        .renderingMode(.template)
-                        .foregroundColor(.primary)
-                        .frame(width: 220, height: 400)
-                        .contentShape(CatShape())
-                        .gesture(
-                            DragGesture(minimumDistance: 0)
-                                .onChanged { _ in
-                                    if !showHearts {
-                                        withAnimation {
-                                            showHearts = true
-                                            HapticManager.startHaptics(intensityValue: Float(intensity))
-                                            startRepeatingSound(sound: "purring", type: "wav")
-                                        }
-                                    }
-                                }
-                                .onEnded { _ in
-                                    withAnimation {
-                                        showHearts = false
-                                        heartIDs.removeAll()
-                                        HapticManager.stopHaptics()
-                                        fadeOutSound()
-                                        
-                                    }
-                                }
-                        )
+                  
+                    catImage
                     
-                    // MARK: - DEBUG
-                    //                    CatShape()
-                    //                        .fill(Color.red.opacity(0.5))
-                    //                        .frame(width: 220, height: 400)
-                    
-                    if showHearts {
-                        ForEach(heartIDs, id: \.self) { id in
-                            HeartsView(id: id)
-                                .onAppear(perform: {
-                                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                        if !heartIDs.isEmpty {
-                                            heartIDs.removeFirst()
-                                        }
-                                    }
-                                })
-                        }
+                    if catViewModel.showHearts {
+                        flyingHearts
                     }
                 } // ZStack
                 .onReceive(timer) { _ in
-                    if showHearts {
-                        heartIDs.append(UUID())
+                    if catViewModel.showHearts {
+                        catViewModel.heartIDs.append(UUID())
                     }
                 }
                 .onAppear {
@@ -85,26 +46,8 @@ struct CatView: View {
                 Text("catViewTitle".localized(language))
                     .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
-                ZStack {
-                    
-                    Slider(value: $intensity, in: 0.2...2, step: 0.2)
-                        .frame(width: 250)
-                        .accentColor(.red)
-                        .onChange(of: intensity) { newValue in
-                            sliderHeartsIDs.append(UUID())
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                if !sliderHeartsIDs.isEmpty {
-                                    sliderHeartsIDs.removeFirst()
-                                }
-                            }
-                            HapticManager.impact(style: .light)
-                        }
-                    ForEach(sliderHeartsIDs, id: \.self) { id in
-                        SliderHeartView(id: id, startPosition: CGPoint(x: 100 + CGFloat(intensity) * 100, y: 0))
-                    }
-                }
-                .frame(height: 60)
-                .background(Color.clear)
+             
+                intensitySlider
                 
                 Text("catViewSlider".localized(language))
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
@@ -112,14 +55,14 @@ struct CatView: View {
             } // VStack
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    ToolbarHelpButton(showHelp: $showHelp)
+                    ToolbarHelpButton(showHelp: $catViewModel.showHelp)
                 }
             }
             .onAppear {
-                showHelp = !UserDefaults.standard.bool(forKey: "CatView")
+                catViewModel.showHelp = !UserDefaults.standard.bool(forKey: "CatView")
             }
-            .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "helpViewCat", screenKey: "CatView", isPresented: $showHelp)
+            .sheet(isPresented: $catViewModel.showHelp, content: {
+                HelpView(helpText: "helpViewCat", screenKey: "CatView", isPresented: $catViewModel.showHelp)
             })
             
         }
@@ -133,3 +76,62 @@ struct CatView_Previews: PreviewProvider {
     }
 }
 
+extension CatView {
+    
+    private var catImage: some View {
+        
+        Image("cat")
+            .resizable()
+            .renderingMode(.template)
+            .foregroundColor(.primary)
+            .frame(width: 220, height: 400)
+            .contentShape(CatShape())
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { _ in
+                        if !catViewModel.showHearts {
+                            withAnimation {
+                                catViewModel.startGesture()
+                            }
+                        }
+                    }
+                    .onEnded { _ in
+                        withAnimation {
+                            catViewModel.endGesture()
+                        }
+                    }
+            )
+        
+    }
+    
+    private var flyingHearts: some View {
+        ForEach(catViewModel.heartIDs, id: \.self) { id in
+            HeartsView(id: id)
+                .onAppear(perform: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                        if !catViewModel.heartIDs.isEmpty {
+                            catViewModel.heartIDs.removeFirst()
+                        }
+                    }
+                })
+        }
+    }
+    
+    private var intensitySlider: some View {
+        ZStack {
+            
+            Slider(value: $catViewModel.intensity, in: 0.2...2, step: 0.2)
+                .frame(width: 250)
+                .accentColor(.red)
+                .onChange(of: catViewModel.intensity) { newValue in
+                    catViewModel.onChangeSlider()
+                }
+            ForEach(catViewModel.sliderHeartsIDs, id: \.self) { id in
+                SliderHeartView(id: id, startPosition: CGPoint(x: 100 + CGFloat(catViewModel.intensity) * 100, y: 0))
+            }
+        }
+        .frame(height: 60)
+        .background(Color.clear)
+    }
+    
+}

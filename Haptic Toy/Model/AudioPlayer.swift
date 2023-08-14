@@ -16,6 +16,8 @@ let fadeDuration: TimeInterval = 0.5
 var fadeOutTimer: Timer?
 
 func startRepeatingSound(sound: String, type: String) {
+    resetAudio()
+
     if let path = Bundle.main.path(forResource: sound, ofType: type) {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
@@ -26,10 +28,11 @@ func startRepeatingSound(sound: String, type: String) {
             print("Could not find and play the sound file.")
         }
     }
-    
 }
 
 func startSound(sound: String, type: String) {
+    resetAudio()
+
     if let player = audioPlayerPool.playerForSound(sound: sound, type: type) {
         player.play()
     } else {
@@ -52,4 +55,11 @@ func fadeOutSound() {
             audioPlayer?.stop()
         }
     }
+  
+}
+func resetAudio() {
+    fadeOutTimer?.invalidate()
+    fadeOutTimer = nil
+    audioPlayer?.stop()
+    audioPlayer = nil
 }

@@ -11,6 +11,7 @@
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
 		E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */; };
+		E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9637BDE2A8A95EB00B118A8 /* CatViewModel.swift */; };
 		E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6232A83829A00536CD2 /* BubbleSprite.swift */; };
 		E971E6262A83830B00536CD2 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6252A83830B00536CD2 /* BubbleScene.swift */; };
 		E971E6282A8384E600536CD2 /* SpriteKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6272A8384E600536CD2 /* SpriteKitView.swift */; };
@@ -55,6 +56,7 @@
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
 		E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderStorageService.swift; sourceTree = "<group>"; };
+		E9637BDE2A8A95EB00B118A8 /* CatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatViewModel.swift; sourceTree = "<group>"; };
 		E971E6232A83829A00536CD2 /* BubbleSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSprite.swift; sourceTree = "<group>"; };
 		E971E6252A83830B00536CD2 /* BubbleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleScene.swift; sourceTree = "<group>"; };
 		E971E6272A8384E600536CD2 /* SpriteKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitView.swift; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 		E9E7781A2A77F36F00FBBE4D /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				E9637BDE2A8A95EB00B118A8 /* CatViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,
 				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
+				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */,
