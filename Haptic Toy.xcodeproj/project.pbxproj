@@ -33,7 +33,6 @@
 		E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */; };
 		E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */; };
 		E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */; };
-		E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */; };
 		E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */; };
 		E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */; };
 		E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */; };
@@ -81,7 +80,6 @@
 		E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberPickerView.swift; sourceTree = "<group>"; };
 		E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsView.swift; sourceTree = "<group>"; };
 		E9A8AE932A6DE78E00ED9FD4 /* SlidersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidersView.swift; sourceTree = "<group>"; };
-		E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentedPicker.swift; sourceTree = "<group>"; };
 		E9A8AE972A6DEFCB00ED9FD4 /* CatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatView.swift; sourceTree = "<group>"; };
 		E9A8AE992A6DF12600ED9FD4 /* HeartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartsView.swift; sourceTree = "<group>"; };
 		E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9E778182A77F36400FBBE4D /* Model */,
 				E9E7781A2A77F36F00FBBE4D /* ViewModel */,
-				E9A8AE8C2A6DE1B600ED9FD4 /* Core */,
 				E9A8AE872A6DACFB00ED9FD4 /* Style */,
 				E9A8AE9D2A6E968000ED9FD4 /* Sounds */,
 				E9A8AE842A6DA8E700ED9FD4 /* Utilities */,
@@ -233,22 +230,6 @@
 				E9A8AE8A2A6DAD3B00ED9FD4 /* CheckboxStyle.swift */,
 			);
 			path = Style;
-			sourceTree = "<group>";
-		};
-		E9A8AE8C2A6DE1B600ED9FD4 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				E9A8AE8D2A6DE1E300ED9FD4 /* Components */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		E9A8AE8D2A6DE1E300ED9FD4 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				E9A8AE952A6DEBB000ED9FD4 /* SegmentedPicker.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		E9A8AE9D2A6E968000ED9FD4 /* Sounds */ = {
@@ -433,7 +414,6 @@
 				E998E10C2A7D82440047530E /* BlankView.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */,
-				E9A8AE962A6DEBB000ED9FD4 /* SegmentedPicker.swift in Sources */,
 				E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
 				E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */,

@@ -30,49 +30,60 @@ struct ButtonsSection: View {
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
                     }) {
                         ZStack {
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(Color("ColorGray"))
-                                .shadow(color: .primary.opacity(0.35), radius: 3,
-                                        x: motion != nil ? CGFloat(-motion!.gravity.x * 4) : 0,
-                                        y: motion != nil ? CGFloat(motion!.gravity.y * 2) : 0
-                                )
-                                .frame(width: 50, height: 50)
-                            
-                                .offset(
-                                    x: motion != nil ? CGFloat(motion!.gravity.x * 4) : 0,
-                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 4) : 0
-                                )
-                                .rotation3DEffect(
-                                    motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
-                                    axis: (
-                                        x: motion != nil ? -motion!.gravity.y : 0,
-                                        y: motion != nil ? motion!.gravity.x : 0,
-                                        z: 0)
-                                )
-                            RoundedRectangle(cornerRadius: 5)
-                                .fill(Color("ColorGray"))
-                                .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 0)
-                            
-                                .frame(width: 50, height: 50)
-                                .offset(
-                                    x: motion != nil ? CGFloat(motion!.gravity.x * 5) : 0,
-                                    y: motion != nil ? CGFloat(-motion!.gravity.y * 5) : 0
-                                )
-                                .rotation3DEffect(
-                                    motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
-                                    axis: (
-                                        x: motion != nil ? -motion!.gravity.y : 0,
-                                        y: motion != nil ? motion!.gravity.x : 0,
-                                        z: 0)
-                                )
+                            backgroundButtons
+                            buttons
                         }
                     } // Button
                     .brightness(Double(1 - index) * 0.02 + brightness)
-                    
                 }
             }
         }
         .opacity(isStackVisible ? 1 : 0)
         .offset(y: isStackVisible ? 0 : yOffset)
     }
+}
+
+extension ButtonsSection {
+    
+    private var backgroundButtons: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .fill(Color("ColorGray"))
+            .shadow(color: .primary.opacity(0.35), radius: 3,
+                    x: motion != nil ? CGFloat(-motion!.gravity.x * 4) : 0,
+                    y: motion != nil ? CGFloat(motion!.gravity.y * 2) : 0
+            )
+            .frame(width: 50, height: 50)
+        
+            .offset(
+                x: motion != nil ? CGFloat(motion!.gravity.x * 4) : 0,
+                y: motion != nil ? CGFloat(-motion!.gravity.y * 4) : 0
+            )
+            .rotation3DEffect(
+                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
+                axis: (
+                    x: motion != nil ? -motion!.gravity.y : 0,
+                    y: motion != nil ? motion!.gravity.x : 0,
+                    z: 0)
+            )
+    }
+    
+    private var buttons: some View {
+        RoundedRectangle(cornerRadius: 5)
+            .fill(Color("ColorGray"))
+            .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 0)
+        
+            .frame(width: 50, height: 50)
+            .offset(
+                x: motion != nil ? CGFloat(motion!.gravity.x * 5) : 0,
+                y: motion != nil ? CGFloat(-motion!.gravity.y * 5) : 0
+            )
+            .rotation3DEffect(
+                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
+                axis: (
+                    x: motion != nil ? -motion!.gravity.y : 0,
+                    y: motion != nil ? motion!.gravity.x : 0,
+                    z: 0)
+            )
+    }
+    
 }

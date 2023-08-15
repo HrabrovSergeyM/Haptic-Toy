@@ -32,45 +32,18 @@ struct LaunchView: View {
                 .ignoresSafeArea()
             
             VStack {
-                
                 if isLabelVisible {
-                    
-                    HStack(spacing: 0) {
-                        
-                        ForEach(Array(loadingText.indices), id: \.self) { index in
-                            Text(loadingText[index])
-                                .font(Font.system(size: 36, weight: .thin, design: .rounded))
-                                .opacity(isLabelVisible ? 1 : 0)
-                                .offset(y: counter == index ? -5 : 0)
-                        }
-                        
-                    } // HStack
-                    .transition(AnyTransition.scale.animation(.easeIn))
-                    
+                    label
                 }
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .opacity(isLogoVisible ? 1 : 0)
-                    .animation(
-                        Animation
-                            .easeInOut(duration: 4)
-                            .repeatForever()
-                        , value: isLogoVisible
-                    )
-                
-                
-                
-            } // ZStack
+                logo
+            } // VStack
             .onAppear {
                 withAnimation(.easeInOut(duration: 1)) {
                     isLabelVisible = true
                     isLogoVisible = true
                 }
             }
-            
         } // ZStack
-        
         .onReceive(timer, perform: handleTimerTick)
     }
     
@@ -97,4 +70,34 @@ struct LaunchView_Previews: PreviewProvider {
     static var previews: some View {
         LaunchView(showLaunchView: .constant(true))
     }
+}
+
+extension LaunchView {
+    
+    private var logo: some View {
+        Image("logo")
+            .resizable()
+            .scaledToFit()
+            .opacity(isLogoVisible ? 1 : 0)
+            .animation(
+                Animation
+                    .easeInOut(duration: 4)
+                    .repeatForever()
+                , value: isLogoVisible
+            )
+    }
+    
+    private var label: some View {
+        HStack(spacing: 0) {
+            ForEach(Array(loadingText.indices), id: \.self) { index in
+                Text(loadingText[index])
+                    .font(Font.system(size: 36, weight: .thin, design: .rounded))
+                    .opacity(isLabelVisible ? 1 : 0)
+                    .offset(y: counter == index ? -5 : 0)
+            }
+            
+        } // HStack
+        .transition(AnyTransition.scale.animation(.easeIn))
+    }
+    
 }

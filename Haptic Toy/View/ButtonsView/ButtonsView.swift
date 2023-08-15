@@ -4,29 +4,22 @@
 //
 //  Created by Sergey Hrabrov on 24.07.2023.
 //
-// TODO: refactoring
 
 import SwiftUI
 import CoreMotion
 
 struct ButtonsView: View {
-    @Environment(\.colorScheme) var colorScheme
     
+    @Environment(\.colorScheme) var colorScheme
     @State var showHelp: Bool = false
     @State var isStackVisible: Bool = false
-    
     @State var motion: CMDeviceMotion? = nil
     let motionManager = CMMotionManager()
     
-
     var body: some View {
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            VStack(spacing: 20) {
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular)
-            }
+            buttonsSection
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
@@ -58,4 +51,17 @@ struct ButtonsView_Previews: PreviewProvider {
     static var previews: some View {
         ButtonsView()
     }
+}
+
+extension ButtonsView {
+    
+    private var buttonsSection: some View {
+        VStack(spacing: 20) {
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular)
+        }
+        
+    }
+    
 }
