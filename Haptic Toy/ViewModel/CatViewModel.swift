@@ -8,13 +8,13 @@
 import Foundation
 
 class CatViewModel: ObservableObject {
-    @Published  var showHearts = false
-    @Published  var heartIDs = [UUID]()
-    @Published  var sliderHeartsIDs = [UUID]()
-    @Published  var counter = 1
-    @Published  var intensity: Double = 0
+    @Published var showHearts = false
+    @Published var heartIDs = [UUID]()
+    @Published var sliderHeartsIDs = [UUID]()
+    @Published var counter = 1
+    @Published var intensity: Double = 0
     @Published var showHelp: Bool = false
-    @Published  var sliderWidth: CGFloat = 0
+    @Published var sliderWidth: CGFloat = 0
     
     
     func startGesture() {

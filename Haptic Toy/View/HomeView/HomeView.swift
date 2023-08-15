@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  Haptic Toy
 //
 //  Created by Sergey Hrabrov on 23.07.2023.
@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    
-    @State private var isShowingSettings: Bool = false
-    
-    @State private var isAnimated: Bool = false
+    @StateObject  var homeViewModel: HomeViewModel = HomeViewModel()
+//    @State private var isShowingSettings: Bool = false
+//
+//    @State private var isAnimated: Bool = false
     
     @State private var gridItems: [GridElement] = [
         GridElement(id: UUID(), destination: AnyView(BubbleWrapView()), imageName: "bubbleWrapper", text: "bubbleWrapper", isAnimated: false, offset: -50, delayTime: 0),
@@ -37,7 +37,7 @@ struct ContentView: View {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             
             VStack {
-                HomeHeader(isShowingSettings: $isShowingSettings)
+                HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
                 VStack {
                     content
                         .zIndex(1)
@@ -45,53 +45,35 @@ struct ContentView: View {
                 } // VStack
                 .onAppear {
                     withAnimation {
-                        isAnimated = true
+                        homeViewModel.isAnimated = true
                     }
                     gridItems = OrderStorageService.loadOrder(gridItems)
                 }
                 .onDisappear {
                     withAnimation {
-                        isAnimated = false
+                        homeViewModel.isAnimated = false
                     }
                 }
             }
-            .blur(radius: isShowingSettings ? 8.0 : 0, opaque: false)
-            .animation(.default, value: isShowingSettings)
-            if isShowingSettings {
-                BlankView(
-                    backgroundColor: isDarkMode ? .black : .gray,
-                    backgroundOpacity: isDarkMode ? 0.3 : 0.5
-                )
-                .onTapGesture {
-                    withAnimation {
-                        isShowingSettings = false
-                    }
-                }
-                
-                
+            .blur(radius: homeViewModel.isShowingSettings ? 8.0 : 0, opaque: false)
+            .animation(.default, value: homeViewModel.isShowingSettings)
+            if homeViewModel.isShowingSettings {
+                blankView
             }
-            SettingsView(isShowingSettings: $isShowingSettings)
-                .frame(width: 300, height: 300, alignment: .center)
-                .accentColor(.primary)
-                .cornerRadius(20)
-                .shadow(radius: 20)
-                .padding()
-                .animation(.easeInOut, value: isShowingSettings)
-                .offset(y: isShowingSettings ? 0 : UIScreen.main.bounds.height)
-                .zIndex(3)
+            settingsView
             
         }
         .navigationTitle("")
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        HomeView()
     }
 }
 
-extension ContentView {
+extension HomeView {
     
     private var content: some View {
         ScrollView {
@@ -104,7 +86,7 @@ extension ContentView {
                         NavigationGrid(destination: gridItems[index].destination,
                                        imageName: gridItems[index].imageName,
                                        text: gridItems[index].text,
-                                       isAnimated: isAnimated,
+                                       isAnimated: homeViewModel.isAnimated,
                                        offset: CGFloat(gridItems[index].offset),
                                        delayTime: Double(gridItems[index].delayTime))
                         .onDrag {
@@ -116,6 +98,30 @@ extension ContentView {
                     
                 } // LazyVGrid
                 .padding(20)
+        }
+    }
+    
+    private var settingsView: some View {
+        SettingsView(isShowingSettings: $homeViewModel.isShowingSettings)
+            .frame(width: 300, height: 300, alignment: .center)
+            .accentColor(.primary)
+            .cornerRadius(20)
+            .shadow(radius: 20)
+            .padding()
+            .animation(.easeInOut, value: homeViewModel.isShowingSettings)
+            .offset(y: homeViewModel.isShowingSettings ? 0 : UIScreen.main.bounds.height)
+            .zIndex(3)
+    }
+    
+    private var blankView: some View {
+        BlankView(
+            backgroundColor: isDarkMode ? .black : .gray,
+            backgroundOpacity: isDarkMode ? 0.3 : 0.5
+        )
+        .onTapGesture {
+            withAnimation {
+                homeViewModel.isShowingSettings = false
+            }
         }
     }
     

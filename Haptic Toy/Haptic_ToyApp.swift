@@ -18,7 +18,7 @@ struct Haptic_ToyApp: App {
         WindowGroup {
             ZStack {
                 NavigationStack {
-                    ContentView()
+                    HomeView()
                         .preferredColorScheme(isDarkMode ? .dark : .light)
                        
                 } // NavigationStack
