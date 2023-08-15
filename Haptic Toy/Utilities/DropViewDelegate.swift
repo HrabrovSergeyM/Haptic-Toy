@@ -9,8 +9,8 @@ import Foundation
 import SwiftUI
 
 struct DropViewDelegate: DropDelegate {
-    let item: GridElement
-    @Binding var list: [GridElement]
+    let item: GridElementData
+    @Binding var list: [GridElementData]
     var currentIndex: Int
     
     func performDrop(info: DropInfo) -> Bool {

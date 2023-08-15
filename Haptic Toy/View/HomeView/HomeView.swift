@@ -10,17 +10,6 @@ import SwiftUI
 struct HomeView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @StateObject  var homeViewModel: HomeViewModel = HomeViewModel()
-//    @State private var isShowingSettings: Bool = false
-//
-//    @State private var isAnimated: Bool = false
-    
-    @State private var gridItems: [GridElement] = [
-        GridElement(id: UUID(), destination: AnyView(BubbleWrapView()), imageName: "bubbleWrapper", text: "bubbleWrapper", isAnimated: false, offset: -50, delayTime: 0),
-        GridElement(id: UUID(), destination: AnyView(CatView()), imageName: "catNavigation", text: "purr", isAnimated: false, offset: 50, delayTime: 0),
-        GridElement(id: UUID(), destination: AnyView(ButtonsView()), imageName: "toggles", text: "buttonsAndToggles", isAnimated: false, offset: -50, delayTime: 4),
-        GridElement(id: UUID(), destination: AnyView(SlidersView()), imageName: "slider", text: "slider", isAnimated: false, offset: 50, delayTime: 1),
-        GridElement(id: UUID(), destination: AnyView(NumberPickerView()), imageName: "numberPicker", text: "rollerPicker", isAnimated: false, offset: 50, delayTime: 4)
-    ]
     
     private var language = LocalizationService.shared.language
     
@@ -47,7 +36,7 @@ struct HomeView: View {
                     withAnimation {
                         homeViewModel.isAnimated = true
                     }
-                    gridItems = OrderStorageService.loadOrder(gridItems)
+                    homeViewModel.loadData()
                 }
                 .onDisappear {
                     withAnimation {
@@ -82,21 +71,24 @@ extension HomeView {
                 alignment: .center,
                 spacing: spacing,
                 pinnedViews: []) {
-                    ForEach(gridItems.indices, id: \.self) { index in
-                        NavigationGrid(destination: gridItems[index].destination,
-                                       imageName: gridItems[index].imageName,
-                                       text: gridItems[index].text,
+                    ForEach(homeViewModel.gridItemsData.indices, id: \.self) { index in
+                        let data = homeViewModel.gridItemsData[index]
+                        let destinationView = viewForDestination(data.destination)
+                        
+                        NavigationGrid(destination: destinationView,
+                                       imageName: data.imageName,
+                                       text: data.text,
                                        isAnimated: homeViewModel.isAnimated,
-                                       offset: CGFloat(gridItems[index].offset),
-                                       delayTime: Double(gridItems[index].delayTime))
+                                       offset: CGFloat(data.offset),
+                                       delayTime: Double(data.delayTime))
                         .onDrag {
                             let fromIndex = index
                             return NSItemProvider(object: String(fromIndex) as NSString)
                         }
-                        .onDrop(of: [.text], delegate: DropViewDelegate(item: gridItems[index], list: $gridItems, currentIndex: index))
+                        .onDrop(of: [.text], delegate: DropViewDelegate(item: homeViewModel.gridItemsData[index], list: $homeViewModel.gridItemsData, currentIndex: index))
                     }
                     
-                } // LazyVGrid
+                }
                 .padding(20)
         }
     }
@@ -122,6 +114,23 @@ extension HomeView {
             withAnimation {
                 homeViewModel.isShowingSettings = false
             }
+        }
+    }
+    
+    private func viewForDestination(_ destination: String) -> AnyView {
+        switch destination {
+        case "BubbleWrapView":
+            return AnyView(BubbleWrapView())
+        case "CatView":
+            return AnyView(CatView())
+        case "ButtonsView":
+            return AnyView(ButtonsView())
+        case "SlidersView":
+            return AnyView(SlidersView())
+        case "NumberPickerView":
+            return AnyView(NumberPickerView())
+        default:
+            return AnyView(Text("Not Found"))
         }
     }
     

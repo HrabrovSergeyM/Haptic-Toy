@@ -8,12 +8,11 @@
 import Foundation
 import SwiftUI
 
-struct GridElement: Identifiable {
+struct GridElementData: Identifiable {
     let id: UUID
-    let destination: AnyView
+    let destination: String
     let imageName: String
     let text: String
-    let isAnimated: Bool
     let offset: Int
     let delayTime: Int
 }
