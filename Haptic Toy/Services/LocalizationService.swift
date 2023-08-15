@@ -18,12 +18,13 @@ class LocalizationService {
     
     private func checkForLanguageChange() {
         let currentAppLanguage = UserDefaults.standard.string(forKey: "language")
-        let systemLanguage = Bundle.main.preferredLocalizations.first
         
-        if let systemLanguage = systemLanguage, systemLanguage != currentAppLanguage {
-            self.language = Language(rawValue: systemLanguage) ?? .english_us
+        if currentAppLanguage == nil {
+            let systemLanguage = Bundle.main.preferredLocalizations.first
+            self.language = Language(rawValue: systemLanguage ?? "en") ?? .english_us
         }
     }
+
     
     var language: Language {
         get {
