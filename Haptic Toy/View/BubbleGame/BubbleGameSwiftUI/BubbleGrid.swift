@@ -1,5 +1,5 @@
 //
-//  BubbleView.swift
+//  BubbleGrid.swift
 //  Haptic Toy
 //
 //  Created by Sergey Hrabrov on 30.07.2023.
@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct BubbleView: View {
-    
+struct BubbleGrid: View {
     @Binding var restartKey: Bool
     @Binding var displayMode: DisplayMode
     

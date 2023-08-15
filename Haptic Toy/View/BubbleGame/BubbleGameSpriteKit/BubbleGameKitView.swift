@@ -1,5 +1,5 @@
 //
-//  SpriteKitView.swift
+//  BubbleGameKitView.swift
 //  Haptic Toy
 //
 //  Created by Sergey Hrabrov on 09.08.2023.
@@ -8,7 +8,7 @@
 import SwiftUI
 import SpriteKit
 
-struct SpriteKitView: UIViewRepresentable {
+struct BubbleGameKitView: UIViewRepresentable {
     var sceneSize: CGSize
     
     @Binding var displayMode: DisplayMode
@@ -19,10 +19,10 @@ struct SpriteKitView: UIViewRepresentable {
     }
     
     class Coordinator {
-        var parent: SpriteKitView
+        var parent: BubbleGameKitView
         var lastDisplayMode: DisplayMode?
         
-        init(_ parent: SpriteKitView) {
+        init(_ parent: BubbleGameKitView) {
             self.parent = parent
         }
     }

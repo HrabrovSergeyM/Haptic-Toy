@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
-    @StateObject  var homeViewModel: HomeViewModel = HomeViewModel()
+    @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
     
     private var language = LocalizationService.shared.language
     
@@ -119,8 +119,8 @@ extension HomeView {
     
     private func viewForDestination(_ destination: String) -> AnyView {
         switch destination {
-        case "BubbleWrapView":
-            return AnyView(BubbleWrapView())
+        case "BubbleGameScreen":
+            return AnyView(BubbleGameScreen())
         case "CatView":
             return AnyView(CatView())
         case "ButtonsView":

@@ -10,13 +10,13 @@
 // ContenView
 "greeting_text" = "Explore Haptics";
 
-"bubbleWrapper" = "Bubble Wrapper";
+"bubbleWrapper" = "Bubble Game";
 "buttonsAndToggles" = "Buttons";
 "slider" = "Slider";
 "purr" = "Purr";
 "rollerPicker" = "Roller";
 
-//BubbleWrapView
+//BubbleGameScreen
 "helpViewBubble" = "Just pop it.";
 
 //ToggleView

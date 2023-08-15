@@ -1,5 +1,5 @@
 //
-//  BubbleWrapView.swift
+//  BubbleGameScreen.swift
 //  Haptic Toy
 //
 //  Created by Sergey Hrabrov on 30.07.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BubbleWrapView: View {
+struct BubbleGameScreen: View {
     @State var showHelp: Bool = false
     @State var restartKey: Bool = false
     @State var isTapMode: Bool = true
@@ -22,12 +22,12 @@ struct BubbleWrapView: View {
                 
                 if isTapMode {
                     
-                    BubbleView(restartKey: $restartKey, displayMode: $displayMode)
+                    BubbleGrid(restartKey: $restartKey, displayMode: $displayMode)
                     
                 } else {
                     
                     GeometryReader { geometry in
-                        SpriteKitView(sceneSize: geometry.size, displayMode: $displayMode, restartKey: $restartKey)
+                        BubbleGameKitView(sceneSize: geometry.size, displayMode: $displayMode, restartKey: $restartKey)
                     }
                     
                 }
@@ -83,10 +83,10 @@ struct BubbleWrapView: View {
                 }
             }
             .onAppear {
-                showHelp = !UserDefaults.standard.bool(forKey: "BubbleWrapView")
+                showHelp = !UserDefaults.standard.bool(forKey: "BubbleGameScreen")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "helpViewBubble", screenKey: "BubbleWrapView", isPresented: $showHelp)
+                HelpView(helpText: "helpViewBubble", screenKey: "BubbleGameScreen", isPresented: $showHelp)
             })
             
         }
@@ -94,8 +94,8 @@ struct BubbleWrapView: View {
     
 }
 
-struct BubbleWrapView_Previews: PreviewProvider {
+struct BubbleGameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleWrapView()
+        BubbleGameScreen()
     }
 }

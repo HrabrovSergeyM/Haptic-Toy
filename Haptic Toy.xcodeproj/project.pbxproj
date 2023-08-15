@@ -15,7 +15,7 @@
 		E9637BE22A8B622D00B118A8 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9637BE12A8B622D00B118A8 /* HomeViewModel.swift */; };
 		E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6232A83829A00536CD2 /* BubbleSprite.swift */; };
 		E971E6262A83830B00536CD2 /* BubbleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6252A83830B00536CD2 /* BubbleScene.swift */; };
-		E971E6282A8384E600536CD2 /* SpriteKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6272A8384E600536CD2 /* SpriteKitView.swift */; };
+		E971E6282A8384E600536CD2 /* BubbleGameKitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6272A8384E600536CD2 /* BubbleGameKitView.swift */; };
 		E971E62A2A83F96600536CD2 /* AudioPlayerPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */; };
 		E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F0D2A80089A00333816 /* LocalizationService.swift */; };
 		E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F102A800FC400333816 /* HomeHeader.swift */; };
@@ -49,8 +49,8 @@
 		E9E778232A78677000FBBE4D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778222A78677000FBBE4D /* pop.mp3 */; };
 		E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778362A796C9F00FBBE4D /* pop2.mp3 */; };
 		E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E7783C2A79CD4300FBBE4D /* Localizable.strings */; };
-		E9FF6E632A75B97A00DF9B87 /* BubbleWrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */; };
-		E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */; };
+		E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */; };
+		E9FF6E652A75B99D00DF9B87 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,7 @@
 		E9637BE12A8B622D00B118A8 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E971E6232A83829A00536CD2 /* BubbleSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleSprite.swift; sourceTree = "<group>"; };
 		E971E6252A83830B00536CD2 /* BubbleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleScene.swift; sourceTree = "<group>"; };
-		E971E6272A8384E600536CD2 /* SpriteKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteKitView.swift; sourceTree = "<group>"; };
+		E971E6272A8384E600536CD2 /* BubbleGameKitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameKitView.swift; sourceTree = "<group>"; };
 		E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPool.swift; sourceTree = "<group>"; };
 		E97D9F0D2A80089A00333816 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		E97D9F102A800FC400333816 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
@@ -99,8 +99,8 @@
 		E9E778362A796C9F00FBBE4D /* pop2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop2.mp3; sourceTree = "<group>"; };
 		E9E7783B2A79CD4300FBBE4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9E7783D2A79CD4900FBBE4D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleWrapView.swift; sourceTree = "<group>"; };
-		E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
+		E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameScreen.swift; sourceTree = "<group>"; };
+		E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,14 +144,24 @@
 			path = HomeView;
 			sourceTree = "<group>";
 		};
-		E971E6202A83825200536CD2 /* BubbleGame */ = {
+		E98B5C3E2A8BB86B00D6941A /* BubbleGameSpriteKit */ = {
 			isa = PBXGroup;
 			children = (
 				E971E6232A83829A00536CD2 /* BubbleSprite.swift */,
 				E971E6252A83830B00536CD2 /* BubbleScene.swift */,
-				E971E6272A8384E600536CD2 /* SpriteKitView.swift */,
+				E971E6272A8384E600536CD2 /* BubbleGameKitView.swift */,
 			);
-			path = BubbleGame;
+			path = BubbleGameSpriteKit;
+			sourceTree = "<group>";
+		};
+		E98B5C3F2A8BB87700D6941A /* BubbleGameSwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */,
+				E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */,
+				E98B5C382A8BAEFA00D6941A /* Bubble.swift */,
+			);
+			path = BubbleGameSwiftUI;
 			sourceTree = "<group>";
 		};
 		E9A2B7442A8002EE00B933AA /* Extensions */ = {
@@ -183,7 +193,6 @@
 			children = (
 				E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */,
 				E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */,
-				E971E6202A83825200536CD2 /* BubbleGame */,
 				E9A2B7442A8002EE00B933AA /* Extensions */,
 				E9636B282A7BF84A006AF0BB /* Services */,
 				E9E778192A77F36A00FBBE4D /* View */,
@@ -276,7 +285,7 @@
 			children = (
 				E9637BE02A8B61F500B118A8 /* HomeView */,
 				E9DAD1892A7D6EB800E03A22 /* SettingsView */,
-				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
+				E9FF6E612A75B96100DF9B87 /* BubbleGame */,
 				E92827152A82000000F5E9AB /* ButtonsView */,
 				E9E7781C2A77F3AA00FBBE4D /* SliderView */,
 				E9E7781B2A77F3A000FBBE4D /* HelpView */,
@@ -324,14 +333,13 @@
 			path = CatView;
 			sourceTree = "<group>";
 		};
-		E9FF6E612A75B96100DF9B87 /* BubbleWrap */ = {
+		E9FF6E612A75B96100DF9B87 /* BubbleGame */ = {
 			isa = PBXGroup;
 			children = (
-				E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */,
-				E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */,
-				E98B5C382A8BAEFA00D6941A /* Bubble.swift */,
+				E98B5C3E2A8BB86B00D6941A /* BubbleGameSpriteKit */,
+				E98B5C3F2A8BB87700D6941A /* BubbleGameSwiftUI */,
 			);
-			path = BubbleWrap;
+			path = BubbleGame;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,7 +425,7 @@
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */,
-				E9FF6E632A75B97A00DF9B87 /* BubbleWrapView.swift in Sources */,
+				E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */,
 				E9637BE22A8B622D00B118A8 /* HomeViewModel.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A2B7462A80032600B933AA /* Strings.swift in Sources */,
@@ -432,14 +440,14 @@
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
 				E9A8AE8B2A6DAD3B00ED9FD4 /* CheckboxStyle.swift in Sources */,
 				E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */,
-				E9FF6E652A75B99D00DF9B87 /* BubbleView.swift in Sources */,
+				E9FF6E652A75B99D00DF9B87 /* BubbleGrid.swift in Sources */,
 				E9A8AE9A2A6DF12600ED9FD4 /* HeartsView.swift in Sources */,
 				E9A8AEAB2A75509500ED9FD4 /* Constants.swift in Sources */,
 				E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */,
 				E9636B2A2A7BF85B006AF0BB /* OrderStorageService.swift in Sources */,
 				E971E6262A83830B00536CD2 /* BubbleScene.swift in Sources */,
 				E971E62A2A83F96600536CD2 /* AudioPlayerPool.swift in Sources */,
-				E971E6282A8384E600536CD2 /* SpriteKitView.swift in Sources */,
+				E971E6282A8384E600536CD2 /* BubbleGameKitView.swift in Sources */,
 				E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */,
 				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
