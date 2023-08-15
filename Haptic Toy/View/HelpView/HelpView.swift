@@ -19,7 +19,6 @@ struct HelpView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-
     var body: some View {
         ZStack {
             Color(.systemGray6)

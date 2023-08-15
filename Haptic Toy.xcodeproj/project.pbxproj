@@ -19,6 +19,8 @@
 		E971E62A2A83F96600536CD2 /* AudioPlayerPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */; };
 		E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F0D2A80089A00333816 /* LocalizationService.swift */; };
 		E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E97D9F102A800FC400333816 /* HomeHeader.swift */; };
+		E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B5C382A8BAEFA00D6941A /* Bubble.swift */; };
+		E98B5C3B2A8BAF4100D6941A /* BubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */; };
 		E998E10C2A7D82440047530E /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998E10B2A7D82440047530E /* BlankView.swift */; };
 		E99934032A7B4FD500323C4D /* GridElementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99934022A7B4FD500323C4D /* GridElementData.swift */; };
 		E9A2B7462A80032600B933AA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A2B7452A80032600B933AA /* Strings.swift */; };
@@ -44,7 +46,6 @@
 		E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D1BD192A8308FE00562287 /* CatShape.swift */; };
 		E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD1872A7D13F700E03A22 /* LaunchView.swift */; };
 		E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */; };
-		E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */; };
 		E9E778232A78677000FBBE4D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778222A78677000FBBE4D /* pop.mp3 */; };
 		E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778362A796C9F00FBBE4D /* pop2.mp3 */; };
 		E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E7783C2A79CD4300FBBE4D /* Localizable.strings */; };
@@ -65,6 +66,8 @@
 		E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerPool.swift; sourceTree = "<group>"; };
 		E97D9F0D2A80089A00333816 /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
 		E97D9F102A800FC400333816 /* HomeHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeader.swift; sourceTree = "<group>"; };
+		E98B5C382A8BAEFA00D6941A /* Bubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bubble.swift; sourceTree = "<group>"; };
+		E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewModel.swift; sourceTree = "<group>"; };
 		E998E10B2A7D82440047530E /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		E99934022A7B4FD500323C4D /* GridElementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridElementData.swift; sourceTree = "<group>"; };
 		E9A2B7452A80032600B933AA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
@@ -92,7 +95,6 @@
 		E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haptic-Toy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9DAD1872A7D13F700E03A22 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleMenuButtonView.swift; sourceTree = "<group>"; };
 		E9E778222A78677000FBBE4D /* pop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop.mp3; sourceTree = "<group>"; };
 		E9E778362A796C9F00FBBE4D /* pop2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop2.mp3; sourceTree = "<group>"; };
 		E9E7783B2A79CD4300FBBE4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -184,9 +186,10 @@
 				E971E6202A83825200536CD2 /* BubbleGame */,
 				E9A2B7442A8002EE00B933AA /* Extensions */,
 				E9636B282A7BF84A006AF0BB /* Services */,
-				E9E7781A2A77F36F00FBBE4D /* ViewModel */,
 				E9E778192A77F36A00FBBE4D /* View */,
+				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E9E778182A77F36400FBBE4D /* Model */,
+				E9E7781A2A77F36F00FBBE4D /* ViewModel */,
 				E9A8AE8C2A6DE1B600ED9FD4 /* Core */,
 				E9A8AE872A6DACFB00ED9FD4 /* Style */,
 				E9A8AE9D2A6E968000ED9FD4 /* Sounds */,
@@ -274,7 +277,6 @@
 				E9637BE02A8B61F500B118A8 /* HomeView */,
 				E9DAD1892A7D6EB800E03A22 /* SettingsView */,
 				E9FF6E612A75B96100DF9B87 /* BubbleWrap */,
-				E9A8AE8F2A6DE25F00ED9FD4 /* NumberPickerView.swift */,
 				E92827152A82000000F5E9AB /* ButtonsView */,
 				E9E7781C2A77F3AA00FBBE4D /* SliderView */,
 				E9E7781B2A77F3A000FBBE4D /* HelpView */,
@@ -288,6 +290,7 @@
 			children = (
 				E9637BDE2A8A95EB00B118A8 /* CatViewModel.swift */,
 				E9637BE12A8B622D00B118A8 /* HomeViewModel.swift */,
+				E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -325,8 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				E9FF6E622A75B97A00DF9B87 /* BubbleWrapView.swift */,
-				E9E7781E2A7804C600FBBE4D /* BubbleMenuButtonView.swift */,
 				E9FF6E642A75B99D00DF9B87 /* BubbleView.swift */,
+				E98B5C382A8BAEFA00D6941A /* Bubble.swift */,
 			);
 			path = BubbleWrap;
 			sourceTree = "<group>";
@@ -409,7 +412,6 @@
 				E99934032A7B4FD500323C4D /* GridElementData.swift in Sources */,
 				E9A8AE792A6D9D8800ED9FD4 /* HomeView.swift in Sources */,
 				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,
-				E9E7781F2A7804C600FBBE4D /* BubbleMenuButtonView.swift in Sources */,
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
@@ -441,7 +443,9 @@
 				E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */,
 				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
+				E98B5C3B2A8BAF4100D6941A /* BubbleViewModel.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
+				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
