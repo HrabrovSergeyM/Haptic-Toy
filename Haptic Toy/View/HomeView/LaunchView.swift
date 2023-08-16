@@ -77,6 +77,8 @@ extension LaunchView {
     private var logo: some View {
         Image("logo")
             .resizable()
+            .renderingMode(.template)
+            .foregroundColor(.primary)
             .scaledToFit()
             .opacity(isLogoVisible ? 1 : 0)
             .animation(

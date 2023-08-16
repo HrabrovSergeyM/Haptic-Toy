@@ -65,7 +65,7 @@ struct HomeView_Previews: PreviewProvider {
 extension HomeView {
     
     private var content: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVGrid(
                 columns: columns,
                 alignment: .center,
