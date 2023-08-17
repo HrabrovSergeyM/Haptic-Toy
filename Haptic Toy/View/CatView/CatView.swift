@@ -12,6 +12,11 @@ struct CatView: View {
     @AppStorage("language")
     var language = LocalizationService.shared.language
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
+    let value: String
+    init(value: String) {
+        self.value = value
+        print("init: \(value)")
+    }
     
     var body: some View {
         ZStack {
@@ -61,7 +66,7 @@ struct CatView: View {
 
 struct CatView_Previews: PreviewProvider {
     static var previews: some View {
-        CatView()
+        CatView(value: "CatView")
     }
 }
 

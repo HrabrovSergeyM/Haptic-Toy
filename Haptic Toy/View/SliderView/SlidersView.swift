@@ -16,6 +16,11 @@ struct SlidersView: View {
     @State var sliderTitle: String = "Soft"
     @State var titleWeight: Font.Weight = .thin
     @State var showHelp: Bool = false
+    let value: String
+    init(value: String) {
+        self.value = value
+        print("init: \(value)")
+    }
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -75,6 +80,6 @@ struct SlidersView: View {
 
 struct SlidersView_Previews: PreviewProvider {
     static var previews: some View {
-        SlidersView()
+        SlidersView(value: "SliderView")
     }
 }

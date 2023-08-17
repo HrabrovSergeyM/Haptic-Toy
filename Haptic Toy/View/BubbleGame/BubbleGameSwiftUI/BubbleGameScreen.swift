@@ -12,6 +12,11 @@ struct BubbleGameScreen: View {
     @State var restartKey: Bool = false
     @State var isTapMode: Bool = true
     @State private var displayMode: DisplayMode = .standard
+    let value: String
+    init(value: String) {
+        self.value = value
+        print("init: \(value)")
+    }
     
     var body: some View {
         ZStack {
@@ -96,6 +101,6 @@ struct BubbleGameScreen: View {
 
 struct BubbleGameScreen_Previews: PreviewProvider {
     static var previews: some View {
-        BubbleGameScreen()
+        BubbleGameScreen(value: "BubbleGameScreen")
     }
 }

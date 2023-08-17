@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NavigationGrid: View {
     
-    var destination: AnyView
+    var destination: String
     var imageName: String
     var text: String
     var isAnimated: Bool
@@ -17,10 +17,10 @@ struct NavigationGrid: View {
     var delayTime: Double
     var language = LocalizationService.shared.language
     @State private var scaleEffectActive = false
-    
     var body: some View {
+      
         VStack {
-            NavigationLink(destination: destination) {
+            NavigationLink(value: destination) {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()

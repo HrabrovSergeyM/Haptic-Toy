@@ -15,6 +15,12 @@ struct ButtonsView: View {
     @State var isStackVisible: Bool = false
     @State var motion: CMDeviceMotion? = nil
     let motionManager = CMMotionManager()
+    let value: String
+    
+    init(value: String) {
+        self.value = value
+        print("Init: \(value)")
+    }
     
     var body: some View {
         ZStack {
@@ -49,7 +55,7 @@ struct ButtonsView: View {
 
 struct ButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsView()
+        ButtonsView(value: "ButtonsView")
     }
 }
 

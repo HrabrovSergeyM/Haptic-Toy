@@ -21,38 +21,58 @@ struct HomeView: View {
     private let spacing: CGFloat = 40
     
     var body: some View {
-        
-        ZStack {
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            
-            VStack {
-                HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
+        NavigationStack {
+            ZStack {
+                Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+                
                 VStack {
-                    content
-                        .zIndex(1)
-                    
-                } // VStack
-                .onAppear {
-                    withAnimation {
-                        homeViewModel.isAnimated = true
+                    HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
+                    VStack {
+                        content
+                            .zIndex(1)
+                        
+                    } // VStack
+                    .onAppear {
+                        withAnimation {
+                            homeViewModel.isAnimated = true
+                        }
+                        homeViewModel.loadData()
                     }
-                    homeViewModel.loadData()
-                }
-                .onDisappear {
-                    withAnimation {
-                        homeViewModel.isAnimated = false
+                    .onDisappear {
+                        withAnimation {
+                            homeViewModel.isAnimated = false
+                        }
                     }
                 }
+                .blur(radius: homeViewModel.isShowingSettings ? 8.0 : 0, opaque: false)
+                .animation(.default, value: homeViewModel.isShowingSettings)
+                if homeViewModel.isShowingSettings {
+                    blankView
+                }
+                settingsView
+                
             }
-            .blur(radius: homeViewModel.isShowingSettings ? 8.0 : 0, opaque: false)
-            .animation(.default, value: homeViewModel.isShowingSettings)
-            if homeViewModel.isShowingSettings {
-                blankView
+            .navigationTitle("")
+            .navigationDestination(for: String.self) { value in
+                switch value {
+                case "BubbleGameScreen":
+                    BubbleGameScreen(value: "BubbleGameScreen")
+                case "CatView":
+                    CatView(value: "CatView")
+                case "ButtonsView":
+                    ButtonsView(value: "ButtonsView")
+                case "SlidersView":
+                    SlidersView(value: "SlidersView")
+                case "NumberPickerView":
+                    NumberPickerView(value: "NumberPickerView")
+                default:
+                    NumberPickerView(value: "NumberPickerView")
+                }
+                
             }
-            settingsView
             
         }
-        .navigationTitle("")
+        
     }
 }
 
@@ -117,20 +137,20 @@ extension HomeView {
         }
     }
     
-    private func viewForDestination(_ destination: String) -> AnyView {
+    private func viewForDestination(_ destination: String) -> String {
         switch destination {
         case "BubbleGameScreen":
-            return AnyView(BubbleGameScreen())
+            return "BubbleGameScreen"
         case "CatView":
-            return AnyView(CatView())
+            return "CatView"
         case "ButtonsView":
-            return AnyView(ButtonsView())
+            return "ButtonsView"
         case "SlidersView":
-            return AnyView(SlidersView())
+            return "SlidersView"
         case "NumberPickerView":
-            return AnyView(NumberPickerView())
+            return "NumberPickerView"
         default:
-            return AnyView(Text("Not Found"))
+            return "Not Found"
         }
     }
     

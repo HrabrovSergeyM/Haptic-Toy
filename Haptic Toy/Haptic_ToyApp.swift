@@ -11,20 +11,15 @@ import SwiftUI
 struct Haptic_ToyApp: App {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @AppStorage("appHasBeenLaunchedBefore") var appHasBeenLaunchedBefore: Bool = false
- 
+    
     @State private var showLaunchView: Bool = true
     
     var body: some Scene {
         WindowGroup {
             ZStack {
-                NavigationStack {
-                    HomeView()
-                        .preferredColorScheme(isDarkMode ? .dark : .light)
-                       
-                } // NavigationStack
-               
-                .accentColor(isDarkMode ? .white : .blue)
-                
+                HomeView()
+                    .preferredColorScheme(isDarkMode ? .dark : .light)
+                    .accentColor(isDarkMode ? .white : .blue)
                 ZStack {
                     if showLaunchView {
                         LaunchView(showLaunchView: $showLaunchView)

@@ -11,6 +11,11 @@ struct NumberPickerView: View {
     
     @State private var selection = 300
     @State var showHelp: Bool = false
+    let value: String
+    init(value: String) {
+        self.value = value
+        print("init: \(value)")
+    }
     
     var body: some View {
         
@@ -43,6 +48,6 @@ struct NumberPickerView: View {
 
 struct NumberPickerView_Previews: PreviewProvider {
     static var previews: some View {
-        NumberPickerView()
+        NumberPickerView(value: "NumberPickerView")
     }
 }
