@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
+    @State var showHelp: Bool = false
     
     private var language = LocalizationService.shared.language
     
@@ -46,6 +47,9 @@ struct HomeView: View {
                             }
                         }
                         .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                                showHelp = !UserDefaults.standard.bool(forKey: "HomeView")
+                            }
                             withAnimation {
                                 homeViewModel.isAnimated = true
                             }
@@ -65,6 +69,10 @@ struct HomeView: View {
                 settingsView
                 
             }
+
+            .sheet(isPresented: $showHelp, content: {
+                HelpView(helpText: "helpViewHome", screenKey: "HomeView", isPresented: $showHelp)
+            })
         }
     }
     
