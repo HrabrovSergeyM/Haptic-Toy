@@ -17,17 +17,15 @@ struct Haptic_ToyApp: App {
     var body: some Scene {
         WindowGroup {
             ZStack {
+                if showLaunchView {
+                    LaunchView(showLaunchView: $showLaunchView)
+                        .transition(.move(edge: .leading))
+                        .zIndex(2.0)
+                }
                 HomeView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
                     .accentColor(isDarkMode ? .white : .blue)
-                ZStack {
-                    if showLaunchView {
-                        LaunchView(showLaunchView: $showLaunchView)
-                            .transition(.move(edge: .leading))
-                    }
-                } // ZStack
-                .zIndex(2.0)
-            } // ZStack
+            }
             .onAppear {
                 if !appHasBeenLaunchedBefore {
                     if UITraitCollection.current.userInterfaceStyle == .dark {
