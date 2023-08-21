@@ -12,12 +12,20 @@ struct HelpView: View {
     var helpText: String
     var screenKey: String
     var language = LocalizationService.shared.language
+    var buttons: [HelpButton] = []
     
     @Binding var isPresented: Bool
     
     @State private var isTextVisible: Bool = false
     
     @Environment(\.colorScheme) var colorScheme
+    
+    init(helpText: String, screenKey: String, isPresented: Binding<Bool>, buttons: [HelpButton] = []) {
+        self.helpText = helpText
+        self.screenKey = screenKey
+        self._isPresented = isPresented
+        self.buttons = buttons
+    }
     
     var body: some View {
         ZStack {
@@ -36,6 +44,27 @@ struct HelpView: View {
                     .padding(.bottom)
                     .opacity(isTextVisible ? 1 : 0)
                     .offset(y: isTextVisible ? 0 : 50)
+                
+                if !buttons.isEmpty {
+                    VStack(alignment: .leading) {
+                        ForEach(buttons) { button in
+                            HStack {
+                                Image(systemName: button.imageName)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 24, height: 24)
+                                    .padding(.trailing, 8)
+                                Text(button.description.localized(language))
+                                    .font(.title2)
+                                    .fontWeight(.thin)
+                            }
+                            .padding(.bottom)
+                            .opacity(isTextVisible ? 1 : 0)
+                            .offset(y: isTextVisible ? 0 : 70)
+                        }
+                    }
+                }
+
                 Spacer()
                 Button(action: {
                     isPresented = false
@@ -69,6 +98,10 @@ struct HelpView: View {
 
 struct HelpView_Previews: PreviewProvider {
     static var previews: some View {
-        HelpView(helpText: "Welcome to a new world of tactile sensations. With the slider, you can control the intensity of vibration, feeling pleasant waves under your fingertips. Want to diversify your feelings? Press the button below and choose one of many vibration styles from the menu. Experiment and find your ideal style.", screenKey: "AnyView", isPresented: .constant(true))
+        HelpView(helpText: "Just pop it.", screenKey: "AnyView", isPresented: .constant(true), buttons: [
+            HelpButton(imageName: "hand.draw", description: "helpViewDrawButton"),
+            HelpButton(imageName: "arrow.triangle.2.circlepath", description: "helpViewRestartButton"),
+            HelpButton(imageName: "rectangle.split.2x2.fill", description: "helpViewDisplayButton")
+         ])
     }
 }

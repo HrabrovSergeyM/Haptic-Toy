@@ -91,7 +91,14 @@ struct BubbleGameScreen: View {
                 showHelp = !UserDefaults.standard.bool(forKey: "BubbleGameScreen")
             }
             .sheet(isPresented: $showHelp, content: {
-                HelpView(helpText: "helpViewBubble", screenKey: "BubbleGameScreen", isPresented: $showHelp)
+                HelpView(helpText: "",
+                         screenKey: "BubbleGameScreen",
+                         isPresented: $showHelp,
+                         buttons: [
+                            HelpButton(imageName: "hand.draw", description: "helpViewDrawButton"),
+                            HelpButton(imageName: "arrow.triangle.2.circlepath", description: "helpViewRestartButton"),
+                            HelpButton(imageName: "rectangle.split.2x2.fill", description: "helpViewDisplayButton")
+                         ])
             })
             
         }

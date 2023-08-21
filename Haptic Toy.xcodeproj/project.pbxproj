@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90418E92A937EAB00D939AE /* popSound2.mp3 */; };
+		E90418EC2A9384CA00D939AE /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90418EB2A9384CA00D939AE /* HelpButton.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -54,6 +56,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E90418E92A937EAB00D939AE /* popSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound2.mp3; sourceTree = "<group>"; };
+		E90418EB2A9384CA00D939AE /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				E9E778222A78677000FBBE4D /* pop.mp3 */,
+				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
 				E9E778362A796C9F00FBBE4D /* pop2.mp3 */,
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
 			);
@@ -259,6 +264,7 @@
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 				E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */,
+				E90418EB2A9384CA00D939AE /* HelpButton.swift */,
 				E99934022A7B4FD500323C4D /* GridElementData.swift */,
 			);
 			path = Model;
@@ -390,6 +396,7 @@
 				E9E778232A78677000FBBE4D /* pop.mp3 in Resources */,
 				E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */,
 				E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */,
+				E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */,
 				E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */,
 				E9DEDEC32A8D24040093042E /* Launch Screen.storyboard in Resources */,
 			);
@@ -402,6 +409,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E90418EC2A9384CA00D939AE /* HelpButton.swift in Sources */,
 				E99934032A7B4FD500323C4D /* GridElementData.swift in Sources */,
 				E9A8AE792A6D9D8800ED9FD4 /* HomeView.swift in Sources */,
 				E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */,

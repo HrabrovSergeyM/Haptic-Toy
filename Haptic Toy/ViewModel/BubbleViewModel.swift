@@ -17,7 +17,7 @@ class BubbleViewModel: ObservableObject {
     func popBubble() {
         if !isPopped {
             isPopped = true
-            startSound(sound: "pop", type: "mp3")
+            startSound(sound: "popSound2", type: "mp3")
             HapticManager.impact(style: .rigid)
         }
     }

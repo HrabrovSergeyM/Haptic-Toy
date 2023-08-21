@@ -18,6 +18,9 @@
 
 //BubbleGameScreen
 "helpViewBubble" = "Just pop it.";
+"helpViewRestartButton" = "Restart";
+"helpViewDrawButton" = "Tap / slice";
+"helpViewDisplayButton" = "Increase field";
 
 //ToggleView
 "helpViewToggle" = "Each button possesses its unique sound and vibration, offering you a new level of interactivity. Find your ideal button.";
@@ -48,5 +51,4 @@
 "backButton" = "Back";
 
 //HomeView
-
 "helpViewHome" = "Welcome to Haptic Toy.\n Make sure you have audio and Haptic Feedback turned on.\n Enjoy the app. Give yourself a rest.\n Be careful - excessive use of Haptic Feedback quickly drains battery power.";
