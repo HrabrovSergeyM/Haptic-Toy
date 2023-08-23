@@ -52,6 +52,7 @@ struct DarkModeToggleView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Button {
+                HapticManager.impact(style: .medium)
                 isDarkMode = false
             } label: {
                 Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
@@ -66,6 +67,7 @@ struct DarkModeToggleView: View {
                 .toggleStyle(SwitchToggleStyle())
             
             Button {
+                HapticManager.impact(style: .light)
                 isDarkMode = true
             } label: {
                 Image(systemName: isDarkMode ? "moon.stars" : "moon.zzz")
@@ -85,6 +87,7 @@ struct LanguageToggleView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Button {
+                HapticManager.impact(style: .medium)
                 isEng = false
             } label: {
                 Text("🇷🇺")
@@ -100,6 +103,7 @@ struct LanguageToggleView: View {
                 }
             
             Button {
+                HapticManager.impact(style: .light)
                 isEng = true
             } label: {
                 Text("🇺🇸")
@@ -117,6 +121,7 @@ struct IconToggleView: View {
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
             Button {
+                HapticManager.impact(style: .medium)
                 isDarkIcon = false
             } label: {
                 Image("settingsLightIcon")
@@ -133,6 +138,7 @@ struct IconToggleView: View {
                     changeAppIcon(isDarkIcon: newValue)
                 }
             Button {
+                HapticManager.impact(style: .light)
                 isDarkIcon = true
             } label: {
                 Image("settingsDarkIcon")

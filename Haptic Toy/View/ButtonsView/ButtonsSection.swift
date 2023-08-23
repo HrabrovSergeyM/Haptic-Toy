@@ -20,7 +20,7 @@ struct ButtonsSection: View {
     var titleWeight: Font.Weight
     var rowIndex: Int
     @State var isRippleActive: [Bool] = Array(repeating: false, count: 5)
-    let synthSounds = ["synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14", "synth15"]
+    let synthSounds = ["synth0", "synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14"]
 
     
     var body: some View {
@@ -50,9 +50,9 @@ struct ButtonsSection: View {
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
-                                .stroke(Color("ColorGray"), lineWidth: isRippleActive[index] ? 100 : 0)
-                                .opacity(isRippleActive[index] ? 0.5 : 0)
-                                .animation(.spring(), value: isRippleActive[index])
+                                .stroke(Color("ColorGray"), lineWidth: isRippleActive[index] ? 75 : 0)
+                                .opacity(isRippleActive[index] ? 0.3 : 0)
+                                .animation(.easeOut(duration: 0.5), value: isRippleActive[index])
                         )
                     }
 
