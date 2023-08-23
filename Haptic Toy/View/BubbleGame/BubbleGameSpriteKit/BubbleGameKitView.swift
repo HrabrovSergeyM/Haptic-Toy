@@ -32,7 +32,7 @@ struct BubbleGameKitView: UIViewRepresentable {
         view.layer.borderWidth = .nan
         view.layer.borderColor = UIColor.clear.cgColor
         view.ignoresSiblingOrder = true
-        view.showsFPS = true
+//        view.showsFPS = true
         return view
     }
     

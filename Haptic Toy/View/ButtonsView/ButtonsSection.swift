@@ -18,6 +18,9 @@ struct ButtonsSection: View {
     var yOffset: CGFloat
     var brightness: Double
     var titleWeight: Font.Weight
+    @State var isRippleActive: [Bool] = Array(repeating: false, count: 5)
+    let synthSounds = ["synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14", "synth15"]
+
     
     var body: some View {
         VStack(spacing: 20) {
@@ -27,13 +30,29 @@ struct ButtonsSection: View {
                 ForEach(0..<5) { index in
                     Button(action: {
                         let sharpnessValue = 1.0 - (Float(index) * 0.15)
+                        startSound(sound: synthSounds[index], type: "wav")
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
+                        withAnimation {
+                            isRippleActive[index].toggle()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                withAnimation {
+                                    isRippleActive[index] = false
+                                }
+                            }
+                        }
                     }) {
                         ZStack {
                             backgroundButtons
                             buttons
                         }
-                    } // Button
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 5)
+                                .stroke(Color("ColorGray"), lineWidth: isRippleActive[index] ? 100 : 0)
+                                .opacity(isRippleActive[index] ? 0.5 : 0)
+                                .animation(.easeOut(duration: 0.5), value: isRippleActive[index])
+                        )
+                    }
+
                     .brightness(Double(1 - index) * 0.02 + brightness)
                 }
             }

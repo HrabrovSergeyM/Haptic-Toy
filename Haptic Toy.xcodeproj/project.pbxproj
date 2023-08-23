@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90418E92A937EAB00D939AE /* popSound2.mp3 */; };
 		E90418EC2A9384CA00D939AE /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90418EB2A9384CA00D939AE /* HelpButton.swift */; };
+		E90418FD2A96310100D939AE /* synth8.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418ED2A96310000D939AE /* synth8.wav */; };
+		E90418FE2A96310100D939AE /* synth14.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418EE2A96310000D939AE /* synth14.wav */; };
+		E90418FF2A96310100D939AE /* synth3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418EF2A96310000D939AE /* synth3.wav */; };
+		E90419002A96310100D939AE /* synth1.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F02A96310000D939AE /* synth1.wav */; };
+		E90419012A96310100D939AE /* synth4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F12A96310000D939AE /* synth4.wav */; };
+		E90419022A96310100D939AE /* synth12.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F22A96310000D939AE /* synth12.wav */; };
+		E90419032A96310100D939AE /* synth10.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F32A96310000D939AE /* synth10.wav */; };
+		E90419042A96310100D939AE /* synth9.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F42A96310000D939AE /* synth9.wav */; };
+		E90419052A96310100D939AE /* synth5.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F52A96310000D939AE /* synth5.wav */; };
+		E90419062A96310100D939AE /* synth11.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F62A96310000D939AE /* synth11.wav */; };
+		E90419072A96310100D939AE /* synth.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F72A96310000D939AE /* synth.wav */; };
+		E90419082A96310100D939AE /* synth6.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F82A96310000D939AE /* synth6.wav */; };
+		E90419092A96310100D939AE /* synth15.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418F92A96310000D939AE /* synth15.wav */; };
+		E904190A2A96310100D939AE /* synth2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418FA2A96310000D939AE /* synth2.wav */; };
+		E904190B2A96310100D939AE /* synth7.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418FB2A96310100D939AE /* synth7.wav */; };
+		E904190C2A96310100D939AE /* synth13.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90418FC2A96310100D939AE /* synth13.wav */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -58,6 +74,22 @@
 /* Begin PBXFileReference section */
 		E90418E92A937EAB00D939AE /* popSound2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = popSound2.mp3; sourceTree = "<group>"; };
 		E90418EB2A9384CA00D939AE /* HelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
+		E90418ED2A96310000D939AE /* synth8.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth8.wav; sourceTree = "<group>"; };
+		E90418EE2A96310000D939AE /* synth14.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth14.wav; sourceTree = "<group>"; };
+		E90418EF2A96310000D939AE /* synth3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth3.wav; sourceTree = "<group>"; };
+		E90418F02A96310000D939AE /* synth1.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth1.wav; sourceTree = "<group>"; };
+		E90418F12A96310000D939AE /* synth4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth4.wav; sourceTree = "<group>"; };
+		E90418F22A96310000D939AE /* synth12.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth12.wav; sourceTree = "<group>"; };
+		E90418F32A96310000D939AE /* synth10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth10.wav; sourceTree = "<group>"; };
+		E90418F42A96310000D939AE /* synth9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth9.wav; sourceTree = "<group>"; };
+		E90418F52A96310000D939AE /* synth5.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth5.wav; sourceTree = "<group>"; };
+		E90418F62A96310000D939AE /* synth11.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth11.wav; sourceTree = "<group>"; };
+		E90418F72A96310000D939AE /* synth.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth.wav; sourceTree = "<group>"; };
+		E90418F82A96310000D939AE /* synth6.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth6.wav; sourceTree = "<group>"; };
+		E90418F92A96310000D939AE /* synth15.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth15.wav; sourceTree = "<group>"; };
+		E90418FA2A96310000D939AE /* synth2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth2.wav; sourceTree = "<group>"; };
+		E90418FB2A96310100D939AE /* synth7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth7.wav; sourceTree = "<group>"; };
+		E90418FC2A96310100D939AE /* synth13.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth13.wav; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -244,6 +276,22 @@
 			children = (
 				E9E778222A78677000FBBE4D /* pop.mp3 */,
 				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
+				E90418F02A96310000D939AE /* synth1.wav */,
+				E90418FA2A96310000D939AE /* synth2.wav */,
+				E90418EF2A96310000D939AE /* synth3.wav */,
+				E90418F12A96310000D939AE /* synth4.wav */,
+				E90418F52A96310000D939AE /* synth5.wav */,
+				E90418F82A96310000D939AE /* synth6.wav */,
+				E90418FB2A96310100D939AE /* synth7.wav */,
+				E90418ED2A96310000D939AE /* synth8.wav */,
+				E90418F42A96310000D939AE /* synth9.wav */,
+				E90418F32A96310000D939AE /* synth10.wav */,
+				E90418F62A96310000D939AE /* synth11.wav */,
+				E90418F22A96310000D939AE /* synth12.wav */,
+				E90418FC2A96310100D939AE /* synth13.wav */,
+				E90418EE2A96310000D939AE /* synth14.wav */,
+				E90418F92A96310000D939AE /* synth15.wav */,
+				E90418F72A96310000D939AE /* synth.wav */,
 				E9E778362A796C9F00FBBE4D /* pop2.mp3 */,
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
 			);
@@ -391,13 +439,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E904190A2A96310100D939AE /* synth2.wav in Resources */,
+				E904190B2A96310100D939AE /* synth7.wav in Resources */,
+				E90418FD2A96310100D939AE /* synth8.wav in Resources */,
 				E9A8AE7E2A6D9D8B00ED9FD4 /* Preview Assets.xcassets in Resources */,
 				E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */,
+				E90419032A96310100D939AE /* synth10.wav in Resources */,
 				E9E778232A78677000FBBE4D /* pop.mp3 in Resources */,
+				E90419022A96310100D939AE /* synth12.wav in Resources */,
+				E90419072A96310100D939AE /* synth.wav in Resources */,
 				E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */,
 				E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */,
 				E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */,
+				E90419042A96310100D939AE /* synth9.wav in Resources */,
 				E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */,
+				E90418FF2A96310100D939AE /* synth3.wav in Resources */,
+				E90419052A96310100D939AE /* synth5.wav in Resources */,
+				E90419092A96310100D939AE /* synth15.wav in Resources */,
+				E90419062A96310100D939AE /* synth11.wav in Resources */,
+				E90419002A96310100D939AE /* synth1.wav in Resources */,
+				E90419012A96310100D939AE /* synth4.wav in Resources */,
+				E90418FE2A96310100D939AE /* synth14.wav in Resources */,
+				E904190C2A96310100D939AE /* synth13.wav in Resources */,
+				E90419082A96310100D939AE /* synth6.wav in Resources */,
 				E9DEDEC32A8D24040093042E /* Launch Screen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
