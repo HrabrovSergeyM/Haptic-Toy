@@ -21,7 +21,6 @@ struct SettingsView: View {
             
             VStack(alignment: .center, spacing: 30) {
                 
-                
                 DarkModeToggleView(isDarkMode: $isDarkMode)
                 LanguageToggleView(isEng: $isEng)
                 IconToggleView(isDarkIcon: $isDarkIcon)
@@ -52,15 +51,30 @@ struct DarkModeToggleView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
-                .font(.title)
-                .frame(width: 42, height: 42)
+            Button {
+                isDarkMode = false
+            } label: {
+                Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
+                    .font(.title)
+                    .frame(width: 42, height: 42)
+                    .foregroundColor(isDarkMode ? .gray : .yellow)
+            }
+            .animation(.spring(), value: isDarkMode)
+            
             Toggle("Dark Mode", isOn: $isDarkMode)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
-            Image(systemName: isDarkMode ? "moon.stars" : "moon.zzz")
-                .font(.title)
-                .frame(width: 42, height: 42)
+            
+            Button {
+                isDarkMode = true
+            } label: {
+                Image(systemName: isDarkMode ? "moon.stars" : "moon.zzz")
+                    .font(.title)
+                    .frame(width: 42, height: 42)
+                    .foregroundColor(isDarkMode ? .yellow : .gray)
+            }
+            .animation(.spring(), value: isDarkMode)
+            
         }
     }
 }
@@ -70,18 +84,29 @@ struct LanguageToggleView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Text("🇷🇺")
-                .font(Font.system(size: 48, weight: .thin, design: .rounded))
-                .frame(width: 42, height: 42)
+            Button {
+                isEng = false
+            } label: {
+                Text("🇷🇺")
+                    .font(Font.system(size: 48, weight: .thin, design: .rounded))
+                    .frame(width: 42, height: 42)
+            }
+            
             Toggle("Language", isOn: $isEng)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: isEng) { value in
                     LocalizationService.shared.language = value ? .english_us : .russian
                 }
-            Text("🇺🇸")
-                .font(Font.system(size: 48, weight: .thin, design: .rounded))
-                .frame(width: 42, height: 42)
+            
+            Button {
+                isEng = true
+            } label: {
+                Text("🇺🇸")
+                    .font(Font.system(size: 48, weight: .thin, design: .rounded))
+                    .frame(width: 42, height: 42)
+            }
+            
         }
     }
 }
@@ -91,22 +116,32 @@ struct IconToggleView: View {
     
     var body: some View {
         HStack(alignment: .center, spacing: 20) {
-            Image("settingsLightIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 60, height: 60)
-                .cornerRadius(12)
+            Button {
+                isDarkIcon = false
+            } label: {
+                Image("settingsLightIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(12)
+            }
+
             Toggle("Icon", isOn: $isDarkIcon)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
                 .onChange(of: isDarkIcon) { newValue in
                     changeAppIcon(isDarkIcon: newValue)
                 }
-            Image("settingsDarkIcon")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 60, height: 60)
-                .cornerRadius(12)
+            Button {
+                isDarkIcon = true
+            } label: {
+                Image("settingsDarkIcon")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60, height: 60)
+                    .cornerRadius(12)
+            }
+
         }
     }
     
