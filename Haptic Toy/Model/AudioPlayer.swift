@@ -33,12 +33,20 @@ func startRepeatingSound(sound: String, type: String) {
 func startSound(sound: String, type: String) {
     resetAudio()
 
-    if let player = audioPlayerPool.playerForSound(sound: sound, type: type) {
-        player.play()
-    } else {
-        print("Could not find and play the sound file.")
+    guard let path = Bundle.main.path(forResource: sound, ofType: type) else {
+        print("Couldn't find the sound file.")
+        return
+    }
+
+    do {
+        audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+        audioPlayer?.prepareToPlay()
+        audioPlayer?.play()
+    } catch {
+        print("Error playing the sound file: \(error.localizedDescription)")
     }
 }
+
 
 func stopSound() {
     audioPlayer?.stop()

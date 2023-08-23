@@ -18,6 +18,7 @@ struct ButtonsSection: View {
     var yOffset: CGFloat
     var brightness: Double
     var titleWeight: Font.Weight
+    var rowIndex: Int
     @State var isRippleActive: [Bool] = Array(repeating: false, count: 5)
     let synthSounds = ["synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14", "synth15"]
 
@@ -30,7 +31,9 @@ struct ButtonsSection: View {
                 ForEach(0..<5) { index in
                     Button(action: {
                         let sharpnessValue = 1.0 - (Float(index) * 0.15)
-                        startSound(sound: synthSounds[index], type: "wav")
+                        let soundIndex = rowIndex * 5 + index
+                        print("Playing sound at index: \(soundIndex)")
+                           startSound(sound: synthSounds[soundIndex], type: "wav")
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
                         withAnimation {
                             isRippleActive[index].toggle()
@@ -49,7 +52,7 @@ struct ButtonsSection: View {
                             RoundedRectangle(cornerRadius: 5)
                                 .stroke(Color("ColorGray"), lineWidth: isRippleActive[index] ? 100 : 0)
                                 .opacity(isRippleActive[index] ? 0.5 : 0)
-                                .animation(.easeOut(duration: 0.5), value: isRippleActive[index])
+                                .animation(.spring(), value: isRippleActive[index])
                         )
                     }
 
