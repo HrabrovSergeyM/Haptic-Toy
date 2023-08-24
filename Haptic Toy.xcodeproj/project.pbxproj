@@ -35,10 +35,6 @@
 		E904194C2A968F3700D939AE /* breakingBass10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419492A968F3700D939AE /* breakingBass10.mp3 */; };
 		E90419522A97450600D939AE /* breakingBass0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419512A97450600D939AE /* breakingBass0.mp3 */; };
 		E90419542A97454400D939AE /* breakingBass1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419532A97454400D939AE /* breakingBass1.mp3 */; };
-		E90419562A97458A00D939AE /* breakingBass11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419552A97458A00D939AE /* breakingBass11.mp3 */; };
-		E904195A2A9745F900D939AE /* breakingBass12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419572A9745F900D939AE /* breakingBass12.mp3 */; };
-		E904195B2A9745F900D939AE /* breakingBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419582A9745F900D939AE /* breakingBass14.mp3 */; };
-		E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419592A9745F900D939AE /* breakingBass13.mp3 */; };
 		E904195E2A974C1700D939AE /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195D2A974C1700D939AE /* PaletteView.swift */; };
 		E90419602A975C1000D939AE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195F2A975C1000D939AE /* UserDefaults.swift */; };
 		E90419652A97614900D939AE /* SoundBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419642A97614900D939AE /* SoundBarView.swift */; };
@@ -57,6 +53,26 @@
 		E90419812A9767FA00D939AE /* feverNights8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419722A9767FA00D939AE /* feverNights8.mp3 */; };
 		E90419822A9767FA00D939AE /* feverNights10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419732A9767FA00D939AE /* feverNights10.mp3 */; };
 		E90419832A9767FA00D939AE /* feverNights5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419742A9767FA00D939AE /* feverNights5.mp3 */; };
+		E90419862A9776DC00D939AE /* Sound.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419852A9776DC00D939AE /* Sound.swift */; };
+		E90419962A97CE2400D939AE /* acousticGuitar1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419872A97CE2300D939AE /* acousticGuitar1.mp3 */; };
+		E90419972A97CE2400D939AE /* acousticGuitar10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419882A97CE2300D939AE /* acousticGuitar10.mp3 */; };
+		E90419982A97CE2400D939AE /* acousticGuitar4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419892A97CE2300D939AE /* acousticGuitar4.mp3 */; };
+		E90419992A97CE2400D939AE /* acousticGuitar13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198A2A97CE2300D939AE /* acousticGuitar13.mp3 */; };
+		E904199A2A97CE2400D939AE /* acousticGuitar12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198B2A97CE2300D939AE /* acousticGuitar12.mp3 */; };
+		E904199B2A97CE2400D939AE /* acousticGuitar11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198C2A97CE2300D939AE /* acousticGuitar11.mp3 */; };
+		E904199C2A97CE2400D939AE /* acousticGuitar7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198D2A97CE2300D939AE /* acousticGuitar7.mp3 */; };
+		E904199D2A97CE2400D939AE /* acousticGuitar5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198E2A97CE2300D939AE /* acousticGuitar5.mp3 */; };
+		E904199E2A97CE2400D939AE /* acousticGuitar2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904198F2A97CE2300D939AE /* acousticGuitar2.mp3 */; };
+		E904199F2A97CE2400D939AE /* acousticGuitar8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419902A97CE2400D939AE /* acousticGuitar8.mp3 */; };
+		E90419A02A97CE2400D939AE /* acousticGuitar0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419912A97CE2400D939AE /* acousticGuitar0.mp3 */; };
+		E90419A12A97CE2400D939AE /* acousticGuitar14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419922A97CE2400D939AE /* acousticGuitar14.mp3 */; };
+		E90419A22A97CE2400D939AE /* acousticGuitar3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419932A97CE2400D939AE /* acousticGuitar3.mp3 */; };
+		E90419A32A97CE2400D939AE /* acousticGuitar6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419942A97CE2400D939AE /* acousticGuitar6.mp3 */; };
+		E90419A42A97CE2400D939AE /* acousticGuitar9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419952A97CE2400D939AE /* acousticGuitar9.mp3 */; };
+		E90419AA2A97EC5F00D939AE /* breakingBass13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A62A97EC5F00D939AE /* breakingBass13.mp3 */; };
+		E90419AB2A97EC5F00D939AE /* breakingBass11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */; };
+		E90419AC2A97EC5F00D939AE /* breakingBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */; };
+		E90419AD2A97EC5F00D939AE /* breakingBass12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -132,10 +148,6 @@
 		E90419492A968F3700D939AE /* breakingBass10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass10.mp3; sourceTree = "<group>"; };
 		E90419512A97450600D939AE /* breakingBass0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass0.mp3; sourceTree = "<group>"; };
 		E90419532A97454400D939AE /* breakingBass1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass1.mp3; sourceTree = "<group>"; };
-		E90419552A97458A00D939AE /* breakingBass11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass11.mp3; sourceTree = "<group>"; };
-		E90419572A9745F900D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass12.mp3; sourceTree = "<group>"; };
-		E90419582A9745F900D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass14.mp3; sourceTree = "<group>"; };
-		E90419592A9745F900D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass13.mp3; sourceTree = "<group>"; };
 		E904195D2A974C1700D939AE /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		E904195F2A975C1000D939AE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E90419632A97609E00D939AE /* synth0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth0.wav; sourceTree = "<group>"; };
@@ -155,6 +167,26 @@
 		E90419722A9767FA00D939AE /* feverNights8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights8.mp3; sourceTree = "<group>"; };
 		E90419732A9767FA00D939AE /* feverNights10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights10.mp3; sourceTree = "<group>"; };
 		E90419742A9767FA00D939AE /* feverNights5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights5.mp3; sourceTree = "<group>"; };
+		E90419852A9776DC00D939AE /* Sound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sound.swift; sourceTree = "<group>"; };
+		E90419872A97CE2300D939AE /* acousticGuitar1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar1.mp3; sourceTree = "<group>"; };
+		E90419882A97CE2300D939AE /* acousticGuitar10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar10.mp3; sourceTree = "<group>"; };
+		E90419892A97CE2300D939AE /* acousticGuitar4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar4.mp3; sourceTree = "<group>"; };
+		E904198A2A97CE2300D939AE /* acousticGuitar13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar13.mp3; sourceTree = "<group>"; };
+		E904198B2A97CE2300D939AE /* acousticGuitar12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar12.mp3; sourceTree = "<group>"; };
+		E904198C2A97CE2300D939AE /* acousticGuitar11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar11.mp3; sourceTree = "<group>"; };
+		E904198D2A97CE2300D939AE /* acousticGuitar7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar7.mp3; sourceTree = "<group>"; };
+		E904198E2A97CE2300D939AE /* acousticGuitar5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar5.mp3; sourceTree = "<group>"; };
+		E904198F2A97CE2300D939AE /* acousticGuitar2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar2.mp3; sourceTree = "<group>"; };
+		E90419902A97CE2400D939AE /* acousticGuitar8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar8.mp3; sourceTree = "<group>"; };
+		E90419912A97CE2400D939AE /* acousticGuitar0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar0.mp3; sourceTree = "<group>"; };
+		E90419922A97CE2400D939AE /* acousticGuitar14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar14.mp3; sourceTree = "<group>"; };
+		E90419932A97CE2400D939AE /* acousticGuitar3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar3.mp3; sourceTree = "<group>"; };
+		E90419942A97CE2400D939AE /* acousticGuitar6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar6.mp3; sourceTree = "<group>"; };
+		E90419952A97CE2400D939AE /* acousticGuitar9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar9.mp3; sourceTree = "<group>"; };
+		E90419A62A97EC5F00D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass13.mp3; path = ../../../../breakingBass/breakingBass13.mp3; sourceTree = "<group>"; };
+		E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass11.mp3; path = ../../../../breakingBass/breakingBass11.mp3; sourceTree = "<group>"; };
+		E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass14.mp3; path = ../../../../breakingBass/breakingBass14.mp3; sourceTree = "<group>"; };
+		E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass12.mp3; path = ../../../../breakingBass/breakingBass12.mp3; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -224,13 +256,13 @@
 				E90419322A968AD900D939AE /* breakingBass3.mp3 */,
 				E90419352A968AD900D939AE /* breakingBass4.mp3 */,
 				E904193D2A968C6000D939AE /* breakingBass5.mp3 */,
+				E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */,
+				E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */,
+				E90419A62A97EC5F00D939AE /* breakingBass13.mp3 */,
+				E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */,
 				E904193F2A968C6000D939AE /* breakingBass6.mp3 */,
 				E904193E2A968C6000D939AE /* breakingBass7.mp3 */,
 				E90419492A968F3700D939AE /* breakingBass10.mp3 */,
-				E90419552A97458A00D939AE /* breakingBass11.mp3 */,
-				E90419572A9745F900D939AE /* breakingBass12.mp3 */,
-				E90419592A9745F900D939AE /* breakingBass13.mp3 */,
-				E90419582A9745F900D939AE /* breakingBass14.mp3 */,
 				E90419412A968C6000D939AE /* breakingBass8.mp3 */,
 				E90419402A968C6000D939AE /* breakingBass9.mp3 */,
 			);
@@ -279,6 +311,28 @@
 				E90419692A9767F900D939AE /* feverNights14.mp3 */,
 			);
 			path = feverNights;
+			sourceTree = "<group>";
+		};
+		E90419A52A97CE2F00D939AE /* acousticGuitar */ = {
+			isa = PBXGroup;
+			children = (
+				E90419912A97CE2400D939AE /* acousticGuitar0.mp3 */,
+				E90419872A97CE2300D939AE /* acousticGuitar1.mp3 */,
+				E904198F2A97CE2300D939AE /* acousticGuitar2.mp3 */,
+				E90419932A97CE2400D939AE /* acousticGuitar3.mp3 */,
+				E90419892A97CE2300D939AE /* acousticGuitar4.mp3 */,
+				E904198E2A97CE2300D939AE /* acousticGuitar5.mp3 */,
+				E90419942A97CE2400D939AE /* acousticGuitar6.mp3 */,
+				E904198D2A97CE2300D939AE /* acousticGuitar7.mp3 */,
+				E90419902A97CE2400D939AE /* acousticGuitar8.mp3 */,
+				E90419952A97CE2400D939AE /* acousticGuitar9.mp3 */,
+				E90419882A97CE2300D939AE /* acousticGuitar10.mp3 */,
+				E904198C2A97CE2300D939AE /* acousticGuitar11.mp3 */,
+				E904198B2A97CE2300D939AE /* acousticGuitar12.mp3 */,
+				E904198A2A97CE2300D939AE /* acousticGuitar13.mp3 */,
+				E90419922A97CE2400D939AE /* acousticGuitar14.mp3 */,
+			);
+			path = acousticGuitar;
 			sourceTree = "<group>";
 		};
 		E92827152A82000000F5E9AB /* ButtonsView */ = {
@@ -408,9 +462,10 @@
 		E9A8AE9D2A6E968000ED9FD4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
-				E90419842A97680600D939AE /* feverNights */,
-				E9E778222A78677000FBBE4D /* pop.mp3 */,
 				E90419612A97608700D939AE /* breakingBass */,
+				E90419842A97680600D939AE /* feverNights */,
+				E90419A52A97CE2F00D939AE /* acousticGuitar */,
+				E9E778222A78677000FBBE4D /* pop.mp3 */,
 				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
 				E90419622A97609D00D939AE /* synth */,
 				E90419152A9658FB00D939AE /* synth0.wav */,
@@ -433,6 +488,7 @@
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
+				E90419852A9776DC00D939AE /* Sound.swift */,
 				E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */,
 				E90418EB2A9384CA00D939AE /* HelpButton.swift */,
 				E99934022A7B4FD500323C4D /* GridElementData.swift */,
@@ -564,34 +620,48 @@
 				E90419252A9658FC00D939AE /* synth2.wav in Resources */,
 				E90419292A9658FC00D939AE /* synth13.wav in Resources */,
 				E90419432A968C6000D939AE /* breakingBass7.mp3 in Resources */,
+				E904199D2A97CE2400D939AE /* acousticGuitar5.mp3 in Resources */,
+				E90419962A97CE2400D939AE /* acousticGuitar1.mp3 in Resources */,
 				E90419372A968AD900D939AE /* breakingBass3.mp3 in Resources */,
+				E90419AB2A97EC5F00D939AE /* breakingBass11.mp3 in Resources */,
 				E90419392A968AD900D939AE /* breakingBass2.mp3 in Resources */,
+				E90419972A97CE2400D939AE /* acousticGuitar10.mp3 in Resources */,
+				E90419A02A97CE2400D939AE /* acousticGuitar0.mp3 in Resources */,
+				E904199B2A97CE2400D939AE /* acousticGuitar11.mp3 in Resources */,
 				E90419262A9658FC00D939AE /* synth4.wav in Resources */,
-				E90419562A97458A00D939AE /* breakingBass11.mp3 in Resources */,
 				E90419212A9658FC00D939AE /* synth9.wav in Resources */,
+				E904199A2A97CE2400D939AE /* acousticGuitar12.mp3 in Resources */,
+				E90419AC2A97EC5F00D939AE /* breakingBass14.mp3 in Resources */,
+				E90419A32A97CE2400D939AE /* acousticGuitar6.mp3 in Resources */,
 				E9A8AE7E2A6D9D8B00ED9FD4 /* Preview Assets.xcassets in Resources */,
 				E90419822A9767FA00D939AE /* feverNights10.mp3 in Resources */,
 				E904191F2A9658FC00D939AE /* synth12.wav in Resources */,
+				E904199C2A97CE2400D939AE /* acousticGuitar7.mp3 in Resources */,
 				E904191E2A9658FC00D939AE /* synth11.wav in Resources */,
 				E904197D2A9767FA00D939AE /* feverNights1.mp3 in Resources */,
-				E904195A2A9745F900D939AE /* breakingBass12.mp3 in Resources */,
+				E904199E2A97CE2400D939AE /* acousticGuitar2.mp3 in Resources */,
 				E904197C2A9767FA00D939AE /* feverNights3.mp3 in Resources */,
 				E90419232A9658FC00D939AE /* synth7.wav in Resources */,
+				E90419A42A97CE2400D939AE /* acousticGuitar9.mp3 in Resources */,
 				E904194C2A968F3700D939AE /* breakingBass10.mp3 in Resources */,
 				E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */,
+				E90419992A97CE2400D939AE /* acousticGuitar13.mp3 in Resources */,
+				E90419A22A97CE2400D939AE /* acousticGuitar3.mp3 in Resources */,
 				E904197F2A9767FA00D939AE /* feverNights13.mp3 in Resources */,
 				E904192A2A9658FC00D939AE /* synth5.wav in Resources */,
-				E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */,
 				E9E778232A78677000FBBE4D /* pop.mp3 in Resources */,
 				E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */,
 				E90419772A9767FA00D939AE /* feverNights11.mp3 in Resources */,
 				E90419832A9767FA00D939AE /* feverNights5.mp3 in Resources */,
+				E90419AA2A97EC5F00D939AE /* breakingBass13.mp3 in Resources */,
+				E904199F2A97CE2400D939AE /* acousticGuitar8.mp3 in Resources */,
 				E90419542A97454400D939AE /* breakingBass1.mp3 in Resources */,
 				E904197B2A9767FA00D939AE /* feverNights2.mp3 in Resources */,
 				E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */,
 				E90419792A9767FA00D939AE /* feverNights6.mp3 in Resources */,
 				E90419802A9767FA00D939AE /* feverNights12.mp3 in Resources */,
 				E90419752A9767FA00D939AE /* feverNights0.mp3 in Resources */,
+				E90419AD2A97EC5F00D939AE /* breakingBass12.mp3 in Resources */,
 				E90419202A9658FC00D939AE /* synth14.wav in Resources */,
 				E90419812A9767FA00D939AE /* feverNights8.mp3 in Resources */,
 				E90419462A968C6000D939AE /* breakingBass8.mp3 in Resources */,
@@ -600,12 +670,13 @@
 				E90419452A968C6000D939AE /* breakingBass9.mp3 in Resources */,
 				E90419242A9658FC00D939AE /* synth0.wav in Resources */,
 				E90419522A97450600D939AE /* breakingBass0.mp3 in Resources */,
-				E904195B2A9745F900D939AE /* breakingBass14.mp3 in Resources */,
 				E904193A2A968AD900D939AE /* breakingBass4.mp3 in Resources */,
 				E90419422A968C6000D939AE /* breakingBass5.mp3 in Resources */,
+				E90419982A97CE2400D939AE /* acousticGuitar4.mp3 in Resources */,
 				E904191D2A9658FC00D939AE /* synth1.wav in Resources */,
 				E904197A2A9767FA00D939AE /* feverNights4.mp3 in Resources */,
 				E90419272A9658FC00D939AE /* synth10.wav in Resources */,
+				E90419A12A97CE2400D939AE /* acousticGuitar14.mp3 in Resources */,
 				E90419282A9658FC00D939AE /* synth6.wav in Resources */,
 				E904191C2A9658FC00D939AE /* synth8.wav in Resources */,
 				E904197E2A9767FA00D939AE /* feverNights7.mp3 in Resources */,
@@ -631,6 +702,7 @@
 				E9A8AEA92A754AB100ED9FD4 /* SliderMenuButtonView.swift in Sources */,
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
+				E90419862A9776DC00D939AE /* Sound.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */,
 				E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */,

@@ -32,16 +32,19 @@ struct ButtonsView: View {
             buttonsSection
                 .blur(radius: (showPalette || showSoundBar) ? 8.0 : 0, opaque: false)
                 .animation(.default, value: showPalette || showSoundBar)
-            if showPalette {
+             
+            
+            if showPalette || showSoundBar {
                 blankView
             }
+            
             palette
-            if showSoundBar {
-                blankView
-            }
+            
             soundBar
+          
             
         }
+        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
@@ -124,7 +127,7 @@ extension ButtonsView {
     
     private var soundBar: some View {
         SoundBarView(isShowingSoundBar: $showSoundBar, selectedSound: $selectedSound)
-            .frame(width: 200, height: 200, alignment: .center)
+            .frame(width: 300, height: 240, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)
