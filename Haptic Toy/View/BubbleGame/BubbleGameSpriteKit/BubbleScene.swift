@@ -73,9 +73,9 @@ class BubblesScene: SKScene {
         }
     }
     
-    override func willMove(from view: SKView) {
-        audioPlayerPool.stopAllPlayers()
-    }
+//    override func willMove(from view: SKView) {
+//        audioPlayerPool.stopAllPlayers()
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         handleTouches(touches)

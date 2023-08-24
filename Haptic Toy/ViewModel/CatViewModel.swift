@@ -15,19 +15,20 @@ class CatViewModel: ObservableObject {
     @Published var intensity: Double = 0
     @Published var showHelp: Bool = false
     @Published var sliderWidth: CGFloat = 0
+    let audioManager = AudioManager()
     
     
     func startGesture() {
         showHearts = true
         HapticManager.startHaptics(intensityValue: Float(intensity))
-        startRepeatingSound(sound: "purring", type: "wav")
+        audioManager.startRepeatingSound(sound: "purring", type: "wav")
     }
     
     func endGesture() {
         showHearts = false
         heartIDs.removeAll()
         HapticManager.stopHaptics()
-        fadeOutSound()
+        audioManager.fadeOutAllSounds()
     }
     
     func onChangeSlider() {

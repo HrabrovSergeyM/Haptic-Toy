@@ -8,7 +8,7 @@
 import Foundation
 
 class BubbleViewModel: ObservableObject {
-    
+    let audioManager = AudioManager()
     @Published var isPopped: Bool = false
     @Published var soundEffects: [String] = ["popBubble1", "popBubble2"]
     @Published var prepopped: [String] = ["softPrepopped", "softPrepopped2", "softPrepopped3", "softPrepopped4"]
@@ -17,7 +17,7 @@ class BubbleViewModel: ObservableObject {
     func popBubble() {
         if !isPopped {
             isPopped = true
-            startSound(sound: "popSound2", type: "mp3")
+            audioManager.startSound(sound: "popSound2", type: "mp3")
             HapticManager.impact(style: .rigid)
         }
     }

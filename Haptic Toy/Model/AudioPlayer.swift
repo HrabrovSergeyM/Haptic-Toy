@@ -4,70 +4,72 @@
 //
 //  Created by Sergey Hrabrov on 24.07.2023.
 //
-// TODO: Refactoring
 
 import Foundation
 import AVFoundation
 
-let audioPlayerPool = AudioPlayerPool()
+class AudioManager {
 
-var audioPlayer: AVAudioPlayer?
-let fadeDuration: TimeInterval = 0.5
-var fadeOutTimer: Timer?
+    private var activeAudioPlayers: [AVAudioPlayer] = []
+    private let fadeDuration: TimeInterval = 0.5
+    private var fadeOutTimers: [Timer] = []
 
-func startRepeatingSound(sound: String, type: String) {
-    resetAudio()
+    func startSound(sound: String, type: String) {
+        guard let path = Bundle.main.path(forResource: sound, ofType: type) else {
+            print("Couldn't find the sound file.")
+            return
+        }
 
-    if let path = Bundle.main.path(forResource: sound, ofType: type) {
         do {
-            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-            audioPlayer?.numberOfLoops = -1
-            audioPlayer?.prepareToPlay()
-            audioPlayer?.play()
+            let audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            activeAudioPlayers.append(audioPlayer)
         } catch {
-            print("Could not find and play the sound file.")
+            print("Error playing the sound file: \(error.localizedDescription)")
         }
     }
-}
 
-func startSound(sound: String, type: String) {
-    resetAudio()
+    // Воспроизведение звука с повторением
+    func startRepeatingSound(sound: String, type: String) {
+        guard let path = Bundle.main.path(forResource: sound, ofType: type) else {
+            print("Couldn't find the sound file.")
+            return
+        }
 
-    guard let path = Bundle.main.path(forResource: sound, ofType: type) else {
-        print("Couldn't find the sound file.")
-        return
-    }
-
-    do {
-        audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
-        audioPlayer?.prepareToPlay()
-        audioPlayer?.play()
-    } catch {
-        print("Error playing the sound file: \(error.localizedDescription)")
-    }
-}
-
-
-func stopSound() {
-    audioPlayer?.stop()
-    audioPlayer = nil
-}
-
-func fadeOutSound() {
-    fadeOutTimer?.invalidate()
-    fadeOutTimer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
-        if audioPlayer?.volume ?? 0 > 0.05 {
-            audioPlayer?.volume -= 0.05
-        } else {
-            timer.invalidate()
-            audioPlayer?.stop()
+        do {
+            let audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer.numberOfLoops = -1
+            audioPlayer.prepareToPlay()
+            audioPlayer.play()
+            activeAudioPlayers.append(audioPlayer)
+        } catch {
+            print("Error playing the sound file: \(error.localizedDescription)")
         }
     }
-  
-}
-func resetAudio() {
-    fadeOutTimer?.invalidate()
-    fadeOutTimer = nil
-    audioPlayer?.stop()
-    audioPlayer = nil
+
+    func stopAllSounds() {
+        for player in activeAudioPlayers {
+            player.stop()
+        }
+        activeAudioPlayers.removeAll()
+    }
+
+    func fadeOutAllSounds() {
+        for player in activeAudioPlayers {
+            let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
+                if player.volume > 0.05 {
+                    player.volume -= 0.05
+                } else {
+                    timer.invalidate()
+                    player.stop()
+                }
+            }
+            fadeOutTimers.append(timer)
+        }
+    }
+
+    func cleanUpFinishedPlayers() {
+        activeAudioPlayers = activeAudioPlayers.filter { $0.isPlaying }
+    }
 }
