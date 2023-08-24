@@ -24,6 +24,7 @@ struct ButtonsSection: View {
     let synthSounds = ["synth0", "synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14"]
     let synthSounds2 = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     var selectedColor: Color
+    var selectedSound: [String]
 
     
     var body: some View {
@@ -37,7 +38,7 @@ struct ButtonsSection: View {
                         let soundIndex = rowIndex * 5 + index
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
                        
-                        audioManager.startSound(sound: synthSounds2[soundIndex], type: "mp3")
+                        audioManager.startSound(sound: selectedSound[soundIndex], type: "mp3")
                         
                         withAnimation {
                             isRippleActive[index].toggle()
@@ -75,7 +76,7 @@ extension ButtonsSection {
     private var backgroundButtons: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(selectedColor)
-            .shadow(color: .primary.opacity(0.35), radius: 3,
+            .shadow(color: selectedColor.opacity(0.35), radius: 3,
                     x: motion != nil ? CGFloat(-motion!.gravity.x * 4) : 0,
                     y: motion != nil ? CGFloat(motion!.gravity.y * 2) : 0
             )
@@ -97,7 +98,7 @@ extension ButtonsSection {
     private var buttons: some View {
         RoundedRectangle(cornerRadius: 5)
             .fill(selectedColor)
-            .shadow(color: .black.opacity(0.15), radius: 2, x: 0, y: 0)
+            .shadow(color: selectedColor.opacity(0.15), radius: 2, x: 0, y: 0)
         
             .frame(width: 50, height: 50)
             .offset(

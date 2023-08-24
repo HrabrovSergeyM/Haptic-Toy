@@ -16,6 +16,8 @@ struct ButtonsView: View {
     @State var motion: CMDeviceMotion? = nil
     @State var showPalette: Bool = false
     @State var selectedColor: Color = Color("ColorGray")
+    @State var showSoundBar: Bool = false
+    @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     let motionManager = CMMotionManager()
     let value: String
     
@@ -28,22 +30,34 @@ struct ButtonsView: View {
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             buttonsSection
-                .blur(radius: showPalette ? 8.0 : 0, opaque: false)
-                .animation(.default, value: showPalette)
-                if showPalette {
-                    blankView
-                }
-                palette
-
+                .blur(radius: (showPalette || showSoundBar) ? 8.0 : 0, opaque: false)
+                .animation(.default, value: showPalette || showSoundBar)
+            if showPalette {
+                blankView
+            }
+            palette
+            if showSoundBar {
+                blankView
+            }
+            soundBar
+            
         }
         .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    showSoundBar = true
+                } label: {
+                    Image(systemName: "music.note.list")
+                }
+                
+            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     showPalette = true
                 } label: {
                     Image(systemName: "paintpalette")
                 }
-
+                
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 ToolbarHelpButton(showHelp: $showHelp)
@@ -53,8 +67,8 @@ struct ButtonsView: View {
             showHelp = !UserDefaults.standard.bool(forKey: "ButtonsView")
             
             if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
-                    selectedColor = Color(savedUIColor)
-                }
+                selectedColor = Color(savedUIColor)
+            }
             
             withAnimation(.easeInOut(duration: 1)) {
                 isStackVisible = true
@@ -87,12 +101,12 @@ struct ButtonsView_Previews: PreviewProvider {
 extension ButtonsView {
     
     private var buttonsSection: some View {
-       
-            VStack(spacing: 20) {
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor)
-                ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor)
-            }
+        
+        VStack(spacing: 20) {
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, selectedSound: selectedSound)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, selectedSound: selectedSound)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, selectedSound: selectedSound)
+        }
         
         
     }
@@ -108,6 +122,17 @@ extension ButtonsView {
             .offset(y: showPalette ? 0 : UIScreen.main.bounds.height)
     }
     
+    private var soundBar: some View {
+        SoundBarView(isShowingSoundBar: $showSoundBar, selectedSound: $selectedSound)
+            .frame(width: 200, height: 200, alignment: .center)
+            .accentColor(.primary)
+            .cornerRadius(20)
+            .shadow(radius: 20)
+            .padding()
+            .animation(.easeInOut, value: showSoundBar)
+            .offset(y: showSoundBar ? 0 : UIScreen.main.bounds.height)
+    }
+    
     private var blankView: some View {
         BlankView(
             backgroundColor: isDarkMode ? .black : .gray,
@@ -116,6 +141,7 @@ extension ButtonsView {
         .onTapGesture {
             withAnimation {
                 showPalette = false
+                showSoundBar = false
             }
         }
     }

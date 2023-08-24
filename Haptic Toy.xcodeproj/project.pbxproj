@@ -41,6 +41,22 @@
 		E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419592A9745F900D939AE /* breakingBass13.mp3 */; };
 		E904195E2A974C1700D939AE /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195D2A974C1700D939AE /* PaletteView.swift */; };
 		E90419602A975C1000D939AE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195F2A975C1000D939AE /* UserDefaults.swift */; };
+		E90419652A97614900D939AE /* SoundBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419642A97614900D939AE /* SoundBarView.swift */; };
+		E90419752A9767FA00D939AE /* feverNights0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419662A9767F900D939AE /* feverNights0.mp3 */; };
+		E90419762A9767FA00D939AE /* feverNights9.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419672A9767F900D939AE /* feverNights9.mp3 */; };
+		E90419772A9767FA00D939AE /* feverNights11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419682A9767F900D939AE /* feverNights11.mp3 */; };
+		E90419782A9767FA00D939AE /* feverNights14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419692A9767F900D939AE /* feverNights14.mp3 */; };
+		E90419792A9767FA00D939AE /* feverNights6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196A2A9767F900D939AE /* feverNights6.mp3 */; };
+		E904197A2A9767FA00D939AE /* feverNights4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196B2A9767F900D939AE /* feverNights4.mp3 */; };
+		E904197B2A9767FA00D939AE /* feverNights2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196C2A9767F900D939AE /* feverNights2.mp3 */; };
+		E904197C2A9767FA00D939AE /* feverNights3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196D2A9767FA00D939AE /* feverNights3.mp3 */; };
+		E904197D2A9767FA00D939AE /* feverNights1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196E2A9767FA00D939AE /* feverNights1.mp3 */; };
+		E904197E2A9767FA00D939AE /* feverNights7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E904196F2A9767FA00D939AE /* feverNights7.mp3 */; };
+		E904197F2A9767FA00D939AE /* feverNights13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419702A9767FA00D939AE /* feverNights13.mp3 */; };
+		E90419802A9767FA00D939AE /* feverNights12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419712A9767FA00D939AE /* feverNights12.mp3 */; };
+		E90419812A9767FA00D939AE /* feverNights8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419722A9767FA00D939AE /* feverNights8.mp3 */; };
+		E90419822A9767FA00D939AE /* feverNights10.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419732A9767FA00D939AE /* feverNights10.mp3 */; };
+		E90419832A9767FA00D939AE /* feverNights5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419742A9767FA00D939AE /* feverNights5.mp3 */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -123,6 +139,22 @@
 		E904195D2A974C1700D939AE /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		E904195F2A975C1000D939AE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E90419632A97609E00D939AE /* synth0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth0.wav; sourceTree = "<group>"; };
+		E90419642A97614900D939AE /* SoundBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundBarView.swift; sourceTree = "<group>"; };
+		E90419662A9767F900D939AE /* feverNights0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights0.mp3; sourceTree = "<group>"; };
+		E90419672A9767F900D939AE /* feverNights9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights9.mp3; sourceTree = "<group>"; };
+		E90419682A9767F900D939AE /* feverNights11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights11.mp3; sourceTree = "<group>"; };
+		E90419692A9767F900D939AE /* feverNights14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights14.mp3; sourceTree = "<group>"; };
+		E904196A2A9767F900D939AE /* feverNights6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights6.mp3; sourceTree = "<group>"; };
+		E904196B2A9767F900D939AE /* feverNights4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights4.mp3; sourceTree = "<group>"; };
+		E904196C2A9767F900D939AE /* feverNights2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights2.mp3; sourceTree = "<group>"; };
+		E904196D2A9767FA00D939AE /* feverNights3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights3.mp3; sourceTree = "<group>"; };
+		E904196E2A9767FA00D939AE /* feverNights1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights1.mp3; sourceTree = "<group>"; };
+		E904196F2A9767FA00D939AE /* feverNights7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights7.mp3; sourceTree = "<group>"; };
+		E90419702A9767FA00D939AE /* feverNights13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights13.mp3; sourceTree = "<group>"; };
+		E90419712A9767FA00D939AE /* feverNights12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights12.mp3; sourceTree = "<group>"; };
+		E90419722A9767FA00D939AE /* feverNights8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights8.mp3; sourceTree = "<group>"; };
+		E90419732A9767FA00D939AE /* feverNights10.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights10.mp3; sourceTree = "<group>"; };
+		E90419742A9767FA00D939AE /* feverNights5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = feverNights5.mp3; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -227,12 +259,35 @@
 			path = synth;
 			sourceTree = "<group>";
 		};
+		E90419842A97680600D939AE /* feverNights */ = {
+			isa = PBXGroup;
+			children = (
+				E90419662A9767F900D939AE /* feverNights0.mp3 */,
+				E904196E2A9767FA00D939AE /* feverNights1.mp3 */,
+				E904196C2A9767F900D939AE /* feverNights2.mp3 */,
+				E904196D2A9767FA00D939AE /* feverNights3.mp3 */,
+				E904196B2A9767F900D939AE /* feverNights4.mp3 */,
+				E90419742A9767FA00D939AE /* feverNights5.mp3 */,
+				E904196A2A9767F900D939AE /* feverNights6.mp3 */,
+				E904196F2A9767FA00D939AE /* feverNights7.mp3 */,
+				E90419722A9767FA00D939AE /* feverNights8.mp3 */,
+				E90419672A9767F900D939AE /* feverNights9.mp3 */,
+				E90419732A9767FA00D939AE /* feverNights10.mp3 */,
+				E90419682A9767F900D939AE /* feverNights11.mp3 */,
+				E90419712A9767FA00D939AE /* feverNights12.mp3 */,
+				E90419702A9767FA00D939AE /* feverNights13.mp3 */,
+				E90419692A9767F900D939AE /* feverNights14.mp3 */,
+			);
+			path = feverNights;
+			sourceTree = "<group>";
+		};
 		E92827152A82000000F5E9AB /* ButtonsView */ = {
 			isa = PBXGroup;
 			children = (
 				E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */,
 				E92827162A82007200F5E9AB /* ButtonsSection.swift */,
 				E904195D2A974C1700D939AE /* PaletteView.swift */,
+				E90419642A97614900D939AE /* SoundBarView.swift */,
 			);
 			path = ButtonsView;
 			sourceTree = "<group>";
@@ -353,6 +408,7 @@
 		E9A8AE9D2A6E968000ED9FD4 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E90419842A97680600D939AE /* feverNights */,
 				E9E778222A78677000FBBE4D /* pop.mp3 */,
 				E90419612A97608700D939AE /* breakingBass */,
 				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
@@ -514,19 +570,30 @@
 				E90419562A97458A00D939AE /* breakingBass11.mp3 in Resources */,
 				E90419212A9658FC00D939AE /* synth9.wav in Resources */,
 				E9A8AE7E2A6D9D8B00ED9FD4 /* Preview Assets.xcassets in Resources */,
+				E90419822A9767FA00D939AE /* feverNights10.mp3 in Resources */,
 				E904191F2A9658FC00D939AE /* synth12.wav in Resources */,
 				E904191E2A9658FC00D939AE /* synth11.wav in Resources */,
+				E904197D2A9767FA00D939AE /* feverNights1.mp3 in Resources */,
 				E904195A2A9745F900D939AE /* breakingBass12.mp3 in Resources */,
+				E904197C2A9767FA00D939AE /* feverNights3.mp3 in Resources */,
 				E90419232A9658FC00D939AE /* synth7.wav in Resources */,
 				E904194C2A968F3700D939AE /* breakingBass10.mp3 in Resources */,
 				E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */,
+				E904197F2A9767FA00D939AE /* feverNights13.mp3 in Resources */,
 				E904192A2A9658FC00D939AE /* synth5.wav in Resources */,
 				E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */,
 				E9E778232A78677000FBBE4D /* pop.mp3 in Resources */,
 				E9A8AE7B2A6D9D8B00ED9FD4 /* Assets.xcassets in Resources */,
+				E90419772A9767FA00D939AE /* feverNights11.mp3 in Resources */,
+				E90419832A9767FA00D939AE /* feverNights5.mp3 in Resources */,
 				E90419542A97454400D939AE /* breakingBass1.mp3 in Resources */,
+				E904197B2A9767FA00D939AE /* feverNights2.mp3 in Resources */,
 				E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */,
+				E90419792A9767FA00D939AE /* feverNights6.mp3 in Resources */,
+				E90419802A9767FA00D939AE /* feverNights12.mp3 in Resources */,
+				E90419752A9767FA00D939AE /* feverNights0.mp3 in Resources */,
 				E90419202A9658FC00D939AE /* synth14.wav in Resources */,
+				E90419812A9767FA00D939AE /* feverNights8.mp3 in Resources */,
 				E90419462A968C6000D939AE /* breakingBass8.mp3 in Resources */,
 				E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */,
 				E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */,
@@ -537,12 +604,16 @@
 				E904193A2A968AD900D939AE /* breakingBass4.mp3 in Resources */,
 				E90419422A968C6000D939AE /* breakingBass5.mp3 in Resources */,
 				E904191D2A9658FC00D939AE /* synth1.wav in Resources */,
+				E904197A2A9767FA00D939AE /* feverNights4.mp3 in Resources */,
 				E90419272A9658FC00D939AE /* synth10.wav in Resources */,
 				E90419282A9658FC00D939AE /* synth6.wav in Resources */,
 				E904191C2A9658FC00D939AE /* synth8.wav in Resources */,
+				E904197E2A9767FA00D939AE /* feverNights7.mp3 in Resources */,
+				E90419762A9767FA00D939AE /* feverNights9.mp3 in Resources */,
 				E90419442A968C6000D939AE /* breakingBass6.mp3 in Resources */,
 				E90419222A9658FC00D939AE /* synth3.wav in Resources */,
 				E9DEDEC32A8D24040093042E /* Launch Screen.storyboard in Resources */,
+				E90419782A9767FA00D939AE /* feverNights14.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +663,7 @@
 				E90419602A975C1000D939AE /* UserDefaults.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
+				E90419652A97614900D939AE /* SoundBarView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
