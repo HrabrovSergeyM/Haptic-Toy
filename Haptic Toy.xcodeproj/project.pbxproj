@@ -39,6 +39,7 @@
 		E904195A2A9745F900D939AE /* breakingBass12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419572A9745F900D939AE /* breakingBass12.mp3 */; };
 		E904195B2A9745F900D939AE /* breakingBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419582A9745F900D939AE /* breakingBass14.mp3 */; };
 		E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419592A9745F900D939AE /* breakingBass13.mp3 */; };
+		E904195E2A974C1700D939AE /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195D2A974C1700D939AE /* PaletteView.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -118,6 +119,7 @@
 		E90419572A9745F900D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass12.mp3; sourceTree = "<group>"; };
 		E90419582A9745F900D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass14.mp3; sourceTree = "<group>"; };
 		E90419592A9745F900D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass13.mp3; sourceTree = "<group>"; };
+		E904195D2A974C1700D939AE /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */,
 				E92827162A82007200F5E9AB /* ButtonsSection.swift */,
+				E904195D2A974C1700D939AE /* PaletteView.swift */,
 			);
 			path = ButtonsView;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				E9637BE22A8B622D00B118A8 /* HomeViewModel.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A2B7462A80032600B933AA /* Strings.swift in Sources */,
+				E904195E2A974C1700D939AE /* PaletteView.swift in Sources */,
 				E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */,
 				E998E10C2A7D82440047530E /* BlankView.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
