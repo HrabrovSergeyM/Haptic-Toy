@@ -10,7 +10,7 @@ import SwiftUI
 struct PaletteView: View {
     @Binding var isShowingPalette: Bool
     @Binding var selectedColor: Color
-    
+    var language = LocalizationService.shared.language
     let colors: [Color] = [
         .purple, .red, .pink,
         .yellow, .mint, .green,
@@ -20,20 +20,31 @@ struct PaletteView: View {
     var body: some View {
         ZStack {
             Color(UIColor.systemGray6).ignoresSafeArea()
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 15) {
-                ForEach(colors, id: \.self) { color in
-                    Button(action: {
-                        self.selectedColor = color
-                        self.isShowingPalette = false
-                    }) {
-                        Rectangle()
-                            .fill(color)
-                            .frame(width: 50, height: 50)
-                            
+            VStack {
+                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 15) {
+                    ForEach(colors, id: \.self) { color in
+                        Button(action: {
+                            self.selectedColor = color
+                                UserDefaults.standard.setColor(color: UIColor(color), forKey: "selectedColor")
+                                self.isShowingPalette = false
+                        }) {
+                            Rectangle()
+                                .fill(color)
+                                .frame(width: 50, height: 50)
+                                
+                        }
                     }
                 }
+                .padding(40)
+                Button {
+                    withAnimation {
+                        isShowingPalette = false
+                    }
+                } label: {
+                    Text("closeButton".localized(language))
+                }
             }
-            .padding(100)
+           
         }
     }
 }

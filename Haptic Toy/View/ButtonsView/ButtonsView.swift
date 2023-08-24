@@ -9,7 +9,7 @@ import SwiftUI
 import CoreMotion
 
 struct ButtonsView: View {
-    
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @Environment(\.colorScheme) var colorScheme
     @State var showHelp: Bool = false
     @State var isStackVisible: Bool = false
@@ -28,15 +28,15 @@ struct ButtonsView: View {
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             buttonsSection
-                .sheet(isPresented: $showPalette, content: {
-                        PaletteView(isShowingPalette: $showPalette, selectedColor: $selectedColor)
-                    })
+                .blur(radius: showPalette ? 8.0 : 0, opaque: false)
+                .animation(.default, value: showPalette)
+                if showPalette {
+                    blankView
+                }
+                palette
 
         }
         .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                ToolbarHelpButton(showHelp: $showHelp)
-            }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     showPalette = true
@@ -45,10 +45,15 @@ struct ButtonsView: View {
                 }
 
             }
-            
+            ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarHelpButton(showHelp: $showHelp)
+            }
         }
         .onAppear {
             showHelp = !UserDefaults.standard.bool(forKey: "ButtonsView")
+            if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
+                    selectedColor = Color(savedUIColor)
+                }
             withAnimation(.easeInOut(duration: 1)) {
                 isStackVisible = true
             }
@@ -85,6 +90,29 @@ extension ButtonsView {
             }
         
         
+    }
+    
+    private var palette: some View {
+        PaletteView(isShowingPalette: $showPalette, selectedColor: $selectedColor)
+            .frame(width: 300, height: 350, alignment: .center)
+            .accentColor(.primary)
+            .cornerRadius(20)
+            .shadow(radius: 20)
+            .padding()
+            .animation(.easeInOut, value: showPalette)
+            .offset(y: showPalette ? 0 : UIScreen.main.bounds.height)
+    }
+    
+    private var blankView: some View {
+        BlankView(
+            backgroundColor: isDarkMode ? .black : .gray,
+            backgroundOpacity: isDarkMode ? 0.3 : 0.5
+        )
+        .onTapGesture {
+            withAnimation {
+                showPalette = false
+            }
+        }
     }
     
 }

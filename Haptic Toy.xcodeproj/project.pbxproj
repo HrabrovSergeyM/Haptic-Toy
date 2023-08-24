@@ -40,6 +40,7 @@
 		E904195B2A9745F900D939AE /* breakingBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419582A9745F900D939AE /* breakingBass14.mp3 */; };
 		E904195C2A9745F900D939AE /* breakingBass13.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419592A9745F900D939AE /* breakingBass13.mp3 */; };
 		E904195E2A974C1700D939AE /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195D2A974C1700D939AE /* PaletteView.swift */; };
+		E90419602A975C1000D939AE /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E904195F2A975C1000D939AE /* UserDefaults.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -120,6 +121,7 @@
 		E90419582A9745F900D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass14.mp3; sourceTree = "<group>"; };
 		E90419592A9745F900D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass13.mp3; sourceTree = "<group>"; };
 		E904195D2A974C1700D939AE /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		E904195F2A975C1000D939AE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A2B7452A80032600B933AA /* Strings.swift */,
+				E904195F2A975C1000D939AE /* UserDefaults.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */,
 				E9A8AE922A6DE69100ED9FD4 /* ButtonsView.swift in Sources */,
 				E98B5C3B2A8BAF4100D6941A /* BubbleViewModel.swift in Sources */,
+				E90419602A975C1000D939AE /* UserDefaults.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
