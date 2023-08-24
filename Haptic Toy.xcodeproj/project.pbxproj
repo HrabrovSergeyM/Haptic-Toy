@@ -122,6 +122,7 @@
 		E90419592A9745F900D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass13.mp3; sourceTree = "<group>"; };
 		E904195D2A974C1700D939AE /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
 		E904195F2A975C1000D939AE /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		E90419632A97609E00D939AE /* synth0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth0.wav; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +183,50 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E90419612A97608700D939AE /* breakingBass */ = {
+			isa = PBXGroup;
+			children = (
+				E90419512A97450600D939AE /* breakingBass0.mp3 */,
+				E90419532A97454400D939AE /* breakingBass1.mp3 */,
+				E90419342A968AD900D939AE /* breakingBass2.mp3 */,
+				E90419322A968AD900D939AE /* breakingBass3.mp3 */,
+				E90419352A968AD900D939AE /* breakingBass4.mp3 */,
+				E904193D2A968C6000D939AE /* breakingBass5.mp3 */,
+				E904193F2A968C6000D939AE /* breakingBass6.mp3 */,
+				E904193E2A968C6000D939AE /* breakingBass7.mp3 */,
+				E90419492A968F3700D939AE /* breakingBass10.mp3 */,
+				E90419552A97458A00D939AE /* breakingBass11.mp3 */,
+				E90419572A9745F900D939AE /* breakingBass12.mp3 */,
+				E90419592A9745F900D939AE /* breakingBass13.mp3 */,
+				E90419582A9745F900D939AE /* breakingBass14.mp3 */,
+				E90419412A968C6000D939AE /* breakingBass8.mp3 */,
+				E90419402A968C6000D939AE /* breakingBass9.mp3 */,
+			);
+			path = breakingBass;
+			sourceTree = "<group>";
+		};
+		E90419622A97609D00D939AE /* synth */ = {
+			isa = PBXGroup;
+			children = (
+				E904190E2A9658FB00D939AE /* synth1.wav */,
+				E90419162A9658FB00D939AE /* synth2.wav */,
+				E90419132A9658FB00D939AE /* synth3.wav */,
+				E90419172A9658FC00D939AE /* synth4.wav */,
+				E904191B2A9658FC00D939AE /* synth5.wav */,
+				E90419192A9658FC00D939AE /* synth6.wav */,
+				E90419142A9658FB00D939AE /* synth7.wav */,
+				E904190D2A9658FB00D939AE /* synth8.wav */,
+				E90419122A9658FB00D939AE /* synth9.wav */,
+				E90419182A9658FC00D939AE /* synth10.wav */,
+				E904190F2A9658FB00D939AE /* synth11.wav */,
+				E90419102A9658FB00D939AE /* synth12.wav */,
+				E904191A2A9658FC00D939AE /* synth13.wav */,
+				E90419112A9658FB00D939AE /* synth14.wav */,
+				E90419632A97609E00D939AE /* synth0.wav */,
+			);
+			path = synth;
+			sourceTree = "<group>";
+		};
 		E92827152A82000000F5E9AB /* ButtonsView */ = {
 			isa = PBXGroup;
 			children = (
@@ -309,36 +354,9 @@
 			isa = PBXGroup;
 			children = (
 				E9E778222A78677000FBBE4D /* pop.mp3 */,
-				E90419512A97450600D939AE /* breakingBass0.mp3 */,
-				E90419532A97454400D939AE /* breakingBass1.mp3 */,
-				E90419342A968AD900D939AE /* breakingBass2.mp3 */,
-				E90419322A968AD900D939AE /* breakingBass3.mp3 */,
-				E90419352A968AD900D939AE /* breakingBass4.mp3 */,
-				E904193D2A968C6000D939AE /* breakingBass5.mp3 */,
-				E904193F2A968C6000D939AE /* breakingBass6.mp3 */,
-				E904193E2A968C6000D939AE /* breakingBass7.mp3 */,
-				E90419492A968F3700D939AE /* breakingBass10.mp3 */,
-				E90419552A97458A00D939AE /* breakingBass11.mp3 */,
-				E90419572A9745F900D939AE /* breakingBass12.mp3 */,
-				E90419592A9745F900D939AE /* breakingBass13.mp3 */,
-				E90419582A9745F900D939AE /* breakingBass14.mp3 */,
-				E90419412A968C6000D939AE /* breakingBass8.mp3 */,
-				E90419402A968C6000D939AE /* breakingBass9.mp3 */,
+				E90419612A97608700D939AE /* breakingBass */,
 				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
-				E904190E2A9658FB00D939AE /* synth1.wav */,
-				E90419162A9658FB00D939AE /* synth2.wav */,
-				E90419132A9658FB00D939AE /* synth3.wav */,
-				E90419172A9658FC00D939AE /* synth4.wav */,
-				E904191B2A9658FC00D939AE /* synth5.wav */,
-				E90419192A9658FC00D939AE /* synth6.wav */,
-				E90419142A9658FB00D939AE /* synth7.wav */,
-				E904190D2A9658FB00D939AE /* synth8.wav */,
-				E90419122A9658FB00D939AE /* synth9.wav */,
-				E90419182A9658FC00D939AE /* synth10.wav */,
-				E904190F2A9658FB00D939AE /* synth11.wav */,
-				E90419102A9658FB00D939AE /* synth12.wav */,
-				E904191A2A9658FC00D939AE /* synth13.wav */,
-				E90419112A9658FB00D939AE /* synth14.wav */,
+				E90419622A97609D00D939AE /* synth */,
 				E90419152A9658FB00D939AE /* synth0.wav */,
 				E9E778362A796C9F00FBBE4D /* pop2.mp3 */,
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,

@@ -51,12 +51,15 @@ struct ButtonsView: View {
         }
         .onAppear {
             showHelp = !UserDefaults.standard.bool(forKey: "ButtonsView")
+            
             if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
                     selectedColor = Color(savedUIColor)
                 }
+            
             withAnimation(.easeInOut(duration: 1)) {
                 isStackVisible = true
             }
+            
             if motionManager.isDeviceMotionAvailable {
                 self.motionManager.deviceMotionUpdateInterval = 1.0 / 60.0
                 self.motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { (data, error) in
@@ -65,7 +68,9 @@ struct ButtonsView: View {
                     }
                 }
             }
+            
             HapticManager.prepareHaptics()
+            
         }
         .sheet(isPresented: $showHelp, content: {
             HelpView(helpText: "helpViewToggle", screenKey: "ButtonsView", isPresented: $showHelp)
