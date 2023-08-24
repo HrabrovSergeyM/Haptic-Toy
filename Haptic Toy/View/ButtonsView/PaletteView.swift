@@ -14,7 +14,8 @@ struct PaletteView: View {
     let colors: [Color] = [
         .purple, .red, .pink,
         .yellow, .mint, .green,
-        .blue, .indigo, .gray
+        .blue, .indigo, .gray,
+        .orange, .cyan, .teal,
     ]
     
     var body: some View {
