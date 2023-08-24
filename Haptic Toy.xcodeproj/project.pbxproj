@@ -73,6 +73,7 @@
 		E90419AB2A97EC5F00D939AE /* breakingBass11.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */; };
 		E90419AC2A97EC5F00D939AE /* breakingBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */; };
 		E90419AD2A97EC5F00D939AE /* breakingBass12.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */; };
+		E90419AF2A97ED3800D939AE /* ButtonsModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419AE2A97ED3800D939AE /* ButtonsModelView.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -187,6 +188,7 @@
 		E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass11.mp3; path = ../../../../breakingBass/breakingBass11.mp3; sourceTree = "<group>"; };
 		E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass14.mp3; path = ../../../../breakingBass/breakingBass14.mp3; sourceTree = "<group>"; };
 		E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass12.mp3; path = ../../../../breakingBass/breakingBass12.mp3; sourceTree = "<group>"; };
+		E90419AE2A97ED3800D939AE /* ButtonsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsModelView.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -515,6 +517,7 @@
 			children = (
 				E9637BDE2A8A95EB00B118A8 /* CatViewModel.swift */,
 				E9637BE12A8B622D00B118A8 /* HomeViewModel.swift */,
+				E90419AE2A97ED3800D939AE /* ButtonsModelView.swift */,
 				E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */,
 			);
 			path = ViewModel;
@@ -735,6 +738,7 @@
 				E90419602A975C1000D939AE /* UserDefaults.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
+				E90419AF2A97ED3800D939AE /* ButtonsModelView.swift in Sources */,
 				E90419652A97614900D939AE /* SoundBarView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
 			);

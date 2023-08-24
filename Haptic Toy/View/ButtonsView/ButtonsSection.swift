@@ -21,8 +21,6 @@ struct ButtonsSection: View {
     var titleWeight: Font.Weight
     var rowIndex: Int
     @State var isRippleActive: [Bool] = Array(repeating: false, count: 5)
-    let synthSounds = ["synth0", "synth1", "synth2", "synth3", "synth4", "synth5", "synth6", "synth7", "synth8", "synth9", "synth10", "synth11", "synth12", "synth13", "synth14"]
-    let synthSounds2 = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     var selectedColor: Color
     var selectedSound: [String]
 

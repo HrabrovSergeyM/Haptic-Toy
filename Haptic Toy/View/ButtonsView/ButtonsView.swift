@@ -11,12 +11,11 @@ import CoreMotion
 struct ButtonsView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @Environment(\.colorScheme) var colorScheme
+    @ObservedObject var buttonsModelView: ButtonsModelView = ButtonsModelView()
     @State var showHelp: Bool = false
     @State var isStackVisible: Bool = false
     @State var motion: CMDeviceMotion? = nil
-    @State var showPalette: Bool = false
     @State var selectedColor: Color = Color("ColorGray")
-    @State var showSoundBar: Bool = false
     @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     let motionManager = CMMotionManager()
     let value: String
@@ -29,41 +28,43 @@ struct ButtonsView: View {
     var body: some View {
         ZStack {
             Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            buttonsSection
-                .blur(radius: (showPalette || showSoundBar) ? 8.0 : 0, opaque: false)
-                .animation(.default, value: showPalette || showSoundBar)
-             
             
-            if showPalette || showSoundBar {
+            buttonsSection
+                .blur(radius: (buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) ? 8.0 : 0, opaque: false)
+                .animation(.default, value: buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar)
+             
+            if buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar {
                 blankView
             }
             
             palette
             
             soundBar
-          
             
         }
         
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    showSoundBar = true
+                    buttonsModelView.isShowingSoundBar = true
                 } label: {
                     Image(systemName: "music.note.list")
                 }
+                .disabled(buttonsModelView.isShowingPalette)
                 
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    showPalette = true
+                    buttonsModelView.isShowingPalette = true
                 } label: {
                     Image(systemName: "paintpalette")
                 }
+                .disabled(buttonsModelView.isShowingSoundBar)
                 
             }
             ToolbarItem(placement: .navigationBarTrailing) {
                 ToolbarHelpButton(showHelp: $showHelp)
+                    .disabled(buttonsModelView.isShowingSoundBar || buttonsModelView.isShowingPalette)
             }
         }
         .onAppear {
@@ -115,25 +116,25 @@ extension ButtonsView {
     }
     
     private var palette: some View {
-        PaletteView(isShowingPalette: $showPalette, selectedColor: $selectedColor)
+        PaletteView(isShowingPalette: $buttonsModelView.isShowingPalette, selectedColor: $selectedColor)
             .frame(width: 300, height: 350, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)
             .padding()
-            .animation(.easeInOut, value: showPalette)
-            .offset(y: showPalette ? 0 : UIScreen.main.bounds.height)
+            .animation(.easeInOut, value: buttonsModelView.isShowingPalette)
+            .offset(y: buttonsModelView.isShowingPalette ? 0 : UIScreen.main.bounds.height)
     }
     
     private var soundBar: some View {
-        SoundBarView(isShowingSoundBar: $showSoundBar, selectedSound: $selectedSound)
+        SoundBarView(isShowingSoundBar: $buttonsModelView.isShowingSoundBar, selectedSound: $selectedSound)
             .frame(width: 300, height: 240, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)
             .padding()
-            .animation(.easeInOut, value: showSoundBar)
-            .offset(y: showSoundBar ? 0 : UIScreen.main.bounds.height)
+            .animation(.easeInOut, value: buttonsModelView.isShowingSoundBar)
+            .offset(y: buttonsModelView.isShowingSoundBar ? 0 : UIScreen.main.bounds.height)
     }
     
     private var blankView: some View {
@@ -143,8 +144,8 @@ extension ButtonsView {
         )
         .onTapGesture {
             withAnimation {
-                showPalette = false
-                showSoundBar = false
+                buttonsModelView.isShowingPalette = false
+                buttonsModelView.isShowingSoundBar = false
             }
         }
     }
