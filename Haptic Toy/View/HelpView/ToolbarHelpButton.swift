@@ -13,6 +13,7 @@ struct ToolbarHelpButton: View {
     
     var body: some View {
             Button(action: {
+                HapticManager.notification(type: .success)
                 showHelp = true
             }, label: {
                 Image(systemName: "questionmark.circle")

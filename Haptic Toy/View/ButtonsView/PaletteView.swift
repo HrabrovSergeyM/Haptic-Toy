@@ -25,6 +25,7 @@ struct PaletteView: View {
                 LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 3), spacing: 15) {
                     ForEach(colors, id: \.self) { color in
                         Button(action: {
+                            HapticManager.impact(style: .light)
                             self.selectedColor = color
                                 UserDefaults.standard.setColor(color: UIColor(color), forKey: "selectedColor")
                                 self.isShowingPalette = false

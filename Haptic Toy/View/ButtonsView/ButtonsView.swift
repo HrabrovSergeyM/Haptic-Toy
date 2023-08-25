@@ -47,6 +47,7 @@ struct ButtonsView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     buttonsModelView.isShowingSoundBar = true
+                    HapticManager.notification(type: .success)
                 } label: {
                     Image(systemName: "music.note.list")
                 }
@@ -56,6 +57,7 @@ struct ButtonsView: View {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
                     buttonsModelView.isShowingPalette = true
+                    HapticManager.notification(type: .success)
                 } label: {
                     Image(systemName: "paintpalette")
                 }

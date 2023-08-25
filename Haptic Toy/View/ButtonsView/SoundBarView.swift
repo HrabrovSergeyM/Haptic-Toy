@@ -22,6 +22,7 @@ struct SoundBarView: View {
                 ForEach(buttonsModelView.sounds, id: \.name) { sound in
                     Button {
                         withAnimation {
+                            HapticManager.impact(style: .light)
                             selectedSound = sound.tracks
                             isShowingSoundBar = false
                         }

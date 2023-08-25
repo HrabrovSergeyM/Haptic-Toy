@@ -42,6 +42,7 @@ struct BubbleGameScreen: View {
                     HStack(spacing: 20) {
                         Button {
                             isTapMode.toggle()
+                            HapticManager.notification(type: .success)
                         } label: {
                             if isTapMode {
                                 Image(systemName: "hand.draw")
