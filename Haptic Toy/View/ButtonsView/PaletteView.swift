@@ -31,8 +31,8 @@ struct PaletteView: View {
                         }) {
                             Rectangle()
                                 .fill(color)
-                                .cornerRadius(8)
-                                .shadow(color: color.opacity(0.15), radius: 2, x: 0, y: 0)
+                                .cornerRadius(5)
+                                .shadow(color: color.opacity(0.15), radius: 3, x: 0, y: 0)
                                 .frame(width: 50, height: 50)
                         }
                     }

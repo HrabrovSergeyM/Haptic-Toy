@@ -30,7 +30,6 @@ class AudioManager {
         }
     }
 
-    // Воспроизведение звука с повторением
     func startRepeatingSound(sound: String, type: String) {
         guard let path = Bundle.main.path(forResource: sound, ofType: type) else {
             print("Couldn't find the sound file.")

@@ -34,6 +34,7 @@ struct ButtonsSection: View {
                     Button(action: {
                         let sharpnessValue = 1.0 - (Float(index) * 0.15)
                         let soundIndex = rowIndex * 5 + index
+//                        print(50 + Double(index) * Double(rowIndex) * 2.5 )
                         HapticManager.playHapticWithIntensity(intensity, sharpness: sharpnessValue)
                        
                         audioManager.startSound(sound: selectedSound[soundIndex], type: "mp3")
@@ -54,7 +55,7 @@ struct ButtonsSection: View {
                         }
                         .overlay(
                             RoundedRectangle(cornerRadius: 5)
-                                .stroke(selectedColor, lineWidth: isRippleActive[index] ? 75 : 0)
+                                .stroke(selectedColor, lineWidth: isRippleActive[index] ? 50 + Double(index) * Double(rowIndex) * 2.5 : 0)
                                 .opacity(isRippleActive[index] ? 0.3 : 0)
                                 .animation(.easeOut(duration: 0.5), value: isRippleActive[index])
                         )
@@ -75,22 +76,22 @@ extension ButtonsSection {
         RoundedRectangle(cornerRadius: 5)
             .fill(selectedColor)
             .shadow(color: selectedColor.opacity(0.35), radius: 3,
-                    x: motion != nil ? CGFloat(-motion!.gravity.x * 4) : 0,
-                    y: motion != nil ? CGFloat(motion!.gravity.y * 2) : 0
+                    x: 0,
+                    y: 0
             )
             .frame(width: 50, height: 50)
         
-            .offset(
-                x: motion != nil ? CGFloat(motion!.gravity.x * 4) : 0,
-                y: motion != nil ? CGFloat(-motion!.gravity.y * 4) : 0
-            )
-            .rotation3DEffect(
-                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
-                axis: (
-                    x: motion != nil ? -motion!.gravity.y : 0,
-                    y: motion != nil ? motion!.gravity.x : 0,
-                    z: 0)
-            )
+//            .offset(
+//                x: motion != nil ? CGFloat(motion!.gravity.x * 4) : 0,
+//                y: motion != nil ? CGFloat(-motion!.gravity.y * 4) : 0
+//            )
+//            .rotation3DEffect(
+//                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 3 / .pi) : .degrees(0),
+//                axis: (
+//                    x: motion != nil ? -motion!.gravity.y : 0,
+//                    y: motion != nil ? motion!.gravity.x : 0,
+//                    z: 0)
+//            )
     }
     
     private var buttons: some View {
@@ -99,17 +100,17 @@ extension ButtonsSection {
             .shadow(color: selectedColor.opacity(0.15), radius: 2, x: 0, y: 0)
         
             .frame(width: 50, height: 50)
-            .offset(
-                x: motion != nil ? CGFloat(motion!.gravity.x * 5) : 0,
-                y: motion != nil ? CGFloat(-motion!.gravity.y * 5) : 0
-            )
-            .rotation3DEffect(
-                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
-                axis: (
-                    x: motion != nil ? -motion!.gravity.y : 0,
-                    y: motion != nil ? motion!.gravity.x : 0,
-                    z: 0)
-            )
+//            .offset(
+//                x: motion != nil ? CGFloat(motion!.gravity.x * 5) : 0,
+//                y: motion != nil ? CGFloat(-motion!.gravity.y * 5) : 0
+//            )
+//            .rotation3DEffect(
+//                motion != nil ? .degrees(Double(motion!.attitude.pitch) * 5 / .pi) : .degrees(0),
+//                axis: (
+//                    x: motion != nil ? -motion!.gravity.y : 0,
+//                    y: motion != nil ? motion!.gravity.x : 0,
+//                    z: 0)
+//            )
     }
     
 }
