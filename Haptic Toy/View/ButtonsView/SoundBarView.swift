@@ -32,7 +32,7 @@ struct SoundBarView: View {
                             Text(sound.name)
                         }
                         .foregroundColor(selectedSound == sound.tracks ? .primary : .gray)
-                        .font(selectedSound == sound.tracks ? .title : .title2)
+                        .font(Font.system(size: selectedSound == sound.tracks ? 28 : 20, weight: .thin, design: .rounded))
                     }
                 }
             }
