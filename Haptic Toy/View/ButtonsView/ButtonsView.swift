@@ -16,6 +16,8 @@ struct ButtonsView: View {
     @State var isStackVisible: Bool = false
     @State var motion: CMDeviceMotion? = nil
     @State var selectedColor: Color = Color("ColorGray")
+    @State var gradientColors: [Color] = [.gray]
+    @State var gradientAngle: GradientAngle = GradientAngle(startPoint: .top, endPoint: .bottom)
     @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     let motionManager = CMMotionManager()
     let value: String
@@ -109,17 +111,17 @@ extension ButtonsView {
     private var buttonsSection: some View {
         
         VStack(spacing: 20) {
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, selectedSound: selectedSound)
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, selectedSound: selectedSound)
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, selectedSound: selectedSound)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
         }
         
         
     }
     
     private var palette: some View {
-        PaletteView(isShowingPalette: $buttonsModelView.isShowingPalette, selectedColor: $selectedColor)
-            .frame(width: 300, height: 400, alignment: .center)
+        PaletteView(isShowingPalette: $buttonsModelView.isShowingPalette, selectedColor: $selectedColor, gradientColors: $gradientColors, gradientAngle: $gradientAngle)
+            .frame(height: 550, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)

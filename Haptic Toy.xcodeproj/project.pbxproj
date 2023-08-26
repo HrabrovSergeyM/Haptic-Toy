@@ -89,6 +89,7 @@
 		E90419CC2A98CE0900D939AE /* studioBass6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419BD2A98CE0800D939AE /* studioBass6.mp3 */; };
 		E90419CD2A98CE0900D939AE /* studioBass0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419BE2A98CE0800D939AE /* studioBass0.mp3 */; };
 		E90419CE2A98CE0900D939AE /* studioBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419BF2A98CE0900D939AE /* studioBass14.mp3 */; };
+		E90419D02A994CDE00D939AE /* GradientAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419CF2A994CDE00D939AE /* GradientAngle.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -219,6 +220,7 @@
 		E90419BD2A98CE0800D939AE /* studioBass6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass6.mp3; sourceTree = "<group>"; };
 		E90419BE2A98CE0800D939AE /* studioBass0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass0.mp3; sourceTree = "<group>"; };
 		E90419BF2A98CE0900D939AE /* studioBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass14.mp3; sourceTree = "<group>"; };
+		E90419CF2A994CDE00D939AE /* GradientAngle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientAngle.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
 				E90419852A9776DC00D939AE /* Sound.swift */,
 				E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */,
+				E90419CF2A994CDE00D939AE /* GradientAngle.swift */,
 				E90418EB2A9384CA00D939AE /* HelpButton.swift */,
 				E99934022A7B4FD500323C4D /* GridElementData.swift */,
 			);
@@ -809,6 +812,7 @@
 				E90419AF2A97ED3800D939AE /* ButtonsModelView.swift in Sources */,
 				E90419652A97614900D939AE /* SoundBarView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
+				E90419D02A994CDE00D939AE /* GradientAngle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
