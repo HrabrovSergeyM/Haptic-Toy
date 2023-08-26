@@ -121,7 +121,7 @@ extension ButtonsView {
     
     private var palette: some View {
         PaletteView(isShowingPalette: $buttonsModelView.isShowingPalette, selectedColor: $selectedColor, gradientColors: $gradientColors, gradientAngle: $gradientAngle)
-            .frame(height: 550, alignment: .center)
+            .frame(height: 500, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)

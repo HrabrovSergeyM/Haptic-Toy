@@ -14,6 +14,14 @@ class ButtonsModelView: ObservableObject {
         Sound(name: "Acoustic Guitar", tracks: ["acousticGuitar0", "acousticGuitar1", "acousticGuitar2", "acousticGuitar3", "acousticGuitar4", "acousticGuitar5", "acousticGuitar6", "acousticGuitar7", "acousticGuitar8", "acousticGuitar9", "acousticGuitar10", "acousticGuitar11", "acousticGuitar12", "acousticGuitar13", "acousticGuitar14"]),
         Sound(name: "Studio Bass", tracks: ["studioBass0", "studioBass1", "studioBass2", "studioBass3", "studioBass4", "studioBass5", "studioBass6", "studioBass7", "studioBass8", "studioBass9", "studioBass10", "studioBass11", "studioBass12", "studioBass13", "studioBass14"])
     ]
+    @Published var gradientAngles: [GradientAngle] = [
+        GradientAngle(startPoint: .topLeading, endPoint: .bottomTrailing),
+        GradientAngle(startPoint: .top, endPoint: .bottom),
+        GradientAngle(startPoint: .topTrailing, endPoint: .bottomLeading),
+        GradientAngle(startPoint: .topTrailing, endPoint: .bottomLeading),
+        GradientAngle(startPoint: .bottom, endPoint: .top),
+        GradientAngle(startPoint: .top, endPoint: .bottomTrailing)
+    ]
     @Published var isShowingPalette: Bool = false
     @Published var isShowingSoundBar: Bool = false
 }

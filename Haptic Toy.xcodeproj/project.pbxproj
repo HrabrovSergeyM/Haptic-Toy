@@ -90,6 +90,7 @@
 		E90419CD2A98CE0900D939AE /* studioBass0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419BE2A98CE0800D939AE /* studioBass0.mp3 */; };
 		E90419CE2A98CE0900D939AE /* studioBass14.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E90419BF2A98CE0900D939AE /* studioBass14.mp3 */; };
 		E90419D02A994CDE00D939AE /* GradientAngle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419CF2A994CDE00D939AE /* GradientAngle.swift */; };
+		E90419D22A9AA29600D939AE /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E90419D12A9AA29600D939AE /* GradientButton.swift */; };
 		E92827172A82007200F5E9AB /* ButtonsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827162A82007200F5E9AB /* ButtonsSection.swift */; };
 		E92827192A8287A000F5E9AB /* SliderHeartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E92827182A8287A000F5E9AB /* SliderHeartView.swift */; };
 		E9636B272A7BF7EE006AF0BB /* DropViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */; };
@@ -221,6 +222,7 @@
 		E90419BE2A98CE0800D939AE /* studioBass0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass0.mp3; sourceTree = "<group>"; };
 		E90419BF2A98CE0900D939AE /* studioBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass14.mp3; sourceTree = "<group>"; };
 		E90419CF2A994CDE00D939AE /* GradientAngle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientAngle.swift; sourceTree = "<group>"; };
+		E90419D12A9AA29600D939AE /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		E92827162A82007200F5E9AB /* ButtonsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsSection.swift; sourceTree = "<group>"; };
 		E92827182A8287A000F5E9AB /* SliderHeartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderHeartView.swift; sourceTree = "<group>"; };
 		E9636B262A7BF7EE006AF0BB /* DropViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropViewDelegate.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				E9A8AE912A6DE69100ED9FD4 /* ButtonsView.swift */,
 				E92827162A82007200F5E9AB /* ButtonsSection.swift */,
 				E904195D2A974C1700D939AE /* PaletteView.swift */,
+				E90419D12A9AA29600D939AE /* GradientButton.swift */,
 				E90419642A97614900D939AE /* SoundBarView.swift */,
 			);
 			path = ButtonsView;
@@ -809,6 +812,7 @@
 				E90419602A975C1000D939AE /* UserDefaults.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
+				E90419D22A9AA29600D939AE /* GradientButton.swift in Sources */,
 				E90419AF2A97ED3800D939AE /* ButtonsModelView.swift in Sources */,
 				E90419652A97614900D939AE /* SoundBarView.swift in Sources */,
 				E9A8AE902A6DE25F00ED9FD4 /* NumberPickerView.swift in Sources */,
