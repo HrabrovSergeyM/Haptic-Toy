@@ -52,22 +52,25 @@ struct PaletteView: View {
                                         HapticManager.impact(style: .light)
                                         gradientColors.append(color)
                                         self.selectedColor = color
-                                        let uiColors = gradientColors.map { UIColor($0) }
-                                        UserDefaults.standard.setColors(colors: uiColors, forKey: "gradientColors")
-                                        
-                                        UserDefaults.standard.setColor(color: UIColor(color), forKey: "selectedColor")
+//                                        let uiColors = gradientColors.map { UIColor($0) }
+//                                        UserDefaults.standard.setColors(colors: uiColors, forKey: "gradientColors")
+//
+//                                        UserDefaults.standard.setColor(color: UIColor(color), forKey: "selectedColor")
                                     }) {
                                         Rectangle()
                                             .fill(color)
-                                            .cornerRadius(5)
-                                            .shadow(color: color.opacity(0.15), radius: 3, x: 0, y: 0)
                                             .frame(width: 50, height: 50)
+                                            .cornerRadius(5)
+                                            .shadow(color: color.opacity(0.5), radius: 3, x: 2, y: 3)
+                                            
                                     }
                                 }
                             }
+                            .frame(height: 75)
                         }
                         .padding(.horizontal, 40)
                         .padding(.vertical, 20)
+                        
                     }
                 }
                 .transition(.slide)
@@ -94,6 +97,7 @@ struct PaletteView: View {
                                .onAppear {
                                    selectedButtonIndex = 1
                                }
+                               .frame(height: 75)
                            }
                         .padding(.horizontal, 40)
                         .padding(.vertical, 20)
@@ -104,6 +108,7 @@ struct PaletteView: View {
                 
                 HStack {
                     Button(action: {
+                        HapticManager.impact(style: .soft)
                         withAnimation {
                             isShowingColors = true
                         }
@@ -114,25 +119,32 @@ struct PaletteView: View {
                             .background(isShowingColors ? .blue : Color.clear)
                             .cornerRadius(15)
                     }
-                    Button(action: {
-                        withAnimation {
-                            isShowingColors = false
+                    if gradientColors.count > 1 {
+                        Button(action: {
+                            HapticManager.impact(style: .soft)
+                            withAnimation {
+                                isShowingColors = false
+                            }
+                        }) {
+                            Text("Gradient")
+                                .padding()
+                                .foregroundColor(!isShowingColors ? .white : .primary)
+                                .background(!isShowingColors ? .blue : Color.clear)
+                                .cornerRadius(15)
                         }
-                    }) {
-                        Text("Gradient")
-                            .padding()
-                            .foregroundColor(!isShowingColors ? .white : .primary)
-                            .background(!isShowingColors ? .blue : Color.clear)
-                            .cornerRadius(15)
                     }
                 }
                 .font(Font.system(size: 18, weight: .thin, design: .rounded))
                 .padding(.bottom, 20)
+                .animation(.spring(), value: gradientColors)
                 
                 HStack {
                     Button(action: {
                         HapticManager.impact(style: .light)
-                        gradientColors = []
+                        withAnimation {
+                            gradientColors = []
+                            isShowingColors = true
+                        }
                     }) {
                         Capsule()
                             .cornerRadius(0)
@@ -151,13 +163,9 @@ struct PaletteView: View {
                     
                     Button {
                         HapticManager.impact(style: .light)
-                        if gradientColors.isEmpty {
-                            showAlert = true
-                        } else {
                             withAnimation {
                                 isShowingPalette = false
                             }
-                        }
                     } label: {
                         Capsule()
                             .cornerRadius(0)
@@ -167,15 +175,13 @@ struct PaletteView: View {
                                 Text("Accept")
                                     .multilineTextAlignment(.center)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                                    
                             })
                             .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
                             .foregroundColor(.primary)
+                            .opacity(gradientColors.isEmpty ? 0.2 : 1)
                     }
-                    .alert(isPresented: $showAlert) {
-                        Alert(title: Text("No Colours"),
-                              message: Text("Please, select one or more colours"),
-                              dismissButton: .default(Text("Ok")))
-                    }
+                    .disabled(gradientColors.isEmpty)
                 }
                 .padding(.horizontal, 40)
                 

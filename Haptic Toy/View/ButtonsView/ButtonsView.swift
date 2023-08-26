@@ -74,9 +74,9 @@ struct ButtonsView: View {
         .onAppear {
             showHelp = !UserDefaults.standard.bool(forKey: "ButtonsView")
             
-            if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
-                selectedColor = Color(savedUIColor)
-            }
+//            if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
+//                selectedColor = Color(savedUIColor)
+//            }
             
             withAnimation(.easeInOut(duration: 1)) {
                 isStackVisible = true
@@ -115,8 +115,6 @@ extension ButtonsView {
             ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
             ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
         }
-        
-        
     }
     
     private var palette: some View {
@@ -148,7 +146,9 @@ extension ButtonsView {
         )
         .onTapGesture {
             withAnimation {
-                buttonsModelView.isShowingPalette = false
+                if !gradientColors.isEmpty {
+                    buttonsModelView.isShowingPalette = false
+                }
                 buttonsModelView.isShowingSoundBar = false
             }
         }

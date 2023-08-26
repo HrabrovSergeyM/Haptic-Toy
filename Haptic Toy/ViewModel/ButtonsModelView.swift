@@ -18,7 +18,7 @@ class ButtonsModelView: ObservableObject {
         GradientAngle(startPoint: .topLeading, endPoint: .bottomTrailing),
         GradientAngle(startPoint: .top, endPoint: .bottom),
         GradientAngle(startPoint: .topTrailing, endPoint: .bottomLeading),
-        GradientAngle(startPoint: .topTrailing, endPoint: .bottomLeading),
+        GradientAngle(startPoint: .bottomLeading, endPoint: .topTrailing),
         GradientAngle(startPoint: .bottom, endPoint: .top),
         GradientAngle(startPoint: .top, endPoint: .bottomTrailing)
     ]
