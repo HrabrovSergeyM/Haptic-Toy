@@ -11,7 +11,7 @@
 "greeting_text" = "Explore Haptics";
 
 "bubbleWrapper" = "Bubble Game";
-"buttonsAndToggles" = "Buttons";
+"buttonsAndToggles" = "Sound Buttons";
 "slider" = "Slider";
 "purr" = "Purr";
 "rollerPicker" = "Roller";
@@ -22,8 +22,12 @@
 "helpViewDrawButton" = "Tap / slice";
 "helpViewDisplayButton" = "Increase field";
 
-//ToggleView
+//ButtonsView
 "helpViewToggle" = "Each button possesses its unique sound and vibration, offering you a new level of interactivity. Find your ideal button.";
+"gradient" = "Gradient";
+"reset" = "Reset";
+"colours" = "Colours";
+"accept" = "Accept";
 
 //SlidersView
 "sliderButton" = "Press and find your ideal style";
@@ -47,7 +51,6 @@
 "closeButton" = "Close";
 
 //Navigation
-
 "backButton" = "Back";
 
 //HomeView

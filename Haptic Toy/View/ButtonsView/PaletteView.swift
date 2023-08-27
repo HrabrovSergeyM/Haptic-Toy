@@ -14,10 +14,10 @@ struct PaletteView: View {
     @Binding var selectedColor: Color
     var language = LocalizationService.shared.language
     let colors: [Color] = [
-        .purple, .red, .pink,
-        .yellow, .mint, .green,
-        .blue, .indigo, .gray,
-        .orange, .cyan, .teal
+        .purple, .red, .teal,
+        .yellow, .gray, .green,
+        .blue, .indigo, .mint,
+        .orange, .cyan, .pink
     ]
     @Binding var gradientColors: [Color]
     @Binding var gradientAngle: GradientAngle
@@ -113,7 +113,7 @@ struct PaletteView: View {
                             isShowingColors = true
                         }
                     }) {
-                        Text("Colours")
+                        Text("colours".localized(language))
                             .padding()
                             .foregroundColor(isShowingColors ? .white : .primary)
                             .background(isShowingColors ? .blue : Color.clear)
@@ -126,7 +126,7 @@ struct PaletteView: View {
                                 isShowingColors = false
                             }
                         }) {
-                            Text("Gradient")
+                            Text("gradient".localized(language))
                                 .padding()
                                 .foregroundColor(!isShowingColors ? .white : .primary)
                                 .background(!isShowingColors ? .blue : Color.clear)
@@ -149,9 +149,9 @@ struct PaletteView: View {
                         Capsule()
                             .cornerRadius(0)
                             .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
-                            .frame(width: 100, height: 50)
+                            .frame(width: 120, height: 50)
                             .overlay(alignment: .center, content: {
-                                Text("Reset")
+                                Text("reset".localized(language))
                                     .multilineTextAlignment(.center)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
                             })
@@ -170,9 +170,9 @@ struct PaletteView: View {
                         Capsule()
                             .cornerRadius(0)
                             .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
-                            .frame(width: 100, height: 50)
+                            .frame(width: 120, height: 50)
                             .overlay(alignment: .center, content: {
-                                Text("Accept")
+                                Text("accept".localized(language))
                                     .multilineTextAlignment(.center)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
                                     
