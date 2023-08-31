@@ -34,7 +34,7 @@ struct ButtonsView: View {
             buttonsSection
                 .blur(radius: (buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) ? 8.0 : 0, opaque: false)
                 .animation(.default, value: buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar)
-             
+            
             if buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar {
                 blankView
             }
@@ -73,10 +73,18 @@ struct ButtonsView: View {
         }
         .onAppear {
             showHelp = !UserDefaults.standard.bool(forKey: "ButtonsView")
+            if let savedColors = UserDefaults.standard.colorsForKey(key: "gradientColors") {
+                gradientColors = savedColors.map { Color($0) }
+            }
             
-//            if let savedUIColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
-//                selectedColor = Color(savedUIColor)
-//            }
+            if let savedColor = UserDefaults.standard.colorForKey(key: "selectedColor") {
+                selectedColor = Color(savedColor)
+            }
+            
+            if let startPoint = UserDefaults.standard.gradientPoint(forKey: "gradientAngleStartPoint"),
+               let endPoint = UserDefaults.standard.gradientPoint(forKey: "gradientAngleEndPoint") {
+                gradientAngle = GradientAngle(startPoint: startPoint.asUnitPoint, endPoint: endPoint.asUnitPoint)
+            }
             
             withAnimation(.easeInOut(duration: 1)) {
                 isStackVisible = true

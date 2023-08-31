@@ -45,7 +45,6 @@ struct ButtonsSection: View {
                             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                                 withAnimation {
                                     isRippleActive[index] = false
-                                    //
                                 }
                             }
                         }

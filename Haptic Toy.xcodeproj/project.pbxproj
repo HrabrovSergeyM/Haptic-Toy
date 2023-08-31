@@ -107,6 +107,8 @@
 		E98B5C3B2A8BAF4100D6941A /* BubbleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */; };
 		E998E10C2A7D82440047530E /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E998E10B2A7D82440047530E /* BlankView.swift */; };
 		E99934032A7B4FD500323C4D /* GridElementData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99934022A7B4FD500323C4D /* GridElementData.swift */; };
+		E99B62192AA0C86100AB75E3 /* UnitPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99B62182AA0C86100AB75E3 /* UnitPoints.swift */; };
+		E99B621B2AA0C87600AB75E3 /* CGPoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99B621A2AA0C87600AB75E3 /* CGPoints.swift */; };
 		E9A2B7462A80032600B933AA /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A2B7452A80032600B933AA /* Strings.swift */; };
 		E9A8AE772A6D9D8800ED9FD4 /* Haptic_ToyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */; };
 		E9A8AE792A6D9D8800ED9FD4 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AE782A6D9D8800ED9FD4 /* HomeView.swift */; };
@@ -241,6 +243,8 @@
 		E98B5C3A2A8BAF4100D6941A /* BubbleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleViewModel.swift; sourceTree = "<group>"; };
 		E998E10B2A7D82440047530E /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
 		E99934022A7B4FD500323C4D /* GridElementData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridElementData.swift; sourceTree = "<group>"; };
+		E99B62182AA0C86100AB75E3 /* UnitPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitPoints.swift; sourceTree = "<group>"; };
+		E99B621A2AA0C87600AB75E3 /* CGPoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoints.swift; sourceTree = "<group>"; };
 		E9A2B7452A80032600B933AA /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		E9A8AE732A6D9D8800ED9FD4 /* Haptic Toy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Haptic Toy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9A8AE762A6D9D8800ED9FD4 /* Haptic_ToyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptic_ToyApp.swift; sourceTree = "<group>"; };
@@ -458,6 +462,8 @@
 				E9A2B7452A80032600B933AA /* Strings.swift */,
 				E9DABB522AA0106800DF86DE /* UIApplications.swift */,
 				E904195F2A975C1000D939AE /* UserDefaults.swift */,
+				E99B62182AA0C86100AB75E3 /* UnitPoints.swift */,
+				E99B621A2AA0C87600AB75E3 /* CGPoints.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -786,6 +792,7 @@
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E90419862A9776DC00D939AE /* Sound.swift in Sources */,
+				E99B62192AA0C86100AB75E3 /* UnitPoints.swift in Sources */,
 				E9DABB512AA009B000DF86DE /* ThemeChangerService.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */,
@@ -799,6 +806,7 @@
 				E998E10C2A7D82440047530E /* BlankView.swift in Sources */,
 				E9A8AE982A6DEFCB00ED9FD4 /* CatView.swift in Sources */,
 				E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */,
+				E99B621B2AA0C87600AB75E3 /* CGPoints.swift in Sources */,
 				E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
 				E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */,

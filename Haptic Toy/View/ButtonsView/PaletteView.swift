@@ -25,6 +25,17 @@ struct PaletteView: View {
     @State private var isShowingColors = true
     @State private var selectedButtonIndex: Int?
     
+    func findGradientAngleIndex(savedGradientAngle: GradientAngle) -> Int? {
+        for (index, gradientAngle) in buttonsModelView.gradientAngles.enumerated() {
+            if gradientAngle.startPoint == savedGradientAngle.startPoint && gradientAngle.endPoint == savedGradientAngle.endPoint {
+                print("Found matching gradient at index: \(index)")
+                return index
+            }
+        }
+        print("No matching gradient found.")
+        return nil
+    }
+    
     var body: some View {
         ZStack {
             Color(UIColor.systemGray6).ignoresSafeArea()
@@ -52,17 +63,17 @@ struct PaletteView: View {
                                         HapticManager.impact(style: .light)
                                         gradientColors.append(color)
                                         self.selectedColor = color
-//                                        let uiColors = gradientColors.map { UIColor($0) }
-//                                        UserDefaults.standard.setColors(colors: uiColors, forKey: "gradientColors")
-//
-//                                        UserDefaults.standard.setColor(color: UIColor(color), forKey: "selectedColor")
+                                        let uiColors = gradientColors.map { UIColor($0) }
+                                        UserDefaults.standard.setColors(colors: uiColors, forKey: "gradientColors")
+                                        UserDefaults.standard.setColor(color: UIColor(selectedColor), forKey: "selectedColor")
+                                      
+                                        
                                     }) {
                                         Rectangle()
                                             .fill(color)
                                             .frame(width: 50, height: 50)
                                             .cornerRadius(5)
                                             .shadow(color: color.opacity(0.5), radius: 3, x: 2, y: 3)
-                                            
                                     }
                                 }
                             }
@@ -79,26 +90,35 @@ struct PaletteView: View {
                 Group {
                     if !isShowingColors {
                         ScrollView(.horizontal, showsIndicators: false) {
-                               HStack {
-                                   ForEach(buttonsModelView.gradientAngles.indices, id: \.self) { index in
-                                       GradientButton(
-                                           gradientColors: gradientColors,
-                                           gradientAngle: buttonsModelView.gradientAngles[index],
-                                           colorScheme: colorScheme,
-                                           isSelected: index == selectedButtonIndex,
-                                           action: {
-                                               HapticManager.impact(style: .light)
-                                               selectedButtonIndex = index
-                                               gradientAngle = buttonsModelView.gradientAngles[index]
-                                           }
-                                       )
-                                   }
-                               }
-                               .onAppear {
-                                   selectedButtonIndex = 1
-                               }
-                               .frame(height: 75)
-                           }
+                            HStack {
+                                ForEach(buttonsModelView.gradientAngles.indices, id: \.self) { index in
+                                    GradientButton(
+                                        gradientColors: gradientColors,
+                                        gradientAngle: buttonsModelView.gradientAngles[index],
+                                        colorScheme: colorScheme,
+                                        isSelected: index == selectedButtonIndex,
+                                        action: {
+                                            HapticManager.impact(style: .light)
+                                            selectedButtonIndex = index
+                                            gradientAngle = buttonsModelView.gradientAngles[index]
+                                            UserDefaults.standard.setAngle(point: gradientAngle.startPoint.asCGPoint, forKey: "gradientAngleStartPoint")
+                                            UserDefaults.standard.setAngle(point: gradientAngle.endPoint.asCGPoint, forKey: "gradientAngleEndPoint")
+                                        }
+                                    )
+                                }
+                            }
+                            .onAppear {
+                                if let startPoint = UserDefaults.standard.gradientPoint(forKey: "gradientAngleStartPoint"),
+                                   let endPoint = UserDefaults.standard.gradientPoint(forKey: "gradientAngleEndPoint") {
+                                    gradientAngle = GradientAngle(startPoint: startPoint.asUnitPoint, endPoint: endPoint.asUnitPoint)
+                                    print("Loaded gradient: start = \(gradientAngle.startPoint), end = \(gradientAngle.endPoint)")
+                                    selectedButtonIndex = findGradientAngleIndex(savedGradientAngle: gradientAngle) ?? 1
+                                } else {
+                                    selectedButtonIndex = 1
+                                }
+                            }
+                            .frame(height: 75)
+                        }
                         .padding(.horizontal, 40)
                         .padding(.vertical, 20)
                     }
@@ -163,9 +183,9 @@ struct PaletteView: View {
                     
                     Button {
                         HapticManager.impact(style: .light)
-                            withAnimation {
-                                isShowingPalette = false
-                            }
+                        withAnimation {
+                            isShowingPalette = false
+                        }
                     } label: {
                         Capsule()
                             .cornerRadius(0)
@@ -175,7 +195,7 @@ struct PaletteView: View {
                                 Text("accept".localized(language))
                                     .multilineTextAlignment(.center)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
-                                    
+                                
                             })
                             .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
                             .foregroundColor(.primary)
