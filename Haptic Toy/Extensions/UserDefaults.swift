@@ -9,6 +9,16 @@ import Foundation
 import SwiftUI
 
 extension UserDefaults {
+    static let selectedSoundNameKey = "selectedSoundName"
+    
+    static var selectedSoundName: String? {
+        get {
+            return UserDefaults.standard.string(forKey: selectedSoundNameKey)
+        }
+        set {
+            UserDefaults.standard.setValue(newValue, forKey: selectedSoundNameKey)
+        }
+    }
     
     func setColor(color: UIColor?, forKey key: String) {
         var colorData: NSData?
@@ -57,12 +67,12 @@ extension UserDefaults {
     }
     
     func setAngle(point: CGPoint, forKey key: String) {
-           let pointData = NSCoder.string(for: point)
-           set(pointData, forKey: key)
-       }
-
-       func gradientPoint(forKey key: String) -> CGPoint? {
-           guard let pointString = string(forKey: key) else { return nil }
-           return NSCoder.cgPoint(for: pointString)
-       }
+        let pointData = NSCoder.string(for: point)
+        set(pointData, forKey: key)
+    }
+    
+    func gradientPoint(forKey key: String) -> CGPoint? {
+        guard let pointString = string(forKey: key) else { return nil }
+        return NSCoder.cgPoint(for: pointString)
+    }
 }

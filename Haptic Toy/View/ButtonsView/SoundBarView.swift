@@ -24,6 +24,7 @@ struct SoundBarView: View {
                         withAnimation {
                             HapticManager.impact(style: .light)
                             selectedSound = sound.tracks
+                            UserDefaults.selectedSoundName = sound.name
                             isShowingSoundBar = false
                         }
                     } label: {
@@ -35,6 +36,12 @@ struct SoundBarView: View {
                         .font(Font.system(size: selectedSound == sound.tracks ? 28 : 20, weight: .thin, design: .rounded))
                     }
                 }
+            }
+        }
+        .onAppear {
+            if let savedSoundName = UserDefaults.selectedSoundName,
+               let sound = buttonsModelView.sounds.first(where: { $0.name == savedSoundName }) {
+                selectedSound = sound.tracks
             }
         }
     }
