@@ -24,6 +24,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+                
                 Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
                 
                 VStack {
@@ -69,7 +70,6 @@ struct HomeView: View {
                 settingsView
                 
             }
-
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: "helpViewHome", screenKey: "HomeView", isPresented: $showHelp)
             })
@@ -111,6 +111,7 @@ extension HomeView {
                 }
                 .padding(20)
         }
+        .background(ThemeChangerController(isDarkMode: $isDarkMode))
     }
     
     private var settingsView: some View {

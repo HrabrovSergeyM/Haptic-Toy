@@ -127,6 +127,8 @@
 		E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */; };
 		E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */; };
 		E9D1BD1A2A8308FE00562287 /* CatShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D1BD192A8308FE00562287 /* CatShape.swift */; };
+		E9DABB512AA009B000DF86DE /* ThemeChangerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DABB502AA009B000DF86DE /* ThemeChangerService.swift */; };
+		E9DABB532AA0106800DF86DE /* UIApplications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DABB522AA0106800DF86DE /* UIApplications.swift */; };
 		E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD1872A7D13F700E03A22 /* LaunchView.swift */; };
 		E9DAD18B2A7D6EC800E03A22 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */; };
 		E9DEDEC32A8D24040093042E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DEDEC22A8D24040093042E /* Launch Screen.storyboard */; };
@@ -260,6 +262,8 @@
 		E9A8AEAC2A755ACD00ED9FD4 /* HelpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelpView.swift; sourceTree = "<group>"; };
 		E9A8AEB02A7580F100ED9FD4 /* ToolbarHelpButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolbarHelpButton.swift; sourceTree = "<group>"; };
 		E9D1BD192A8308FE00562287 /* CatShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatShape.swift; sourceTree = "<group>"; };
+		E9DABB502AA009B000DF86DE /* ThemeChangerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeChangerService.swift; sourceTree = "<group>"; };
+		E9DABB522AA0106800DF86DE /* UIApplications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplications.swift; sourceTree = "<group>"; };
 		E9DAD1862A7CF1CE00E03A22 /* Haptic-Toy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Haptic-Toy-Info.plist"; sourceTree = SOURCE_ROOT; };
 		E9DAD1872A7D13F700E03A22 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -409,6 +413,7 @@
 			isa = PBXGroup;
 			children = (
 				E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */,
+				E9DABB502AA009B000DF86DE /* ThemeChangerService.swift */,
 				E97D9F0D2A80089A00333816 /* LocalizationService.swift */,
 			);
 			path = Services;
@@ -451,6 +456,7 @@
 			isa = PBXGroup;
 			children = (
 				E9A2B7452A80032600B933AA /* Strings.swift */,
+				E9DABB522AA0106800DF86DE /* UIApplications.swift */,
 				E904195F2A975C1000D939AE /* UserDefaults.swift */,
 			);
 			path = Extensions;
@@ -780,10 +786,12 @@
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E90419862A9776DC00D939AE /* Sound.swift in Sources */,
+				E9DABB512AA009B000DF86DE /* ThemeChangerService.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
 				E97D9F112A800FC400333816 /* HomeHeader.swift in Sources */,
 				E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */,
 				E9637BE22A8B622D00B118A8 /* HomeViewModel.swift in Sources */,
+				E9DABB532AA0106800DF86DE /* UIApplications.swift in Sources */,
 				E9A8AE9C2A6E961100ED9FD4 /* AudioPlayer.swift in Sources */,
 				E9A2B7462A80032600B933AA /* Strings.swift in Sources */,
 				E904195E2A974C1700D939AE /* PaletteView.swift in Sources */,

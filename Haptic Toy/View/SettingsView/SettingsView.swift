@@ -54,13 +54,14 @@ struct DarkModeToggleView: View {
             Button {
                 HapticManager.impact(style: .medium)
                 isDarkMode = false
+                
             } label: {
                 Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
                     .font(.title)
                     .frame(width: 42, height: 42)
                     .foregroundColor(isDarkMode ? .gray : .yellow)
             }
-            .animation(.spring(), value: isDarkMode)
+            .animation(.easeIn(duration: 0.5), value: isDarkMode)
             
             Toggle("Dark Mode", isOn: $isDarkMode)
                 .labelsHidden()
@@ -75,7 +76,7 @@ struct DarkModeToggleView: View {
                     .frame(width: 42, height: 42)
                     .foregroundColor(isDarkMode ? .yellow : .gray)
             }
-            .animation(.spring(), value: isDarkMode)
+            .animation(.easeIn(duration: 0.5), value: isDarkMode)
             
         }
     }
@@ -130,7 +131,7 @@ struct IconToggleView: View {
                     .frame(width: 60, height: 60)
                     .cornerRadius(12)
             }
-
+            
             Toggle("Icon", isOn: $isDarkIcon)
                 .labelsHidden()
                 .toggleStyle(SwitchToggleStyle())
@@ -147,7 +148,7 @@ struct IconToggleView: View {
                     .frame(width: 60, height: 60)
                     .cornerRadius(12)
             }
-
+            
         }
     }
     

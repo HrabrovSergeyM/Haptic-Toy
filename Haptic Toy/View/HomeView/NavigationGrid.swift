@@ -35,7 +35,6 @@ struct NavigationGrid: View {
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
         }
         .opacity(isAnimated ? 1 : 0)
-        .offset(y: isAnimated ? 0 : offset)
         .animation(.easeOut(duration: 1.5), value: isAnimated)
     }
 }
