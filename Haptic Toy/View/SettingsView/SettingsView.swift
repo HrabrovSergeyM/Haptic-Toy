@@ -12,7 +12,7 @@ struct SettingsView: View {
     @AppStorage("language")
     private var language = LocalizationService.shared.language
     @State var isEng: Bool = LocalizationService.shared.language == .english_us
-    
+    @State var showTheme: Bool = false
     @Binding var isShowingSettings: Bool
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
@@ -26,33 +26,31 @@ struct SettingsView: View {
                 DarkModeToggleView(isDarkMode: $isDarkMode)
                 LanguageToggleView(isEng: $isEng)
                 IconToggleView(isDarkIcon: $isDarkIcon)
-                
-                    ForEach(themes, id: \.id) { theme in
-                        Button {
-                            withAnimation(.easeIn(duration: 1)) {
-                                self.theme.themeSettings = theme.id
-                            }
-                            UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
-                        } label: {
-                            HStack {
-                                Text(theme.themeName)
-                                Spacer()
-                                Image(systemName: "circle.fill")
-                                    .foregroundColor(theme.themeAccentColor)
-                            } // HStack
-                        } // Button
-                        .accentColor(.primary)
-                    } // ForEach
+                Button {
+                    showTheme = true
+                    
+                } label: {
+                    HStack {
+                        Text("Show themes")
+                        Image(systemName: "chevron.right")
+                    }
+                        .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+                }
                
-                
                 Button {
                     withAnimation {
                         isShowingSettings = false
                     }
                 } label: {
                     Text("closeButton".localized(language))
+                        .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                 }
             }
+            .sheet(isPresented: $showTheme, content: {
+                ColorThemeSelectorView(isSelected: $showTheme)
+            })
         }
     }
     

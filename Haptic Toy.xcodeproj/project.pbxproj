@@ -139,6 +139,8 @@
 		E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E7783C2A79CD4300FBBE4D /* Localizable.strings */; };
 		E9F2AD272AA22A1000504059 /* ColorThemeChangerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD262AA22A1000504059 /* ColorThemeChangerService.swift */; };
 		E9F2AD292AA22A4600504059 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD282AA22A4600504059 /* ColorTheme.swift */; };
+		E9F2AD2B2AA252BE00504059 /* ColorThemeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD2A2AA252BE00504059 /* ColorThemeSelectorView.swift */; };
+		E9F2AD2D2AA252F100504059 /* ColorThemePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD2C2AA252F100504059 /* ColorThemePreview.swift */; };
 		E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */; };
 		E9FF6E652A75B99D00DF9B87 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */; };
 /* End PBXBuildFile section */
@@ -280,6 +282,8 @@
 		E9E7783D2A79CD4900FBBE4D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9F2AD262AA22A1000504059 /* ColorThemeChangerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeChangerService.swift; sourceTree = "<group>"; };
 		E9F2AD282AA22A4600504059 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
+		E9F2AD2A2AA252BE00504059 /* ColorThemeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeSelectorView.swift; sourceTree = "<group>"; };
+		E9F2AD2C2AA252F100504059 /* ColorThemePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemePreview.swift; sourceTree = "<group>"; };
 		E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameScreen.swift; sourceTree = "<group>"; };
 		E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -556,6 +560,8 @@
 			isa = PBXGroup;
 			children = (
 				E9DAD18A2A7D6EC800E03A22 /* SettingsView.swift */,
+				E9F2AD2A2AA252BE00504059 /* ColorThemeSelectorView.swift */,
+				E9F2AD2C2AA252F100504059 /* ColorThemePreview.swift */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -798,6 +804,7 @@
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E90419862A9776DC00D939AE /* Sound.swift in Sources */,
+				E9F2AD2D2AA252F100504059 /* ColorThemePreview.swift in Sources */,
 				E9F2AD292AA22A4600504059 /* ColorTheme.swift in Sources */,
 				E99B62192AA0C86100AB75E3 /* UnitPoints.swift in Sources */,
 				E9DABB512AA009B000DF86DE /* ThemeChangerService.swift in Sources */,
@@ -815,6 +822,7 @@
 				E97D9F0E2A80089A00333816 /* LocalizationService.swift in Sources */,
 				E99B621B2AA0C87600AB75E3 /* CGPoints.swift in Sources */,
 				E971E6242A83829A00536CD2 /* BubbleSprite.swift in Sources */,
+				E9F2AD2B2AA252BE00504059 /* ColorThemeSelectorView.swift in Sources */,
 				E9A8AEA12A6FFAA800ED9FD4 /* NavigationGrid.swift in Sources */,
 				E9A8AEB12A7580F100ED9FD4 /* ToolbarHelpButton.swift in Sources */,
 				E9A8AE942A6DE78E00ED9FD4 /* SlidersView.swift in Sources */,
