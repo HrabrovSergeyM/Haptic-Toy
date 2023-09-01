@@ -137,6 +137,8 @@
 		E9E778232A78677000FBBE4D /* pop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778222A78677000FBBE4D /* pop.mp3 */; };
 		E9E778372A796C9F00FBBE4D /* pop2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E9E778362A796C9F00FBBE4D /* pop2.mp3 */; };
 		E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E7783C2A79CD4300FBBE4D /* Localizable.strings */; };
+		E9F2AD272AA22A1000504059 /* ColorThemeChangerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD262AA22A1000504059 /* ColorThemeChangerService.swift */; };
+		E9F2AD292AA22A4600504059 /* ColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9F2AD282AA22A4600504059 /* ColorTheme.swift */; };
 		E9FF6E632A75B97A00DF9B87 /* BubbleGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */; };
 		E9FF6E652A75B99D00DF9B87 /* BubbleGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */; };
 /* End PBXBuildFile section */
@@ -276,6 +278,8 @@
 		E9E778362A796C9F00FBBE4D /* pop2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pop2.mp3; sourceTree = "<group>"; };
 		E9E7783B2A79CD4300FBBE4D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E9E7783D2A79CD4900FBBE4D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E9F2AD262AA22A1000504059 /* ColorThemeChangerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorThemeChangerService.swift; sourceTree = "<group>"; };
+		E9F2AD282AA22A4600504059 /* ColorTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorTheme.swift; sourceTree = "<group>"; };
 		E9FF6E622A75B97A00DF9B87 /* BubbleGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGameScreen.swift; sourceTree = "<group>"; };
 		E9FF6E642A75B99D00DF9B87 /* BubbleGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleGrid.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -419,6 +423,7 @@
 				E9636B292A7BF85B006AF0BB /* OrderStorageService.swift */,
 				E9DABB502AA009B000DF86DE /* ThemeChangerService.swift */,
 				E97D9F0D2A80089A00333816 /* LocalizationService.swift */,
+				E9F2AD262AA22A1000504059 /* ColorThemeChangerService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -560,6 +565,7 @@
 			children = (
 				E9A8AE852A6DA8FF00ED9FD4 /* HapticManager.swift */,
 				E9A8AE9B2A6E961100ED9FD4 /* AudioPlayer.swift */,
+				E9F2AD282AA22A4600504059 /* ColorTheme.swift */,
 				E90419852A9776DC00D939AE /* Sound.swift */,
 				E971E6292A83F96600536CD2 /* AudioPlayerPool.swift */,
 				E90419CF2A994CDE00D939AE /* GradientAngle.swift */,
@@ -792,6 +798,7 @@
 				E9637BDF2A8A95EB00B118A8 /* CatViewModel.swift in Sources */,
 				E9A8AE862A6DA8FF00ED9FD4 /* HapticManager.swift in Sources */,
 				E90419862A9776DC00D939AE /* Sound.swift in Sources */,
+				E9F2AD292AA22A4600504059 /* ColorTheme.swift in Sources */,
 				E99B62192AA0C86100AB75E3 /* UnitPoints.swift in Sources */,
 				E9DABB512AA009B000DF86DE /* ThemeChangerService.swift in Sources */,
 				E9DAD1882A7D13F700E03A22 /* LaunchView.swift in Sources */,
@@ -828,6 +835,7 @@
 				E90419602A975C1000D939AE /* UserDefaults.swift in Sources */,
 				E9A8AEAD2A755ACD00ED9FD4 /* HelpView.swift in Sources */,
 				E98B5C392A8BAEFA00D6941A /* Bubble.swift in Sources */,
+				E9F2AD272AA22A1000504059 /* ColorThemeChangerService.swift in Sources */,
 				E90419D22A9AA29600D939AE /* GradientButton.swift in Sources */,
 				E90419AF2A97ED3800D939AE /* ButtonsModelView.swift in Sources */,
 				E90419652A97614900D939AE /* SoundBarView.swift in Sources */,

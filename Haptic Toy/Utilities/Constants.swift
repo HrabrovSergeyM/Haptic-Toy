@@ -67,3 +67,10 @@ enum SceneUpdate {
     case updateBubbles
     case noChange
 }
+
+let themeData: [ColorTheme] = [
+    ColorTheme(id: 0, themeName: "Default", themeAccentColor: .primary, themePrimaryColor: Color(UIColor.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground)),
+    ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor")),
+//    ColorTheme(id: 0, themeName: "Pink", themeAccentColor: .pink, themePrimaryColor: .pink, themeSecondaryColor: .pink),
+//    ColorTheme(id: 0, themeName: "Pink", themeAccentColor: .pink, themePrimaryColor: .pink, themeSecondaryColor: .pink),
+]

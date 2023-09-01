@@ -161,6 +161,26 @@ struct IconToggleView: View {
     }
 }
 
+struct ColorThemeSelector: View {
+    var body: some View {
+         let spacing: CGFloat = 40
+        
+         let columns: [GridItem] = [
+            GridItem(.flexible()),
+            GridItem(.flexible()),
+        ]
+        
+        LazyVGrid(
+            columns: columns,
+            alignment: .center,
+            spacing: spacing,
+            pinnedViews: []) {
+               
+                
+            }
+    }
+}
+
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView(isShowingSettings: .constant(false))

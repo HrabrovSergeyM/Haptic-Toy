@@ -11,6 +11,8 @@ struct HomeView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @StateObject var homeViewModel: HomeViewModel = HomeViewModel()
     @State var showHelp: Bool = false
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     private var language = LocalizationService.shared.language
     
@@ -25,7 +27,9 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 
-                Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//                Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+                themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
+//                themes[0].themeSecondaryColor.ignoresSafeArea()
                 
                 VStack {
                     HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
