@@ -14,16 +14,36 @@ struct SettingsView: View {
     @State var isEng: Bool = LocalizationService.shared.language == .english_us
     
     @Binding var isShowingSettings: Bool
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     var body: some View {
         ZStack {
-            Color(UIColor.systemGray6).ignoresSafeArea()
+            themes[self.theme.themeSettings].themePrimaryColor.ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 30) {
                 
                 DarkModeToggleView(isDarkMode: $isDarkMode)
                 LanguageToggleView(isEng: $isEng)
                 IconToggleView(isDarkIcon: $isDarkIcon)
+                
+                    ForEach(themes, id: \.id) { theme in
+                        Button {
+                            withAnimation(.easeIn(duration: 1)) {
+                                self.theme.themeSettings = theme.id
+                            }
+                            UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                        } label: {
+                            HStack {
+                                Text(theme.themeName)
+                                Spacer()
+                                Image(systemName: "circle.fill")
+                                    .foregroundColor(theme.themeAccentColor)
+                            } // HStack
+                        } // Button
+                        .accentColor(.primary)
+                    } // ForEach
+               
                 
                 Button {
                     withAnimation {
@@ -163,9 +183,9 @@ struct IconToggleView: View {
 
 struct ColorThemeSelector: View {
     var body: some View {
-         let spacing: CGFloat = 40
+        let spacing: CGFloat = 40
         
-         let columns: [GridItem] = [
+        let columns: [GridItem] = [
             GridItem(.flexible()),
             GridItem(.flexible()),
         ]
@@ -175,7 +195,7 @@ struct ColorThemeSelector: View {
             alignment: .center,
             spacing: spacing,
             pinnedViews: []) {
-               
+                
                 
             }
     }

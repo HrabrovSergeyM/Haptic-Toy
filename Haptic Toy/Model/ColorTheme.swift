@@ -13,4 +13,5 @@ struct ColorTheme: Identifiable {
     let themeAccentColor: Color
     let themePrimaryColor: Color
     let themeSecondaryColor: Color
+    let themeForegroundColor: Color
 }

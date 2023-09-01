@@ -34,6 +34,7 @@ struct HomeView: View {
                 VStack {
                     HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
                     content
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                         .navigationTitle("")
                         .navigationDestination(for: String.self) { value in
                             switch value {
@@ -120,7 +121,7 @@ extension HomeView {
     
     private var settingsView: some View {
         SettingsView(isShowingSettings: $homeViewModel.isShowingSettings)
-            .frame(width: 300, height: 300, alignment: .center)
+            .frame(width: 300, height: 400, alignment: .center)
             .accentColor(.primary)
             .cornerRadius(20)
             .shadow(radius: 20)

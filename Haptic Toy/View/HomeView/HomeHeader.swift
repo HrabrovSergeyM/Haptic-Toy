@@ -10,10 +10,12 @@ import SwiftUI
 struct HomeHeader: View {
     @Binding var isShowingSettings: Bool
     var language = LocalizationService.shared.language
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     var body: some View {
         RoundedRectangle(cornerRadius: 0)
-            .fill(Color(.systemGray6)).ignoresSafeArea()
+            .fill(themes[self.theme.themeSettings].themePrimaryColor).ignoresSafeArea()
             .frame(height: 60)
             .shadow(color: .black.opacity(0.2), radius: 8, x: 0, y: 2)
             .overlay(
@@ -22,6 +24,7 @@ struct HomeHeader: View {
                     Spacer()
                     Text("greeting_text".localized(language))
                         .font(Font.system(size: 28, weight: .thin, design: .rounded))
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     Spacer()
                     Button {
                         isShowingSettings.toggle()
@@ -31,7 +34,7 @@ struct HomeHeader: View {
                             .resizable()
                             .frame(width: 24, height: 24)
                             .font(.system(.title, design: .rounded))
-                            .foregroundColor(.primary)
+                            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     }
                     .padding(.horizontal)
                 }

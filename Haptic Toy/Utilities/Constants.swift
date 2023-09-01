@@ -69,8 +69,8 @@ enum SceneUpdate {
 }
 
 let themeData: [ColorTheme] = [
-    ColorTheme(id: 0, themeName: "Default", themeAccentColor: .primary, themePrimaryColor: Color(UIColor.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground)),
-    ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor")),
-//    ColorTheme(id: 0, themeName: "Pink", themeAccentColor: .pink, themePrimaryColor: .pink, themeSecondaryColor: .pink),
-//    ColorTheme(id: 0, themeName: "Pink", themeAccentColor: .pink, themePrimaryColor: .pink, themeSecondaryColor: .pink),
+    ColorTheme(id: 0, themeName: "Default", themeAccentColor: .primary, themePrimaryColor: Color(.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground), themeForegroundColor: .primary),
+    ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor"), themeForegroundColor: .white),
+    ColorTheme(id: 2, themeName: "Pink", themeAccentColor: Color("AccentPinkColor"), themePrimaryColor: Color("PrimaryPinkColor"), themeSecondaryColor: Color("SecondaryPinkColor"), themeForegroundColor: .white),
+    ColorTheme(id: 3, themeName: "Green", themeAccentColor: Color("AccentGreenColor"), themePrimaryColor: Color("PrimaryGreenColor"), themeSecondaryColor: Color("SecondaryGreenColor"), themeForegroundColor: .white)
 ]
