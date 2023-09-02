@@ -20,6 +20,9 @@ struct HelpView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
+    
     init(helpText: String, screenKey: String, isPresented: Binding<Bool>, buttons: [HelpButton] = []) {
         self.helpText = helpText
         self.screenKey = screenKey
@@ -29,8 +32,9 @@ struct HelpView: View {
     
     var body: some View {
         ZStack {
-            Color(.systemGray6)
-                .ignoresSafeArea()
+//            Color(.systemGray6)
+//                .ignoresSafeArea()
+            themes[self.theme.themeSettings].themePrimaryColor.ignoresSafeArea()
             VStack {
                 Spacer()
                 Text("helpViewTitle".localized(language))
@@ -73,19 +77,20 @@ struct HelpView: View {
                 }) {
                     Capsule()
                         .cornerRadius(0)
-                        .foregroundColor(colorScheme == .dark ? Color(UIColor.tertiarySystemBackground) : .white)
+                        .foregroundColor(themes[self.theme.themeSettings].themeSecondaryColor)
                         .frame(width: 200, height: 75)
                         .overlay(alignment: .center, content: {
                             Text("helpViewButton".localized(language))
                                 .multilineTextAlignment(.center)
                                 .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                                
                         })
                         .shadow(color: .black.opacity(0.2), radius: 5, x: 2, y: 4)
-                        .foregroundColor(.primary)
                 }
             } // VStack
             .padding()
-            .background(Color(.systemGray6))
+            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+            .background(themes[self.theme.themeSettings].themePrimaryColor)
             .cornerRadius(10)
             .onAppear {
                 withAnimation(.easeInOut(duration: 1)) {

@@ -23,13 +23,12 @@ struct NumberPickerView: View {
         
         ZStack {
             
-//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
             
             ZStack {
                 RoundedRectangle(cornerRadius: 5)
                     .frame(width: UIScreen.main.bounds.size.width - 18, height: 32)
-                    .foregroundColor(themes[self.theme.themeSettings].themeAccentColor)
+                    .foregroundColor(themes[self.theme.themeSettings].id != 0 ? themes[self.theme.themeSettings].themeAccentColor : .gray.opacity(0.1))
                 Picker("", selection: $selection) {
                     ForEach(0..<600, id: \.self) {
                         Text(String(format: "%01d", $0 % 60))
@@ -40,7 +39,6 @@ struct NumberPickerView: View {
                     }
                 } // Picker
             }
-//            .accentColor(.white)
             .pickerStyle(WheelPickerStyle())
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

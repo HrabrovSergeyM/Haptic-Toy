@@ -32,10 +32,11 @@ struct ButtonsView: View {
     var body: some View {
         ZStack {
 //            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            themes[1].themeSecondaryColor.opacity(1).ignoresSafeArea()
+            themes[self.theme.themeSettings].themePrimaryColor.opacity(themes[self.theme.themeSettings].id != 0 ? 0.8 : 1.0).ignoresSafeArea()
             
             buttonsSection
                 
+
                 .blur(radius: (buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) ? 8.0 : 0, opaque: false)
                 .animation(.default, value: buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar)
             
@@ -48,7 +49,6 @@ struct ButtonsView: View {
             soundBar
             
         }
-        
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {

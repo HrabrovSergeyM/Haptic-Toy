@@ -11,7 +11,8 @@ import SwiftUI
 struct Haptic_ToyApp: App {
     @AppStorage("isDarkMode") var isDarkMode: Bool = false
     @AppStorage("appHasBeenLaunchedBefore") var appHasBeenLaunchedBefore: Bool = false
-    
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     @State private var showLaunchView: Bool = true
     
     var body: some Scene {
@@ -24,7 +25,7 @@ struct Haptic_ToyApp: App {
                 }
                 HomeView()
                     .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .accentColor(isDarkMode ? .white : .blue)
+                    .accentColor(themes[self.theme.themeSettings].id != 0 ? themes[self.theme.themeSettings].themeForegroundColor : (isDarkMode ? .white : .blue))
             }
             .onAppear {
                 if !appHasBeenLaunchedBefore {
