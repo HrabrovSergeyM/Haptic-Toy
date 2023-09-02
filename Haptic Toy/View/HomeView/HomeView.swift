@@ -76,6 +76,7 @@ struct HomeView: View {
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: "helpViewHome", screenKey: "HomeView", isPresented: $showHelp)
             })
+            
         }
     }
     

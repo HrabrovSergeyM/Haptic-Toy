@@ -33,6 +33,7 @@ struct ColorThemeSelectorView: View {
                                     self.theme.themeSettings = theme.id
                                 }
                                 UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                print(self.theme.themeSettings)
                             } label: {
                                 ColorThemePreview(image: theme.themePreview)
                             }
