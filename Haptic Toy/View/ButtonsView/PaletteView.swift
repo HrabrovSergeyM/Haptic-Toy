@@ -212,6 +212,6 @@ struct PaletteView: View {
 
 struct PaletteView_Previews: PreviewProvider {
     static var previews: some View {
-        PaletteView(isShowingPalette: .constant(true), selectedColor: .constant(.gray), gradientColors: .constant([.red, .blue]), gradientAngle: .constant(GradientAngle(startPoint: .top, endPoint: .bottom)))
+        PaletteView(isShowingPalette: .constant(true), selectedColor: .constant(.gray), gradientColors: .constant([.green, .blue]), gradientAngle: .constant(GradientAngle(startPoint: .top, endPoint: .bottom)))
     }
 }

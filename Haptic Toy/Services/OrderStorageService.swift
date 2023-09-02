@@ -9,7 +9,7 @@ import Foundation
 
 struct OrderStorageService {
     static func saveOrder(_ gridItems: [GridElementData]) {
-        let ids = gridItems.map { $0.imageName }
+        let ids = gridItems.map { $0.baseImageName }
         UserDefaults.standard.set(ids, forKey: "gridItemsOrder")
     }
 
@@ -17,7 +17,7 @@ struct OrderStorageService {
         if let savedIds = UserDefaults.standard.object(forKey: "gridItemsOrder") as? [String] {
             var orderedItems = [GridElementData]()
             for id in savedIds {
-                if let index = gridItems.firstIndex(where: { $0.imageName == id }) {
+                if let index = gridItems.firstIndex(where: { $0.baseImageName == id }) {
                     orderedItems.append(gridItems[index])
                 }
             }

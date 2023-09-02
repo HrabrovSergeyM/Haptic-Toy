@@ -11,6 +11,8 @@ struct NumberPickerView: View {
     
     @State private var selection = 300
     @State var showHelp: Bool = false
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     let value: String
     init(value: String) {
         self.value = value
@@ -21,13 +23,24 @@ struct NumberPickerView: View {
         
         ZStack {
             
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
             
-            Picker("", selection: $selection) {
-                ForEach(0..<600, id: \.self) {
-                    Text(String(format: "%01d", $0 % 60))
-                }
-            } // Picker
+            ZStack {
+                RoundedRectangle(cornerRadius: 5)
+                    .frame(width: UIScreen.main.bounds.size.width - 18, height: 32)
+                    .foregroundColor(themes[self.theme.themeSettings].themeAccentColor)
+                Picker("", selection: $selection) {
+                    ForEach(0..<600, id: \.self) {
+                        Text(String(format: "%01d", $0 % 60))
+                            .frame(width: 150)
+                            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+                           
+                            
+                    }
+                } // Picker
+            }
+//            .accentColor(.white)
             .pickerStyle(WheelPickerStyle())
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

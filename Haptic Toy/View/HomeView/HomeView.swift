@@ -27,9 +27,7 @@ struct HomeView: View {
         NavigationStack {
             ZStack {
                 
-//                Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
                 themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
-//                themes[0].themeSecondaryColor.ignoresSafeArea()
                 
                 VStack {
                     HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
@@ -99,9 +97,10 @@ extension HomeView {
                 pinnedViews: []) {
                     ForEach(homeViewModel.gridItemsData.indices, id: \.self) { index in
                         let data = homeViewModel.gridItemsData[index]
-                        
+                        let currentImageName = homeViewModel.imageNameForCurrentTheme(baseImageName: data.baseImageName)
+
                         NavigationGrid(destination: data.destination,
-                                       imageName: data.imageName,
+                                       imageName: currentImageName,
                                        text: data.text,
                                        isAnimated: homeViewModel.isAnimated,
                                        offset: CGFloat(data.offset),

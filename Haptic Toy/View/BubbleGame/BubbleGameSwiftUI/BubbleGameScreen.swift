@@ -13,6 +13,8 @@ struct BubbleGameScreen: View {
     @State var isTapMode: Bool = true
     @State private var displayMode: DisplayMode = .standard
     let value: String
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     init(value: String) {
         self.value = value
         print("init: \(value)")
@@ -21,13 +23,15 @@ struct BubbleGameScreen: View {
     var body: some View {
         ZStack {
             
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
             
             VStack {
                 
                 if isTapMode {
                     
                     BubbleGrid(restartKey: $restartKey, displayMode: $displayMode)
+                        
                     
                 } else {
                     

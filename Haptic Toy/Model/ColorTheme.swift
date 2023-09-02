@@ -15,4 +15,5 @@ struct ColorTheme: Identifiable {
     let themeSecondaryColor: Color
     let themeForegroundColor: Color
     let themePreview: String
+    let bubbleNavigationImage: String
 }

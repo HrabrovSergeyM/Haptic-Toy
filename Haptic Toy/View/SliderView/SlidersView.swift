@@ -16,6 +16,8 @@ struct SlidersView: View {
     @State var sliderTitle: String = "Soft"
     @State var titleWeight: Font.Weight = .thin
     @State var showHelp: Bool = false
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     let value: String
     init(value: String) {
         self.value = value
@@ -28,7 +30,8 @@ struct SlidersView: View {
         
         ZStack {
             
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
             
             VStack(spacing: 20) {
                     Spacer()
@@ -37,8 +40,12 @@ struct SlidersView: View {
                         .onChange(of: sliderValue) { newValue in
                             HapticManager.impact(style: hapticStyle.feedbackStyle)
                         }
+//                        .foregroundColor(.red)
+                        .accentColor(themes[self.theme.themeSettings].themeAccentColor)
+                        
                     Text(sliderTitle)
                         .font(Font.system(size: 24, weight: titleWeight, design: .rounded))
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     Spacer()
                     Menu {
                         ForEach(HapticStyle.allCases, id: \.self) { style in
@@ -48,7 +55,8 @@ struct SlidersView: View {
                     } label: {
                         Capsule()
                             .cornerRadius(0)
-                            .foregroundColor(Color(colorScheme == .dark ? .systemGray4 : .white))
+//                            .foregroundColor(Color(colorScheme == .dark ? .systemGray4 : .white))
+                            .foregroundColor(themes[self.theme.themeSettings].themeAccentColor)
                             .frame(width: 200, height: 75)
                             .overlay(alignment: .center, content: {
                                 Text("sliderButton".localized(language))
@@ -58,7 +66,7 @@ struct SlidersView: View {
                             })
                     }
                     .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 2)
-                    .foregroundColor(.primary)
+                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     Spacer()
                 }
                 .padding(.horizontal, 80)

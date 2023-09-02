@@ -12,12 +12,14 @@ struct Bubble: View {
     @ObservedObject var bubbleViewModel: BubbleViewModel = BubbleViewModel()
     @Binding var restartKey: Bool
     @Binding var displayMode: DisplayMode
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     var body: some View {
         Image((bubbleViewModel.isPopped ? bubbleViewModel.popped.randomElement() : bubbleViewModel.prepopped.randomElement())!)
             .resizable()
             .renderingMode(.template)
-            .foregroundColor(.primary)
+            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
             .scaledToFit()
             .onTapGesture {
                 bubbleViewModel.popBubble()

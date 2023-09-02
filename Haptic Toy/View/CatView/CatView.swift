@@ -13,6 +13,8 @@ struct CatView: View {
     var language = LocalizationService.shared.language
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let value: String
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     init(value: String) {
         self.value = value
         print("init: \(value)")
@@ -21,7 +23,8 @@ struct CatView: View {
     var body: some View {
         ZStack {
             
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.backgroundStyle(.ultraThinMaterial).ignoresSafeArea()
             
             VStack {
                 ZStack {
@@ -60,6 +63,7 @@ struct CatView: View {
             })
             
         }
+        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
     }
     
 }
@@ -77,7 +81,7 @@ extension CatView {
         Image("cat")
             .resizable()
             .renderingMode(.template)
-            .foregroundColor(.primary)
+            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
             .frame(width: 220, height: 400)
             .contentShape(CatShape())
             .gesture(

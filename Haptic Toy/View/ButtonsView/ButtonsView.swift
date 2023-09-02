@@ -32,7 +32,7 @@ struct ButtonsView: View {
     var body: some View {
         ZStack {
 //            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            themes[self.theme.themeSettings].themeSecondaryColor.opacity(0.7).ignoresSafeArea()
+            themes[1].themeSecondaryColor.opacity(1).ignoresSafeArea()
             
             buttonsSection
                 
@@ -114,7 +114,9 @@ struct ButtonsView: View {
 
 struct ButtonsView_Previews: PreviewProvider {
     static var previews: some View {
-        ButtonsView(value: "ButtonsView")
+        NavigationStack {
+            ButtonsView(value: "ButtonsView")
+        }
     }
 }
 

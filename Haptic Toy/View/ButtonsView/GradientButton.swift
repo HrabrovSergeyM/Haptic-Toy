@@ -29,6 +29,6 @@ struct GradientButton: View {
 
 struct GradientButton_Previews: PreviewProvider {
     static var previews: some View {
-        GradientButton(gradientColors: [.red, .blue], gradientAngle: GradientAngle(startPoint: .top, endPoint: .bottom), colorScheme: .light, isSelected: true, action: {})
+        GradientButton(gradientColors: [.green, .blue], gradientAngle: GradientAngle(startPoint: .top, endPoint: .bottom), colorScheme: .light, isSelected: true, action: {})
     }
 }
