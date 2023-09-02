@@ -77,7 +77,7 @@ struct DarkModeToggleView: View {
                 Image(systemName: isDarkMode ? "sun.and.horizon" : "sun.max")
                     .font(.title)
                     .frame(width: 42, height: 42)
-                    .foregroundColor(isDarkMode ? .gray : .yellow)
+                    .foregroundColor(isDarkMode ? .gray.opacity(0.3) : .yellow)
             }
             .animation(.easeIn(duration: 0.5), value: isDarkMode)
             
@@ -92,7 +92,7 @@ struct DarkModeToggleView: View {
                 Image(systemName: isDarkMode ? "moon.stars" : "moon.zzz")
                     .font(.title)
                     .frame(width: 42, height: 42)
-                    .foregroundColor(isDarkMode ? .yellow : .gray)
+                    .foregroundColor(isDarkMode ? Color("moonColor") : .gray.opacity(0.3))
             }
             .animation(.easeIn(duration: 0.5), value: isDarkMode)
             
@@ -176,26 +176,6 @@ struct IconToggleView: View {
                 print(error.localizedDescription)
             }
         }
-    }
-}
-
-struct ColorThemeSelector: View {
-    var body: some View {
-        let spacing: CGFloat = 40
-        
-        let columns: [GridItem] = [
-            GridItem(.flexible()),
-            GridItem(.flexible()),
-        ]
-        
-        LazyVGrid(
-            columns: columns,
-            alignment: .center,
-            spacing: spacing,
-            pinnedViews: []) {
-                
-                
-            }
     }
 }
 
