@@ -1,17 +1,28 @@
 {
   "images" : [
     {
+      "filename" : "lightGreenPreview 1.png",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
       "filename" : "lightGreenPreview.png",
-      "idiom" : "universal",
-      "scale" : "1x"
+      "idiom" : "universal"
     },
     {
-      "idiom" : "universal",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "universal",
-      "scale" : "3x"
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "darkGreenPreview.png",
+      "idiom" : "universal"
     }
   ],
   "info" : {

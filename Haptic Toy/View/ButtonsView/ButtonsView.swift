@@ -21,6 +21,8 @@ struct ButtonsView: View {
     @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
     let motionManager = CMMotionManager()
     let value: String
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     init(value: String) {
         self.value = value
@@ -29,9 +31,11 @@ struct ButtonsView: View {
     
     var body: some View {
         ZStack {
-            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.opacity(0.7).ignoresSafeArea()
             
             buttonsSection
+                
                 .blur(radius: (buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) ? 8.0 : 0, opaque: false)
                 .animation(.default, value: buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar)
             
@@ -123,12 +127,13 @@ extension ButtonsView {
             ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
             ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
         }
+        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
     }
     
     private var palette: some View {
         PaletteView(isShowingPalette: $buttonsModelView.isShowingPalette, selectedColor: $selectedColor, gradientColors: $gradientColors, gradientAngle: $gradientAngle)
             .frame(height: 500, alignment: .center)
-            .accentColor(.primary)
+            .accentColor(themes[self.theme.themeSettings].themeForegroundColor)
             .cornerRadius(20)
             .shadow(radius: 20)
             .padding()
@@ -139,7 +144,7 @@ extension ButtonsView {
     private var soundBar: some View {
         SoundBarView(isShowingSoundBar: $buttonsModelView.isShowingSoundBar, selectedSound: $selectedSound)
             .frame(width: 300, height: 240, alignment: .center)
-            .accentColor(.primary)
+            .accentColor(themes[self.theme.themeSettings].themeForegroundColor)
             .cornerRadius(20)
             .shadow(radius: 20)
             .padding()

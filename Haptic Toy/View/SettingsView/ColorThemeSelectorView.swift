@@ -11,7 +11,7 @@ struct ColorThemeSelectorView: View {
     
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
-    let spacing: CGFloat = 10
+    let spacing: CGFloat = 40
     @Binding var isSelected: Bool
     let columns: [GridItem] = [
         GridItem(.flexible()),
@@ -21,26 +21,28 @@ struct ColorThemeSelectorView: View {
     var body: some View {
         ZStack {
             themes[self.theme.themeSettings].themePrimaryColor.opacity(0.7).ignoresSafeArea()
-            LazyVGrid(
-                columns: columns,
-                alignment: .center,
-                spacing: 10,
-                pinnedViews: []) {
-                    ForEach(themes, id: \.id) { theme in
-                        Button {
-                            withAnimation(.linear(duration: 0.5)) {
-                                self.theme.themeSettings = theme.id
+            ScrollView {
+                LazyVGrid(
+                    columns: columns,
+                    alignment: .center,
+                    spacing: spacing,
+                    pinnedViews: []) {
+                        ForEach(themes, id: \.id) { theme in
+                            Button {
+                                withAnimation(.linear(duration: 0.5)) {
+                                    self.theme.themeSettings = theme.id
+                                }
+                                UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                            } label: {
+                                ColorThemePreview(image: theme.themePreview)
                             }
-                            UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
-                        } label: {
-                            ColorThemePreview(lightImage: theme.lightImage, darkImage: theme.darkImage)
-                        }
 
-                    } // ForEach
-                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
-                    
-                }
-                .padding()
+                        } // ForEach
+                        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+                        
+                    }
+                    .padding()
+            }
           
         }
     }

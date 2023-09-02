@@ -8,29 +8,16 @@
 import SwiftUI
 
 struct ColorThemePreview: View {
-    let lightImage: String
-    let darkImage: String
+    let image: String
+    
     var body: some View {
     
             VStack {
-                HStack {
-                    VStack {
-//                        Text("Light")
-                        Image(lightImage)
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .frame(height: 300)
-                    }
-                    VStack {
-//                        Text("Dark")
-                        Image(darkImage)
-                            .resizable()
-                            .scaledToFit()
-                            .cornerRadius(12)
-                            .frame(height: 300)
-                    }
-                }
+                Image(image)
+                    .resizable()
+                    .scaledToFit()
+                    .cornerRadius(12)
+                    .frame(height: 300)
    
             }
         }
@@ -42,6 +29,6 @@ struct ColorThemePreview: View {
 
 struct ColorThemePreview_Previews: PreviewProvider {
     static var previews: some View {
-        ColorThemePreview(lightImage: "lightDefaultPreview", darkImage: "darkDefaultPreview")
+        ColorThemePreview(image: "lightDefaultPreview")
     }
 }
