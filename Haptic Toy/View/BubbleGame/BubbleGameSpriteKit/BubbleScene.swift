@@ -10,6 +10,8 @@ import SwiftUI
 import Swift
 
 class BubblesScene: SKScene {
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     var maxColumns: Int = 15
     var rows: Int = 7
     
@@ -102,11 +104,8 @@ class BubblesScene: SKScene {
     }
     
     func updateColorsForCurrentTheme(using traitCollection: UITraitCollection) {
-        if traitCollection.userInterfaceStyle == .dark {
-            backgroundColor = UIColor.tertiarySystemBackground
-        } else {
-            backgroundColor = UIColor.white
-        }
+
+        backgroundColor = UIColor(themes[self.theme.themeSettings].themeSecondaryColor).resolvedColor(with: traitCollection)
         
         for node in self.children {
             if let bubble = node as? SpriteBubble {
