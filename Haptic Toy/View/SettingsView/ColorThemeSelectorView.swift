@@ -39,21 +39,25 @@ struct ColorThemeSelectorView: View {
                                 UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
                             } label: {
                                 ColorThemePreview(image: theme.themePreview)
-                                    .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 0)
+                                    .shadow(
+                                        color: .black.opacity(self.theme.themeSettings == theme.id ? 0.55 : 0.35),
+                                        radius: self.theme.themeSettings == theme.id ? 10 : 6,
+                                        x: 0,
+                                        y: 0)
                                     .scaleEffect(self.theme.themeSettings == theme.id ? 1.05 : 1.0)
-                                    
-                                   
+                                
+                                
                             }
-
+                            
                         } // ForEach
                         .offset(y: isAnimated ? 0 : 360)
-//                        .opacity(isAnimated ? 1 : 0)
                         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                         
                     }
                     .padding()
+                    .padding(.top, 40)
             }
-            .animation(.spring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.8), value: isAnimated)
+            .animation(.spring(response: 0.9, dampingFraction: 0.6, blendDuration: 0.8), value: isAnimated)
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                     withAnimation {
