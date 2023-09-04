@@ -27,6 +27,7 @@ struct Haptic_ToyApp: App {
                     .preferredColorScheme(isDarkMode ? .dark : .light)
                     .accentColor(themes[self.theme.themeSettings].id != 0 ? themes[self.theme.themeSettings].themeForegroundColor : (isDarkMode ? .white : .blue))
             }
+            .persistentSystemOverlays(.hidden)
             .onAppear {
                 if !appHasBeenLaunchedBefore {
                     if UITraitCollection.current.userInterfaceStyle == .dark {

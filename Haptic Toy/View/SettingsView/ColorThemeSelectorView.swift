@@ -12,7 +12,7 @@ struct ColorThemeSelectorView: View {
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
     let spacing: CGFloat = 40
-    @Binding var isThemesShown: Bool
+    @Binding var isShowingThemes: Bool
     @State var isAnimated: Bool = false
     let columns: [GridItem] = [
         GridItem(.flexible()),
@@ -45,8 +45,6 @@ struct ColorThemeSelectorView: View {
                                         x: 0,
                                         y: 0)
                                     .scaleEffect(self.theme.themeSettings == theme.id ? 1.05 : 1.0)
-                                
-                                
                             }
                             
                         } // ForEach
@@ -57,12 +55,15 @@ struct ColorThemeSelectorView: View {
                     .padding()
                     .padding(.top, 40)
             }
-            .animation(.spring(response: 0.9, dampingFraction: 0.6, blendDuration: 0.8), value: isAnimated)
+            .animation(.spring(response: 0.9, dampingFraction: 0.55, blendDuration: 0.8), value: isAnimated)
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                     withAnimation {
                         isAnimated = true
                     }
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    HapticManager.impact(style: .soft)
                 }
             }
         }
@@ -71,6 +72,6 @@ struct ColorThemeSelectorView: View {
 
 struct ColorThemeSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorThemeSelectorView(isThemesShown: .constant(true))
+        ColorThemeSelectorView(isShowingThemes: .constant(true))
     }
 }

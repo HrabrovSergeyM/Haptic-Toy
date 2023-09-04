@@ -49,6 +49,7 @@
 
 //SettingsView
 "closeButton" = "Close";
+"showThemesButton" = "Show themes";
 
 //Navigation
 "backButton" = "Back";

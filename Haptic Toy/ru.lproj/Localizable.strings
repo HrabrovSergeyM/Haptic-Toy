@@ -49,6 +49,7 @@
 
 //SettingsView
 "closeButton" = "Закрыть";
+"showThemesButton" = "Показать темы";
 
 //Navigation
 "backButton" = "Назад";

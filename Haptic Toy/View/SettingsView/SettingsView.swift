@@ -27,13 +27,13 @@ struct SettingsView: View {
                 LanguageToggleView(isEng: $isEng)
                 IconToggleView(isDarkIcon: $isDarkIcon)
                 Button {
-                    HapticManager.impact(style: .soft)
+//                    HapticManager.impact(style: .soft)
                     withAnimation {
                         showTheme = true
                     }
                 } label: {
                     HStack {
-                        Text("Show themes")
+                        Text("showThemesButton".localized(language))
                         Image(systemName: "chevron.right")
                     }
                         .font(Font.system(size: 20, weight: .thin, design: .rounded))
@@ -52,7 +52,7 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $showTheme, content: {
-                ColorThemeSelectorView(isThemesShown: $showTheme)
+                ColorThemeSelectorView(isShowingThemes: $showTheme)
             })
         }
     }
