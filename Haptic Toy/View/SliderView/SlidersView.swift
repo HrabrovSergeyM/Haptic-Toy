@@ -54,19 +54,21 @@ struct SlidersView: View {
                         }
                     } label: {
                         Capsule()
+                            .fill(themes[self.theme.themeSettings].themeAccentColor)
                             .cornerRadius(0)
 //                            .foregroundColor(Color(colorScheme == .dark ? .systemGray4 : .white))
-                            .foregroundColor(themes[self.theme.themeSettings].themeAccentColor)
+                            
                             .frame(width: 200, height: 75)
                             .overlay(alignment: .center, content: {
                                 Text("sliderButton".localized(language))
                                     .multilineTextAlignment(.center)
+                                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
 
                             })
                     }
                     .shadow(color: .black.opacity(0.2), radius: 5, x: 0, y: 2)
-                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+//                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     Spacer()
                 }
                 .padding(.horizontal, 80)

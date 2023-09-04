@@ -27,8 +27,8 @@ struct SettingsView: View {
                 LanguageToggleView(isEng: $isEng)
                 IconToggleView(isDarkIcon: $isDarkIcon)
                 Button {
+                    HapticManager.impact(style: .soft)
                     showTheme = true
-                    
                 } label: {
                     HStack {
                         Text("Show themes")
@@ -39,6 +39,7 @@ struct SettingsView: View {
                 }
                
                 Button {
+                    HapticManager.impact(style: .light)
                     withAnimation {
                         isShowingSettings = false
                     }

@@ -24,12 +24,15 @@ struct LaunchView: View {
     private static let fontSize: CGFloat = 36
     private static let animationDuration: Double = 1
     
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
+    
     private let timer = Timer.publish(every: animationInterval, on: .main, in: .common).autoconnect()
     
     var body: some View {
         ZStack {
-            Color(UIColor.systemGray6).ignoresSafeArea()
-                .ignoresSafeArea()
+            themes[self.theme.themeSettings].themePrimaryColor.ignoresSafeArea()
+            
             
             VStack {
                 if isLabelVisible {
@@ -78,7 +81,7 @@ extension LaunchView {
         Image("logo")
             .resizable()
             .renderingMode(.template)
-            .foregroundColor(.primary)
+            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
             .scaledToFit()
             .opacity(isLogoVisible ? 1 : 0)
             .animation(
@@ -96,6 +99,7 @@ extension LaunchView {
                     .font(Font.system(size: 36, weight: .thin, design: .rounded))
                     .opacity(isLabelVisible ? 1 : 0)
                     .offset(y: counter == index ? -5 : 0)
+                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
             }
             
         } // HStack

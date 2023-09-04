@@ -24,7 +24,7 @@ struct CatView: View {
         ZStack {
             
 //            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
-            themes[self.theme.themeSettings].themeSecondaryColor.backgroundStyle(.ultraThinMaterial).ignoresSafeArea()
+            themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
             
             VStack {
                 ZStack {
@@ -43,11 +43,13 @@ struct CatView: View {
                 Text("catViewTitle".localized(language))
                     .font(Font.system(size: 22, weight: .thin, design: .rounded))
                     .padding(.bottom, 40)
+                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                 
                 intensitySlider
                 
                 Text("catViewSlider".localized(language))
                     .font(Font.system(size: 20, weight: .thin, design: .rounded))
+                    .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                 
             } // VStack
             .toolbar {
@@ -63,7 +65,7 @@ struct CatView: View {
             })
             
         }
-        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+//        .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
     }
     
 }

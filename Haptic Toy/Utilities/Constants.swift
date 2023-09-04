@@ -69,7 +69,7 @@ enum SceneUpdate {
 }
 
 let themeData: [ColorTheme] = [
-    ColorTheme(id: 0, themeName: "Default", themeAccentColor: .primary, themePrimaryColor: Color(.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground), themeForegroundColor: .primary, themePreview: "lightDefaultPreview", bubbleNavigationImage: ""),
+    ColorTheme(id: 0, themeName: "Default", themeAccentColor: Color("AccentDefaultColor"), themePrimaryColor: Color(.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground), themeForegroundColor: .primary, themePreview: "lightDefaultPreview", bubbleNavigationImage: ""),
     
     ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor"), themeForegroundColor: .white, themePreview: "lightBluePreview", bubbleNavigationImage: ""),
     

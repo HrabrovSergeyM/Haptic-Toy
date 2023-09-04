@@ -29,6 +29,7 @@ struct ColorThemeSelectorView: View {
                     pinnedViews: []) {
                         ForEach(themes, id: \.id) { theme in
                             Button {
+                                HapticManager.impact(style: .soft)
                                 withAnimation(.linear(duration: 0.5)) {
                                     self.theme.themeSettings = theme.id
                                 }

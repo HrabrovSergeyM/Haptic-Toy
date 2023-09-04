@@ -12,11 +12,13 @@ struct SoundBarView: View {
     @Binding var isShowingSoundBar: Bool
     @Binding var selectedSound: [String]
     var language = LocalizationService.shared.language
+    @ObservedObject var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     var body: some View {
         ZStack {
             
-            Color(UIColor.systemGray6).ignoresSafeArea()
+            themes[self.theme.themeSettings].themePrimaryColor.ignoresSafeArea()
             
             VStack(alignment: .leading, spacing: 15) {
                 ForEach(buttonsModelView.sounds, id: \.name) { sound in
@@ -32,7 +34,7 @@ struct SoundBarView: View {
                             Image(systemName: "music.note")
                             Text(sound.name)
                         }
-                        .foregroundColor(selectedSound == sound.tracks ? .primary : .gray)
+                        .foregroundColor(selectedSound == sound.tracks ? themes[self.theme.themeSettings].themeForegroundColor : .gray)
                         .font(Font.system(size: selectedSound == sound.tracks ? 28 : 20, weight: .thin, design: .rounded))
                     }
                 }
