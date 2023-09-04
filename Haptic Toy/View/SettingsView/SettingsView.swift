@@ -28,7 +28,9 @@ struct SettingsView: View {
                 IconToggleView(isDarkIcon: $isDarkIcon)
                 Button {
                     HapticManager.impact(style: .soft)
-                    showTheme = true
+                    withAnimation {
+                        showTheme = true
+                    }
                 } label: {
                     HStack {
                         Text("Show themes")
@@ -50,7 +52,7 @@ struct SettingsView: View {
                 }
             }
             .sheet(isPresented: $showTheme, content: {
-                ColorThemeSelectorView(isSelected: $showTheme)
+                ColorThemeSelectorView(isThemesShown: $showTheme)
             })
         }
     }

@@ -12,7 +12,8 @@ struct ColorThemeSelectorView: View {
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
     let spacing: CGFloat = 40
-    @Binding var isSelected: Bool
+    @Binding var isThemesShown: Bool
+    @State var isAnimated: Bool = false
     let columns: [GridItem] = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -20,7 +21,9 @@ struct ColorThemeSelectorView: View {
     
     var body: some View {
         ZStack {
+            
             themes[self.theme.themeSettings].themePrimaryColor.opacity(0.7).ignoresSafeArea()
+            
             ScrollView {
                 LazyVGrid(
                     columns: columns,
@@ -34,24 +37,36 @@ struct ColorThemeSelectorView: View {
                                     self.theme.themeSettings = theme.id
                                 }
                                 UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
-                                print(self.theme.themeSettings)
                             } label: {
                                 ColorThemePreview(image: theme.themePreview)
+                                    .shadow(color: .black.opacity(0.25), radius: 8, x: 0, y: 0)
+                                    .scaleEffect(self.theme.themeSettings == theme.id ? 1.05 : 1.0)
+                                    
+                                   
                             }
 
                         } // ForEach
+                        .offset(y: isAnimated ? 0 : 360)
+//                        .opacity(isAnimated ? 1 : 0)
                         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                         
                     }
                     .padding()
             }
-          
+            .animation(.spring(response: 0.9, dampingFraction: 0.8, blendDuration: 0.8), value: isAnimated)
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                    withAnimation {
+                        isAnimated = true
+                    }
+                }
+            }
         }
     }
 }
 
 struct ColorThemeSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        ColorThemeSelectorView(isSelected: .constant(true))
+        ColorThemeSelectorView(isThemesShown: .constant(true))
     }
 }
