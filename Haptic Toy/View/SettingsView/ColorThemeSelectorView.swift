@@ -37,6 +37,7 @@ struct ColorThemeSelectorView: View {
                                     self.theme.themeSettings = theme.id
                                 }
                                 UserDefaults.standard.set(self.theme.themeSettings, forKey: "Theme")
+                                isShowingThemes = false
                             } label: {
                                 ColorThemePreview(image: theme.themePreview)
                                     .shadow(
@@ -46,6 +47,7 @@ struct ColorThemeSelectorView: View {
                                         y: 0)
                                     .scaleEffect(self.theme.themeSettings == theme.id ? 1.05 : 1.0)
                             }
+                            .animation(.spring(response: 0.9, dampingFraction: self.theme.themeSettings <= 1 ? 0.55 : 0.525, blendDuration: 0.8), value: isAnimated)
                             
                         } // ForEach
                         .offset(y: isAnimated ? 0 : 360)
@@ -55,7 +57,7 @@ struct ColorThemeSelectorView: View {
                     .padding()
                     .padding(.top, 40)
             }
-            .animation(.spring(response: 0.9, dampingFraction: 0.55, blendDuration: 0.8), value: isAnimated)
+            
             .onAppear {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                     withAnimation {

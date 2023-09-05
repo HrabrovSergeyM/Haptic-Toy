@@ -30,6 +30,7 @@ struct SettingsView: View {
 //                    HapticManager.impact(style: .soft)
                     withAnimation {
                         showTheme = true
+//                        isShowingSettings = false
                     }
                 } label: {
                     HStack {
