@@ -1,7 +1,7 @@
 {
   "images" : [
     {
-      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-02 at 07.53.00.png",
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.40.42.png",
       "idiom" : "universal"
     },
     {
@@ -11,7 +11,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-02 at 07.53.00 1.png",
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.40.42 1.png",
       "idiom" : "universal"
     },
     {
@@ -21,12 +21,69 @@
           "value" : "dark"
         }
       ],
-      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-02 at 07.53.06.png",
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.39.22.png",
       "idiom" : "universal"
+    },
+    {
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.40.42 2.png",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.40.42 3.png",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.39.22 1.png",
+      "idiom" : "universal",
+      "locale" : "en"
+    },
+    {
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.44.48 1.png",
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.44.48.png",
+      "idiom" : "universal",
+      "locale" : "ru"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "Simulator Screenshot - iPhone 14 Pro Max - 2023-09-04 at 18.45.21.png",
+      "idiom" : "universal",
+      "locale" : "ru"
     }
   ],
   "info" : {
     "author" : "xcode",
     "version" : 1
+  },
+  "properties" : {
+    "localizable" : true
   }
 }

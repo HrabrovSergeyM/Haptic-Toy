@@ -73,6 +73,7 @@ struct HomeView: View {
                 settingsView
                 
             }
+//            .statusBarHidden(true)
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: "helpViewHome", screenKey: "HomeView", isPresented: $showHelp)
             })
