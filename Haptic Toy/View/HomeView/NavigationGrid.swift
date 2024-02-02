@@ -24,12 +24,12 @@ struct NavigationGrid: View {
                 Image(imageName)
                     .resizable()
                     .scaledToFit()
-                    .scaleEffect(scaleEffectActive ? 1.05 : 1.0)
-                    .onAppear {
-                        withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {
-                            self.scaleEffectActive.toggle()
-                        }
-                    }
+//                    .scaleEffect(scaleEffectActive ? 1.05 : 1.0)
+//                    .onAppear {
+//                        withAnimation(Animation.easeInOut(duration: 1.0).repeatForever(autoreverses: true).delay(delayTime)) {
+//                            self.scaleEffectActive.toggle()
+//                        }
+//                    }
             }
             Text(text.localized(language))
                 .font(Font.system(size: 24, weight: .thin, design: .rounded))
