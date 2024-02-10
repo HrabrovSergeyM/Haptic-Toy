@@ -8,9 +8,10 @@
 import SwiftUI
 
 final public class ColorThemeChangerService: ObservableObject {
-    @Published public var themeSettings: Int = UserDefaults.standard.integer(forKey: "Theme") {
+    private static let themeKey = "Theme"
+    @Published public var themeSettings: Int = UserDefaults.standard.integer(forKey: themeKey) {
         didSet {
-            UserDefaults.standard.set(self.themeSettings, forKey: "Theme")
+            UserDefaults.standard.set(self.themeSettings, forKey: ColorThemeChangerService.themeKey)
         }
     }
     private init() {}
