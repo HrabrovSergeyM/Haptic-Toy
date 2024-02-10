@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SlidersView: View {
-    @AppStorage("language")
+    @AppStorage(LocalizationService.languageKey)
     var language = LocalizationService.shared.language
     
     @State var sliderValue: Double = 0

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CatView: View {
     @StateObject  var catViewModel: CatViewModel = CatViewModel()
-    @AppStorage("language")
+    @AppStorage(LocalizationService.languageKey)
     var language = LocalizationService.shared.language
     let timer = Timer.publish(every: 0.2, on: .main, in: .common).autoconnect()
     let value: String

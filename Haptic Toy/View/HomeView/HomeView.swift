@@ -36,15 +36,15 @@ struct HomeView: View {
                         .navigationTitle("")
                         .navigationDestination(for: String.self) { value in
                             switch value {
-                            case "BubbleGameScreen":
-                                BubbleGameScreen(value: "BubbleGameScreen")
-                            case "CatView":
+                            case GridDestination.bubbleGameScreen.rawValue:
+                                BubbleGameScreen(value: "BubbleGameView")
+                            case GridDestination.catView.rawValue:
                                 CatView(value: "CatView")
-                            case "ButtonsView":
+                            case GridDestination.buttonsView.rawValue:
                                 ButtonsView(value: "ButtonsView")
-                            case "SlidersView":
+                            case GridDestination.slidersView.rawValue:
                                 SlidersView(value: "SlidersView")
-                            case "NumberPickerView":
+                            case GridDestination.numberPickerView.rawValue:
                                 NumberPickerView(value: "NumberPickerView")
                             default:
                                 (Text("Not Found"))
@@ -73,7 +73,7 @@ struct HomeView: View {
                 settingsView
                 
             }
-//            .statusBarHidden(true)
+            //            .statusBarHidden(true)
             .sheet(isPresented: $showHelp, content: {
                 HelpView(helpText: "helpViewHome", screenKey: "HomeView", isPresented: $showHelp)
             })
@@ -100,7 +100,7 @@ extension HomeView {
                     ForEach(homeViewModel.gridItemsData.indices, id: \.self) { index in
                         let data = homeViewModel.gridItemsData[index]
                         let currentImageName = homeViewModel.imageNameForCurrentTheme(baseImageName: data.baseImageName.rawValue)
-
+                        
                         NavigationGrid(destination: data.destination.rawValue,
                                        imageName: currentImageName,
                                        text: data.text.rawValue,

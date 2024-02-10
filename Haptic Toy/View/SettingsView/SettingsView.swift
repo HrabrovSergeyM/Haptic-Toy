@@ -9,7 +9,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     @AppStorage("isDarkIcon") var isDarkIcon: Bool = false
-    @AppStorage("language")
+    @AppStorage(LocalizationService.languageKey)
     private var language = LocalizationService.shared.language
     @State var isEng: Bool = LocalizationService.shared.language == .english_us
     @State var showTheme: Bool = false

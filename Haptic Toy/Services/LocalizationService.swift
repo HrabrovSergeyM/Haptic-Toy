@@ -11,7 +11,7 @@ class LocalizationService {
     
     static let shared = LocalizationService()
     static let changedLanguage = Notification.Name("changedLanguage")
-    private static let languageKey = "language"
+    static let languageKey = "language"
     
     private init() {
         checkForLanguageChange()

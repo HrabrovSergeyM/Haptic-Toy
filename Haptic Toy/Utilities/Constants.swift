@@ -69,11 +69,11 @@ enum SceneUpdate {
 }
 
 let themeData: [ColorTheme] = [
-    ColorTheme(id: 0, themeName: "Default", themeAccentColor: Color("AccentDefaultColor"), themePrimaryColor: Color(.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground), themeForegroundColor: .primary, themePreview: "lightDefaultPreview", bubbleNavigationImage: ""),
+    ColorTheme(id: 0, themeName: "Default", themeAccentColor: Color("AccentDefaultColor"), themePrimaryColor: Color(.systemGray6), themeSecondaryColor: Color(UIColor.tertiarySystemBackground), themeForegroundColor: .primary, themePreview: "lightDefaultPreview"),
     
-    ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor"), themeForegroundColor: .white, themePreview: "lightBluePreview", bubbleNavigationImage: ""),
+    ColorTheme(id: 1, themeName: "Blue", themeAccentColor: Color("AccentBlueColor"), themePrimaryColor: Color("PrimaryBlueColor"), themeSecondaryColor: Color("SecondaryBlueColor"), themeForegroundColor: .white, themePreview: "lightBluePreview"),
     
-    ColorTheme(id: 2, themeName: "Pink", themeAccentColor: Color("AccentPinkColor"), themePrimaryColor: Color("PrimaryPinkColor"), themeSecondaryColor: Color("SecondaryPinkColor"), themeForegroundColor: .white, themePreview: "lightPinkPreview", bubbleNavigationImage: ""),
+    ColorTheme(id: 2, themeName: "Pink", themeAccentColor: Color("AccentPinkColor"), themePrimaryColor: Color("PrimaryPinkColor"), themeSecondaryColor: Color("SecondaryPinkColor"), themeForegroundColor: .white, themePreview: "lightPinkPreview"),
     
-    ColorTheme(id: 3, themeName: "Green", themeAccentColor: Color("AccentGreenColor"), themePrimaryColor: Color("PrimaryGreenColor"), themeSecondaryColor: Color("SecondaryGreenColor"), themeForegroundColor: .white, themePreview: "lightGreenPreview", bubbleNavigationImage: "")
+    ColorTheme(id: 3, themeName: "Green", themeAccentColor: Color("AccentGreenColor"), themePrimaryColor: Color("PrimaryGreenColor"), themeSecondaryColor: Color("SecondaryGreenColor"), themeForegroundColor: .white, themePreview: "lightGreenPreview")
 ]
