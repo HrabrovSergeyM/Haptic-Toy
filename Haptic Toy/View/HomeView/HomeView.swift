@@ -99,11 +99,11 @@ extension HomeView {
                 pinnedViews: []) {
                     ForEach(homeViewModel.gridItemsData.indices, id: \.self) { index in
                         let data = homeViewModel.gridItemsData[index]
-                        let currentImageName = homeViewModel.imageNameForCurrentTheme(baseImageName: data.baseImageName)
+                        let currentImageName = homeViewModel.imageNameForCurrentTheme(baseImageName: data.baseImageName.rawValue)
 
-                        NavigationGrid(destination: data.destination,
+                        NavigationGrid(destination: data.destination.rawValue,
                                        imageName: currentImageName,
-                                       text: data.text,
+                                       text: data.text.rawValue,
                                        isAnimated: homeViewModel.isAnimated,
                                        offset: CGFloat(data.offset),
                                        delayTime: Double(data.delayTime))

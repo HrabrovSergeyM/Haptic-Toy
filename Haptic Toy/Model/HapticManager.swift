@@ -15,6 +15,11 @@ class HapticManager {
     static var player: CHHapticAdvancedPatternPlayer?
     static var isPlaying: Bool = false
     
+    static let initialIntensity: Float = 0.0
+    static let intensityIncrement: Float = 0.1
+    static let relativeTimeIncrement: Float = 1.0
+    static let durationBeforeRepeat: TimeInterval = 2.0
+    
     static func notification(type: UINotificationFeedbackGenerator.FeedbackType) {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(type)
@@ -54,17 +59,17 @@ class HapticManager {
         guard CHHapticEngine.capabilitiesForHardware().supportsHaptics else { return }
         var events = [CHHapticEvent]()
         
-        for i in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? Float(i))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(i))
-            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: i)
+        for i in stride(from: initialIntensity, to: 1.0, by: intensityIncrement) {
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? i)
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: i)
+            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: TimeInterval(i))
             events.append(event)
         }
         
-        for i in stride(from: 0, to: 1, by: 0.1) {
-            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? Float(1 - i))
-            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1 - i))
-            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: 1 + i)
+        for i in stride(from: initialIntensity, to: 1.0, by: intensityIncrement) {
+            let intensity = CHHapticEventParameter(parameterID: .hapticIntensity, value: intensityValue ?? Float(1.0 - i))
+            let sharpness = CHHapticEventParameter(parameterID: .hapticSharpness, value: Float(1.0 - i))
+            let event = CHHapticEvent(eventType: .hapticTransient, parameters: [intensity, sharpness], relativeTime: Double(relativeTimeIncrement) + TimeInterval(i))
             events.append(event)
         }
         
@@ -105,7 +110,7 @@ class HapticManager {
     }
     
     private static func repeatHaptics() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + durationBeforeRepeat) {
             guard self.isPlaying else { return }
             try? self.player?.start(atTime: 0)
             self.repeatHaptics()

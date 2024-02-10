@@ -19,7 +19,7 @@ struct OrderStorageService {
         if let savedIds = UserDefaults.standard.object(forKey: orderKey) as? [String] {
             var orderedItems = [GridElementData]()
             for id in savedIds {
-                if let index = gridItems.firstIndex(where: { $0.baseImageName == id }) {
+                if let index = gridItems.firstIndex(where: { $0.baseImageName.rawValue == id }) {
                     orderedItems.append(gridItems[index])
                 }
             }

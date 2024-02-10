@@ -12,6 +12,7 @@ class AudioManager {
 
     private var activeAudioPlayers: [AVAudioPlayer] = []
     private let fadeDuration: TimeInterval = 0.5
+    private let fadeOutStep: Float = 0.05
     private var fadeOutTimers: [Timer] = []
 
     func startSound(sound: String, type: String) {
@@ -56,9 +57,9 @@ class AudioManager {
 
     func fadeOutAllSounds() {
         for player in activeAudioPlayers {
-            let timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true) { timer in
-                if player.volume > 0.05 {
-                    player.volume -= 0.05
+            let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(fadeOutStep), repeats: true) { [self] timer in
+                if player.volume > fadeOutStep {
+                    player.volume -= fadeOutStep
                 } else {
                     timer.invalidate()
                     player.stop()

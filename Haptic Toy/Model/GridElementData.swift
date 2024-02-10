@@ -18,9 +18,33 @@ import SwiftUI
 //}
 struct GridElementData {
     let id: UUID
-    let destination: String
-    let baseImageName: String 
-    let text: String
+    let destination: GridDestination
+    let baseImageName: GridBaseImageName
+    let text: GridText
     let offset: CGFloat
     let delayTime: Int
+}
+
+enum GridDestination: String {
+    case bubbleGameScreen = "BubbleGameScreen"
+    case catView = "CatView"
+    case buttonsView = "ButtonsView"
+    case slidersView = "SlidersView"
+    case numberPickerView = "NumberPickerView"
+}
+
+enum GridBaseImageName: String {
+    case bubbleWrapper = "bubbleWrapper"
+    case catNavigation = "catNavigation"
+    case toggles = "toggles"
+    case slider = "slider"
+    case numberPicker = "numberPicker"
+}
+
+enum GridText: String {
+    case bubbleWrapper = "bubbleWrapper"
+    case purr = "purr"
+    case buttonsAndToggles = "buttonsAndToggles"
+    case slider = "slider"
+    case rollerPicker = "rollerPicker"
 }
