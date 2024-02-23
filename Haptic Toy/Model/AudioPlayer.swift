@@ -57,12 +57,17 @@ class AudioManager {
 
     func fadeOutAllSounds() {
         for player in activeAudioPlayers {
-            let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(fadeOutStep), repeats: true) { [self] timer in
+            let timer = Timer.scheduledTimer(withTimeInterval: TimeInterval(fadeOutStep), repeats: true) { [weak self] timer in
+                guard let self = self else {
+                    timer.invalidate()
+                    return
+                }
                 if player.volume > fadeOutStep {
                     player.volume -= fadeOutStep
                 } else {
                     timer.invalidate()
                     player.stop()
+                    self.activeAudioPlayers.removeAll(where: { $0 == player })
                 }
             }
             fadeOutTimers.append(timer)
@@ -73,3 +78,4 @@ class AudioManager {
         activeAudioPlayers = activeAudioPlayers.filter { $0.isPlaying }
     }
 }
+

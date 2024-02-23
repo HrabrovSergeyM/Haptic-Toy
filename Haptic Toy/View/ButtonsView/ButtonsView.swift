@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreMotion
 
 struct ButtonsView: View {
     @AppStorage("isDarkMode") private var isDarkMode: Bool = false
@@ -14,12 +13,10 @@ struct ButtonsView: View {
     @ObservedObject var buttonsModelView: ButtonsModelView = ButtonsModelView()
     @State var showHelp: Bool = false
     @State var isStackVisible: Bool = false
-    @State var motion: CMDeviceMotion? = nil
     @State var selectedColor: Color = Color("ColorGray")
     @State var gradientColors: [Color] = [.gray]
     @State var gradientAngle: GradientAngle = GradientAngle(startPoint: .top, endPoint: .bottom)
     @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
-    let motionManager = CMMotionManager()
     let value: String
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
@@ -31,7 +28,6 @@ struct ButtonsView: View {
     
     var body: some View {
         ZStack {
-//            Color(UIColor.tertiarySystemBackground).ignoresSafeArea()
             themes[self.theme.themeSettings].themePrimaryColor.opacity(themes[self.theme.themeSettings].id != 0 ? 0.8 : 1.0).ignoresSafeArea()
             
             buttonsSection
@@ -94,15 +90,6 @@ struct ButtonsView: View {
                 isStackVisible = true
             }
             
-            if motionManager.isDeviceMotionAvailable {
-                self.motionManager.deviceMotionUpdateInterval = 1.0 / 60.0
-                self.motionManager.startDeviceMotionUpdates(to: OperationQueue.main) { (data, error) in
-                    if let validData = data {
-                        self.motion = validData
-                    }
-                }
-            }
-            
             HapticManager.prepareHaptics()
             
         }
@@ -125,9 +112,9 @@ extension ButtonsView {
     private var buttonsSection: some View {
         
         VStack(spacing: 20) {
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
-            ButtonsSection(isStackVisible: $isStackVisible, motion: $motion, motionManager: motionManager, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
         }
         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
     }
