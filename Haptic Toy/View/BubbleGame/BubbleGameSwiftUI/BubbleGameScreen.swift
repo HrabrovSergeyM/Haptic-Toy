@@ -56,18 +56,14 @@ struct BubbleGameScreen: View {
                         }
                         
                         Button {
-                            withAnimation(.spring()) {
-                                restartKey.toggle()
-                                HapticManager.notification(type: .success)
-                            }
+                            restartKey.toggle()
+                            HapticManager.notification(type: .success)
                         } label: {
                             Image(systemName: "arrow.triangle.2.circlepath")
                         }
                         
                         Button {
-                            withAnimation(.spring()) {
-                                displayMode.toggle()
-                            }
+                            displayMode.toggle()
                             switch displayMode {
                             case .standard:
                                 HapticManager.impact(style: .light)

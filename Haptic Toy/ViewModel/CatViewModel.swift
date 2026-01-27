@@ -15,7 +15,7 @@ class CatViewModel: ObservableObject {
     @Published var intensity: Double = 0
     @Published var showHelp: Bool = false
     @Published var sliderWidth: CGFloat = 0
-    let audioManager = AudioManager()
+    let audioManager = AudioManager.shared
     
     
     func startGesture() {

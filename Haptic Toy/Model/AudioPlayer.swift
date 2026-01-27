@@ -8,7 +8,10 @@
 import Foundation
 import AVFoundation
 
-class AudioManager {
+final class AudioManager: NSObject {
+
+    static let shared = AudioManager()
+    private override init() {}
 
     private var activeAudioPlayers: [AVAudioPlayer] = []
     private let fadeDuration: TimeInterval = 0.5
@@ -22,7 +25,9 @@ class AudioManager {
         }
 
         do {
+            cleanUpFinishedPlayers()
             let audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer.delegate = self
             audioPlayer.prepareToPlay()
             audioPlayer.play()
             activeAudioPlayers.append(audioPlayer)
@@ -38,7 +43,9 @@ class AudioManager {
         }
 
         do {
+            cleanUpFinishedPlayers()
             let audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+            audioPlayer.delegate = self
             audioPlayer.numberOfLoops = -1
             audioPlayer.prepareToPlay()
             audioPlayer.play()
@@ -74,8 +81,13 @@ class AudioManager {
         }
     }
 
-    func cleanUpFinishedPlayers() {
+    private func cleanUpFinishedPlayers() {
         activeAudioPlayers = activeAudioPlayers.filter { $0.isPlaying }
     }
 }
 
+extension AudioManager: AVAudioPlayerDelegate {
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        activeAudioPlayers.removeAll(where: { $0 === player })
+    }
+}

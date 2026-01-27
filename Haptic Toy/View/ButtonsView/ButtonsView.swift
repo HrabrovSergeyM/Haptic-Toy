@@ -17,6 +17,9 @@ struct ButtonsView: View {
     @State var gradientColors: [Color] = [.gray]
     @State var gradientAngle: GradientAngle = GradientAngle(startPoint: .top, endPoint: .bottom)
     @State var selectedSound: [String] = ["breakingBass0", "breakingBass1", "breakingBass2", "breakingBass3", "breakingBass4", "breakingBass5", "breakingBass6", "breakingBass7", "breakingBass8", "breakingBass9", "breakingBass10", "breakingBass11", "breakingBass12", "breakingBass13", "breakingBass14"]
+    @State private var padFrames: [ButtonPadID: CGRect] = [:]
+    @State private var externalTrigger: ButtonPadTrigger?
+    @State private var activePad: ButtonPadID?
     let value: String
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
@@ -31,6 +34,11 @@ struct ButtonsView: View {
             themes[self.theme.themeSettings].themePrimaryColor.opacity(themes[self.theme.themeSettings].id != 0 ? 0.8 : 1.0).ignoresSafeArea()
             
             buttonsSection
+                .coordinateSpace(name: ButtonsTouchSpace.name)
+                .onPreferenceChange(ButtonPadPreferenceKey.self) { value in
+                    updatePadFrames(value)
+                }
+                .simultaneousGesture(glissandoGesture, including: .gesture)
                 
 
                 .blur(radius: (buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) ? 8.0 : 0, opaque: false)
@@ -112,9 +120,9 @@ extension ButtonsView {
     private var buttonsSection: some View {
         
         VStack(spacing: 20) {
-            ButtonsSection(isStackVisible: $isStackVisible, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
-            ButtonsSection(isStackVisible: $isStackVisible, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
-            ButtonsSection(isStackVisible: $isStackVisible, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, externalTrigger: $externalTrigger, intensity: 0.6, title: "Soft", yOffset: -40, brightness: colorScheme == .light ? 0.4 : -0.1, titleWeight: .thin, rowIndex: 0, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, externalTrigger: $externalTrigger, intensity: 0.8, title: "Medium", yOffset: -60, brightness: colorScheme == .light ? 0.34 : -0.18, titleWeight: .light, rowIndex: 1, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
+            ButtonsSection(isStackVisible: $isStackVisible, externalTrigger: $externalTrigger, intensity: 1.0, title: "Heavy", yOffset: -80, brightness: colorScheme == .light ? 0.28 : -0.26, titleWeight: .regular, rowIndex: 2, selectedColor: selectedColor, gradientColors: gradientColors, selectedSound: selectedSound, gradientAngle: gradientAngle)
         }
         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
     }
@@ -153,6 +161,37 @@ extension ButtonsView {
                 }
                 buttonsModelView.isShowingSoundBar = false
             }
+        }
+    }
+    
+    private var glissandoGesture: some Gesture {
+        DragGesture(minimumDistance: 0)
+            .onChanged { value in
+                guard !(buttonsModelView.isShowingPalette || buttonsModelView.isShowingSoundBar) else { return }
+                triggerPad(at: value.location)
+            }
+            .onEnded { _ in
+                activePad = nil
+                externalTrigger = nil
+            }
+    }
+    
+    private func updatePadFrames(_ infos: [ButtonPadInfo]) {
+        var frames: [ButtonPadID: CGRect] = [:]
+        for info in infos {
+            frames[info.id] = info.frame
+        }
+        padFrames = frames
+    }
+    
+    private func triggerPad(at location: CGPoint) {
+        guard let match = padFrames.first(where: { $0.value.contains(location) }) else {
+            activePad = nil
+            return
+        }
+        if match.key != activePad {
+            activePad = match.key
+            externalTrigger = ButtonPadTrigger(id: match.key)
         }
     }
     

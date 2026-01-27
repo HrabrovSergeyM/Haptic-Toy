@@ -10,23 +10,30 @@ import Foundation
 import SpriteKit
 
 class SpriteBubble: SKSpriteNode {
-    var isPopped: Bool = false
-    var prepopped: [String] = ["whiteSoftPrepopped", "whiteSoftPrepopped2", "whiteSoftPrepopped3", "whiteSoftPrepopped4"]
-    var popped: [String] = ["whiteSoftPopped", "whiteSoftPopped2", "whiteSoftPopped3", "whiteSoftPopped4", "whiteSoftPopped5"]
+    private static let prepoppedNames = ["whiteSoftPrepopped", "whiteSoftPrepopped2", "whiteSoftPrepopped3", "whiteSoftPrepopped4"]
+    private static let poppedNames = ["whiteSoftPopped", "whiteSoftPopped2", "whiteSoftPopped3", "whiteSoftPopped4", "whiteSoftPopped5"]
+    
+    private(set) var isPopped: Bool = false
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
     
     init() {
-        let texture = SKTexture(imageNamed: prepopped.randomElement()!)
+        let texture = SKTexture(imageNamed: SpriteBubble.randomImage(from: SpriteBubble.prepoppedNames))
         super.init(texture: texture, color: .white, size: texture.size())
         self.name = "bubble"
         self.colorBlendFactor = 1.0
     }
     
-    func pop() {
-        guard !isPopped else { return }
-        self.texture = SKTexture(imageNamed: popped.randomElement()!)
+    func pop() -> Bool {
+        guard !isPopped else { return false }
+        self.texture = SKTexture(imageNamed: SpriteBubble.randomImage(from: SpriteBubble.poppedNames))
         isPopped = true
+        return true
+    }
+    
+    func reset() {
+        isPopped = false
+        texture = SKTexture(imageNamed: SpriteBubble.randomImage(from: SpriteBubble.prepoppedNames))
     }
     
     func updateColorForTheme(using traitCollection: UITraitCollection) {
@@ -35,5 +42,9 @@ class SpriteBubble: SKSpriteNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    private static func randomImage(from names: [String]) -> String {
+        names.randomElement() ?? names.first ?? ""
     }
 }

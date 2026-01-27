@@ -17,7 +17,7 @@
 		E90419212A9658FC00D939AE /* synth9.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419122A9658FB00D939AE /* synth9.wav */; };
 		E90419222A9658FC00D939AE /* synth3.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419132A9658FB00D939AE /* synth3.wav */; };
 		E90419232A9658FC00D939AE /* synth7.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419142A9658FB00D939AE /* synth7.wav */; };
-		E90419242A9658FC00D939AE /* synth0.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419152A9658FB00D939AE /* synth0.wav */; };
+		16F93821C25F40E3A4FB8DF4 /* synth0.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419632A97609E00D939AE /* synth0.wav */; };
 		E90419252A9658FC00D939AE /* synth2.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419162A9658FB00D939AE /* synth2.wav */; };
 		E90419262A9658FC00D939AE /* synth4.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419172A9658FC00D939AE /* synth4.wav */; };
 		E90419272A9658FC00D939AE /* synth10.wav in Resources */ = {isa = PBXBuildFile; fileRef = E90419182A9658FC00D939AE /* synth10.wav */; };
@@ -156,7 +156,6 @@
 		E90419122A9658FB00D939AE /* synth9.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth9.wav; sourceTree = "<group>"; };
 		E90419132A9658FB00D939AE /* synth3.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth3.wav; sourceTree = "<group>"; };
 		E90419142A9658FB00D939AE /* synth7.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth7.wav; sourceTree = "<group>"; };
-		E90419152A9658FB00D939AE /* synth0.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = synth0.wav; path = ../../../../Downloads/synth0.wav; sourceTree = "<group>"; };
 		E90419162A9658FB00D939AE /* synth2.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth2.wav; sourceTree = "<group>"; };
 		E90419172A9658FC00D939AE /* synth4.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth4.wav; sourceTree = "<group>"; };
 		E90419182A9658FC00D939AE /* synth10.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = synth10.wav; sourceTree = "<group>"; };
@@ -209,10 +208,10 @@
 		E90419932A97CE2400D939AE /* acousticGuitar3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar3.mp3; sourceTree = "<group>"; };
 		E90419942A97CE2400D939AE /* acousticGuitar6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar6.mp3; sourceTree = "<group>"; };
 		E90419952A97CE2400D939AE /* acousticGuitar9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = acousticGuitar9.mp3; sourceTree = "<group>"; };
-		E90419A62A97EC5F00D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass13.mp3; path = ../../../../breakingBass/breakingBass13.mp3; sourceTree = "<group>"; };
-		E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass11.mp3; path = ../../../../breakingBass/breakingBass11.mp3; sourceTree = "<group>"; };
-		E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass14.mp3; path = ../../../../breakingBass/breakingBass14.mp3; sourceTree = "<group>"; };
-		E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = breakingBass12.mp3; path = ../../../../breakingBass/breakingBass12.mp3; sourceTree = "<group>"; };
+		E90419A62A97EC5F00D939AE /* breakingBass13.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass13.mp3; sourceTree = "<group>"; };
+		E90419A72A97EC5F00D939AE /* breakingBass11.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass11.mp3; sourceTree = "<group>"; };
+		E90419A82A97EC5F00D939AE /* breakingBass14.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass14.mp3; sourceTree = "<group>"; };
+		E90419A92A97EC5F00D939AE /* breakingBass12.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = breakingBass12.mp3; sourceTree = "<group>"; };
 		E90419AE2A97ED3800D939AE /* ButtonsModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsModelView.swift; sourceTree = "<group>"; };
 		E90419B12A98CE0700D939AE /* studioBass7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass7.mp3; sourceTree = "<group>"; };
 		E90419B22A98CE0700D939AE /* studioBass9.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = studioBass9.mp3; sourceTree = "<group>"; };
@@ -549,7 +548,6 @@
 				E9E778222A78677000FBBE4D /* pop.mp3 */,
 				E90418E92A937EAB00D939AE /* popSound2.mp3 */,
 				E90419622A97609D00D939AE /* synth */,
-				E90419152A9658FB00D939AE /* synth0.wav */,
 				E9E778362A796C9F00FBBE4D /* pop2.mp3 */,
 				E9A8AE9E2A6E96A900ED9FD4 /* purring.wav */,
 			);
@@ -731,6 +729,7 @@
 				E904199E2A97CE2400D939AE /* acousticGuitar2.mp3 in Resources */,
 				E904197C2A9767FA00D939AE /* feverNights3.mp3 in Resources */,
 				E90419232A9658FC00D939AE /* synth7.wav in Resources */,
+				16F93821C25F40E3A4FB8DF4 /* synth0.wav in Resources */,
 				E90419A42A97CE2400D939AE /* acousticGuitar9.mp3 in Resources */,
 				E904194C2A968F3700D939AE /* breakingBass10.mp3 in Resources */,
 				E9E7783A2A79CD4300FBBE4D /* Localizable.strings in Resources */,
@@ -765,7 +764,6 @@
 				E90418EA2A937EAB00D939AE /* popSound2.mp3 in Resources */,
 				E9A8AE9F2A6E96A900ED9FD4 /* purring.wav in Resources */,
 				E90419452A968C6000D939AE /* breakingBass9.mp3 in Resources */,
-				E90419242A9658FC00D939AE /* synth0.wav in Resources */,
 				E90419522A97450600D939AE /* breakingBass0.mp3 in Resources */,
 				E904193A2A968AD900D939AE /* breakingBass4.mp3 in Resources */,
 				E90419C12A98CE0900D939AE /* studioBass9.mp3 in Resources */,
@@ -1002,7 +1000,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1013,6 +1011,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1040,7 +1039,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1051,6 +1050,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

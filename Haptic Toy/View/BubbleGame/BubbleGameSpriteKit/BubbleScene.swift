@@ -14,6 +14,7 @@ class BubblesScene: SKScene {
     var themes: [ColorTheme] = themeData
     var maxColumns: Int = 15
     var rows: Int = 7
+    private let audioManager = AudioManager.shared
     
     init(size: CGSize, displayMode: DisplayMode) {
         super.init(size: size)
@@ -69,8 +70,7 @@ class BubblesScene: SKScene {
     func resetBubbles() {
         for node in self.children {
             if let bubble = node as? SpriteBubble {
-                bubble.isPopped = false
-                bubble.texture = SKTexture(imageNamed: bubble.prepopped.randomElement()!)
+                bubble.reset()
             }
         }
     }
@@ -93,11 +93,9 @@ class BubblesScene: SKScene {
             let nodesAtPoint = nodes(at: location)
             
             for node in nodesAtPoint {
-                if let bubble = node as? SpriteBubble, !bubble.isPopped {
-                    //                    startSound(sound: "pop", type: "mp3")
+                if let bubble = node as? SpriteBubble, bubble.pop() {
+                    audioManager.startSound(sound: SoundName.popSound2, type: "mp3")
                     HapticManager.impact(style: .heavy)
-                    
-                    bubble.pop()
                 }
             }
         }

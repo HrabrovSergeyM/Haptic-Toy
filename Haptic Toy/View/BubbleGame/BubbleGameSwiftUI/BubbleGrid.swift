@@ -10,6 +10,8 @@ import SwiftUI
 struct BubbleGrid: View {
     @Binding var restartKey: Bool
     @Binding var displayMode: DisplayMode
+    @ObservedObject private var theme = ColorThemeChangerService.shared
+    var themes: [ColorTheme] = themeData
     
     var body: some View {
         let bubbleRows: Int
@@ -32,7 +34,11 @@ struct BubbleGrid: View {
                 ForEach(0..<bubbleRows, id: \.self) { index in
                     HStack {
                         ForEach(0..<(index % 2 == 0 ? bubblesPerRow : bubblesPerRow + 1), id: \.self) { _ in
-                            Bubble(restartKey: $restartKey, displayMode: $displayMode)
+                            Bubble(
+                                restartKey: $restartKey,
+                                displayMode: $displayMode,
+                                foregroundColor: themes[self.theme.themeSettings].themeForegroundColor
+                            )
                         }
                     }
                 }
@@ -41,4 +47,3 @@ struct BubbleGrid: View {
         .padding()
     }
 }
-
