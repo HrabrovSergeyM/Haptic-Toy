@@ -10,7 +10,7 @@ import Foundation
 class HomeViewModel: ObservableObject {
     
     @Published var isShowingSettings: Bool = false
-    @Published var isAnimated: Bool = false
+    @Published var isAnimated: Bool = true
     @Published var gridItemsData: [GridElementData] = [
         GridElementData(id: UUID(), destination: .bubbleGameScreen, baseImageName: .bubbleWrapper, text: .bubbleWrapper, offset: -50, delayTime: 0),
         GridElementData(id: UUID(), destination: .catView, baseImageName: .catNavigation, text: .purr, offset: 50, delayTime: 0),

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeHeader: View {
     @Binding var isShowingSettings: Bool
+    @Binding var isShowingHelp: Bool
     var language = LocalizationService.shared.language
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
@@ -26,6 +27,14 @@ struct HomeHeader: View {
                         .font(Font.system(size: 28, weight: .thin, design: .rounded))
                         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                     Spacer()
+                    Button {
+                        isShowingHelp = true
+                    } label: {
+                        Image(systemName: "questionmark.circle")
+                            .font(.system(size: 24, weight: .regular))
+                            .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
+                    }
+                    .accessibilityLabel(Text("helpViewTitle".localized(language)))
                     Button {
                         isShowingSettings.toggle()
                         HapticManager.notification(type: .success)
@@ -47,6 +56,6 @@ struct HomeHeader: View {
 
 struct HomeHeader_Previews: PreviewProvider {
     static var previews: some View {
-        HomeHeader(isShowingSettings: .constant(false))
+        HomeHeader(isShowingSettings: .constant(false), isShowingHelp: .constant(false))
     }
 }
