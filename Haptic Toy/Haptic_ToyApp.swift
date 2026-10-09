@@ -13,20 +13,12 @@ struct Haptic_ToyApp: App {
     @AppStorage("appHasBeenLaunchedBefore") var appHasBeenLaunchedBefore: Bool = false
     @ObservedObject var theme = ColorThemeChangerService.shared
     var themes: [ColorTheme] = themeData
-    @State private var showLaunchView: Bool = true
     
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                if showLaunchView {
-                    LaunchView(showLaunchView: $showLaunchView)
-                        .transition(.move(edge: .leading))
-                        .zIndex(2.0)
-                }
-                HomeView()
-                    .preferredColorScheme(isDarkMode ? .dark : .light)
-                    .accentColor(themes[self.theme.themeSettings].id != 0 ? themes[self.theme.themeSettings].themeForegroundColor : (isDarkMode ? .white : .blue))
-            }
+            HomeView()
+                .preferredColorScheme(isDarkMode ? .dark : .light)
+                .accentColor(themes[self.theme.themeSettings].id != 0 ? themes[self.theme.themeSettings].themeForegroundColor : (isDarkMode ? .white : .blue))
             .persistentSystemOverlays(.hidden)
             .onAppear {
                 if !appHasBeenLaunchedBefore {

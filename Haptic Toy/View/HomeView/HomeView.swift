@@ -30,7 +30,7 @@ struct HomeView: View {
                 themes[self.theme.themeSettings].themeSecondaryColor.ignoresSafeArea()
                 
                 VStack {
-                    HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings)
+                    HomeHeader(isShowingSettings: $homeViewModel.isShowingSettings, isShowingHelp: $showHelp)
                     content
                         .foregroundColor(themes[self.theme.themeSettings].themeForegroundColor)
                         .navigationTitle("")
@@ -51,18 +51,7 @@ struct HomeView: View {
                             }
                         }
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                                showHelp = !UserDefaults.standard.bool(forKey: "HomeView")
-                            }
-                            withAnimation {
-                                homeViewModel.isAnimated = true
-                            }
                             homeViewModel.loadData()
-                        }
-                        .onDisappear {
-                            withAnimation {
-                                homeViewModel.isAnimated = false
-                            }
                         }
                 }
                 .blur(radius: homeViewModel.isShowingSettings ? 8.0 : 0, opaque: false)
